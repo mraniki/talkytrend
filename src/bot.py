@@ -61,11 +61,11 @@ async def supertrend_check(symbol, interval):
     trend0 = supertrend_response[0]['supertrend']
     trend1 = supertrend_response[1]['supertrend']
     if trend0 > trend1:
-        response = f"🟢⬆️ {round(trend0,5)}"
+        response = f"🟢⬆️ {trend0}"
     elif trend1 > trend0:
-        response = f"🔴⬇️ {round(trend1,5)}"
+        response = f"🔴⬇️ {trend1}"
     else:
-        response = f"🟡↔️ {round(trend0,5)}"
+        response = f"🟡↔️ {trend0}"
     logger.debug(msg=f"response {response}")
     return response
 
