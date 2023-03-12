@@ -20,6 +20,7 @@ import time
 from fastapi import FastAPI, Header, HTTPException, Request
 import uvicorn
 import http
+from prettytable import PrettyTable as pt
 
 #🔧CONFIG
 load_dotenv()
@@ -38,11 +39,8 @@ TDAPI=os.getenv("TDAPI", "TDAPI")
 td = TDClient(apikey=TDAPI)
 
 #🔁UTILS
-# async def retrieve_url_json(url,params=None):
-#     headers = { "User-Agent": "Mozilla/5.0" }
-#     response = requests.get(url,params =params,headers=headers)
-#     # logger.debug(msg=f"retrieve_url_json {response}")
-#     return response.json()
+from prettytable import PrettyTable
+x = PrettyTable()
 
 # #💬MESSAGING
 # async def notify(msg):
@@ -65,7 +63,6 @@ async def supertrend_check(symbol, interval):
     response = f"{symbol} {interval}\n"
     if trend0 > trend1:
         response += f"⬆️ 🐸 {trend0}"
-        return TrendUp
     elif trend1 > trend0:
         response = f"⬇️ 🦑 {trend1}"
     else:
@@ -73,13 +70,22 @@ async def supertrend_check(symbol, interval):
     logger.debug(msg=f"response {response}")
     return response
 
+
+
+
 #CHECK
 async def checker():
     global symboltrend
     while True:
-        symbol = "BTC/USD"
-        interval = "4h"
-        symboltrend = await supertrend_check(symbol, interval)
+        x.field_names = ["Symbol", "Trend"]
+        x.add_rows(
+            [
+                ["EUR", await supertrend_check("EUR/USD","4h")],
+                ["XAU", await supertrend_check("XAU/USD","4h")],
+                ["BTC", await supertrend_check("BTC/USD","4h")],
+            ]
+        )
+        symboltrend = x.get_string()
         time.sleep(3600)  # do work every one hour
 
 #⛓️API
