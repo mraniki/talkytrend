@@ -101,6 +101,7 @@ async def checker():
             ]
         )
         symboltrend = x.get_string()
+        logger.info(msg=f"symboltrend {symboltrend}")
         time.sleep(3600)  # do work every one hour
 
 #⛓️API
@@ -119,10 +120,6 @@ async def shutdown_event():
 @app.get("/")
 def root():
     return {f"Bot is online {TTversion}\n"}
-
-@app.get("/trend")
-def trend():
-    return {f"symboltrend {x.get_string()}\n"}
 
 @app.get("/health")
 def health_check():
