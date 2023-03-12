@@ -56,8 +56,6 @@ td = TDClient(apikey=TDAPI)
 
 #INDICATOR
 
-
-
 async def supertrend_check(symbol, interval):
     ts = td.time_series(symbol=symbol, interval=interval, outputsize=2)
     supertrend_response = ts.with_supertrend().as_json()
@@ -66,20 +64,18 @@ async def supertrend_check(symbol, interval):
     trend1 = supertrend_response[1]['supertrend']
     response = f"{symbol} {interval}\n"
     if trend0 > trend1:
-        logger.debug(msg=f"TrendUp {trend0}")
         response += f"⬆️ 🐸 {trend0}"
         return TrendUp
     elif trend1 > trend0:
-        logger.debug(msg=f"TrendDown {trend1}")
         response = f"⬇️ 🦑 {trend1}"
     else:
-        logger.debug(msg=f"No Change {trend0}")
         response = f"↔️ {trend0}"
-
+    logger.debug(msg=f"response {response}")
     return response
 
 #CHECK
 async def checker():
+    global symboltrend
     while True:
         symbol = "BTC/USD"
         interval = "4h"
