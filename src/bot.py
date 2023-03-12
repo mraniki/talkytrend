@@ -69,6 +69,24 @@ async def supertrend_check(symbol, interval):
     logger.debug(msg=f"response {response}")
     return response
 
+
+# async def trend():
+#     global symboltrend
+#     try:
+#         x.field_names = ["Symbol", "Trend"]
+#         x.align = "r"
+#         x.add_rows(
+#             [
+#                 ["EUR", await supertrend_check("EUR/USD","4h")],
+#                 ["XAU", await supertrend_check("XAU/USD","4h")],
+#                 ["BTC", await supertrend_check("BTC/USD","4h")],
+#             ]
+#         )
+#         return  x.get_string()
+#     except Exception as e:
+#         logger.error(msg=f" error {e}")
+#         return
+
 #CHECK
 async def checker():
     global symboltrend
@@ -83,7 +101,6 @@ async def checker():
             ]
         )
         symboltrend = x.get_string()
-        logger.info(msg=f"symboltrend {symboltrend}")
         time.sleep(3600)  # do work every one hour
 
 #⛓️API
