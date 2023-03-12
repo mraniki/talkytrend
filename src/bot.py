@@ -56,23 +56,34 @@ td = TDClient(apikey=TDAPI)
 
 #INDICATOR
 
-async def supertrend_check():
-    ts = td.time_series(symbol="BTC/USD", interval="4h", outputsize=2)
+
+
+async def supertrend_check(symbol, interval):
+    ts = td.time_series(symbol=symbol, interval=interval, outputsize=2)
     supertrend_response = ts.with_supertrend().as_json()
     logger.debug(msg=f"supertrend_response {supertrend_response}")
     trend0 = supertrend_response[0]['supertrend']
     trend1 = supertrend_response[1]['supertrend']
+    response = f"{symbol} {interval}\n"
     if trend0 > trend1:
         logger.debug(msg=f"TrendUp {trend0}")
+        response += f"⬆️ 🐸 {trend0}"
+        return TrendUp
     elif trend1 > trend0:
         logger.debug(msg=f"TrendDown {trend1}")
+        response = f"⬇️ 🦑 {trend1}"
     else:
         logger.debug(msg=f"No Change {trend0}")
+        response = f"↔️ {trend0}"
+
+    return response
 
 #CHECK
 async def checker():
     while True:
-        await supertrend_check()
+        symbol = "BTC/USD"
+        interval = "4h"
+        symboltrend = await supertrend_check(symbol, interval)
         time.sleep(3600)  # do work every one hour
 
 #⛓️API
@@ -90,7 +101,7 @@ async def shutdown_event():
 
 @app.get("/")
 def root():
-    return {f"Bot is online {TTversion}"}
+    return {f"Bot is online {TTversion}\n{symboltrend}"}
 
 @app.get("/health")
 def health_check():
