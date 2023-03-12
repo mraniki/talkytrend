@@ -61,11 +61,11 @@ async def supertrend_check(symbol, interval):
     trend0 = supertrend_response[0]['supertrend']
     trend1 = supertrend_response[1]['supertrend']
     if trend0 > trend1:
-        response = f"⬆️ 🐸 {trend0}"
+        response = f"🟢⬆️ {round(trend0,5)}"
     elif trend1 > trend0:
-        response = f"⬇️ 🦑 {trend1}"
+        response = f"🔴⬇️ {round(trend1,5)}"
     else:
-        response = f"↔️ {trend0}"
+        response = f"🟡↔️ {round(trend0,5)}"
     logger.debug(msg=f"response {response}")
     return response
 
@@ -74,6 +74,7 @@ async def checker():
     global symboltrend
     while True:
         x.field_names = ["Symbol", "Trend"]
+        x.align = "r"
         x.add_rows(
             [
                 ["EUR", await supertrend_check("EUR/USD","4h")],
