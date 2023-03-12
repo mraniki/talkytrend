@@ -1,6 +1,5 @@
 python-dotenv>=0.21.1
 apprise
 twelvedata
-time
 fastapi
 uvicorn
