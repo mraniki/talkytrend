@@ -105,6 +105,10 @@ async def shutdown_event():
 def root():
     return {f"Bot is online {TTversion}\n"}
 
+@app.get("/trend")
+def trend():
+    return {f"symboltrend {x.get_string()}\n"}
+
 @app.get("/health")
 def health_check():
     logger.info(msg="Healthcheck_Ping")
