@@ -97,7 +97,7 @@ async def shutdown_event():
 
 @app.get("/")
 def root():
-    return {f"Bot is online {TTversion}\n{symboltrend}"}
+    return {f"Bot is online {TTversion}\n{checker()}"}
 
 @app.get("/health")
 def health_check():
