@@ -60,18 +60,14 @@ async def supertrend_check(symbol, interval):
     logger.debug(msg=f"supertrend_response {supertrend_response}")
     trend0 = supertrend_response[0]['supertrend']
     trend1 = supertrend_response[1]['supertrend']
-    response = f"{symbol} {interval}\n"
     if trend0 > trend1:
-        response += f"⬆️ 🐸 {trend0}"
+        response = f"⬆️ 🐸 {trend0}"
     elif trend1 > trend0:
         response = f"⬇️ 🦑 {trend1}"
     else:
         response = f"↔️ {trend0}"
     logger.debug(msg=f"response {response}")
     return response
-
-
-
 
 #CHECK
 async def checker():
@@ -86,6 +82,7 @@ async def checker():
             ]
         )
         symboltrend = x.get_string()
+        logger.info(msg=f"symboltrend {symboltrend}")
         time.sleep(3600)  # do work every one hour
 
 #⛓️API
