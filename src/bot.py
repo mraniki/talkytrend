@@ -97,7 +97,7 @@ async def shutdown_event():
 
 @app.get("/")
 def root():
-    return {f"Bot is online {TTversion}\n{checker()}"}
+    return {f"Bot is online {TTversion}\n{await supertrend_check("BTC/USD", "4h")}"}
 
 @app.get("/health")
 def health_check():
