@@ -1,12 +1,12 @@
 # set base image (host OS)
 
-FROM python:3.10
+FROM python:3.10.5-slim-buster
 
 # set the working directory in the container
 WORKDIR /code
 
 # copy the dependencies file to the working directory
-COPY requirements.txt .
+COPY requirements.txt requirements.txt
 
 # install dependencies
 RUN pip install -r requirements.txt
