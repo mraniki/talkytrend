@@ -1,6 +1,6 @@
 ##=============== VERSION =============
 
-TTversion="📊🗿 TT Beta 0.0.1"
+TTversion="📊🗿 TT Beta 0.0.2"
 
 ##=============== import  =============
 ##log
@@ -42,18 +42,24 @@ td = TDClient(apikey=TDAPI)
 from prettytable import PrettyTable
 x = PrettyTable()
 
-# #💬MESSAGING
-# async def notify(msg):
-#     if not msg:
-#         return
-#     apobj = apprise.Apprise()
-#     try:
-#         await apobj.async_notify(body=msg, body_format=NotifyFormat.HTML)
-#     except Exception as e:
-#         logger.warning(msg=f"{msg} not sent due to error: {e}")
+#💬MESSAGING
+#APPRISE INSTANCE
+apobj = apprise.Apprise()
+config = apprise.AppriseConfig()
+APPRISECFG=os.getenv("APPRISE", "/config/config.yml")
+config.add(APPRISECFG)
+apobj.add(config)
+
+#APPRISE NOTIFICATION
+async def notify(msg):
+    if not msg:
+        return
+    try:
+        await apobj.async_notify(body=msg, body_format=NotifyFormat.HTML)
+    except Exception as e:
+        logger.warning(msg=f"{msg} not sent due to error: {e}")
 
 #INDICATOR
-
 async def supertrend_check(symbol, interval):
     ts = td.time_series(symbol=symbol, interval=interval, outputsize=2)
     supertrend_response = ts.with_supertrend().as_json()
