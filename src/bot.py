@@ -16,6 +16,9 @@ from apprise import NotifyFormat
 #twelvedata
 from twelvedata import TDClient
 import time
+
+import finnhub
+
 #API
 from fastapi import FastAPI, Header, HTTPException, Request
 import uvicorn

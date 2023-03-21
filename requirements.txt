@@ -4,3 +4,4 @@ twelvedata
 prettytable
 fastapi
 uvicorn
+finnhub
