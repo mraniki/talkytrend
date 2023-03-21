@@ -29,6 +29,7 @@ from prettytable import PrettyTable as pt
 load_dotenv()
 LOGLEVEL=os.getenv("LOGLEVEL", "INFO")
 TDAPI=os.getenv("TDAPI", "TDAPI")
+FNAPI=os.getenv("FNAPI", "FNAPI")
 PORT=os.getenv("PORT", "8080")
 HOST=os.getenv("HOST", "0.0.0.0")
 
@@ -38,8 +39,9 @@ logger = logging.getLogger(__name__)
 logger.info(msg=f"LOGLEVEL {LOGLEVEL}")
 
 #🔗API
-TDAPI=os.getenv("TDAPI", "TDAPI")
 td = TDClient(apikey=TDAPI)
+fn = finnhub.Client(api_key=FNAPI)
+print(fn.recommendation_trends('BTCUSD'))
 
 #🔁UTILS
 from prettytable import PrettyTable
