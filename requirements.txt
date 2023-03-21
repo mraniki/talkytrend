@@ -1,7 +1,7 @@
 python-dotenv>=0.21.1
 apprise
-twelvedata
-prettytable
 fastapi
 uvicorn
-finnhub
+twelvedata
+prettytable
+finnhub-python
