@@ -41,7 +41,7 @@ logger.info(msg=f"LOGLEVEL {LOGLEVEL}")
 #🔗API
 td = TDClient(apikey=TDAPI)
 fn = finnhub.Client(api_key=FNAPI)
-print(fn.recommendation_trends('BTCUSD'))
+print(fn.general_news('general', min_id=0))
 
 #🔁UTILS
 from prettytable import PrettyTable
