@@ -1,22 +1,8 @@
-# set base image (host OS)
-
 FROM python:3.11-slim-bullseye
-
-# set the working directory in the container
-WORKDIR /code
-
-# copy the dependencies file to the working directory
+WORKDIR /app
 COPY requirements.txt requirements.txt
-
-# install dependencies
-RUN pip install -r requirements.txt
-
-# copy the content of the local src directory to the working directory
 COPY ./src .
-
-RUN mkdir /code/config
-
-EXPOSE 8443
-EXPOSE 8080
-# command to run on container start
+RUN pip install -r requirements.txt
+RUN mkdir /app/config
+EXPOSE 5000 8080 8443
 CMD [ "python", "./bot.py" ]

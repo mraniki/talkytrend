@@ -47,12 +47,18 @@ fred = Fred(api_key=FRAPI)
 
 #🔗APITEST
 dataSP500 = fred.get_series('SP500')
-news= fn.general_news('general', min_id=0)
-
 
 #🔁UTILS
 from prettytable import PrettyTable
 x = PrettyTable()
+
+
+def retrieve_url_json(url,params=None):
+    headers = { "User-Agent": "Mozilla/5.0" }
+    response = requests.get(url,params =params,headers=headers)
+    logger.debug(msg=f"retrieve_url_json {response}")
+    return response.json()
+
 
 # #💬MESSAGING
 # #APPRISE INSTANCE
@@ -72,7 +78,7 @@ x = PrettyTable()
 # #         logger.warning(msg=f"{msg} not sent due to error: {e}")
 
 #INDICATOR
-def supertrend_check(symbol, interval):
+def indicator_supertrend(symbol, interval):
     ts = td.time_series(symbol=symbol, interval=interval, outputsize=2)
     supertrend_response = ts.with_supertrend().as_json()
     logger.debug(msg=f"supertrend_response {supertrend_response}")
@@ -87,40 +93,28 @@ def supertrend_check(symbol, interval):
     logger.debug(msg=f"response {response}")
     return response
 
+#VIEWER
+def viewer_news():
+    news= fn.general_news('general', min_id=0)
+    logger.debug(msg=f"news {news}")
+    for keyval in news:
+        if (keyval['category'] == 'top news'):
+            return f"<a href={keyval['url']}>{keyval['headline']}"
 
-# # async def trend():
-# #     global symboltrend
-# #     try:
-# #         x.field_names = ["Symbol", "Trend"]
-# #         x.align = "r"
-# #         x.add_rows(
-# #             [
-# #                 ["EUR", await supertrend_check("EUR/USD","4h")],
-# #                 ["XAU", await supertrend_check("XAU/USD","4h")],
-# #                 ["BTC", await supertrend_check("BTC/USD","4h")],
-# #             ]
-# #         )
-# #         return  x.get_string()
-# #     except Exception as e:
-# #         logger.error(msg=f" error {e}")
-# #         return
-
-#CHECK
-def checker():
+def viewer_supertrend():
     global symboltrend
-    while True:
-        x.field_names = ["Symbol", "Trend"]
-        x.align = "r"
-        x.add_rows(
-            [
-                ["EUR",  supertrend_check("EUR/USD","4h")],
-                ["XAU",  supertrend_check("XAU/USD","4h")],
-                ["BTC",  supertrend_check("BTC/USD","4h")],
-            ]
-        )
-        symboltrend = x.get_string()
-        logger.info(msg=f"symboltrend {symboltrend}")
-
+    news= fn.general_news('general', min_id=0)
+    x.field_names = ["Symbol", "Trend"]
+    x.align = "r"
+    x.add_rows(
+        [
+            ["EUR",  indicator_supertrend("EUR/USD","4h")],
+            ["XAU",  indicator_supertrend("XAU/USD","4h")],
+            ["BTC",  indicator_supertrend("BTC/USD","4h")],
+        ]
+    )
+    symboltrend = x.get_string()
+    logger.info(msg=f"symboltrend {symboltrend}")
 
 
 app = Microdot()
@@ -128,23 +122,31 @@ app = Microdot()
 htmldoc = '''<!DOCTYPE html>
 <html>
     <head>
-        <title>Microdot Example Page</title>
+        <title>Talky</title>
     </head>
     <body>
-        <div>
-            <h1>Microdot Example Page</h1>
-            <p>Hello from Microdot!</p>
-            <p><a href="/shutdown">Click to shutdown the server</a></p>
+        <div>Talky Trend</h1>
+            <p>Menu</p>
+            <p><a href="/trend">Trend</a></p>
+            <p><a href="/news">News</a></p>
+            <p><a href="/shutdown">Shutdown the server</a></p>
         </div>
+        <img src="https://user-images.githubusercontent.com/8766259/226854338-e900f69e-d884-4a9a-90b1-b3dde7711b31.png" alt="Talky Trend" width="300" height="300"> 
     </body>
 </html>
 '''
-
 
 @app.route('/')
 def hello(request):
     return htmldoc, 200, {'Content-Type': 'text/html'}
 
+@app.route('/trend')
+def trend(request):
+    return viewer_supertrend(), 200, {'Content-Type': 'text/html'}
+
+@app.route('/news')
+def news(request):
+    return viewer_news(), 200, {'Content-Type': 'text/html'}
 
 @app.route('/shutdown')
 def shutdown(request):
@@ -153,5 +155,6 @@ def shutdown(request):
 
 #🙊TALKYTRADER
 if __name__ == '__main__':
-    # uvicorn.run(app, host=HOST, port=PORT)
-    app.run(host=HOST, port=PORT, debug=True, ssl=None)
+    app.run(host=HOST, port=PORT, debug=True)
+
+
