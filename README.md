@@ -8,11 +8,14 @@ Retrieve key economic data such as Trend, Key economic data for any financial sy
 
 ### Docker
 	docker push mraniki/talkytrend:latest
+	
 or 
+	
 	docker pull ghcr.io/mraniki/talkytrend:latest
 
 ### Local
 	git clone https://github.com/mraniki/talkytrend:main && pip install -r requirements.txt
+
 	python3 bot.py
 
 ## Features
