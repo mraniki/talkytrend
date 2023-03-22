@@ -11,6 +11,7 @@ from dotenv import load_dotenv
 import asyncio
 import json, requests
 #Table
+import pandas as pd
 from prettytable import PrettyTable as pt
 #notification
 import apprise
@@ -101,6 +102,9 @@ def viewer_news():
         if (keyval['category'] == 'top news'):
             return f"<a href={keyval['url']}>{keyval['headline']}"
 
+df = pd.read_json()
+df.to_csv()
+            
 def viewer_supertrend():
     global symboltrend
     news= fn.general_news('general', min_id=0)
