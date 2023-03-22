@@ -12,11 +12,11 @@ import asyncio
 import json, requests
 #Table
 from prettytable import PrettyTable as pt
-#API
-import pyvibe as pv
 #notification
 import apprise
 from apprise import NotifyFormat
+
+from microdot import Microdot
 #twelvedata.com
 from twelvedata import TDClient
 import time
@@ -120,30 +120,12 @@ def checker():
         )
         symboltrend = x.get_string()
         logger.info(msg=f"symboltrend {symboltrend}")
-        time.sleep(3600)  # do work every one hour
 
 
-page = pv.Page()
-page.add_header("Welcome to Talky!")
-page.add_text(f"Trend {checker()}")
+app = Microdot()
 
-# # 🤖BOT
-# async def bot():
-#     global bot
-#     await checker()
+@app.route('/')
+def index(request):
+    return checker()
 
-# # ⛓️API
-# @get("/")
-# def index() -> dict[str, str]:
-#     return {news}
-
-# app = Starlite([index])
-
-# #🙊TALKYTRADER
-# if __name__ == '__main__':
-#     uvicorn.run(app, host=HOST, port=PORT)
-
-# if __name__ == '__main__':
-#     page = pv.Page()
-#     page.add_header("Welcome to Talky!")
-#     page.add_text(f"Trend info")
+app.run()
