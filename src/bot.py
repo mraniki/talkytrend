@@ -151,5 +151,9 @@ def shutdown(request):
     request.app.shutdown()
     return 'The server is shutting down...'
 
-
-app.run(debug=True)
+#🙊TALKYTRADER
+if __name__ == '__main__':
+    # HOST=os.getenv("HOST", "0.0.0.0")
+    # PORT=os.getenv("PORT", "8080")
+    # uvicorn.run(app, host=HOST, port=PORT)
+    app.run(debug=True)
