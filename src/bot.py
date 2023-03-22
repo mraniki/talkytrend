@@ -125,7 +125,7 @@ async def checker():
         logger.info(msg=f"symboltrend {symboltrend}")
         time.sleep(3600)  # do work every one hour
 
-🤖BOT
+# 🤖BOT
 async def bot():
     global bot
     await checker()
