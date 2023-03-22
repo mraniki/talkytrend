@@ -1,6 +1,6 @@
 # TalkyTrend 
+![Trend](https://user-images.githubusercontent.com/8766259/226854338-e900f69e-d884-4a9a-90b1-b3dde7711b31.png)
 
-![Trend](https://user-images.githubusercontent.com/8766259/226852286-c584ee4d-a5b2-45dc-8149-210745c38895.png)
 
 Retrieve key economic data such as Trend, Key economic data for any financial symbol thru messaging platform.
 
