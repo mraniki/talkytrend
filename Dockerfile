@@ -1,6 +1,6 @@
 # set base image (host OS)
 
-FROM python:3.10.5-slim-buster
+FROM 3.10-alpine3.17
 
 # set the working directory in the container
 WORKDIR /code

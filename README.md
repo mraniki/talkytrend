@@ -20,7 +20,7 @@ or
 
 	python3 bot.py
 
-### Environment
+### Environment .env
 
 	#LOG LEVEL
 	LOGLEVEL=DEBUG
