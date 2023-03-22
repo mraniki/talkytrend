@@ -14,13 +14,9 @@ import json, requests
 from prettytable import PrettyTable as pt
 #API
 from fastapi import FastAPI, Header, HTTPException, Request
+from starlite import Starlite, get
 import uvicorn
 import http
-#render
-from starlette.applications import Starlette
-from starlette.requests import Request
-from starlette.responses import PlainTextResponse, Response
-from starlette.routing import Route
 #notification
 import apprise
 from apprise import NotifyFormat
@@ -50,31 +46,33 @@ logger.info(msg=f"LOGLEVEL {LOGLEVEL}")
 #🔗API
 td = TDClient(apikey=TDAPI)
 fn = finnhub.Client(api_key=FNAPI)
-print(fn.general_news('general', min_id=0))
 fred = Fred(api_key=FRAPI)
+
+#🔗APITEST
 dataSP500 = fred.get_series('SP500')
-print(dataSP500)
+news= fn.general_news('general', min_id=0)
+
 
 #🔁UTILS
 from prettytable import PrettyTable
 x = PrettyTable()
 
-#💬MESSAGING
-#APPRISE INSTANCE
-apobj = apprise.Apprise()
-config = apprise.AppriseConfig()
-APPRISECFG=os.getenv("APPRISE", "/config/config.yml")
-config.add(APPRISECFG)
-apobj.add(config)
+# #💬MESSAGING
+# #APPRISE INSTANCE
+# # apobj = apprise.Apprise()
+# # config = apprise.AppriseConfig()
+# # APPRISECFG=os.getenv("APPRISE", "/config/config.yml")
+# # config.add(APPRISECFG)
+# # apobj.add(config)
 
-#APPRISE NOTIFICATION
-async def notify(msg):
-    if not msg:
-        return
-    try:
-        await apobj.async_notify(body=msg, body_format=NotifyFormat.HTML)
-    except Exception as e:
-        logger.warning(msg=f"{msg} not sent due to error: {e}")
+# # #APPRISE NOTIFICATION
+# # async def notify(msg):
+# #     if not msg:
+# #         return
+# #     try:
+# #         await apobj.async_notify(body=msg, body_format=NotifyFormat.HTML)
+# #     except Exception as e:
+# #         logger.warning(msg=f"{msg} not sent due to error: {e}")
 
 #INDICATOR
 async def supertrend_check(symbol, interval):
@@ -93,22 +91,22 @@ async def supertrend_check(symbol, interval):
     return response
 
 
-# async def trend():
-#     global symboltrend
-#     try:
-#         x.field_names = ["Symbol", "Trend"]
-#         x.align = "r"
-#         x.add_rows(
-#             [
-#                 ["EUR", await supertrend_check("EUR/USD","4h")],
-#                 ["XAU", await supertrend_check("XAU/USD","4h")],
-#                 ["BTC", await supertrend_check("BTC/USD","4h")],
-#             ]
-#         )
-#         return  x.get_string()
-#     except Exception as e:
-#         logger.error(msg=f" error {e}")
-#         return
+# # async def trend():
+# #     global symboltrend
+# #     try:
+# #         x.field_names = ["Symbol", "Trend"]
+# #         x.align = "r"
+# #         x.add_rows(
+# #             [
+# #                 ["EUR", await supertrend_check("EUR/USD","4h")],
+# #                 ["XAU", await supertrend_check("XAU/USD","4h")],
+# #                 ["BTC", await supertrend_check("BTC/USD","4h")],
+# #             ]
+# #         )
+# #         return  x.get_string()
+# #     except Exception as e:
+# #         logger.error(msg=f" error {e}")
+# #         return
 
 #CHECK
 async def checker():
@@ -127,32 +125,18 @@ async def checker():
         logger.info(msg=f"symboltrend {symboltrend}")
         time.sleep(3600)  # do work every one hour
 
-#🤖BOT
+🤖BOT
 async def bot():
     global bot
     await checker()
 
-#⛓️API
-app = FastAPI(title="TALKYTREND",)
+# ⛓️API
 
-@app.on_event("startup")
-def startup_event():
-    loop = asyncio.get_event_loop()
-    loop.create_task(bot())
-    logger.info(msg="Webserver started")
+@get("/")
+def index() -> dict[str, str]:
+    return {news}
 
-@app.on_event('shutdown')
-async def shutdown_event():
-    logger.info('Webserver shutting down...')
-
-@app.get("/")
-def root():
-    return {f"Bot is online {TTversion}"}
-
-@app.get("/health")
-def health_check():
-    logger.info(msg="Healthcheck_Ping")
-    return {f"Bot is online {TTversion}"}
+app = Starlite([index])
 
 #🙊TALKYTRADER
 if __name__ == '__main__':
