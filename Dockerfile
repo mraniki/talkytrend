@@ -1,6 +1,6 @@
 # set base image (host OS)
 
-FROM 3.10-alpine3.17
+FROM python:3.11-slim-bullseye
 
 # set the working directory in the container
 WORKDIR /code
