@@ -153,7 +153,5 @@ def shutdown(request):
 
 #🙊TALKYTRADER
 if __name__ == '__main__':
-    # HOST=os.getenv("HOST", "0.0.0.0")
-    # PORT=os.getenv("PORT", "8080")
     # uvicorn.run(app, host=HOST, port=PORT)
-    app.run(debug=True)
+    app.run(host=HOST, port=PORT, debug=True, ssl=None)
