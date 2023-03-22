@@ -1,6 +1,7 @@
 python-dotenv>=0.21.1
 apprise
 microdot
+uvicorn
 prettytable
 twelvedata
 finnhub-python

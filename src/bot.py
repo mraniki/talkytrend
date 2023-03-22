@@ -17,6 +17,8 @@ import apprise
 from apprise import NotifyFormat
 
 from microdot import Microdot
+from microdot_asyncio import Microdot, Response
+from microdot_utemplate import render_template
 #twelvedata.com
 from twelvedata import TDClient
 import time
@@ -123,9 +125,16 @@ def checker():
 
 
 app = Microdot()
+Response.default_content_type = 'text/html'
 
-@app.route('/')
-def index(request):
-    return checker()
 
-app.run()
+@app.route('/', methods=['GET', 'POST'])
+async def index(req):
+    name = None
+    if req.method == 'POST':
+        name = req.form.get('name')
+    return render_template('index.html', name=name)
+
+
+if __name__ == '__main__':
+    app.run()
