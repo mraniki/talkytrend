@@ -98,13 +98,18 @@ def indicator_supertrend(symbol, interval):
 def viewer_news():
     news= fn.general_news('general', min_id=0)
     logger.debug(msg=f"news {news}")
+    for keyval in news:
+        if (keyval['category'] == 'top news'):
+            return f"<a href={keyval['url']}>{keyval['headline']}"
+
+def viewer_news2():
+    news= fn.general_news('general', min_id=0)
+    logger.debug(msg=f"news {news}")
     df = pd.read_json(news)
     df.to_csv()
     for keyval in news:
         if (keyval['category'] == 'top news'):
             return f"<a href={keyval['url']}>{keyval['headline']}"
-
-            
             
 def viewer_supertrend():
     global symboltrend
