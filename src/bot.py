@@ -107,9 +107,6 @@ def viewer_news2():
     logger.debug(msg=f"news {news}")
     df = pd.read_json(news)
     df.to_csv()
-    for keyval in news:
-        if (keyval['category'] == 'top news'):
-            return f"<a href={keyval['url']}>{keyval['headline']}"
             
 def viewer_supertrend():
     global symboltrend
