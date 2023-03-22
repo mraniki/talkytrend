@@ -8,7 +8,7 @@ Retrieve key economic data such as Trend, Key economic data for any financial sy
 
 ### Docker
 	docker push mraniki/talkytrend:latest
-	
+
 or 
 	
 	docker pull ghcr.io/mraniki/talkytrend:latest
@@ -16,7 +16,27 @@ or
 ### Local
 	git clone https://github.com/mraniki/talkytrend:main && pip install -r requirements.txt
 
+
+
 	python3 bot.py
+
+### Environment
+
+	#LOG LEVEL
+	LOGLEVEL=DEBUG
+	
+	#TWELVE DATA API
+	TDAPI=123
+	
+	#FINNHUB API
+	FNAPI=123
+	
+	#FREDAPI
+	FRAPI=123
+
+	#FASTAPI WEBSERVER PORT & IP
+	PORT=
+	HOST=
 
 ## Features
 🚧 WiP
