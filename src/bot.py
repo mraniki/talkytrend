@@ -13,23 +13,29 @@ import json, requests
 #notification
 import apprise
 from apprise import NotifyFormat
-#twelvedata
+#twelvedata.com
 from twelvedata import TDClient
 import time
-
+#finnhub.io
 import finnhub
+#Federal Reserve Bank of St. Louis
+from fredapi import Fred
+
+#Table
+from prettytable import PrettyTable as pt
 
 #API
 from fastapi import FastAPI, Header, HTTPException, Request
 import uvicorn
 import http
-from prettytable import PrettyTable as pt
+
 
 #🔧CONFIG
 load_dotenv()
 LOGLEVEL=os.getenv("LOGLEVEL", "INFO")
 TDAPI=os.getenv("TDAPI", "TDAPI")
 FNAPI=os.getenv("FNAPI", "FNAPI")
+FRAPI=os.getenv("FRAPI", "FRAPI")
 PORT=os.getenv("PORT", "8080")
 HOST=os.getenv("HOST", "0.0.0.0")
 
@@ -42,6 +48,10 @@ logger.info(msg=f"LOGLEVEL {LOGLEVEL}")
 td = TDClient(apikey=TDAPI)
 fn = finnhub.Client(api_key=FNAPI)
 print(fn.general_news('general', min_id=0))
+
+fred = Fred(api_key=FRAPI)
+dataSP500 = fred.get_series('SP500')
+print(dataSP500)
 
 #🔁UTILS
 from prettytable import PrettyTable
