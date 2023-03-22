@@ -10,6 +10,17 @@ import os
 from dotenv import load_dotenv
 import asyncio
 import json, requests
+#Table
+from prettytable import PrettyTable as pt
+#API
+from fastapi import FastAPI, Header, HTTPException, Request
+import uvicorn
+import http
+#render
+from starlette.applications import Starlette
+from starlette.requests import Request
+from starlette.responses import PlainTextResponse, Response
+from starlette.routing import Route
 #notification
 import apprise
 from apprise import NotifyFormat
@@ -20,14 +31,6 @@ import time
 import finnhub
 #Federal Reserve Bank of St. Louis
 from fredapi import Fred
-
-#Table
-from prettytable import PrettyTable as pt
-
-#API
-from fastapi import FastAPI, Header, HTTPException, Request
-import uvicorn
-import http
 
 
 #🔧CONFIG
@@ -48,7 +51,6 @@ logger.info(msg=f"LOGLEVEL {LOGLEVEL}")
 td = TDClient(apikey=TDAPI)
 fn = finnhub.Client(api_key=FNAPI)
 print(fn.general_news('general', min_id=0))
-
 fred = Fred(api_key=FRAPI)
 dataSP500 = fred.get_series('SP500')
 print(dataSP500)
@@ -125,13 +127,18 @@ async def checker():
         logger.info(msg=f"symboltrend {symboltrend}")
         time.sleep(3600)  # do work every one hour
 
+#🤖BOT
+async def bot():
+    global bot
+    await checker()
+
 #⛓️API
 app = FastAPI(title="TALKYTREND",)
 
 @app.on_event("startup")
 def startup_event():
     loop = asyncio.get_event_loop()
-    loop.create_task(checker())
+    loop.create_task(bot())
     logger.info(msg="Webserver started")
 
 @app.on_event('shutdown')
@@ -147,8 +154,6 @@ def health_check():
     logger.info(msg="Healthcheck_Ping")
     return {f"Bot is online {TTversion}"}
 
-#🙊TALKYTREND
+#🙊TALKYTRADER
 if __name__ == '__main__':
     uvicorn.run(app, host=HOST, port=PORT)
-
-
