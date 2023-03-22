@@ -13,10 +13,7 @@ import json, requests
 #Table
 from prettytable import PrettyTable as pt
 #API
-from fastapi import FastAPI, Header, HTTPException, Request
-from starlite import Starlite, get
-import uvicorn
-import http
+import pyvibe as pv
 #notification
 import apprise
 from apprise import NotifyFormat
@@ -75,7 +72,7 @@ x = PrettyTable()
 # #         logger.warning(msg=f"{msg} not sent due to error: {e}")
 
 #INDICATOR
-async def supertrend_check(symbol, interval):
+def supertrend_check(symbol, interval):
     ts = td.time_series(symbol=symbol, interval=interval, outputsize=2)
     supertrend_response = ts.with_supertrend().as_json()
     logger.debug(msg=f"supertrend_response {supertrend_response}")
@@ -109,35 +106,44 @@ async def supertrend_check(symbol, interval):
 # #         return
 
 #CHECK
-async def checker():
+def checker():
     global symboltrend
     while True:
         x.field_names = ["Symbol", "Trend"]
         x.align = "r"
         x.add_rows(
             [
-                ["EUR", await supertrend_check("EUR/USD","4h")],
-                ["XAU", await supertrend_check("XAU/USD","4h")],
-                ["BTC", await supertrend_check("BTC/USD","4h")],
+                ["EUR",  supertrend_check("EUR/USD","4h")],
+                ["XAU",  supertrend_check("XAU/USD","4h")],
+                ["BTC",  supertrend_check("BTC/USD","4h")],
             ]
         )
         symboltrend = x.get_string()
         logger.info(msg=f"symboltrend {symboltrend}")
         time.sleep(3600)  # do work every one hour
 
-# 🤖BOT
-async def bot():
-    global bot
-    await checker()
 
-# ⛓️API
+page = pv.Page()
+page.add_header("Welcome to Talky!")
+page.add_text(f"Trend {checker()}")
 
-@get("/")
-def index() -> dict[str, str]:
-    return {news}
+# # 🤖BOT
+# async def bot():
+#     global bot
+#     await checker()
 
-app = Starlite([index])
+# # ⛓️API
+# @get("/")
+# def index() -> dict[str, str]:
+#     return {news}
 
-#🙊TALKYTRADER
-if __name__ == '__main__':
-    uvicorn.run(app, host=HOST, port=PORT)
+# app = Starlite([index])
+
+# #🙊TALKYTRADER
+# if __name__ == '__main__':
+#     uvicorn.run(app, host=HOST, port=PORT)
+
+# if __name__ == '__main__':
+#     page = pv.Page()
+#     page.add_header("Welcome to Talky!")
+#     page.add_text(f"Trend info")
