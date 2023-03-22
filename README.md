@@ -4,6 +4,9 @@
 
 Retrieve key economic data such as Trend, Key economic data for any financial symbol thru messaging platform.
 
+## Build status
+[![Docker](https://github.com/mraniki/tt/actions/workflows/DockerHub.yml/badge.svg)](https://github.com/mraniki/tt/actions/workflows/DockerHub.yml) 
+
 ## Install
 
 ### Docker
