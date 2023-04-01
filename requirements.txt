@@ -6,3 +6,6 @@ prettytable
 twelvedata
 finnhub-python
 fredapi
+newsapi-python
+colorama
+yfinance

@@ -1,167 +1,85 @@
-##=============== VERSION =============
-
-TTversion="📊🗿 TT Beta 0.0.2"
-
-##=============== import  =============
-##log
-import logging
-##env
+import yfinance as yf
+from fastapi import FastAPI
+from fastapi.responses import HTMLResponse, JSONResponse
+from prettytable import PrettyTable
+from apprise import Apprise
+from colorama import Fore, Style
+from newsapi import NewsApiClient
 import os
 from dotenv import load_dotenv
-import asyncio
-import json, requests
-#Table
-import pandas as pd
-from prettytable import PrettyTable as pt
-#notification
-import apprise
-from apprise import NotifyFormat
-
-from microdot import Microdot
-#twelvedata.com
-from twelvedata import TDClient
-import time
-#finnhub.io
-import finnhub
-#Federal Reserve Bank of St. Louis
-from fredapi import Fred
 
 
-#🔧CONFIG
+# Load environment variables from .env file
 load_dotenv()
-LOGLEVEL=os.getenv("LOGLEVEL", "INFO")
-TDAPI=os.getenv("TDAPI", "TDAPI")
-FNAPI=os.getenv("FNAPI", "FNAPI")
-FRAPI=os.getenv("FRAPI", "FRAPI")
-PORT=os.getenv("PORT", "8080")
-HOST=os.getenv("HOST", "0.0.0.0")
+timeframe_minutes = os.getenv("TIMEFRAME_MINUTES",'4 *60')
+newsapikey=os.getenv("NEWS_API_KEY")
+newsapi = NewsApiClient(api_key=newsapikey)
 
-#🧐LOGGING
-logging.basicConfig(format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=LOGLEVEL)
-logger = logging.getLogger(__name__)
-logger.info(msg=f"LOGLEVEL {LOGLEVEL}")
-
-#🔗API
-td = TDClient(apikey=TDAPI)
-fn = finnhub.Client(api_key=FNAPI)
-fred = Fred(api_key=FRAPI)
-
-#🔗APITEST
-dataSP500 = fred.get_series('SP500')
-
-#🔁UTILS
-from prettytable import PrettyTable
-x = PrettyTable()
+instruments = ['EURUSD=X', 'GC=F', 'CL=F', 'BTC-USD']
 
 
-def retrieve_url_json(url,params=None):
-    headers = { "User-Agent": "Mozilla/5.0" }
-    response = requests.get(url,params =params,headers=headers)
-    logger.debug(msg=f"retrieve_url_json {response}")
-    return response.json()
+# Create an empty table with the columns we want to display
+table = PrettyTable(['Symbol', 'Supertrend'])
 
+# Connect to the News API
+newsapi = NewsApiClient(api_key='YOUR_NEWS_API_KEY')
 
-# #💬MESSAGING
-# #APPRISE INSTANCE
-# # apobj = apprise.Apprise()
-# # config = apprise.AppriseConfig()
-# # APPRISECFG=os.getenv("APPRISE", "/config/config.yml")
-# # config.add(APPRISECFG)
-# # apobj.add(config)
+# Get the top market news headline
+top_headlines = newsapi.get_top_headlines(q='market', category='business', country='us', language='en')
+if top_headlines['totalResults'] > 0:
+    news_headline = top_headlines['articles'][0]['title']
+else:
+    news_headline = ''
 
-# # #APPRISE NOTIFICATION
-# # async def notify(msg):
-# #     if not msg:
-# #         return
-# #     try:
-# #         await apobj.async_notify(body=msg, body_format=NotifyFormat.HTML)
-# #     except Exception as e:
-# #         logger.warning(msg=f"{msg} not sent due to error: {e}")
+# Set the news headline as the header of the table
+table.title = news_headline
 
-#INDICATOR
-def indicator_supertrend(symbol, interval):
-    ts = td.time_series(symbol=symbol, interval=interval, outputsize=2)
-    supertrend_response = ts.with_supertrend().as_json()
-    logger.debug(msg=f"supertrend_response {supertrend_response}")
-    trend0 = supertrend_response[0]['supertrend']
-    trend1 = supertrend_response[1]['supertrend']
-    if trend0 > trend1:
-        response = f"🟢⬆️ {trend0}"
-    elif trend1 > trend0:
-        response = f"🔴⬇️ {trend1}"
+# Loop through each instrument and calculate the supertrend
+for symbol in instruments:
+    # Get the historical data for the symbol
+    data = yf.download(symbol, period='1d', interval='1m')
+    
+    # Calculate the supertrend using the Supertrend indicator
+    data['atr'] = data['High'] - data['Low']
+    data['basic_ub'] = (data['High'] + data['Low']) / 2 + (3 * data['atr'] / timeframe_minutes)
+    data['basic_lb'] = (data['High'] + data['Low']) / 2 - (3 * data['atr'] / timeframe_minutes)
+    data['final_ub'] = 0.00
+    data['final_lb'] = 0.00
+    for i in range(timeframe_minutes, len(data)):
+        data['final_ub'].iloc[i] = data['basic_ub'].iloc[i] if data['basic_ub'].iloc[i] < data['final_ub'].iloc[i - 1] or data['Close'].iloc[i - timeframe_minutes] > data['final_ub'].iloc[i - 1] else data['final_ub'].iloc[i - 1]
+        data['final_lb'].iloc[i] = data['basic_lb'].iloc[i] if data['basic_lb'].iloc[i] > data['final_lb'].iloc[i - 1] or data['Close'].iloc[i - timeframe_minutes] < data['final_lb'].iloc[i - 1] else data['final_lb'].iloc[i - 1]
+    data['supertrend'] = data['final_ub'] if data['final_ub'].iloc[-1] < data['Close'].iloc[-1] else data['final_lb']
+    
+    # Determine the emoji and color based on whether the supertrend is up or down
+    if data['supertrend'].iloc[-1] > data['Close'].iloc[-1]:
+        emoji = '🔴'
+        color = Fore.RED
     else:
-        response = f"🟡↔️ {trend0}"
-    logger.debug(msg=f"response {response}")
-    return response
+        emoji = '🟢'
+        color = Fore.GREEN
+    
+    # Add the symbol and supertrend to the table with color
+    table.add_row([symbol, f'{color}{round(data["supertrend"].iloc[-1], 2)}{Style.RESET_ALL}'])
 
-#VIEWER
-def viewer_news():
-    news= fn.general_news('general', min_id=0)
-    logger.debug(msg=f"news {news}")
-    for keyval in news:
-        if (keyval['category'] == 'top news'):
-            return f"<a href={keyval['url']}>{keyval['headline']}"
+# Create a FastAPI app
+app = FastAPI()
 
-def viewer_news2():
-    news= fn.general_news('general', min_id=0)
-    logger.debug(msg=f"news {news}")
-    df = pd.read_json(news)
-    df.to_csv()
-            
-def viewer_supertrend():
-    global symboltrend
-    news= fn.general_news('general', min_id=0)
-    x.field_names = ["Symbol", "Trend"]
-    x.align = "r"
-    x.add_rows(
-        [
-            ["EUR",  indicator_supertrend("EUR/USD","4h")],
-            ["XAU",  indicator_supertrend("XAU/USD","4h")],
-            ["BTC",  indicator_supertrend("BTC/USD","4h")],
-        ]
-    )
-    symboltrend = x.get_string()
-    logger.info(msg=f"symboltrend {symboltrend}")
+# Define a route to return the HTML version of the table
+@app.get('/', response_class=HTMLResponse)
+async def get_table_html():
+    return f'<html><body><pre>{table}</pre></body></html>'
 
+# Define a route to return the JSON version of the table
+@app.get('/api/table', response_class=JSONResponse)
+async def get_table_json():
+    data = []
+    for row in table:
+        data.append({'Symbol': row[0], 'Supertrend': row[1]})
+    return {'data': data}
 
-app = Microdot()
-
-htmldoc = '''<!DOCTYPE html>
-<html>
-    <head>
-        <title>Talky</title>
-    </head>
-    <body>
-        <div>Talky Trend</h1>
-            <p>Menu</p>
-            <p><a href="/trend">Trend</a></p>
-            <p><a href="/news">News</a></p>
-            <p><a href="/shutdown">Shutdown the server</a></p>
-        </div>
-        <img src="https://user-images.githubusercontent.com/8766259/226854338-e900f69e-d884-4a9a-90b1-b3dde7711b31.png" alt="Talky Trend" width="300" height="300"> 
-    </body>
-</html>
-'''
-
-@app.route('/')
-def hello(request):
-    return htmldoc, 200, {'Content-Type': 'text/html'}
-
-@app.route('/trend')
-def trend(request):
-    return viewer_supertrend(), 200, {'Content-Type': 'text/html'}
-
-@app.route('/news')
-def news(request):
-    return viewer_news(), 200, {'Content-Type': 'text/html'}
-
-@app.route('/shutdown')
-def shutdown(request):
-    request.app.shutdown()
-    return 'The server is shutting down...'
-
-#🙊TALKYTRADER
-if __name__ == '__main__':
-    app.run(host=HOST, port=PORT, debug=True)
-
-
+# Send the table to Discord and Telegram
+apobj = Apprise()
+apobj.add('discord://YOUR_DISCORD_WEBHOOK_URL')
+apobj.add('telegram://YOUR_TELEGRAM_BOT_TOKEN/YOUR_TELEGRAM_CHAT_ID')
+message = f'```{table}```'
+apobj.notify(title='Supertrend Table', body=message)
