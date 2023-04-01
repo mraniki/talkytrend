@@ -8,4 +8,5 @@ finnhub-python
 fredapi
 newsapi-python
 colorama
+fastapi
 yfinance
