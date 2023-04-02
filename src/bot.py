@@ -1,6 +1,6 @@
 import os
 from dotenv import load_dotenv
-from fastapi import FastAPI, Header, HTTPException, Request
+from fastapi import FastAPI, HTMLResponse
 import uvicorn
 import gspread
 import pandas as pd
@@ -21,7 +21,7 @@ def get_dashboard():
 
 app = FastAPI()
 
-@app.get("/")
+@app.get("/", response_class=HTMLResponse)
 def read_root():
     return get_dashboard()
 
