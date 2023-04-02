@@ -1,12 +1,4 @@
 python-dotenv>=0.21.1
 apprise
-microdot
-pandas
-prettytable
-twelvedata
-finnhub-python
-fredapi
-newsapi-python
-colorama
 fastapi
-yfinance
+gspread
