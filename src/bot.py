@@ -8,7 +8,7 @@ import pandas as pd
 
 load_dotenv()
 GSHEET=os.getenv("GSHEET")
-PORT=os.getenv("PORT", "8080")
+PORT=int(os.getenv("PORT", "8080"))
 HOST=os.getenv("HOST", "0.0.0.0")
 
 def get_dashboard():
