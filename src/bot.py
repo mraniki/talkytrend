@@ -3,7 +3,6 @@ from dotenv import load_dotenv
 from fastapi import FastAPI, Header, HTTPException, Request
 import uvicorn
 import gspread
-import gspread_dataframe as gd
 import pandas as pd
 
 
