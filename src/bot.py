@@ -17,13 +17,13 @@ def get_dashboard():
     dashboard = book.get_worksheet(0)
     df = pd.DataFrame(dashboard.get_all_values())
     print(df)
-    return df
+    return df.to_html
 
 app = FastAPI()
 
 @app.get("/")
 def read_root():
-    return  get_dashboard()
+    return get_dashboard()
 
 if __name__ == '__main__':
     uvicorn.run("bot:app", host=HOST, port=PORT, reload=True)
