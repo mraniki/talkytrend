@@ -1,6 +1,7 @@
 import os
 from dotenv import load_dotenv
-from fastapi import FastAPI, HTMLResponse
+from fastapi import FastAPI
+from fastapi.responses import HTMLResponse
 import uvicorn
 import gspread
 import pandas as pd
