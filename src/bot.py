@@ -17,7 +17,7 @@ def get_dashboard():
     dashboard = book.get_worksheet(0)
     df = pd.DataFrame(dashboard.get_all_values())
     print(df)
-    return df
+    return df.to_html()
 
 app = FastAPI()
 
