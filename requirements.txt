@@ -2,7 +2,6 @@ apprise==1.3.0
 fastapi==0.95.0
 fredapi==0.5.0
 gspread==5.7.2
-gspread_dataframe==3.3.0
 microdot==1.2.4
 pandas==1.5.3
 prettytable==3.6.0
