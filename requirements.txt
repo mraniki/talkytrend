@@ -1,5 +1,5 @@
 fastapi==0.95.0
-gspread==5.7.2
+gspread==5.9.0
 pandas==1.5.3
 python-dotenv==1.0.0
 uvicorn==0.21.1
