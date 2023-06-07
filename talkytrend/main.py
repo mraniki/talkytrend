@@ -8,7 +8,6 @@ from .config import settings
 
 
 import asyncio
-import httpx
 from tradingview_ta import TA_Handler, Interval
 
 
