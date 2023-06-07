@@ -17,14 +17,13 @@ class TrendPlugin:
             assets = settings.assets  # Use the default assets if none are provided
 
         self.assets = assets
-        # Initialize a dictionary to store asset signals
         self.asset_signals = {asset: {'15m': None, '4h': None} for asset in self.assets}
 
     async def fetch_analysis(self, asset, interval):
         # Initialize the TA_Handler for the asset
-        handler = TA_Handler()
-        handler.set_symbol_as(asset)
-        handler.set_screener_as("forex")
+        handler = TA_Handler(
+        symbol=asset,
+        screener="forex"
 
         if interval == '15m':
             handler.set_interval_as(Interval.INTERVAL_15_MINUTES)
