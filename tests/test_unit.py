@@ -4,7 +4,7 @@ talkytrend Unit Testing
 
 import pytest
 from unittest.mock import patch, Mock
-from tradingview_ta import Interval
+from tradingview_ta import TA_Handler, Interval
 from talkytrend import TrendPlugin
 
 @pytest.fixture
@@ -16,7 +16,7 @@ def trend():
 @pytest.mark.asyncio
 async def test_fetch_analysis():
     # Mock the TA_Handler class
-    with patch("talkytrend.TA_Handler") as mock_handler: 
+    with patch("tradingview_ta.TA_Handler") as mock_handler: 
         # Mock the get_analysis method to return a predefined result
         mock_handler.return_value.get_analysis.return_value = {
             "summary": {"RECOMMENDATION": "BUY"}
