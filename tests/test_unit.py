@@ -23,7 +23,7 @@ async def test_fetch_analysis():
         }
 
         # Initialize the plugin with 'EURUSD'
-        plugin = TrendPlugin(["EURUSD"])
+        plugin = TrendPlugin("EURUSD")
 
         # Call the fetch_analysis method
         result = await plugin.fetch_analysis()
