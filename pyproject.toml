@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "talkytrend"
-version = "0.1.0"
+version = "0.0.0"
 description = "A python package to retrieve key economic data such as Trend, Key economic data for any financial symbol."
 authors = ["mraniki <8766259+mraniki@users.noreply.github.com>"]
 license = "MIT License"
@@ -20,7 +20,7 @@ packages = [
 python = "^3.10"
 asyncio = "*"
 dynaconf = "*"
-tradingview_ta = ""
+tradingview_ta = "*"
 
 
 [tool.poetry.dev-dependencies]
