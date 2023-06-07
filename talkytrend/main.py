@@ -23,7 +23,9 @@ class TrendPlugin:
         # Initialize the TA_Handler for the asset
         handler = TA_Handler(
         symbol=asset,
-        screener="forex"
+        exchange="FX_IDC",
+        screener="forex",
+        interval=interval)
 
         if interval == '15m':
             handler.set_interval_as(Interval.INTERVAL_15_MINUTES)
