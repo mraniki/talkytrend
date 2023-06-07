@@ -1,5 +1,5 @@
 """
-Provides example for FindMyOrder
+Provides example for talkytrend
 """
 
 import asyncio
@@ -7,7 +7,7 @@ import logging
 
 import uvicorn
 from fastapi import FastAPI
-from iamlistening import IAL, __version__
+from talkytrend import TrendPlugin, __version__
 
 logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
@@ -15,18 +15,18 @@ logging.basicConfig(
 )
 
 logger = logging.getLogger(__name__)
-logging.getLogger('iamlistening').setLevel(logging.DEBUG)
+logging.getLogger('TTREND').setLevel(logging.DEBUG)
 
 
 async def main():
     """Main"""
     while True:
         try:
-
-            ial = listener()
-            print(ial)
+            trend_plugin = TrendPlugin()
+            #trend_plugin.monitor_assets()
+            print(trend_plugin)
             logger.debug(
-                "iamlistening logger: %s version: %s",
+                "trend_plugin logger: %s version: %s",
                 __name__,
                 __version__)
 
@@ -35,7 +35,7 @@ async def main():
             await asyncio.sleep(7200)
 
         except Exception as e:
-            logger.error("error search %s", e)
+            logger.error("error %s", e)
 
 
 app = FastAPI()

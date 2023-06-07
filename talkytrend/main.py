@@ -1,137 +1,50 @@
 """
- IAmListening Main
+ talky trend Main
 """
 __version__ = "0.0.0"
 
-import os
-import sys
-import asyncio
 import logging 
-
-import apprise
-from apprise import NotifyFormat
-from telethon import TelegramClient, events
-import discord
-import simplematrixbotlib as botlib
-
 from .config import settings
 
 
-# 🤖BOT
+import asyncio
+from tradingview_ta import TA_Handler, Interval
 
-class Listener:
-    """ i am listening class """
 
-    def __init__(
-        self,
-    ):
-        self.logger = logging.getLogger(name="Listener")
-    async def start(self):
-        token = settings.bot_token
-        channel = settings.bot_channel_id
-        if settings.discord_webhook_id:
-            print("discord")
-        elif settings.matrix_hostname:
-            print("matrix")
-        elif settings.telethon_api_id or settings.rocket_chat:
-            print("telethon")
-        return True
-# async def listener():
-#     """Launch Bot Listener"""
-#     try:
-#         await load_exchange()
-#     except Exception as e:
-#         logger.error("exchange: %s", e)
-#     try:
-#         while True:
-#             if settings.discord_webhook_id:
-#                 # DISCORD
-#                 intents = discord.Intents.default()
-#                 intents.message_content = True
-#                 bot = discord.Bot(intents=intents)
+class TrendPlugin:
+    def __init__(self, asset=None):
+        if asset is None:
+            asset = settings.asset
 
-#                 @bot.event
-#                 async def on_ready():
-#                     await post_init()
+        self.asset = asset
+        #self.asset_signals = {asset: {'15m': None, '4h': None} for asset in self.assets}
 
-#                 @bot.event
-#                 async def on_message(message: discord.Message):
-#                     await parse_message(message.content)
-#                 await bot.start(settings.bot_token)
-#             elif settings.matrix_hostname:
-#                 # MATRIX
-#                 config = botlib.Config()
-#                 config.emoji_verify = True
-#                 config.ignore_unverified_devices = True
-#                 config.store_path = './config/matrix/'
-#                 creds = botlib.Creds(
-#                             settings.matrix_hostname,
-#                             settings.matrix_user,
-#                             settings.matrix_pass
-#                             )
-#                 bot = botlib.Bot(creds, config)
+    async def fetch_analysis(self):
+        # Initialize the TA_Handler 
+        handler = TA_Handler(
+        symbol=self.asset,
+        exchange="FX_IDC",
+        screener="forex",
+        interval=Interval.INTERVAL_4_HOURS)
 
-#                 @bot.listener.on_startup
-#                 async def room_joined(room):
-#                     await post_init()
+        # Fetch the technical analysis summary
+        analysis = handler.get_analysis()
+        print(analysis)
+        return analysis.summary['RECOMMENDATION']
 
-#                 @bot.listener.on_message_event
-#                 async def on_matrix_message(room, message):
-#                     await parse_message(message.body)
-#                 await bot.api.login()
-#                 bot.api.async_client.callbacks = botlib.Callbacks(
-#                                                     bot.api.async_client, bot
-#                                                     )
-#                 await bot.api.async_client.callbacks.setup_callbacks()
-#                 for action in bot.listener._startup_registry:
-#                     for room_id in bot.api.async_client.rooms:
-#                         await action(room_id)
-#                 await bot.api.async_client.sync_forever(
-#                                                         timeout=3000,
-#                                                         full_state=True
-#                                                     )
-#             elif settings.telethon_api_id:
-#                 # TELEGRAM
-#                 bot = await TelegramClient(
-#                             None,
-#                             settings.telethon_api_id,
-#                             settings.telethon_api_hash
-#                             ).start(bot_token=settings.bot_token)
-#                 await post_init()
+    # async def check_signal(self, asset):
+    #     for interval in ['15m', '4h']:
+    #         current_signal = await self.fetch_analysis(asset, interval)
 
-#                 @bot.on(events.NewMessage())
-#                 async def telethon(event):
-#                     await parse_message(event.message.message)
+    #         # If there's a previous signal and the current signal is different, print a message
+    #         if self.asset_signals[asset][interval] and current_signal != self.asset_signals[asset][interval]:
+    #             print(f'New signal for {asset} ({interval}): {current_signal}')
 
-#                 await bot.run_until_disconnected()
-#             else:
-#                 logger.warning("Check settings")
-#                 await asyncio.sleep(7200)
+    #         # Store the current signal
+    #         self.asset_signals[asset][interval] = current_signal
 
-#     except Exception as e:
-#         logger.error("Bot not started: %s", e)
-        
-# async def notify(msg):
-#     """💬 MESSAGING """
-#     if not msg:
-#         return
-#     apobj = apprise.Apprise()
-#     if settings.discord_webhook_id:
-#         url = (f"discord://{str(settings.discord_webhook_id)}/"
-#                f"{str(settings.discord_webhook_token)}")
-#         if isinstance(msg, str):
-#             msg = msg.replace("<code>", "`")
-#             msg = msg.replace("</code>", "`")
-#     elif settings.matrix_hostname:
-#         url = (f"matrixs://{settings.matrix_user}:{settings.matrix_pass}@"
-#                f"{settings.matrix_hostname[8:]}:443/"
-#                f"{str(settings.bot_channel_id)}")
-#     else:
-#         url = (f"tgram://{str(settings.bot_token)}/"
-#                f"{str(settings.bot_channel_id)}")
-#     try:
-#         apobj.add(url)
-#         await apobj.async_notify(body=str(msg), body_format=NotifyFormat.HTML)
-#     except Exception as e:
-#         logger.error("%s not sent: %s", msg, e)
+    # async def monitor_assets(self):
+    #     while True:
+    #         await asyncio.gather(*[self.check_signal(asset) for asset in self.assets])
+    #         await asyncio.sleep(600)
 
