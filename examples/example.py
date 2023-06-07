@@ -23,7 +23,7 @@ async def main():
     while True:
         try:
             trend_plugin = TrendPlugin()
-            trend_plugin.monitor_assets()
+            #trend_plugin.monitor_assets()
             print(trend_plugin)
             logger.debug(
                 "trend_plugin logger: %s version: %s",

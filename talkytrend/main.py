@@ -12,44 +12,39 @@ from tradingview_ta import TA_Handler, Interval
 
 
 class TrendPlugin:
-    def __init__(self, assets=None):
-        if assets is None:
-            assets = settings.assets  # Use the default assets if none are provided
+    def __init__(self, asset=None):
+        if asset is None:
+            asset = settings.asset
 
-        self.assets = assets
-        self.asset_signals = {asset: {'15m': None, '4h': None} for asset in self.assets}
+        self.asset = asset
+        #self.asset_signals = {asset: {'15m': None, '4h': None} for asset in self.assets}
 
-    async def fetch_analysis(self, asset, interval):
-        # Initialize the TA_Handler for the asset
+    async def fetch_analysis(self):
+        # Initialize the TA_Handler 
         handler = TA_Handler(
-        symbol=asset,
+        symbol=self.asset,
         exchange="FX_IDC",
         screener="forex",
-        interval=interval)
-
-        if interval == '15m':
-            handler.set_interval_as(Interval.INTERVAL_15_MINUTES)
-        elif interval == '4h':
-            handler.set_interval_as(Interval.INTERVAL_4_HOURS)
+        interval=Interval.INTERVAL_4_HOURS)
 
         # Fetch the technical analysis summary
         analysis = handler.get_analysis()
-
+        print(analysis)
         return analysis.summary['RECOMMENDATION']
 
-    async def check_signal(self, asset):
-        for interval in ['15m', '4h']:
-            current_signal = await self.fetch_analysis(asset, interval)
+    # async def check_signal(self, asset):
+    #     for interval in ['15m', '4h']:
+    #         current_signal = await self.fetch_analysis(asset, interval)
 
-            # If there's a previous signal and the current signal is different, print a message
-            if self.asset_signals[asset][interval] and current_signal != self.asset_signals[asset][interval]:
-                print(f'New signal for {asset} ({interval}): {current_signal}')
+    #         # If there's a previous signal and the current signal is different, print a message
+    #         if self.asset_signals[asset][interval] and current_signal != self.asset_signals[asset][interval]:
+    #             print(f'New signal for {asset} ({interval}): {current_signal}')
 
-            # Store the current signal
-            self.asset_signals[asset][interval] = current_signal
+    #         # Store the current signal
+    #         self.asset_signals[asset][interval] = current_signal
 
-    async def monitor_assets(self):
-        while True:
-            await asyncio.gather(*[self.check_signal(asset) for asset in self.assets])
-            await asyncio.sleep(600)
+    # async def monitor_assets(self):
+    #     while True:
+    #         await asyncio.gather(*[self.check_signal(asset) for asset in self.assets])
+    #         await asyncio.sleep(600)
 
