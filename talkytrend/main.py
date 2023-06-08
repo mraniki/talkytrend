@@ -15,7 +15,7 @@ class TrendPlugin:
     def __init__(self, 
                  asset=None, 
                  exchange="FX_IDC",
-                 screener="forex"
+                 screener="forex",
                  interval=Interval.INTERVAL_4_HOURS):
         if asset is None:
             asset = settings.asset
