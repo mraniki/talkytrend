@@ -19,7 +19,7 @@ class TalkyTrend:
         self.logger = logging.getLogger(name="TalkyTrend")
         if asset is None:
             asset = settings.asset
-        self.enabled = settings.plugin_trend
+        self.enabled = settings.talkytrend_status
         self.asset = asset
         self.exchange = exchange
         self.screener = screener

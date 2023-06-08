@@ -1,5 +1,5 @@
 [default]
-plugin_trend = true
+talkytrend_status = true
 # assets = ['EURUSD', 'NZDUSD', 'GBPUSD', 'GBPJPY', 'DXY', 'DE40', 'US500', 'OIL_BRENT', 'OIL_CRUDE', 'NATURALGAS', 'GOLD', 'BTCUSDT', 'ETHUSDT']
 asset = 'EURUSD'
 # timeframe = {'15m': None, '4h': None}
