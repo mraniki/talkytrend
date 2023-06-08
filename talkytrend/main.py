@@ -1,7 +1,6 @@
 """
  talky trend Main
 """
-__version__ = "0.0.0"
 
 import asyncio
 import logging 
@@ -25,17 +24,17 @@ class TalkyTrend:
         self.exchange = exchange
         self.screener = screener
         self.interval = interval
-#         self.asset_signals = {asset: {'15m': None, '4h': None} for asset in self.assets}
+        self.asset_signals = {'15m': None, '4h': None} 
 
     async def fetch_analysis(self):
-        # Initialize the TA_Handler 
+        
+        # Initialize the TA_Handler
         handler = TA_Handler(
         symbol=self.asset,
         exchange=self.exchange,
         screener=self.screener,
         interval=self.interval)
 
-        # Fetch the technical analysis summary
         analysis = handler.get_analysis()
         print(analysis)
         return analysis.summary['RECOMMENDATION']
