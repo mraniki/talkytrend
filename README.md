@@ -1,50 +1,34 @@
 # TalkyTrend 
-![Trend](https://user-images.githubusercontent.com/8766259/226854338-e900f69e-d884-4a9a-90b1-b3dde7711b31.png)
 
+| <img width="200" alt="Logo" src="https://user-images.githubusercontent.com/8766259/226854338-e900f69e-d884-4a9a-90b1-b3dde7711b31.png"> | A python package to retrieve asset trend and economic data. |
+| ------------- | ------------- |
+|<br> [![wiki](https://img.shields.io/badge/🪙🗿-wiki-0080ff)](https://talkytrader.gitbook.io/talky/) [![Pypi](https://badgen.net/badge/icon/talkytrend?icon=pypi&label)](https://pypi.org/project/talkytrend/) ![Version](https://img.shields.io/pypi/v/talkytrend)<br>  ![Pypi](https://img.shields.io/pypi/dm/talkytrend)<br> [![Build](https://github.com/mraniki/talkytrend/actions/workflows/%E2%9C%A8Flow.yml/badge.svg)](https://github.com/mraniki/talkytrend/actions/workflows/%E2%9C%A8Flow.yml) [![codecov](https://codecov.io/gh/mraniki/talkytrend/branch/dev/graph/badge.svg?token=4838MSZNCC)](https://codecov.io/gh/mraniki/talkytrend) | Find Trend |
 
-Retrieve key economic data such as Trend, Key economic data for any financial symbol thru messaging platform.
+Key features:
 
-## Build status
-[![Docker](https://github.com/mraniki/tt/actions/workflows/DockerHub.yml/badge.svg)](https://github.com/mraniki/tt/actions/workflows/DockerHub.yml) 
+- trading view connectivity
 
 ## Install
 
-### Docker
-	docker push mraniki/talkytrend:latest
+`pip install talkytrend`
 
-or 
-	
-	docker pull ghcr.io/mraniki/talkytrend:latest
+## How to use it
 
-### Local
-	git clone https://github.com/mraniki/talkytrend:main && pip install -r requirements.txt
+```
+trend_plugin = TrendPlugin()
+trend_plugin.monitor_assets()
+
+```
+
+### Example
+
+[example](https://github.com/mraniki/talkytrend/blob/main/examples/example.py)
+
+### Real use case
+
+[TalkyTrader](https://github.com/mraniki/tt)
+
+## Documentation
 
 
-
-	python3 bot.py
-
-### Environment .env
-
-	#LOG LEVEL
-	LOGLEVEL=DEBUG
-	
-	#TWELVE DATA API
-	TDAPI=123
-	
-	#FINNHUB API
-	FNAPI=123
-	
-	#FREDAPI
-	FRAPI=123
-
-	#FASTAPI WEBSERVER PORT & IP
-	PORT=
-	HOST=
-
-## Features
-🚧 WiP
-
-## Questions? Want to help? 
-
-[![discord](https://badgen.net/badge/icon/discord/purple?icon=discord&label)](https://discord.gg/vegJQGrRRa)
-[![telegram](https://badgen.net/badge/icon/telegram?icon=telegram&label)](https://t.me/TTTalkyTraderChat/1)
+[![wiki](https://img.shields.io/badge/🪙🗿-wiki-0080ff)](https://talkytrader.gitbook.io/talky/)
