@@ -2,6 +2,13 @@
 
 <!--next-version-placeholder-->
 
+## v0.0.3 (2023-06-08)
+
+### Fix
+
+* ♻️ refactor ([`02ed9c8`](https://github.com/mraniki/TalkyTrend/commit/02ed9c8ffe1dc1b09f3284106481ddcfae986822))
+* ♻️ refactor ([`25889d9`](https://github.com/mraniki/TalkyTrend/commit/25889d98622c83b1c111a01b7230536c7bc2ba6e))
+
 ## v0.0.2 (2023-06-08)
 
 ### Fix
