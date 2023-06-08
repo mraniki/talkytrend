@@ -15,8 +15,10 @@ Key features:
 ## How to use it
 
 ```
-trend = TalkyTrend()
-trend.monitor_assets()
+    trend = TalkyTrend()
+    result = await trend.fetch_analysis()
+    print(result) #BUY
+    monitor = await trend.monitor_assets() #monitor change of trend
 
 ```
 

@@ -18,7 +18,7 @@ async def test_fetch_analysis(trend):
     result = await trend.fetch_analysis()
     print(result)
     assert result is not None
- 
+
 
 @pytest.mark.asyncio
 async def test_fetch_analysis_crypto():

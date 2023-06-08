@@ -19,12 +19,12 @@ class TalkyTrend:
         self.logger = logging.getLogger(name="TalkyTrend")
         if asset is None:
             asset = settings.asset
-        self.enabled = settings.plugin_trend
+        self.enabled = settings.talkytrend_status
         self.asset = asset
         self.exchange = exchange
         self.screener = screener
         self.interval = interval
-        self.asset_signals = {'15m': None, '4h': None} 
+        self.asset_signals = {'4h': None} 
 
     async def fetch_analysis(self):
         
@@ -39,19 +39,16 @@ class TalkyTrend:
         print(analysis)
         return analysis.summary['RECOMMENDATION']
 
-#     async def check_signal(self, asset):
-#         for interval in ['15m', '4h']:
-#             current_signal = await self.fetch_analysis(asset, interval)
-
-#             # If there's a previous signal and the current signal is different, print a message
-#             if self.asset_signals[asset][interval] and current_signal != self.asset_signals[asset][interval]:
-#                 print(f'New signal for {asset} ({interval}): {current_signal}')
-
-#             # Store the current signal
-#             self.asset_signals[asset][interval] = current_signal
-
-    # async def monitor_assets(self):
-    #     while True:
-    #         await asyncio.gather(*[self.check_signal(asset) for asset in self.assets])
-    #         await asyncio.sleep(600)
-
+    async def check_signal(self):
+        current_signal = await self.fetch_analysis()
+        # If there's a previous signal and the current signal is different, print a message
+        if self.asset_signals[self.interval] and current_signal != self.asset_signals[self.interval]:
+            message = f'New signal for {self.asset} ({self.interval}): {current_signal}'
+            print(message)
+            self.asset_signals[self.interval] = current_signal
+            return message
+            
+    async def monitor_assets(self):
+        while True:
+            await asyncio.gather(*[self.check_signal()])
+            await asyncio.sleep(settings.scanner_frequency)

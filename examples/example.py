@@ -29,7 +29,10 @@ async def main():
                 "trend logger: %s version: %s",
                 __name__,
                 __version__)
-            await asyncio.sleep(7200)
+            result = await trend.fetch_analysis()
+            print(result) #BUY
+            monitor = await trend.monitor_assets()
+            print(monitor)
 
         except Exception as e:
             logger.error("error %s", e)
@@ -57,4 +60,4 @@ def health_check():
 
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8080)
+    uvicorn.run(app, host="0.0.0.0", port=8090)
