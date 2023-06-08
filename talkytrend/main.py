@@ -14,7 +14,7 @@ from tradingview_ta import TA_Handler, Interval
 class TrendPlugin:
     def __init__(self, 
                  asset=None, 
-                 exchange"FX_IDC",
+                 exchange="FX_IDC",
                  screener="forex"
                  interval=Interval.INTERVAL_4_HOURS):
         if asset is None:
