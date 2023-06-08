@@ -7,7 +7,7 @@ import logging
 
 import uvicorn
 from fastapi import FastAPI
-from talkytrend import TrendPlugin, __version__
+from talkytrend import TalkyTrend, __version__
 
 logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
@@ -22,16 +22,13 @@ async def main():
     """Main"""
     while True:
         try:
-            trend_plugin = TrendPlugin()
+            trend = TalkyTrend()
             #trend_plugin.monitor_assets()
-            print(trend_plugin)
+            print(trend)
             logger.debug(
-                "trend_plugin logger: %s version: %s",
+                "trend logger: %s version: %s",
                 __name__,
                 __version__)
-
-                
-
             await asyncio.sleep(7200)
 
         except Exception as e:
