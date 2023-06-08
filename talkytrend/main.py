@@ -12,20 +12,27 @@ from tradingview_ta import TA_Handler, Interval
 
 
 class TrendPlugin:
-    def __init__(self, asset=None):
+    def __init__(self, 
+                 asset=None, 
+                 exchange"FX_IDC",
+                 screener="forex"
+                 interval=Interval.INTERVAL_4_HOURS):
         if asset is None:
             asset = settings.asset
 
         self.asset = asset
+        self.exchange = exchange
+        self.screener = screener
+        self.interval = interval
         #self.asset_signals = {asset: {'15m': None, '4h': None} for asset in self.assets}
 
     async def fetch_analysis(self):
         # Initialize the TA_Handler 
         handler = TA_Handler(
         symbol=self.asset,
-        exchange="FX_IDC",
-        screener="forex",
-        interval=Interval.INTERVAL_4_HOURS)
+        exchange=self.exchange,
+        screener=self.screener,
+        interval=self.interval)
 
         # Fetch the technical analysis summary
         analysis = handler.get_analysis()
