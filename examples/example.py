@@ -29,6 +29,8 @@ async def main():
                 "trend logger: %s version: %s",
                 __name__,
                 __version__)
+            result = await trend.fetch_analysis()
+            print(result)
             await asyncio.sleep(7200)
 
         except Exception as e:
