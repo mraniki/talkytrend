@@ -24,7 +24,7 @@ class TalkyTrend:
         self.exchange = exchange
         self.screener = screener
         self.interval = interval
-        self.asset_signals = {asset: {'15m': None, '4h': None} for asset in self.assets}
+        self.asset_signals = {'15m': None, '4h': None} 
 
     async def fetch_analysis(self):
         
