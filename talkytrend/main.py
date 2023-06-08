@@ -3,13 +3,13 @@
 """
 __version__ = "0.0.0"
 
-import logging 
-from .config import settings
-
-
 import asyncio
+import logging 
+
 from tradingview_ta import TA_Handler, Interval
 
+from talkytrend import __version__
+from .config import settings
 
 class TalkyTrend:
     def __init__(self,
@@ -17,6 +17,7 @@ class TalkyTrend:
                  exchange="FX_IDC",
                  screener="forex",
                  interval=Interval.INTERVAL_4_HOURS):
+        self.logger = logging.getLogger(name="TalkyTrend")
         if asset is None:
             asset = settings.asset
         self.enabled = settings.plugin_trend
