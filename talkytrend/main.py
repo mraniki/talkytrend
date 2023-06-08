@@ -24,7 +24,7 @@ class TrendPlugin:
         self.exchange = exchange
         self.screener = screener
         self.interval = interval
-        #self.asset_signals = {asset: {'15m': None, '4h': None} for asset in self.assets}
+#         self.asset_signals = {asset: {'15m': None, '4h': None} for asset in self.assets}
 
     async def fetch_analysis(self):
         # Initialize the TA_Handler 
@@ -39,16 +39,16 @@ class TrendPlugin:
         print(analysis)
         return analysis.summary['RECOMMENDATION']
 
-    # async def check_signal(self, asset):
-    #     for interval in ['15m', '4h']:
-    #         current_signal = await self.fetch_analysis(asset, interval)
+#     async def check_signal(self, asset):
+#         for interval in ['15m', '4h']:
+#             current_signal = await self.fetch_analysis(asset, interval)
 
-    #         # If there's a previous signal and the current signal is different, print a message
-    #         if self.asset_signals[asset][interval] and current_signal != self.asset_signals[asset][interval]:
-    #             print(f'New signal for {asset} ({interval}): {current_signal}')
+#             # If there's a previous signal and the current signal is different, print a message
+#             if self.asset_signals[asset][interval] and current_signal != self.asset_signals[asset][interval]:
+#                 print(f'New signal for {asset} ({interval}): {current_signal}')
 
-    #         # Store the current signal
-    #         self.asset_signals[asset][interval] = current_signal
+#             # Store the current signal
+#             self.asset_signals[asset][interval] = current_signal
 
     # async def monitor_assets(self):
     #     while True:
