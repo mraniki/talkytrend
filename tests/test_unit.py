@@ -4,7 +4,6 @@ talkytrend Unit Testing
 
 import pytest
 from unittest.mock import patch, Mock
-from tradingview_ta import TA_Handler, Interval
 from talkytrend import TrendPlugin
 
 @pytest.fixture

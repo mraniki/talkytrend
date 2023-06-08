@@ -19,7 +19,7 @@ class TrendPlugin:
                  interval=Interval.INTERVAL_4_HOURS):
         if asset is None:
             asset = settings.asset
-
+        self.enabled = settings.plugin_trend
         self.asset = asset
         self.exchange = exchange
         self.screener = screener
