@@ -2,6 +2,18 @@
 
 <!--next-version-placeholder-->
 
+## v1.0.0 (2023-06-08)
+
+### Fix
+
+* ♻️ refactor ([`d6aec00`](https://github.com/mraniki/talkytrend/commit/d6aec00495175924fe58111ffb624e8d98934f4d))
+* 🔧 config ([`4d65c62`](https://github.com/mraniki/talkytrend/commit/4d65c62477f9f7ebfe07f5f9054264dfe6b455b0))
+
+### Breaking
+
+* 💥 initial tv monitoring ([`97955e3`](https://github.com/mraniki/talkytrend/commit/97955e3053b9d7793a3f270bfadcdf2d23f0c252))
+* 💥 initial tv monitoring ([`97955e3`](https://github.com/mraniki/talkytrend/commit/97955e3053b9d7793a3f270bfadcdf2d23f0c252))
+
 ## v0.0.3 (2023-06-08)
 
 ### Fix
