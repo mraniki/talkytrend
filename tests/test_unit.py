@@ -49,7 +49,7 @@ async def test_fetch_analysis_crypto():
         
 
         # Initialize the plugin with 'EURUSD'
-    plugin = TrendPlugin(asset=BTCUSDT',exchange='Binance',screener='crypto',interval=Interval.INTERVAL_15_MINUTES)
+    plugin = TrendPlugin(asset='BTCUSDT',exchange='Binance',screener='crypto',interval=Interval.INTERVAL_15_MINUTES)
     print(plugin)
         # Call the fetch_analysis method
     result = await plugin.fetch_analysis()
