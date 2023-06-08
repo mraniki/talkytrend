@@ -15,8 +15,8 @@ Key features:
 ## How to use it
 
 ```
-trend_plugin = TrendPlugin()
-trend_plugin.monitor_assets()
+trend = TalkyTrend()
+trend.monitor_assets()
 
 ```
 
