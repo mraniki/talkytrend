@@ -2,6 +2,18 @@
 
 <!--next-version-placeholder-->
 
+## v0.0.2 (2023-06-08)
+
+### Fix
+
+* ♻️ refactor ([`3333b3e`](https://github.com/mraniki/TalkyTrend/commit/3333b3e38af9fade1a821f1f020f95357931457b))
+* ✅ unit test ([`1a2ce47`](https://github.com/mraniki/TalkyTrend/commit/1a2ce47b3c4ffcf6cf91ed095d48cd01f7551859))
+* ✅ unit test ([`24afabc`](https://github.com/mraniki/TalkyTrend/commit/24afabc6db39bca08b41466bdfb1c22a2707d478))
+
+### Other
+
+* Update README.md ([`1cdbe1d`](https://github.com/mraniki/TalkyTrend/commit/1cdbe1d746c14d0889eb03c4ce9657135a15ac33))
+
 ## v0.0.1 (2023-06-08)
 
 ### Fix
