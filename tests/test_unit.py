@@ -9,7 +9,7 @@ from talkytrend import TrendPlugin
 
 @pytest.fixture
 def trend():
-    """return fmo"""
+    """return TrendPlugin"""
     return TrendPlugin()
 
 
