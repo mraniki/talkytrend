@@ -41,7 +41,6 @@ class TalkyTrend:
 
     async def check_signal(self):
         current_signal = await self.fetch_analysis()
-        # If there's a previous signal and the current signal is different, print a message
         if self.asset_signals[self.interval] and current_signal != self.asset_signals[self.interval]:
             message = f'New signal for {self.asset} ({self.interval}): {current_signal}'
             print(message)
