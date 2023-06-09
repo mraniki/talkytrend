@@ -59,9 +59,10 @@ class TalkyBreaking:
         self.economic_calendar = settings.economic_calendar
 
     async def fetch_key_events(self):
-        calendar = requests.get(settings.economic_calendar, timeout=10)
+        calendar = requests.get(self.economic_calendar , timeout=10)
         if calendar.status_code == 200:
             event_list = calendar.json()
+            print(event_list)
             for keyval in event_list:
                 if (keyval['impact'] == 'High' and keyval['country'] == 'USD'):
                     return keyval
@@ -71,5 +72,5 @@ class TalkyBreaking:
 
     async def monitor_events(self):
         while True:
-            await asyncio.gather(*[self.key_events()])
+            await asyncio.gather(*[self.fetch_key_events()])
             await asyncio.sleep(settings.scanner_frequency)
