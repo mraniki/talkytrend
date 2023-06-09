@@ -24,7 +24,7 @@ tradingview_ta = "*"
 
 [tool.poetry.dev-dependencies]
 python-semantic-release = "*"
-pytest = "*"
+pytest = "^7.3.1"
 pytest-cov = "*"
 pytest-asyncio = "*"
 pytest-mock = "*"
