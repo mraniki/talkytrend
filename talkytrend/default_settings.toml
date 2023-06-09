@@ -4,6 +4,6 @@ scanner_frequency = 600
 # assets = ['EURUSD', 'NZDUSD', 'GBPUSD', 'GBPJPY', 'DXY', 'DE40', 'US500', 'OIL_BRENT', 'OIL_CRUDE', 'NATURALGAS', 'GOLD', 'BTCUSDT', 'ETHUSDT']
 asset = 'EURUSD'
 # timeframe = {'15m': None, '4h': None}
-
+economic_calendar = "https://nfs.faireconomy.media/ff_calendar_thisweek.json"
 [testing]
 VALUE = "On Testing"
