@@ -15,11 +15,19 @@ Key features:
 ## How to use it
 
 ```
-    trend = TalkyTrend()
-    result = await trend.fetch_analysis()
-    print(result) #BUY
-    monitor = await trend.monitor_assets() #monitor change of trend
+    talky = TalkyTrend()
+    result = await talky.check_signal()
+    <!-- BUY -->
 
+    result = await talky.fetch_key_events()
+    print(result)
+    <!-- Title:  FDA advisers say new Alzheimer’s drug lecanemab slows cognitive decline -->
+    <!-- Description:  Panel’s opinion could pave way for full regulatory approval next month for treatment of disease that affects 6.5m Americans -->
+
+    monitor = await talky.scanner() #ongoing monitoring
+    <!-- New signal for BTCUSD (4h): STRONG_SELL -->
+    <!-- Key event: {'title': 'OPEC-JMMC Meetings', 'country': 'ALL', 'date': '2023-06-04T06:15:00-04:00', 'impact': 'High', 'forecast': '', 'previous': ''} -->
+    <!-- Key news: FDA advisers say new Alzheimer’s drug lecanemab slows cognitive decline -->
 ```
 
 ### Example

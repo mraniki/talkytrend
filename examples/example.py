@@ -22,16 +22,18 @@ async def main():
     """Main"""
     while True:
         try:
-            trend = TalkyTrend()
+            talky = TalkyTrend()
             #trend_plugin.monitor_assets()
-            print(trend)
+            print(talky)
             logger.debug(
                 "trend logger: %s version: %s",
                 __name__,
                 __version__)
-            result = await trend.fetch_analysis()
+            result = await talky.check_signal()
             print(result) #BUY
-            monitor = await trend.monitor_assets()
+            result = await talky.fetch_key_events()
+            print(result)
+            monitor = await talky.scanner()
             print(monitor)
 
         except Exception as e:

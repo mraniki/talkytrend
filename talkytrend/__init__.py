@@ -4,4 +4,4 @@
 __version__ = "1.1.0"
 
 from .config import settings
-from .main import TalkyTrend, TalkyBreaking
+from .main import TalkyTrend

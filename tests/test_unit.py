@@ -4,51 +4,29 @@ talkytrend Unit Testing
 
 # from unittest.mock import patch, Mock
 import pytest
-from talkytrend import TalkyTrend, TalkyBreaking
+from talkytrend import TalkyTrend
 
 @pytest.fixture
-def trend():
+def talky():
     """return TrendPlugin"""
     return TalkyTrend()
 
-@pytest.fixture
-def breaking():
-    """return TrendPlugin"""
-    return TalkyBreaking()
-
-
 @pytest.mark.asyncio
-async def test_fetch_analysis(trend):
-    print(trend)
-    result = await trend.fetch_analysis()
-    print(result)
-    assert result is not None
-
-
-@pytest.mark.asyncio
-async def test_fetch_analysis_crypto():
-    crypto_trend = TalkyTrend(
-        asset='BTCUSDT',
-        exchange='Binance',
-        screener='crypto',
-        interval='Interval.INTERVAL_15_MINUTES')
-    print(crypto_trend)
-    result = await crypto_trend.fetch_analysis()
+async def test_check_signal(talky):
+    print(talky)
+    result = await talky.check_signal()
     print(result)
     assert result is not None
 
 @pytest.mark.asyncio
-async def test_fetch_key_events(breaking):
-    print(breaking)
-    result = await breaking.fetch_key_events()
+async def test_fetch_key_events(talky):
+    result = await talky.fetch_key_events()
     print(result)
     assert result is not None
 
-
 @pytest.mark.asyncio
-async def fetch_key_news(breaking):
-    print(breaking)
-    result = await breaking.fetch_key_news()
+async def fetch_key_news(talky):
+    result = await talky.fetch_key_news()
     print(result)
     assert result is not None
  
