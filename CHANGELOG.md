@@ -2,6 +2,28 @@
 
 <!--next-version-placeholder-->
 
+## v1.1.0 (2023-06-10)
+
+### Feature
+
+* 🥚prepping new feat breaking calendar and news ([`7acb397`](https://github.com/mraniki/talkytrend/commit/7acb3970bac56c820650f91cd21cacbae2f1536a))
+
+### Fix
+
+* ✅ unit test ([`ffae900`](https://github.com/mraniki/talkytrend/commit/ffae90027a91a9614ca2b419d78e4802362734ca))
+* 🎨 code format ([`15866e5`](https://github.com/mraniki/talkytrend/commit/15866e5540207bf03d5622f7e73828b7476963e2))
+* 🚑 hot fix ([`e72aef8`](https://github.com/mraniki/talkytrend/commit/e72aef809a3109c28033c943b30a7e20c2bbe2b5))
+* 🐛 bug ([`d487a17`](https://github.com/mraniki/talkytrend/commit/d487a173d101ef427785c7f4150f32f94c851d7b))
+
+### Other
+
+* Update pyproject.toml ([`35aaa4f`](https://github.com/mraniki/talkytrend/commit/35aaa4f5c0081dded56426bebde4a6cc59bd8f6d))
+* Update pyproject.toml ([`4dc8739`](https://github.com/mraniki/talkytrend/commit/4dc8739ad1acf26d280dfad7198838c0956a812f))
+* Update pyproject.toml ([`d123dcc`](https://github.com/mraniki/talkytrend/commit/d123dcc983f731c1519233051a85e3ea04bc692c))
+* :speech_balloon: Update pyproject.toml with improved package description and removed unused dependency ([`323faba`](https://github.com/mraniki/talkytrend/commit/323faba55f63ad2a675f987be26e70615006fd29))
+* :recycle:  Remove unnecessary comment in TalkyTrend class. ([`806aabf`](https://github.com/mraniki/talkytrend/commit/806aabfc68b772f7a05daa195051ae12549e29e6))
+* Update README.md ([`a94c461`](https://github.com/mraniki/talkytrend/commit/a94c4614932ea5028ec825432a81a64bff06e72f))
+
 ## v1.0.0 (2023-06-08)
 
 ### Fix
