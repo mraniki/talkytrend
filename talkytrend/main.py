@@ -2,11 +2,13 @@
  talky trend Main
 """
 
+import aiohttp
 import asyncio
 import logging
 import requests
 
 from tradingview_ta import TA_Handler, Interval
+import finnhub
 
 from talkytrend import __version__
 from .config import settings
@@ -57,18 +59,27 @@ class TalkyBreaking:
     def __init__(self):
         self.logger = logging.getLogger(name="TalkyBreaking")
         self.economic_calendar = settings.economic_calendar
-
+        self.news_url = f"{settings.news_url}{settings.news_api_key}"
     async def fetch_key_events(self):
-        calendar = requests.get(self.economic_calendar , timeout=10)
-        if calendar.status_code == 200:
-            event_list = calendar.json()
-            print(event_list)
-            for keyval in event_list:
-                if (keyval['impact'] == 'High' and keyval['country'] == 'USD'):
-                    return keyval
+        response = requests.get(self.economic_calendar, timeout=10)  
+        if response.status_code == 200:
+            event_list = response.json()
+            for event in event_list:
+                impact = event.get('impact')
+                country = event.get('country')
+                title = event.get('title')
+                if impact == 'High' and country in {'USD', 'ALL'}:
+                    return event
+                if "OPEC" in title or "FOMC" in title:
+                    return event
 
     async def fetch_key_news(self):
-        return
+        response = requests.get(self.news_url,timeout=10)
+        data = response.json()
+        articles = data['articles']
+        for article in articles:
+            print("Title: ", article['title'])
+            print("Description: ", article['description'])
 
     async def monitor_events(self):
         while True:

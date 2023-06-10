@@ -40,6 +40,13 @@ async def test_fetch_analysis_crypto():
 @pytest.mark.asyncio
 async def test_fetch_key_events(breaking):
     print(breaking)
-    result = await breaking.key_events()
+    result = await breaking.fetch_key_events()
+    print(result)
+    assert result is not None
+
+@pytest.mark.asyncio
+async def fetch_key_news(breaking):
+    print(breaking)
+    result = await breaking.fetch_key_news()
     print(result)
     assert result is not None

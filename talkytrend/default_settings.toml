@@ -5,5 +5,8 @@ scanner_frequency = 600
 asset = 'EURUSD'
 # timeframe = {'15m': None, '4h': None}
 economic_calendar = "https://nfs.faireconomy.media/ff_calendar_thisweek.json"
+news_url="https://gnews.io/api/v4/top-headlines?category=business&lang=en&country=us&max=2&apikey="
+news_api_key = ""
+
 [testing]
 VALUE = "On Testing"
