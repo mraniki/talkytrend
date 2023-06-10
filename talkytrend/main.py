@@ -3,7 +3,8 @@
 """
 
 import asyncio
-import logging 
+import logging
+import requests
 
 from tradingview_ta import TA_Handler, Interval
 
@@ -50,4 +51,36 @@ class TalkyTrend:
     async def monitor_assets(self):
         while True:
             await asyncio.gather(*[self.check_signal()])
+            await asyncio.sleep(settings.scanner_frequency)
+
+class TalkyBreaking:
+    def __init__(self):
+        self.logger = logging.getLogger(name="TalkyBreaking")
+        self.economic_calendar = settings.economic_calendar
+        self.news_url = f"{settings.news_url}{settings.news_api_key}"
+
+    async def fetch_key_events(self):
+        response = requests.get(self.economic_calendar, timeout=10)  
+        if response.status_code == 200:
+            event_list = response.json()
+            for event in event_list:
+                impact = event.get('impact')
+                country = event.get('country')
+                title = event.get('title')
+                if impact == 'High' and country in {'USD', 'ALL'}:
+                    return event
+                if "OPEC" in title or "FOMC" in title:
+                    return event
+
+    async def fetch_key_news(self):
+        response = requests.get(self.news_url,timeout=10)
+        data = response.json()
+        articles = data['articles']
+        for article in articles:
+            print("Title: ", article['title'])
+            print("Description: ", article['description'])
+
+    async def monitor_events(self):
+        while True:
+            await asyncio.gather(*[self.fetch_key_events()])
             await asyncio.sleep(settings.scanner_frequency)
