@@ -1,0 +1,339 @@
+(base) pakira@code-server:/home/code_server/project/talkytrend$ source /home/coder/micromamba/bin/activate dev
+(dev) pakira@code-server:/home/code_server/project/talkytrend$ cd /home/code_server/project/talkytrend/examples
+(dev) pakira@code-server:/home/code_server/project/talkytrend/examples$ /home/coder/micromamba/envs/dev/bin/python /home/code_server/project/talkytrend/examples/example.py
+2023-06-10 17:55:58,226 - asyncio - DEBUG - Using selector: EpollSelector
+INFO:     Started server process [384927]
+INFO:     Waiting for application startup.
+<talkytrend.main.TalkyTrend object at 0x7f7fc7bed450>
+2023-06-10 17:55:58,289 - __main__ - DEBUG - trend logger: __main__ version: 1.1.0
+2023-06-10 17:55:58,291 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:55:58,425 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /forex/scan HTTP/1.1" 200 None
+[]
+2023-06-10 17:55:58,427 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): nfs.faireconomy.media:443
+2023-06-10 17:55:58,470 - urllib3.connectionpool - DEBUG - https://nfs.faireconomy.media:443 "GET /ff_calendar_thisweek.json HTTP/1.1" 200 None
+{'title': 'OPEC-JMMC Meetings', 'country': 'ALL', 'date': '2023-06-04T06:15:00-04:00', 'impact': 'High', 'forecast': '', 'previous': ''}
+INFO:     Application startup complete.
+2023-06-10 17:55:58,472 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:55:58,627 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /forex/scan HTTP/1.1" 200 None
+2023-06-10 17:55:58,629 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): nfs.faireconomy.media:443
+2023-06-10 17:55:59,169 - urllib3.connectionpool - DEBUG - https://nfs.faireconomy.media:443 "GET /ff_calendar_thisweek.json HTTP/1.1" 200 None
+2023-06-10 17:55:59,172 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): gnews.io:443
+2023-06-10 17:55:59,547 - urllib3.connectionpool - DEBUG - https://gnews.io:443 "GET /api/v4/top-headlines?category=business&lang=en&country=us&max=2&apikey=e19aa7c41920d27c0dd30e9b73777594 HTTP/1.1" 200 None
+Title:  FDA advisers say new Alzheimer’s drug lecanemab slows cognitive decline
+Description:  Panel’s opinion could pave way for full regulatory approval next month for treatment of disease that affects 6.5m Americans
+Key event: {'title': 'OPEC-JMMC Meetings', 'country': 'ALL', 'date': '2023-06-04T06:15:00-04:00', 'impact': 'High', 'forecast': '', 'previous': ''}
+Key news: FDA advisers say new Alzheimer’s drug lecanemab slows cognitive decline
+INFO:     Uvicorn running on http://0.0.0.0:8090 (Press CTRL+C to quit)
+^CINFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [384927]
+(dev) pakira@code-server:/home/code_server/project/talkytrend/examples$ cd /home/code_server/project/talkytrend/examples
+(dev) pakira@code-server:/home/code_server/project/talkytrend/examples$ /home/coder/micromamba/envs/dev/bin/python /home/code_server/project/talkytrend/examples/example.py
+2023-06-10 17:58:58,173 - asyncio - DEBUG - Using selector: EpollSelector
+INFO:     Started server process [385885]
+INFO:     Waiting for application startup.
+<talkytrend.main.TalkyTrend object at 0x7f5fd9b39450>
+2023-06-10 17:58:58,236 - __main__ - DEBUG - trend logger: __main__ version: 1.1.0
+2023-06-10 17:58:58,237 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:58:58,438 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /forex/scan HTTP/1.1" 200 None
+2023-06-10 17:58:58,440 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:58:58,636 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /crypto/scan HTTP/1.1" 200 None
+2023-06-10 17:58:58,636 - __main__ - ERROR - error Exchange or symbol not found.
+<talkytrend.main.TalkyTrend object at 0x7f5fd9a2cd30>
+2023-06-10 17:58:58,638 - __main__ - DEBUG - trend logger: __main__ version: 1.1.0
+2023-06-10 17:58:58,639 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:58:58,793 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /forex/scan HTTP/1.1" 200 None
+2023-06-10 17:58:58,795 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:58:58,953 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /crypto/scan HTTP/1.1" 200 None
+2023-06-10 17:58:58,953 - __main__ - ERROR - error Exchange or symbol not found.
+<talkytrend.main.TalkyTrend object at 0x7f5fda728880>
+2023-06-10 17:58:58,954 - __main__ - DEBUG - trend logger: __main__ version: 1.1.0
+2023-06-10 17:58:58,955 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:58:59,367 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /forex/scan HTTP/1.1" 200 None
+2023-06-10 17:58:59,369 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:58:59,553 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /crypto/scan HTTP/1.1" 200 None
+2023-06-10 17:58:59,554 - __main__ - ERROR - error Exchange or symbol not found.
+<talkytrend.main.TalkyTrend object at 0x7f5fd9a2cfd0>
+2023-06-10 17:58:59,555 - __main__ - DEBUG - trend logger: __main__ version: 1.1.0
+2023-06-10 17:58:59,556 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:58:59,746 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /forex/scan HTTP/1.1" 200 None
+2023-06-10 17:58:59,748 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:00,155 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /crypto/scan HTTP/1.1" 200 None
+2023-06-10 17:59:00,156 - __main__ - ERROR - error Exchange or symbol not found.
+<talkytrend.main.TalkyTrend object at 0x7f5fd9b39450>
+2023-06-10 17:59:00,157 - __main__ - DEBUG - trend logger: __main__ version: 1.1.0
+2023-06-10 17:59:00,158 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:00,343 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /forex/scan HTTP/1.1" 200 None
+2023-06-10 17:59:00,344 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:00,497 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /crypto/scan HTTP/1.1" 200 None
+2023-06-10 17:59:00,497 - __main__ - ERROR - error Exchange or symbol not found.
+<talkytrend.main.TalkyTrend object at 0x7f5fd9a2cf40>
+2023-06-10 17:59:00,498 - __main__ - DEBUG - trend logger: __main__ version: 1.1.0
+2023-06-10 17:59:00,499 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:00,911 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /forex/scan HTTP/1.1" 200 None
+2023-06-10 17:59:00,913 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:01,101 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /crypto/scan HTTP/1.1" 200 None
+2023-06-10 17:59:01,101 - __main__ - ERROR - error Exchange or symbol not found.
+<talkytrend.main.TalkyTrend object at 0x7f5fda728880>
+2023-06-10 17:59:01,102 - __main__ - DEBUG - trend logger: __main__ version: 1.1.0
+2023-06-10 17:59:01,103 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:01,288 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /forex/scan HTTP/1.1" 200 None
+2023-06-10 17:59:01,290 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:01,445 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /crypto/scan HTTP/1.1" 200 None
+2023-06-10 17:59:01,446 - __main__ - ERROR - error Exchange or symbol not found.
+<talkytrend.main.TalkyTrend object at 0x7f5fd9a2cee0>
+2023-06-10 17:59:01,447 - __main__ - DEBUG - trend logger: __main__ version: 1.1.0
+2023-06-10 17:59:01,448 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:01,860 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /forex/scan HTTP/1.1" 200 None
+2023-06-10 17:59:01,861 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:02,022 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /crypto/scan HTTP/1.1" 200 None
+2023-06-10 17:59:02,022 - __main__ - ERROR - error Exchange or symbol not found.
+<talkytrend.main.TalkyTrend object at 0x7f5fd9b39450>
+2023-06-10 17:59:02,023 - __main__ - DEBUG - trend logger: __main__ version: 1.1.0
+2023-06-10 17:59:02,024 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:02,179 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /forex/scan HTTP/1.1" 200 None
+2023-06-10 17:59:02,181 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:02,336 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /crypto/scan HTTP/1.1" 200 None
+2023-06-10 17:59:02,336 - __main__ - ERROR - error Exchange or symbol not found.
+<talkytrend.main.TalkyTrend object at 0x7f5fd9a2d870>
+2023-06-10 17:59:02,337 - __main__ - DEBUG - trend logger: __main__ version: 1.1.0
+2023-06-10 17:59:02,338 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:02,492 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /forex/scan HTTP/1.1" 200 None
+2023-06-10 17:59:02,494 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:02,651 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /crypto/scan HTTP/1.1" 200 None
+2023-06-10 17:59:02,651 - __main__ - ERROR - error Exchange or symbol not found.
+<talkytrend.main.TalkyTrend object at 0x7f5fda728880>
+2023-06-10 17:59:02,652 - __main__ - DEBUG - trend logger: __main__ version: 1.1.0
+2023-06-10 17:59:02,653 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:02,806 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /forex/scan HTTP/1.1" 200 None
+2023-06-10 17:59:02,808 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:02,961 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /crypto/scan HTTP/1.1" 200 None
+2023-06-10 17:59:02,962 - __main__ - ERROR - error Exchange or symbol not found.
+<talkytrend.main.TalkyTrend object at 0x7f5fd9a2d000>
+2023-06-10 17:59:02,963 - __main__ - DEBUG - trend logger: __main__ version: 1.1.0
+2023-06-10 17:59:02,964 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:03,119 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /forex/scan HTTP/1.1" 200 None
+2023-06-10 17:59:03,121 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:03,275 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /crypto/scan HTTP/1.1" 200 None
+2023-06-10 17:59:03,275 - __main__ - ERROR - error Exchange or symbol not found.
+<talkytrend.main.TalkyTrend object at 0x7f5fd9b39450>
+2023-06-10 17:59:03,276 - __main__ - DEBUG - trend logger: __main__ version: 1.1.0
+2023-06-10 17:59:03,277 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:03,431 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /forex/scan HTTP/1.1" 200 None
+2023-06-10 17:59:03,432 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:03,588 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /crypto/scan HTTP/1.1" 200 None
+2023-06-10 17:59:03,588 - __main__ - ERROR - error Exchange or symbol not found.
+<talkytrend.main.TalkyTrend object at 0x7f5fd9a2ce50>
+2023-06-10 17:59:03,590 - __main__ - DEBUG - trend logger: __main__ version: 1.1.0
+2023-06-10 17:59:03,591 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:03,914 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /forex/scan HTTP/1.1" 200 None
+2023-06-10 17:59:03,916 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:04,042 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /crypto/scan HTTP/1.1" 200 None
+2023-06-10 17:59:04,042 - __main__ - ERROR - error Exchange or symbol not found.
+<talkytrend.main.TalkyTrend object at 0x7f5fda728880>
+2023-06-10 17:59:04,044 - __main__ - DEBUG - trend logger: __main__ version: 1.1.0
+2023-06-10 17:59:04,044 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:04,198 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /forex/scan HTTP/1.1" 200 None
+2023-06-10 17:59:04,200 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:04,612 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /crypto/scan HTTP/1.1" 200 None
+2023-06-10 17:59:04,612 - __main__ - ERROR - error Exchange or symbol not found.
+<talkytrend.main.TalkyTrend object at 0x7f5fd9a2db40>
+2023-06-10 17:59:04,613 - __main__ - DEBUG - trend logger: __main__ version: 1.1.0
+2023-06-10 17:59:04,614 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:04,767 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /forex/scan HTTP/1.1" 200 None
+2023-06-10 17:59:04,769 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:04,923 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /crypto/scan HTTP/1.1" 200 None
+2023-06-10 17:59:04,923 - __main__ - ERROR - error Exchange or symbol not found.
+<talkytrend.main.TalkyTrend object at 0x7f5fd9b39450>
+2023-06-10 17:59:04,925 - __main__ - DEBUG - trend logger: __main__ version: 1.1.0
+2023-06-10 17:59:04,925 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:05,081 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /forex/scan HTTP/1.1" 200 None
+2023-06-10 17:59:05,083 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:05,209 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /crypto/scan HTTP/1.1" 200 None
+2023-06-10 17:59:05,209 - __main__ - ERROR - error Exchange or symbol not found.
+<talkytrend.main.TalkyTrend object at 0x7f5fd9a2d510>
+2023-06-10 17:59:05,210 - __main__ - DEBUG - trend logger: __main__ version: 1.1.0
+2023-06-10 17:59:05,211 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:05,621 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /forex/scan HTTP/1.1" 200 None
+2023-06-10 17:59:05,623 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:05,748 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /crypto/scan HTTP/1.1" 200 None
+2023-06-10 17:59:05,749 - __main__ - ERROR - error Exchange or symbol not found.
+<talkytrend.main.TalkyTrend object at 0x7f5fda728880>
+2023-06-10 17:59:05,750 - __main__ - DEBUG - trend logger: __main__ version: 1.1.0
+2023-06-10 17:59:05,751 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:05,908 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /forex/scan HTTP/1.1" 200 None
+2023-06-10 17:59:05,910 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:06,035 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /crypto/scan HTTP/1.1" 200 None
+2023-06-10 17:59:06,035 - __main__ - ERROR - error Exchange or symbol not found.
+<talkytrend.main.TalkyTrend object at 0x7f5fd9a2c970>
+2023-06-10 17:59:06,037 - __main__ - DEBUG - trend logger: __main__ version: 1.1.0
+2023-06-10 17:59:06,037 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:06,192 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /forex/scan HTTP/1.1" 200 None
+2023-06-10 17:59:06,194 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:06,348 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /crypto/scan HTTP/1.1" 200 None
+2023-06-10 17:59:06,348 - __main__ - ERROR - error Exchange or symbol not found.
+<talkytrend.main.TalkyTrend object at 0x7f5fd9b39450>
+2023-06-10 17:59:06,350 - __main__ - DEBUG - trend logger: __main__ version: 1.1.0
+2023-06-10 17:59:06,350 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:06,503 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /forex/scan HTTP/1.1" 200 None
+2023-06-10 17:59:06,505 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:06,633 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /crypto/scan HTTP/1.1" 200 None
+2023-06-10 17:59:06,633 - __main__ - ERROR - error Exchange or symbol not found.
+<talkytrend.main.TalkyTrend object at 0x7f5fd9a2dae0>
+2023-06-10 17:59:06,634 - __main__ - DEBUG - trend logger: __main__ version: 1.1.0
+2023-06-10 17:59:06,635 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:06,788 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /forex/scan HTTP/1.1" 200 None
+2023-06-10 17:59:06,790 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:06,944 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /crypto/scan HTTP/1.1" 200 None
+2023-06-10 17:59:06,944 - __main__ - ERROR - error Exchange or symbol not found.
+<talkytrend.main.TalkyTrend object at 0x7f5fda728880>
+2023-06-10 17:59:06,946 - __main__ - DEBUG - trend logger: __main__ version: 1.1.0
+2023-06-10 17:59:06,947 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:07,074 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /forex/scan HTTP/1.1" 200 None
+2023-06-10 17:59:07,076 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:07,231 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /crypto/scan HTTP/1.1" 200 None
+2023-06-10 17:59:07,231 - __main__ - ERROR - error Exchange or symbol not found.
+<talkytrend.main.TalkyTrend object at 0x7f5fd9a2d0c0>
+2023-06-10 17:59:07,232 - __main__ - DEBUG - trend logger: __main__ version: 1.1.0
+2023-06-10 17:59:07,233 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:07,388 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /forex/scan HTTP/1.1" 200 None
+2023-06-10 17:59:07,390 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:07,545 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /crypto/scan HTTP/1.1" 200 None
+2023-06-10 17:59:07,546 - __main__ - ERROR - error Exchange or symbol not found.
+<talkytrend.main.TalkyTrend object at 0x7f5fd9b39450>
+2023-06-10 17:59:07,547 - __main__ - DEBUG - trend logger: __main__ version: 1.1.0
+2023-06-10 17:59:07,548 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:07,674 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /forex/scan HTTP/1.1" 200 None
+2023-06-10 17:59:07,675 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:08,356 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /crypto/scan HTTP/1.1" 200 None
+2023-06-10 17:59:08,357 - __main__ - ERROR - error Exchange or symbol not found.
+<talkytrend.main.TalkyTrend object at 0x7f5fd9a2da20>
+2023-06-10 17:59:08,358 - __main__ - DEBUG - trend logger: __main__ version: 1.1.0
+2023-06-10 17:59:08,359 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:08,488 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /forex/scan HTTP/1.1" 200 None
+2023-06-10 17:59:08,490 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:08,645 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /crypto/scan HTTP/1.1" 200 None
+2023-06-10 17:59:08,646 - __main__ - ERROR - error Exchange or symbol not found.
+<talkytrend.main.TalkyTrend object at 0x7f5fda728880>
+2023-06-10 17:59:08,647 - __main__ - DEBUG - trend logger: __main__ version: 1.1.0
+2023-06-10 17:59:08,648 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:08,801 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /forex/scan HTTP/1.1" 200 None
+2023-06-10 17:59:08,803 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:08,957 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /crypto/scan HTTP/1.1" 200 None
+2023-06-10 17:59:08,957 - __main__ - ERROR - error Exchange or symbol not found.
+<talkytrend.main.TalkyTrend object at 0x7f5fd9a2d900>
+2023-06-10 17:59:08,958 - __main__ - DEBUG - trend logger: __main__ version: 1.1.0
+2023-06-10 17:59:08,960 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:09,113 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /forex/scan HTTP/1.1" 200 None
+2023-06-10 17:59:09,115 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:09,270 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /crypto/scan HTTP/1.1" 200 None
+2023-06-10 17:59:09,270 - __main__ - ERROR - error Exchange or symbol not found.
+<talkytrend.main.TalkyTrend object at 0x7f5fd9b39450>
+2023-06-10 17:59:09,272 - __main__ - DEBUG - trend logger: __main__ version: 1.1.0
+2023-06-10 17:59:09,273 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:09,427 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /forex/scan HTTP/1.1" 200 None
+2023-06-10 17:59:09,428 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:09,583 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /crypto/scan HTTP/1.1" 200 None
+2023-06-10 17:59:09,583 - __main__ - ERROR - error Exchange or symbol not found.
+<talkytrend.main.TalkyTrend object at 0x7f5fd9a2d5a0>
+2023-06-10 17:59:09,584 - __main__ - DEBUG - trend logger: __main__ version: 1.1.0
+2023-06-10 17:59:09,585 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:09,741 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /forex/scan HTTP/1.1" 200 None
+2023-06-10 17:59:09,743 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:09,896 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /crypto/scan HTTP/1.1" 200 None
+2023-06-10 17:59:09,897 - __main__ - ERROR - error Exchange or symbol not found.
+<talkytrend.main.TalkyTrend object at 0x7f5fda728880>
+2023-06-10 17:59:09,898 - __main__ - DEBUG - trend logger: __main__ version: 1.1.0
+2023-06-10 17:59:09,899 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:10,056 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /forex/scan HTTP/1.1" 200 None
+2023-06-10 17:59:10,058 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:10,212 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /crypto/scan HTTP/1.1" 200 None
+2023-06-10 17:59:10,212 - __main__ - ERROR - error Exchange or symbol not found.
+<talkytrend.main.TalkyTrend object at 0x7f5fd9a2cca0>
+2023-06-10 17:59:10,213 - __main__ - DEBUG - trend logger: __main__ version: 1.1.0
+2023-06-10 17:59:10,214 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:10,342 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /forex/scan HTTP/1.1" 200 None
+2023-06-10 17:59:10,344 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:10,498 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /crypto/scan HTTP/1.1" 200 None
+2023-06-10 17:59:10,498 - __main__ - ERROR - error Exchange or symbol not found.
+<talkytrend.main.TalkyTrend object at 0x7f5fd9b39450>
+2023-06-10 17:59:10,499 - __main__ - DEBUG - trend logger: __main__ version: 1.1.0
+2023-06-10 17:59:10,500 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:10,656 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /forex/scan HTTP/1.1" 200 None
+2023-06-10 17:59:10,658 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:10,785 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /crypto/scan HTTP/1.1" 200 None
+2023-06-10 17:59:10,785 - __main__ - ERROR - error Exchange or symbol not found.
+<talkytrend.main.TalkyTrend object at 0x7f5fd9a2d570>
+2023-06-10 17:59:10,787 - __main__ - DEBUG - trend logger: __main__ version: 1.1.0
+2023-06-10 17:59:10,788 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:10,941 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /forex/scan HTTP/1.1" 200 None
+2023-06-10 17:59:10,943 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:11,098 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /crypto/scan HTTP/1.1" 200 None
+2023-06-10 17:59:11,099 - __main__ - ERROR - error Exchange or symbol not found.
+<talkytrend.main.TalkyTrend object at 0x7f5fda728880>
+2023-06-10 17:59:11,100 - __main__ - DEBUG - trend logger: __main__ version: 1.1.0
+2023-06-10 17:59:11,101 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:11,227 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /forex/scan HTTP/1.1" 200 None
+2023-06-10 17:59:11,229 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:11,383 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /crypto/scan HTTP/1.1" 200 None
+2023-06-10 17:59:11,383 - __main__ - ERROR - error Exchange or symbol not found.
+<talkytrend.main.TalkyTrend object at 0x7f5fd9a2cf70>
+2023-06-10 17:59:11,384 - __main__ - DEBUG - trend logger: __main__ version: 1.1.0
+2023-06-10 17:59:11,385 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:11,506 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /forex/scan HTTP/1.1" 200 None
+2023-06-10 17:59:11,508 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:11,663 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /crypto/scan HTTP/1.1" 200 None
+2023-06-10 17:59:11,663 - __main__ - ERROR - error Exchange or symbol not found.
+<talkytrend.main.TalkyTrend object at 0x7f5fd9b39450>
+2023-06-10 17:59:11,664 - __main__ - DEBUG - trend logger: __main__ version: 1.1.0
+2023-06-10 17:59:11,666 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:11,791 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /forex/scan HTTP/1.1" 200 None
+2023-06-10 17:59:11,793 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:11,947 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /crypto/scan HTTP/1.1" 200 None
+2023-06-10 17:59:11,948 - __main__ - ERROR - error Exchange or symbol not found.
+<talkytrend.main.TalkyTrend object at 0x7f5fd9a2d960>
+2023-06-10 17:59:11,949 - __main__ - DEBUG - trend logger: __main__ version: 1.1.0
+2023-06-10 17:59:11,950 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:12,107 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /forex/scan HTTP/1.1" 200 None
+2023-06-10 17:59:12,109 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:12,230 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /crypto/scan HTTP/1.1" 200 None
+2023-06-10 17:59:12,230 - __main__ - ERROR - error Exchange or symbol not found.
+<talkytrend.main.TalkyTrend object at 0x7f5fda728880>
+2023-06-10 17:59:12,231 - __main__ - DEBUG - trend logger: __main__ version: 1.1.0
+2023-06-10 17:59:12,232 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:12,388 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /forex/scan HTTP/1.1" 200 None
+2023-06-10 17:59:12,390 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:12,545 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /crypto/scan HTTP/1.1" 200 None
+2023-06-10 17:59:12,546 - __main__ - ERROR - error Exchange or symbol not found.
+<talkytrend.main.TalkyTrend object at 0x7f5fd9a2db70>
+2023-06-10 17:59:12,547 - __main__ - DEBUG - trend logger: __main__ version: 1.1.0
+2023-06-10 17:59:12,548 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:12,703 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /forex/scan HTTP/1.1" 200 None
+2023-06-10 17:59:12,705 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:12,859 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /crypto/scan HTTP/1.1" 200 None
+2023-06-10 17:59:12,859 - __main__ - ERROR - error Exchange or symbol not found.
+<talkytrend.main.TalkyTrend object at 0x7f5fd9b39450>
+2023-06-10 17:59:12,860 - __main__ - DEBUG - trend logger: __main__ version: 1.1.0
+2023-06-10 17:59:12,861 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:12,987 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /forex/scan HTTP/1.1" 200 None
+2023-06-10 17:59:12,989 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:13,112 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /crypto/scan HTTP/1.1" 200 None
+2023-06-10 17:59:13,112 - __main__ - ERROR - error Exchange or symbol not found.
+<talkytrend.main.TalkyTrend object at 0x7f5fd9a2d990>
+2023-06-10 17:59:13,113 - __main__ - DEBUG - trend logger: __main__ version: 1.1.0
+2023-06-10 17:59:13,114 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:13,270 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /forex/scan HTTP/1.1" 200 None
+2023-06-10 17:59:13,272 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:13,427 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /crypto/scan HTTP/1.1" 200 None
+2023-06-10 17:59:13,427 - __main__ - ERROR - error Exchange or symbol not found.
+<talkytrend.main.TalkyTrend object at 0x7f5fda728880>
+2023-06-10 17:59:13,428 - __main__ - DEBUG - trend logger: __main__ version: 1.1.0
+2023-06-10 17:59:13,429 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:13,584 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /forex/scan HTTP/1.1" 200 None
+2023-06-10 17:59:13,586 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443
+2023-06-10 17:59:13,742 - urllib3.connectionpool - DEBUG - https://scanner.tradingview.com:443 "POST /crypto/scan HTTP/1.1" 200 None
+2023-06-10 17:59:13,742 - __main__ - ERROR - error Exchange or symbol not found.
+<talkytrend.main.TalkyTrend object at 0x7f5fd9a2ca60>
+2023-06-10 17:59:13,743 - __main__ - DEBUG - trend logger: __main__ version: 1.1.0
+2023-06-10 17:59:13,744 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): scanner.tradingview.com:443

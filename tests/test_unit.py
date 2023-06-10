@@ -12,9 +12,9 @@ def talky():
     return TalkyTrend()
 
 @pytest.mark.asyncio
-async def test_fetch_analysis(talky):
+async def test_check_signal(talky):
     print(talky)
-    result = await talky.fetch_analysis()
+    result = await talky.check_signal()
     print(result)
     assert result is not None
 

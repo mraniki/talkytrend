@@ -19,24 +19,33 @@ class TalkyTrend:
         self.assets = settings.assets
         self.asset_signals = {"15m": None, "1h": None, "4h": None}
 
-    async def fetch_analysis(self):
-        recommendations = []
-        for asset in self.assets:
+    async def fetch_analysis(
+        self,
+        asset_id,
+        exchange,
+        screener,
+        interval):
+        try:
             handler = TA_Handler(
-                symbol=asset["id"],
-                exchange=asset["exchange"],
-                screener=asset["screener"],
-                interval=asset["interval"]
+                symbol=asset_id,
+                exchange=exchange,
+                screener=screener,
+                interval=interval
             )
             analysis = handler.get_analysis()
-            recommendations.append(analysis.summary["RECOMMENDATION"])
-        return recommendations
+            return analysis.summary["RECOMMENDATION"]
+        except Exception as e:
+            print(e)
 
 
     async def check_signal(self):
         messages = []
         for asset in self.assets:
-            current_signal = await self.fetch_analysis(asset["id"], asset["interval"])
+            current_signal = await self.fetch_analysis(
+                asset["id"],
+                asset["exchange"],
+                asset["screener"],
+                asset["interval"])
             if self.asset_signals.get(asset["id"]) and self.asset_signals[asset["id"]].get(asset["interval"]) and current_signal != self.asset_signals[asset["id"]][asset["interval"]]:
                 message = f'New signal for {asset["id"]} ({asset["interval"]}): {current_signal}'
                 print(message)
@@ -47,6 +56,7 @@ class TalkyTrend:
             else:
                 self.asset_signals[asset["id"]][asset["interval"]] = current_signal
         return messages
+
 
 
     def get_asset_signals(self):
@@ -70,8 +80,8 @@ class TalkyTrend:
         data = response.json()
         articles = data['articles']
         for article in articles:
-            print("Title: ", article['title'])
-            print("Description: ", article['description'])
+            # print("Title: ", article['title'])
+            # print("Description: ", article['description'])
             return article
 
     async def scanner(self):
