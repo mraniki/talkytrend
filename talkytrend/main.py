@@ -2,13 +2,11 @@
  talky trend Main
 """
 
-import aiohttp
 import asyncio
 import logging
 import requests
 
 from tradingview_ta import TA_Handler, Interval
-import finnhub
 
 from talkytrend import __version__
 from .config import settings
@@ -60,6 +58,7 @@ class TalkyBreaking:
         self.logger = logging.getLogger(name="TalkyBreaking")
         self.economic_calendar = settings.economic_calendar
         self.news_url = f"{settings.news_url}{settings.news_api_key}"
+
     async def fetch_key_events(self):
         response = requests.get(self.economic_calendar, timeout=10)  
         if response.status_code == 200:

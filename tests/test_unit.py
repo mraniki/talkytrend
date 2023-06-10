@@ -2,8 +2,8 @@
 talkytrend Unit Testing
 """
 
+# from unittest.mock import patch, Mock
 import pytest
-from unittest.mock import patch, Mock
 from talkytrend import TalkyTrend, TalkyBreaking
 
 @pytest.fixture
@@ -43,6 +43,7 @@ async def test_fetch_key_events(breaking):
     result = await breaking.fetch_key_events()
     print(result)
     assert result is not None
+
 
 @pytest.mark.asyncio
 async def fetch_key_news(breaking):
