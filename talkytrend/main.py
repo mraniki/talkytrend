@@ -12,11 +12,11 @@ from talkytrend import __version__
 from .config import settings
 
 class TalkyTrend:
-    def __init__(self, assets=settings.assets):
+    def __init__(self):
         self.economic_calendar = settings.economic_calendar
         self.news_url = f"{settings.news_url}{settings.news_api_key}" if settings.news_api_key else None
         self.enabled = settings.talkytrend_status
-        self.assets = assets
+        self.assets = settings.assets
         self.asset_signals = {"15m": None, "1h": None, "4h": None}
 
     async def fetch_analysis(self):
