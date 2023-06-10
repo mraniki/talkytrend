@@ -2,6 +2,16 @@
 
 <!--next-version-placeholder-->
 
+## v1.1.1 (2023-06-10)
+
+### Fix
+
+* 💬 doc ([`6529043`](https://github.com/mraniki/talkytrend/commit/65290435310566ce8d9bdf15d26ace9749494075))
+* 💬 doc ([`1553373`](https://github.com/mraniki/talkytrend/commit/1553373a7e546193e303743313e2cb64aa9e408a))
+* ✅ unit test ([`756e629`](https://github.com/mraniki/talkytrend/commit/756e629ca9c97e2206ce745cb5a20ee4199f9c8c))
+* ♻️ refactor ([`9940b58`](https://github.com/mraniki/talkytrend/commit/9940b58928b2b66c3daac1c3d84be1c5a6f7c369))
+* ♻️ refactor ([`0f70d7c`](https://github.com/mraniki/talkytrend/commit/0f70d7c2332eb9c24e2edd6a708934fbec71fcc7))
+
 ## v1.1.0 (2023-06-10)
 
 ### Feature
