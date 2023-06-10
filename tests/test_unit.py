@@ -51,3 +51,4 @@ async def fetch_key_news(breaking):
     result = await breaking.fetch_key_news()
     print(result)
     assert result is not None
+ 
