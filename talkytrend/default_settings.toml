@@ -2,7 +2,6 @@
 talkytrend_status = true
 scanner_frequency = 600
 # assets = ['EURUSD', 'NZDUSD', 'GBPUSD', 'GBPJPY', 'DXY', 'DE40', 'US500', 'OIL_BRENT', 'OIL_CRUDE', 'NATURALGAS', 'GOLD', 'BTCUSDT', 'ETHUSDT']
-asset = 'EURUSD'
 assets = [
     { id ="EURUSD", exchange='FX_IDC',screener="forex", interval = "4h" },
     { id ="BTCUSD",exchange="BINANCE",screener="crypto", interval = "4h"},
