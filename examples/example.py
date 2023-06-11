@@ -15,7 +15,7 @@ logging.basicConfig(
 )
 
 logger = logging.getLogger(__name__)
-logging.getLogger('talkytrend').setLevel(logging.DEBUG)
+logging.getLogger('TalkyTrend').setLevel(logging.DEBUG)
 
 
 async def main():

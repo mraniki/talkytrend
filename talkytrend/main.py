@@ -13,6 +13,7 @@ from .config import settings
 
 class TalkyTrend:
     def __init__(self):
+        self.logger = logging.getLogger("TalkyTrend")
         self.enabled = settings.talkytrend_enabled
         self.assets = settings.assets
         self.asset_signals = {"15m": None, "1h": None, "4h": None}
