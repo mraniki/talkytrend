@@ -13,11 +13,12 @@ from .config import settings
 
 class TalkyTrend:
     def __init__(self):
-        self.economic_calendar = settings.economic_calendar
-        self.news_url = f"{settings.news_url}{settings.news_api_key}" if settings.news_api_key else None
         self.enabled = settings.talkytrend_status
         self.assets = settings.assets
         self.asset_signals = {"15m": None, "1h": None, "4h": None}
+        self.economic_calendar = settings.economic_calendar
+        self.news_url = f"{settings.news_url}{settings.news_api_key}" if settings.news_api_key else None
+        self.live_tv = settings.live_tv_url
 
     async def fetch_analysis(
         self,
@@ -90,11 +91,14 @@ class TalkyTrend:
             tasks.append(self.fetch_key_events())
             tasks.append(self.fetch_key_news())
             results = await asyncio.gather(*tasks)
+            if results[0] is not None:
+                print("Key signal:", results[0])
+                yield results[0]
             if results[1] is not None:
                 print("Key event:", results[1])
+                yield results[1]
             if results[2] is not None:
                 print("Key news:", results[2]["title"])
+                yield results[2]
             await asyncio.sleep(settings.scanner_frequency)
 
-    async def live_tv(self):
-        return settings.live_tv_url
