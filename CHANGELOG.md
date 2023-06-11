@@ -2,6 +2,13 @@
 
 <!--next-version-placeholder-->
 
+## v1.1.4 (2023-06-11)
+
+### Fix
+
+* 🔊 add logs ([`fd8dc7c`](https://github.com/mraniki/talkytrend/commit/fd8dc7c904c82d3679a220757565a2c5515b7635))
+* 🔧 config ([`743b2c3`](https://github.com/mraniki/talkytrend/commit/743b2c3641c375598b702f0bba527e312f0b5fdb))
+
 ## v1.1.3 (2023-06-11)
 
 ### Fix
