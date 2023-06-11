@@ -2,6 +2,17 @@
 
 <!--next-version-placeholder-->
 
+## v1.1.2 (2023-06-11)
+
+### Fix
+
+* ⚗️ live tv link ([`37c49fa`](https://github.com/mraniki/talkytrend/commit/37c49faba19c1380ad470aabf223f537207e9319))
+* 🔧 config ([`cb5a0b1`](https://github.com/mraniki/talkytrend/commit/cb5a0b10b2f5dbd02bf2fc39054f5efab7d04204))
+
+### Other
+
+* Update default_settings.toml ([`a2910b5`](https://github.com/mraniki/talkytrend/commit/a2910b5b912825aa94d23c13d41aa4de3900ff63))
+
 ## v1.1.1 (2023-06-10)
 
 ### Fix
