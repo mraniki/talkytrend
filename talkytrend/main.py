@@ -13,7 +13,7 @@ from .config import settings
 
 class TalkyTrend:
     def __init__(self):
-        self.enabled = settings.talkytrend_status
+        self.enabled = settings.talkytrend_enabled
         self.assets = settings.assets
         self.asset_signals = {"15m": None, "1h": None, "4h": None}
         self.economic_calendar = settings.economic_calendar

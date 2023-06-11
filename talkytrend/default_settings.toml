@@ -1,9 +1,9 @@
 [default]
-talkytrend_status = true
-scanner_frequency = 600
+talkytrend_enabled = true
+scanner_frequency = 7200
 assets = [
     { id ="EURUSD", exchange='FX_IDC',screener="forex", interval = "4h" },
-    { id ="BTCUSD",exchange="BINANCE",screener="crypto", interval = "4h"},
+    # { id ="BTCUSD",exchange="BINANCE",screener="crypto", interval = "4h"},
     #use https://tvdb.brianthe.dev/ to get details
     # { id ="GOLD",exchange="TVC",screener="cfd", interval = "4h"},
     # { id ="USOIL",exchange="FX",screener="cfd", interval = "4h"},
