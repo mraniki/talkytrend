@@ -2,6 +2,12 @@
 
 <!--next-version-placeholder-->
 
+## v1.1.3 (2023-06-11)
+
+### Fix
+
+* ♻️ refactor ([`43b9052`](https://github.com/mraniki/talkytrend/commit/43b905205ef5b3fbd7b841e9f500d6f592a9df2d))
+
 ## v1.1.2 (2023-06-11)
 
 ### Fix
