@@ -95,3 +95,6 @@ class TalkyTrend:
             if results[2] is not None:
                 print("Key news:", results[2]["title"])
             await asyncio.sleep(settings.scanner_frequency)
+
+    async def live_tv(self):
+        return settings.live_tv_url
