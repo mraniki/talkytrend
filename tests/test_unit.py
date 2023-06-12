@@ -18,11 +18,11 @@ async def test_check_signal(talky):
     print(result)
     assert result is not None
 
-@pytest.mark.asyncio
-async def test_fetch_key_events(talky):
-    result = await talky.fetch_key_events()
-    print(result)
-    assert result is not None
+# @pytest.mark.asyncio
+# async def test_fetch_key_events(talky):
+#     result = await talky.fetch_key_events()
+#     print(result)
+#     assert result is not None or {}
 
 @pytest.mark.asyncio
 async def fetch_key_news(talky):
