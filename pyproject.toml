@@ -20,6 +20,7 @@ packages = [
 python = "^3.10"
 asyncio = "*"
 dynaconf = "*"
+aiohttp = "*"
 tradingview_ta = "*"
 
 [tool.poetry.dev-dependencies]
@@ -40,7 +41,8 @@ log_level = "DEBUG"
 [tool.coverage.run]
 omit = [
     "tests/*",
-    "examples/*"
+    "examples/*",
+    "*/config.py"
 ]
 
 [build-system]

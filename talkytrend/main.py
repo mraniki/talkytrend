@@ -4,7 +4,8 @@
 
 import asyncio
 import logging
-import requests
+import aiohttp
+from datetime import datetime, date
 
 from tradingview_ta import TA_Handler, Interval
 
@@ -39,67 +40,80 @@ class TalkyTrend:
         except Exception as e:
             print(e)
 
-
     async def check_signal(self):
-        messages = []
-        for asset in self.assets:
-            current_signal = await self.fetch_analysis(
-                asset["id"],
-                asset["exchange"],
-                asset["screener"],
-                asset["interval"])
-            if self.asset_signals.get(asset["id"]) and self.asset_signals[asset["id"]].get(asset["interval"]) and current_signal != self.asset_signals[asset["id"]][asset["interval"]]:
-                message = f'New signal for {asset["id"]} ({asset["interval"]}): {current_signal}'
-                print(message)
-                self.asset_signals[asset["id"]][asset["interval"]] = current_signal
-                messages.append(message)
-            elif not self.asset_signals.get(asset["id"]):
-                self.asset_signals[asset["id"]] = {asset["interval"]: current_signal}
-            else:
-                self.asset_signals[asset["id"]][asset["interval"]] = current_signal
-        return messages
-
+            messages = []
+            for asset in self.assets:
+                current_signal = await self.fetch_analysis(
+                    asset["id"],
+                    asset["exchange"],
+                    asset["screener"],
+                    asset["interval"])
+                if self.asset_signals.get(asset["id"]) and self.asset_signals[asset["id"]].get(asset["interval"]) and current_signal != self.asset_signals[asset["id"]][asset["interval"]]:
+                    message = f'New signal for {asset["id"]} ({asset["interval"]}): {current_signal}'
+                    print(message)
+                    self.asset_signals[asset["id"]][asset["interval"]] = current_signal
+                    messages.append(message)
+                elif not self.asset_signals.get(asset["id"]):
+                    self.asset_signals[asset["id"]] = {asset["interval"]: current_signal}
+                else:
+                    self.asset_signals[asset["id"]][asset["interval"]] = current_signal
+            return messages
 
 
     def get_asset_signals(self):
         return self.asset_signals
 
     async def fetch_key_events(self):
-        response = requests.get(self.economic_calendar, timeout=10)  
-        if response.status_code == 200:
-            event_list = response.json()
-            for event in event_list:
-                impact = event.get('impact')
-                country = event.get('country')
-                title = event.get('title')
-                if impact == 'High' and country in {'USD', 'ALL'}:
-                    return event
-                if "OPEC" in title or "FOMC" in title:
-                    return event
+        async with aiohttp.ClientSession() as session:
+            async with session.get(self.economic_calendar, timeout=10) as response:
+                if response.status == 200:
+                    event_list = await response.json()
+                    today = date.today().isoformat()
+                    for event in event_list:
+                        impact = event.get('impact')
+                        country = event.get('country')
+                        title = event.get('title')
+                        event_date = event.get('date')
+                        if event_date and event_date.startswith(today):
+                            if impact == 'High' and country in {'USD', 'ALL'}:
+                                return event
+                            if "OPEC" in title or "FOMC" in title:
+                                return event
 
     async def fetch_key_news(self):
-        response = requests.get(self.news_url,timeout=10)
-        data = response.json()
-        articles = data['articles']
-        for article in articles:
-            # print("Title: ", article['title'])
-            # print("Description: ", article['description'])
-            return article
+        async with aiohttp.ClientSession() as session:
+            async with session.get(self.news_url, timeout=10) as response:
+                data = await response.json()
+                articles = data['articles']
+                key_news = []
+                for article in articles:
+                    news_item = {
+                        'title': article['title'],
+                        'url': article['url']
+                    }
+                    key_news.append(news_item)
+                return key_news
+
+
 
     async def scanner(self):
         while True:
-            tasks = [self.check_signal()]
-            tasks.append(self.fetch_key_events())
-            tasks.append(self.fetch_key_news())
-            results = await asyncio.gather(*tasks)
-            if results[0] is not None:
-                print("Key signal:", results[0])
-                return results[0]
-            if results[1] is not None:
-                print("Key event:", results[1])
-                return results[1]
-            if results[2] is not None:
-                print("Key news:", results[2]["title"])
-                return results[2]
+            try:
+                tasks = [self.fetch_key_events(), self.fetch_key_news()]
+                results = await asyncio.gather(*tasks)
+
+                if results[0] is not None:
+                    print("Key event:", results[0])
+                    return results[0]
+                
+                if results[1] is not None:
+                    if results[1]:
+                        print("Key news:", results[1][0])
+                        return results[1]
+
+            except Exception as e:
+                print(f"Error in scanner loop: {e}")
+            
             await asyncio.sleep(settings.scanner_frequency)
+
 

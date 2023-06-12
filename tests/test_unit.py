@@ -6,8 +6,8 @@ talkytrend Unit Testing
 import pytest
 from talkytrend import TalkyTrend
 
-@pytest.fixture
-def talky():
+@pytest.fixture(name="talky")
+def talky_fixture():
     """return TrendPlugin"""
     return TalkyTrend()
 

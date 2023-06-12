@@ -20,24 +20,15 @@ logging.getLogger('TalkyTrend').setLevel(logging.DEBUG)
 
 async def main():
     """Main"""
-    while True:
-        try:
-            talky = TalkyTrend()
-            #trend_plugin.monitor_assets()
-            print(talky)
-            logger.debug(
-                "trend logger: %s version: %s",
-                __name__,
-                __version__)
-            result = await talky.check_signal()
-            print(result) #BUY
-            result = await talky.fetch_key_events()
-            print(result)
-            monitor = await talky.scanner()
-            print(monitor)
-
-        except Exception as e:
-            logger.error("error %s", e)
+    talky = TalkyTrend()
+    print(talky)
+    result = await talky.check_signal()
+    print(result) #BUY
+    result = await talky.fetch_key_events()
+    print(result) # {'title': 'CPI m/m', 'country': 'USD', 'date': '2023-06-13T08:30:00-04:00', 'impact': 'High', 'forecast': '0.2%', 'previous': '0.4%'}
+    monitor = await talky.scanner()
+    # Key news: {'title': 'Fred Ryan to leave Washington Post after nine years as publisher',
+    # 'url': 'https://www.washingtonpost.com/media/2023/06/12/fred-ryan-publisher-leaves-washington-post/'}
 
 
 app = FastAPI()
