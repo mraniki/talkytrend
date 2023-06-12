@@ -40,8 +40,8 @@ log_level = "DEBUG"
 [tool.coverage.run]
 omit = [
     "tests/*",
-    "examples/*"
-    "config.py"
+    "examples/*",
+    "*/config.py"
 ]
 
 [build-system]
