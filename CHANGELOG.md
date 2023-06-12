@@ -2,6 +2,12 @@
 
 <!--next-version-placeholder-->
 
+## v1.1.5 (2023-06-12)
+
+### Fix
+
+* 🐛 return instead of yield ([`029145a`](https://github.com/mraniki/talkytrend/commit/029145a709d35856ffe49b25cee2487516eb4d45))
+
 ## v1.1.4 (2023-06-11)
 
 ### Fix
