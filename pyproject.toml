@@ -20,6 +20,7 @@ packages = [
 python = "^3.10"
 asyncio = "*"
 dynaconf = "*"
+aiohttp = "*"
 tradingview_ta = "*"
 
 [tool.poetry.dev-dependencies]
