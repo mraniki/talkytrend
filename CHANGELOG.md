@@ -2,6 +2,18 @@
 
 <!--next-version-placeholder-->
 
+## v1.1.6 (2023-06-12)
+
+### Fix
+
+* 💬 doc ([`adbd2fd`](https://github.com/mraniki/talkytrend/commit/adbd2fdf28cc0bd41abd83e2d7c80776c43e921e))
+* ✅ unit test ([`d4bd8da`](https://github.com/mraniki/talkytrend/commit/d4bd8da4903147a2bb48d129e65cb7a29ab3ecfe))
+* ♻️ refactor and fix loop defect ([`3616948`](https://github.com/mraniki/talkytrend/commit/36169489754b3242b0b7f3c0e7107debe732b66f))
+
+### Other
+
+* :arrow_up: Add aiohttp to dependencies ([`8f44fc1`](https://github.com/mraniki/talkytrend/commit/8f44fc16c89c72726699814b02a9324e7ec53264))
+
 ## v1.1.5 (2023-06-12)
 
 ### Fix
