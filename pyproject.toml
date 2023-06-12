@@ -41,6 +41,7 @@ log_level = "DEBUG"
 omit = [
     "tests/*",
     "examples/*"
+    "config.py"
 ]
 
 [build-system]
