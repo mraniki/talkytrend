@@ -94,12 +94,12 @@ class TalkyTrend:
             results = await asyncio.gather(*tasks)
             if results[0] is not None:
                 print("Key signal:", results[0])
-                yield results[0]
+                return results[0]
             if results[1] is not None:
                 print("Key event:", results[1])
-                yield results[1]
+                return results[1]
             if results[2] is not None:
                 print("Key news:", results[2]["title"])
-                yield results[2]
+                return results[2]
             await asyncio.sleep(settings.scanner_frequency)
 
