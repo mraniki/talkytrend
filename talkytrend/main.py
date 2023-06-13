@@ -79,20 +79,23 @@ class TalkyTrend:
                                 return f"💬 {title}\n⏰ {event_date}T{event.get('time')}"
                             if "OPEC" in title or "FOMC" in title:
                                 return f"💬 {title}\n⏰ {event_date}T{event.get('time')}"
-
+    
     async def fetch_key_news(self):
         async with aiohttp.ClientSession() as session:
             async with session.get(self.news_url, timeout=10) as response:
                 data = await response.json()
-                articles = data['articles']
-                key_news = []
-                for article in articles:
-                    news_item = {
-                        'title': article['title'],
-                        'url': article['url']
-                    }
-                    key_news.append(news_item)
-                return key_news
+                articles = data.get('articles')
+                if articles:
+                    key_news = []
+                    for article in articles:
+                        news_item = {
+                            'title': article['title'],
+                            'url': article['url']
+                        }
+                        key_news.append(news_item)
+                    return key_news
+                else:
+                    return None
 
 
 
