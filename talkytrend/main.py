@@ -84,18 +84,16 @@ class TalkyTrend:
         async with aiohttp.ClientSession() as session:
             async with session.get(self.news_url, timeout=10) as response:
                 data = await response.json()
-                articles = data.get('articles')
-                if articles:
-                    key_news = []
-                    for article in articles:
-                        news_item = {
-                            'title': article['title'],
-                            'url': article['url']
-                        }
-                        key_news.append(news_item)
-                    return key_news
-                else:
+                if not (articles := data.get('articles')):
                     return None
+                key_news = []
+                for article in articles:
+                    news_item = {
+                        'title': article['title'],
+                        'url': article['url']
+                    }
+                    key_news.append(news_item)
+                return key_news
 
 
 
