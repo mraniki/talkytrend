@@ -76,15 +76,16 @@ class TalkyTrend:
                         event_date = event.get('date')
                         if event_date and event_date.startswith(today):
                             if impact == 'High' and country in {'USD', 'ALL'}:
-                                return event
+                                return f"💬 {title}\n⏰ {event_date}T{event.get('time')}"
                             if "OPEC" in title or "FOMC" in title:
-                                return event
-
+                                return f"💬 {title}\n⏰ {event_date}T{event.get('time')}"
+    
     async def fetch_key_news(self):
         async with aiohttp.ClientSession() as session:
             async with session.get(self.news_url, timeout=10) as response:
                 data = await response.json()
-                articles = data['articles']
+                if not (articles := data.get('articles')):
+                    return None
                 key_news = []
                 for article in articles:
                     news_item = {
