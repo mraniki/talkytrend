@@ -2,6 +2,19 @@
 
 <!--next-version-placeholder-->
 
+## v1.1.7 (2023-06-13)
+
+### Fix
+
+* ⚗️ emoji for market event ([`64ec558`](https://github.com/mraniki/talkytrend/commit/64ec5589d401ff2624b2f57a30d4585cdc0f17cf))
+
+### Other
+
+* 'Refactored by Sourcery' ([`a14d0fa`](https://github.com/mraniki/talkytrend/commit/a14d0fa61c534db491d1c9faf44c96d3b7d97ae7))
+* :recycle: none article case ([`1bea4f8`](https://github.com/mraniki/talkytrend/commit/1bea4f87c49166c50fcb3e76f90ef9e77776975c))
+* Merge branch 'dev' of git@github.com:mraniki/talkytrend.git ([`50cafd3`](https://github.com/mraniki/talkytrend/commit/50cafd3fc3e4a8367e4283f36904cd372749003f))
+* :white_check_mark: unit test ([`5a3795f`](https://github.com/mraniki/talkytrend/commit/5a3795fd63ccee4c33467269a219841257ff1065))
+
 ## v1.1.6 (2023-06-12)
 
 ### Fix
