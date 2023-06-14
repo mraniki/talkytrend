@@ -2,6 +2,26 @@
 
 <!--next-version-placeholder-->
 
+## v1.2.0 (2023-06-14)
+
+### Feature
+
+* ✨ adding pretty table support ([`7552491`](https://github.com/mraniki/talkytrend/commit/75524918f43b0ab1608c5a599fbaa77236cfb5d0))
+
+### Fix
+
+* 🎨 code format ([`6be8713`](https://github.com/mraniki/talkytrend/commit/6be87133969a5411cddc56154e3bd735f8a35c2f))
+* 🎨 code format ([`17d547d`](https://github.com/mraniki/talkytrend/commit/17d547d83f55b8887cfc0dd8d74df3df593314fc))
+* ⚡perf ([`43568fe`](https://github.com/mraniki/talkytrend/commit/43568fe5690f131da42572975d68de65f45c5d57))
+
+### Other
+
+* Update Dockerfile ([`901d4a1`](https://github.com/mraniki/talkytrend/commit/901d4a1035bf5fcdc7bf1ba685a1a2edebd78de0))
+* Update Dockerfile ([`29c566b`](https://github.com/mraniki/talkytrend/commit/29c566b4e3249e8c1dc21b65ba9679873d60bced))
+* Update Dockerfile ([`884bcae`](https://github.com/mraniki/talkytrend/commit/884bcae9c1f4cde68991d60deac31e5df1ff54f2))
+* Update Dockerfile ([`e788463`](https://github.com/mraniki/talkytrend/commit/e788463301b06d93fbbb4aece663c8fe3eb3efbc))
+* Update Dockerfile ([`5660a50`](https://github.com/mraniki/talkytrend/commit/5660a5048b4255b9938e3ced250c03d689cafe66))
+
 ## v1.1.9 (2023-06-14)
 
 ### Fix
