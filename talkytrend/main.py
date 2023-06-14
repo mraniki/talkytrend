@@ -59,7 +59,6 @@ class TalkyTrend:
                     self.asset_signals[asset["id"]][asset["interval"]] = current_signal
             return messages
 
-
     def get_asset_signals(self):
         return self.asset_signals
 
@@ -95,8 +94,25 @@ class TalkyTrend:
                     key_news.append(news_item)
                 return key_news
 
+#    async def scanner(self):
+#        while True:
+#            try:
+#                tasks = [self.fetch_key_events(), self.fetch_key_news()]
+#                results = await asyncio.gather(*tasks)
 
+#                if results[0] is not None:
+#                    print("Key event:", results[0])
+#                    return results[0]
+                
+#                if results[1] is not None:
+#                    if results[1]:
+#                        print("Key news:", results[1][0])
+#                        return results[1]
 
+#            except Exception as e:
+#                print(f"Error in scanner loop: {e}")
+            
+#            await asyncio.sleep(settings.scanner_frequency)
     async def scanner(self):
         while True:
             try:
@@ -105,16 +121,14 @@ class TalkyTrend:
 
                 if results[0] is not None:
                     print("Key event:", results[0])
-                    return results[0]
-                
+                    yield results[0]  # Use 'yield' to return the result as an asynchronous iterator
+
                 if results[1] is not None:
                     if results[1]:
                         print("Key news:", results[1][0])
-                        return results[1]
+                        yield results[1]  # Use 'yield' to return the result as an asynchronous iterator
 
             except Exception as e:
                 print(f"Error in scanner loop: {e}")
-            
-            await asyncio.sleep(settings.scanner_frequency)
 
 
