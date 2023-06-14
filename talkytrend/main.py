@@ -6,6 +6,7 @@ import asyncio
 import logging
 from datetime import date
 import aiohttp
+from prettytable import PrettyTable
 from tradingview_ta import TA_Handler
 from talkytrend import __version__
 from .config import settings
@@ -42,6 +43,8 @@ class TalkyTrend:
     async def check_signal(self):
         try:
             signals = []
+            table = PrettyTable()
+            table.field_names = ["Asset", "4h"]
             for asset in self.assets:
                 current_signal = await self.fetch_analysis(
                     asset_id=asset["id"],
@@ -57,11 +60,15 @@ class TalkyTrend:
                         "signal": current_signal
                     }
                     self.logger.debug("signal message %s", signal_item)
+                    print(asset["id"], current_signal)
                     self.update_signal(asset["id"], asset["interval"], current_signal)
+                    table.add_row([asset["id"], current_signal])
+                    self.logger.debug("table %s", table)
                     signals.append(signal_item)
                 self.logger.debug("asset_signals %s", self.asset_signals)
                 self.logger.debug("signals %s", signals)
-            return signals
+            #return signals
+            return str(table)
         except Exception as error:
             self.logger.error("check_signal %s", error)
             return []
@@ -111,48 +118,39 @@ class TalkyTrend:
             async with aiohttp.ClientSession() as session:
                 async with session.get(self.news_url, timeout=10) as response:
                     data = await response.json()
-                    if not (articles := data.get('articles')):
-                        return None
-                    key_news = []
-                    for article in articles:
-                        news_item = {
-                            'title': article['title'],
-                            'url': article['url']
-                        }
-                        key_news.append(news_item)
-                    self.logger.debug("key_news %s",key_news)
-                    return key_news
-        except Exception as error:
-            self.logger.error("news %s",error)
+                    articles = data.get('articles', [])
+                    key_news = [{'title': article['title'], 'url': article['url']} for article in articles]
+                    self.logger.debug("key_news %s", key_news)
+                    last_item = key_news[-1]
+                    return f"{last_item['title']} {last_item['url']}"
+        except aiohttp.ClientError as error:
+            self.logger.error("news %s", error)
+            return None
+
 
     async def scanner(self):
         while True:
             try:
-                tasks = [
-                    self.fetch_key_events(),
-                    self.fetch_key_news(),
-                    self.check_signal()
-                ]
-                results = await asyncio.gather(*tasks)
+                key_events = await self.fetch_key_events()
+                if key_events is not None:
+                    self.logger.debug("Key event %s", key_events)
+                    yield key_events
 
-                if results[0] is not None:
-                    self.logger.debug("Key event %s", results[0])
-                    yield results[0]
+                key_news = await self.fetch_key_news()
+                if key_news is not None:
+                    self.logger.debug("Key news %s", key_news)
+                    yield key_news
 
-                if results[1]:
-                    if results[1][0] is not None:
-                        self.logger.debug("Key news %s", results[1][0])
-                        yield results[1][0]
-
-                if results[2]:
-                    for signal in results[2]:
+                signals = await self.check_signal()
+                if signals:
+                    for signal in signals:
                         message = f"New signal for {signal['symbol']} ({signal['interval']}): {signal['signal']}"
                         self.logger.debug("Signal message %s", message)
                         yield message
-
 
             except Exception as error:
                 self.logger.error("scanner %s", error)
 
             await asyncio.sleep(settings.scanner_frequency)
+
 

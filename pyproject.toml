@@ -22,6 +22,7 @@ asyncio = "*"
 dynaconf = "*"
 aiohttp = "*"
 tradingview_ta = "*"
+prettytable = "*"
 
 [tool.poetry.dev-dependencies]
 python-semantic-release = "*"
