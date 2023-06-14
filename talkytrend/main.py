@@ -9,12 +9,14 @@ import aiohttp
 from prettytable import PrettyTable
 from tradingview_ta import TA_Handler
 from talkytrend import __version__
-from .config import settings
+from talkytrend.config import settings
 
 class TalkyTrend:
     def __init__(self):
         self.logger = logging.getLogger("TalkyTrend")
         self.enabled = settings.talkytrend_enabled
+        if not self.enabled:
+            return
         self.assets = settings.assets
         self.asset_signals = {}
         self.economic_calendar = settings.economic_calendar
@@ -131,22 +133,22 @@ class TalkyTrend:
     async def scanner(self):
         while True:
             try:
-                key_events = await self.fetch_key_events()
-                if key_events is not None:
-                    self.logger.debug("Key event %s", key_events)
-                    yield key_events
+                if settings.enable_events:
+                    key_events = await self.fetch_key_events()
+                    if key_events is not None:
+                        self.logger.debug("Key event %s", key_events)
+                        yield key_events
+                if settings.enable_news:
+                    key_news = await self.fetch_key_news()
+                    if key_news is not None:
+                        self.logger.debug("Key news %s", key_news)
+                        yield key_news
 
-                key_news = await self.fetch_key_news()
-                if key_news is not None:
-                    self.logger.debug("Key news %s", key_news)
-                    yield key_news
-
-                signals = await self.check_signal()
-                if signals:
-                    for signal in signals:
-                        message = f"New signal for {signal['symbol']} ({signal['interval']}): {signal['signal']}"
-                        self.logger.debug("Signal message %s", message)
-                        yield message
+                if settings.enable_signals:
+                    signals = await self.check_signal()
+                    if signals is not None:
+                        self.logger.debug("Signals %s", signals)
+                        yield signals
 
             except Exception as error:
                 self.logger.error("scanner %s", error)
