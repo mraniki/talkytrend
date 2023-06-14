@@ -37,10 +37,11 @@ class TalkyTrend:
             )
             analysis = handler.get_analysis()
             return analysis.summary["RECOMMENDATION"]
-        except Exception as e:
-            print(e)
+        except Exception as error:
+            logger.error("event %s",error)
 
     async def check_signal(self):
+        try:
             messages = []
             for asset in self.assets:
                 current_signal = await self.fetch_analysis(
@@ -58,42 +59,50 @@ class TalkyTrend:
                 else:
                     self.asset_signals[asset["id"]][asset["interval"]] = current_signal
             return messages
+        except Exception as error:
+            logger.error("event %s",error)
+
 
     def get_asset_signals(self):
         return self.asset_signals
 
     async def fetch_key_events(self):
-        async with aiohttp.ClientSession() as session:
-            async with session.get(self.economic_calendar, timeout=10) as response:
-                if response.status == 200:
-                    event_list = await response.json()
-                    today = date.today().isoformat()
-                    for event in event_list:
-                        impact = event.get('impact')
-                        country = event.get('country')
-                        title = event.get('title')
-                        event_date = event.get('date')
-                        if event_date and event_date.startswith(today):
-                            if impact == 'High' and country in {'USD', 'ALL'}:
-                                return f"💬 {title}\n⏰ {event_date}T{event.get('time')}"
-                            if "OPEC" in title or "FOMC" in title:
-                                return f"💬 {title}\n⏰ {event_date}T{event.get('time')}"
+        try:
+            async with aiohttp.ClientSession() as session:
+                async with session.get(self.economic_calendar, timeout=10) as response:
+                    if response.status == 200:
+                        event_list = await response.json()
+                        today = date.today().isoformat()
+                        for event in event_list:
+                            impact = event.get('impact')
+                            country = event.get('country')
+                            title = event.get('title')
+                            event_date = event.get('date')
+                            if event_date and event_date.startswith(today):
+                                if impact == 'High' and country in {'USD', 'ALL'}:
+                                    return f"💬 {title}\n⏰ {event_date}T{event.get('time')}"
+                                if "OPEC" in title or "FOMC" in title:
+                                    return f"💬 {title}\n⏰ {event_date}T{event.get('time')}"
+        except Exception as error:
+            logger.error("event %s",error)
     
     async def fetch_key_news(self):
-        async with aiohttp.ClientSession() as session:
-            async with session.get(self.news_url, timeout=10) as response:
-                data = await response.json()
-                if not (articles := data.get('articles')):
-                    return None
-                key_news = []
-                for article in articles:
-                    news_item = {
-                        'title': article['title'],
-                        'url': article['url']
-                    }
-                    key_news.append(news_item)
-                return key_news
-
+        try:
+            async with aiohttp.ClientSession() as session:
+                async with session.get(self.news_url, timeout=10) as response:
+                    data = await response.json()
+                    if not (articles := data.get('articles')):
+                        return None
+                    key_news = []
+                    for article in articles:
+                        news_item = {
+                            'title': article['title'],
+                            'url': article['url']
+                        }
+                        key_news.append(news_item)
+                    return key_news
+        except Exception as error:
+            logger.error("news %s",error)
 #    async def scanner(self):
 #        while True:
 #            try:
@@ -120,15 +129,16 @@ class TalkyTrend:
                 results = await asyncio.gather(*tasks)
 
                 if results[0] is not None:
-                    print("Key event:", results[0])
+                    logger.debug("Key event %s",results[0])
                     yield results[0]  # Use 'yield' to return the result as an asynchronous iterator
 
                 if results[1] is not None:
                     if results[1]:
-                        print("Key news:", results[1][0])
+                        logger.debug("Key news %s",results[1][0])
                         yield results[1]  # Use 'yield' to return the result as an asynchronous iterator
 
-            except Exception as e:
-                print(f"Error in scanner loop: {e}")
+            except Exception as error:
+                logger.error("scanner %s",error)
+                
 
 
