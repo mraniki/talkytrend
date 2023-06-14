@@ -2,6 +2,12 @@
 
 <!--next-version-placeholder-->
 
+## v1.1.8 (2023-06-14)
+
+### Fix
+
+* 🚑 hot fix  Use 'yield' to return the result as an asynchronous iterator for scanner ([`2374c72`](https://github.com/mraniki/talkytrend/commit/2374c72e4bed0dfcb6df6ac48a01d8b386297f8e))
+
 ## v1.1.7 (2023-06-13)
 
 ### Fix
