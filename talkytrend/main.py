@@ -6,6 +6,7 @@ import asyncio
 import logging
 from datetime import date
 import aiohttp
+from prettytable import PrettyTable
 from tradingview_ta import TA_Handler
 from talkytrend import __version__
 from .config import settings
@@ -61,7 +62,13 @@ class TalkyTrend:
                     signals.append(signal_item)
                 self.logger.debug("asset_signals %s", self.asset_signals)
                 self.logger.debug("signals %s", signals)
-            return signals
+            #return signals
+            # Create the table
+            table = PrettyTable()
+            table.field_names = ["Asset", "4h"]
+            for signal in signals:
+                table.add_row([signal["symbol"], signal["signal"]["4h"]])
+            return str(table)
         except Exception as error:
             self.logger.error("check_signal %s", error)
             return []
