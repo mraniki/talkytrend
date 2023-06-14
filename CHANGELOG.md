@@ -2,6 +2,19 @@
 
 <!--next-version-placeholder-->
 
+## v1.1.9 (2023-06-14)
+
+### Fix
+
+* 🚑 fix signal ([`148a873`](https://github.com/mraniki/talkytrend/commit/148a87352205683fa790a9c4287860ba1b28f76e))
+* 🐛 fix async bug and signal bug ([`27dae32`](https://github.com/mraniki/talkytrend/commit/27dae328e0c03129592a937c4c3d012aa9c5634c))
+* 🐳 dockerignore ([`a6dfa56`](https://github.com/mraniki/talkytrend/commit/a6dfa568aa4ea56b81ab7ed36187a4ed61a72e4a))
+* :recycle:🥅 Refactor error handling and logging in TalkyTrend class ([`b56e3be`](https://github.com/mraniki/talkytrend/commit/b56e3be121463e9af276bcfc3d235df1d98b61c7))
+
+### Other
+
+* Rename requirements.txt to requirements.txt ([`97f1a3e`](https://github.com/mraniki/talkytrend/commit/97f1a3e7d6bc51c8e5807cbf5f70bfd817f1940f))
+
 ## v1.1.8 (2023-06-14)
 
 ### Fix
