@@ -35,6 +35,8 @@ async def main():
             #💬 Core PPI m/m
             #⏰ 2023-06-14T08:30:00-04:00
             #{'title': "Bud Light loses its title as America's top-selling beer", 'url': 'https://edition.cnn.com/2023/06/14/business/bud-light-modelo-top-selling-may-sales/index.html'}
+            #New signal for EURUSD (4h): STRONG_BUY
+            #New signal for BTCUSD (4h): NEUTRAL
 
 
 app = FastAPI()
