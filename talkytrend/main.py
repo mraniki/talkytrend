@@ -34,6 +34,7 @@ class TalkyTrend:
                 interval=interval
             )
             analysis = handler.get_analysis()
+            self.logger.debug("fetch_analysis summary %s",analysis.summary)
             return analysis.summary["RECOMMENDATION"]
         except Exception as error:
             self.logger.error("event %s",error)
@@ -43,22 +44,34 @@ class TalkyTrend:
             messages = []
             for asset in self.assets:
                 current_signal = await self.fetch_analysis(
-                    asset["id"],
-                    asset["exchange"],
-                    asset["screener"],
-                    asset["interval"])
-                if self.asset_signals.get(asset["id"]) and self.asset_signals[asset["id"]].get(asset["interval"]) and current_signal != self.asset_signals[asset["id"]][asset["interval"]]:
-                    message = f'New signal for {asset["id"]} ({asset["interval"]}): {current_signal}'
-                    print(message)
-                    self.asset_signals[asset["id"]][asset["interval"]] = current_signal
+                    asset_id=asset["id"],
+                    exchange=asset["exchange"],
+                    screener=asset["screener"],
+                    interval=asset["interval"]
+                )
+                self.logger.debug("fetch_analysis summary %s", current_signal)
+                if self.is_new_signal(asset["id"], asset["interval"], current_signal):
+                    message = f"New signal for {asset['id']} ({asset['interval']}): {current_signal}"
+                    self.logger.debug("signal message %s", message)
+                    self.update_signal(asset["id"], asset["interval"], current_signal)
                     messages.append(message)
-                elif not self.asset_signals.get(asset["id"]):
-                    self.asset_signals[asset["id"]] = {asset["interval"]: current_signal}
-                else:
-                    self.asset_signals[asset["id"]][asset["interval"]] = current_signal
+                self.logger.debug("asset_signals %s", self.asset_signals)
+                self.logger.debug("messages %s", messages)
             return messages
         except Exception as error:
-            self.logger.error("event %s",error)
+                self.logger.error("event %s", error)
+    def is_new_signal(self, asset_id, interval, current_signal):
+        if self.asset_signals.get(asset_id):
+            if self.asset_signals[asset_id].get(interval) and current_signal != self.asset_signals[asset_id][interval]:
+                self.asset_signals[asset_id][interval] = current_signal
+                return True
+        else:
+            self.asset_signals[asset_id] = {interval: current_signal}
+            return True
+        return False
+
+    def update_signal(self, asset_id, interval, current_signal):
+        self.asset_signals[asset_id][interval] = current_signal
 
 
     def get_asset_signals(self):
@@ -78,9 +91,10 @@ class TalkyTrend:
                             event_date = event.get('date')
                             if event_date and event_date.startswith(today):
                                 if impact == 'High' and country in {'USD', 'ALL'}:
-                                    return f"💬 {title}\n⏰ {event_date}T{event.get('time')}"
+                                    return f"💬 {title}\n⏰ {event_date}"
                                 if "OPEC" in title or "FOMC" in title:
-                                    return f"💬 {title}\n⏰ {event_date}T{event.get('time')}"
+                                    return f"💬 {title}\n⏰ {event_date}"
+            return None
         except Exception as error:
             self.logger.error("event %s",error)
     
@@ -101,6 +115,27 @@ class TalkyTrend:
                     return key_news
         except Exception as error:
             self.logger.error("news %s",error)
+
+    async def scanner(self):
+        while True:
+            try:
+                tasks = [self.fetch_key_events(), self.fetch_key_news()]
+                results = await asyncio.gather(*tasks)
+
+                if results[0] is not None:
+                    self.logger.debug("Key event %s",results[0])
+                    yield results[0]  # Use 'yield' to return the result as an asynchronous iterator
+
+                if results[1] is not None:
+                    if results[1]:
+                        self.logger.debug("Key news %s",results[1][0])
+                        yield results[1][0]  # Use 'yield' to return the result as an asynchronous iterator
+
+            except Exception as error:
+                self.logger.error("scanner %s",error)
+            await asyncio.sleep(settings.scanner_frequency)
+
+
 #    async def scanner(self):
 #        while True:
 #            try:
@@ -120,21 +155,3 @@ class TalkyTrend:
 #                print(f"Error in scanner loop: {e}")
             
 #            await asyncio.sleep(settings.scanner_frequency)
-    async def scanner(self):
-        while True:
-            try:
-                tasks = [self.fetch_key_events(), self.fetch_key_news()]
-                results = await asyncio.gather(*tasks)
-
-                if results[0] is not None:
-                    self.logger.debug("Key event %s",results[0])
-                    yield results[0]  # Use 'yield' to return the result as an asynchronous iterator
-
-                if results[1] is not None:
-                    if results[1]:
-                        self.logger.debug("Key news %s",results[1][0])
-                        yield results[1]  # Use 'yield' to return the result as an asynchronous iterator
-
-            except Exception as error:
-                self.logger.error("scanner %s",error)
-                
