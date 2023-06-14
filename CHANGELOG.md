@@ -2,6 +2,12 @@
 
 <!--next-version-placeholder-->
 
+## v1.2.1 (2023-06-14)
+
+### Fix
+
+* 🔧 config for enabling disabling the lib ([`b8ccc8a`](https://github.com/mraniki/talkytrend/commit/b8ccc8ab5328181051ea5fadce452c1976104a8e))
+
 ## v1.2.0 (2023-06-14)
 
 ### Feature
