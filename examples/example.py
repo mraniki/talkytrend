@@ -22,11 +22,11 @@ async def main():
     """Main"""
     talky = TalkyTrend()
     print(talky)
-    signal = await talky.check_signal()
-    print("signal:\n",signal) 
-    #BUY
-    events = await talky.fetch_key_events()
-    print("events:\n",events) 
+    #signal = await talky.check_signal()
+    #print("signal:\n",signal) 
+    #{'EURUSD': {'4h': 'STRONG_BUY'}, 'BTCUSD': {'4h': 'NEUTRAL'}}
+    #events = await talky.fetch_key_events()
+    #print("events:\n",events) 
     # 💬 Core PPI m/m
     # ⏰ 2023-06-14T08:30:00-04:00
     while True:
