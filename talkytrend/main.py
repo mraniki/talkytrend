@@ -4,11 +4,9 @@
 
 import asyncio
 import logging
+from datetime import date
 import aiohttp
-from datetime import datetime, date
-
-from tradingview_ta import TA_Handler, Interval
-
+from tradingview_ta import TA_Handler
 from talkytrend import __version__
 from .config import settings
 
@@ -17,7 +15,7 @@ class TalkyTrend:
         self.logger = logging.getLogger("TalkyTrend")
         self.enabled = settings.talkytrend_enabled
         self.assets = settings.assets
-        self.asset_signals = {"15m": None, "1h": None, "4h": None}
+        self.asset_signals = {}
         self.economic_calendar = settings.economic_calendar
         self.news_url = f"{settings.news_url}{settings.news_api_key}" if settings.news_api_key else None
         self.live_tv = settings.live_tv_url
@@ -36,31 +34,52 @@ class TalkyTrend:
                 interval=interval
             )
             analysis = handler.get_analysis()
+            self.logger.debug("fetch_analysis summary %s",analysis.summary)
             return analysis.summary["RECOMMENDATION"]
         except Exception as error:
-            logger.error("event %s",error)
+            self.logger.error("event %s",error)
 
     async def check_signal(self):
         try:
-            messages = []
+            signals = []
             for asset in self.assets:
                 current_signal = await self.fetch_analysis(
-                    asset["id"],
-                    asset["exchange"],
-                    asset["screener"],
-                    asset["interval"])
-                if self.asset_signals.get(asset["id"]) and self.asset_signals[asset["id"]].get(asset["interval"]) and current_signal != self.asset_signals[asset["id"]][asset["interval"]]:
-                    message = f'New signal for {asset["id"]} ({asset["interval"]}): {current_signal}'
-                    print(message)
-                    self.asset_signals[asset["id"]][asset["interval"]] = current_signal
-                    messages.append(message)
-                elif not self.asset_signals.get(asset["id"]):
-                    self.asset_signals[asset["id"]] = {asset["interval"]: current_signal}
-                else:
-                    self.asset_signals[asset["id"]][asset["interval"]] = current_signal
-            return messages
+                    asset_id=asset["id"],
+                    exchange=asset["exchange"],
+                    screener=asset["screener"],
+                    interval=asset["interval"]
+                )
+                self.logger.debug("fetch_analysis summary %s", current_signal)
+                if self.is_new_signal(asset["id"], asset["interval"], current_signal):
+                    signal_item = {
+                        "symbol": asset["id"],
+                        "interval": asset["interval"],
+                        "signal": current_signal
+                    }
+                    self.logger.debug("signal message %s", signal_item)
+                    self.update_signal(asset["id"], asset["interval"], current_signal)
+                    signals.append(signal_item)
+                self.logger.debug("asset_signals %s", self.asset_signals)
+                self.logger.debug("signals %s", signals)
+            return signals
         except Exception as error:
-            logger.error("event %s",error)
+            self.logger.error("check_signal %s", error)
+            return []
+
+
+
+    def is_new_signal(self, asset_id, interval, current_signal):
+        if self.asset_signals.get(asset_id):
+            if self.asset_signals[asset_id].get(interval) and current_signal != self.asset_signals[asset_id][interval]:
+                self.asset_signals[asset_id][interval] = current_signal
+                return True
+        else:
+            self.asset_signals[asset_id] = {interval: current_signal}
+            return True
+        return False
+
+    def update_signal(self, asset_id, interval, current_signal):
+        self.asset_signals[asset_id][interval] = current_signal
 
 
     def get_asset_signals(self):
@@ -80,11 +99,12 @@ class TalkyTrend:
                             event_date = event.get('date')
                             if event_date and event_date.startswith(today):
                                 if impact == 'High' and country in {'USD', 'ALL'}:
-                                    return f"💬 {title}\n⏰ {event_date}T{event.get('time')}"
+                                    return f"💬 {title}\n⏰ {event_date}"
                                 if "OPEC" in title or "FOMC" in title:
-                                    return f"💬 {title}\n⏰ {event_date}T{event.get('time')}"
+                                    return f"💬 {title}\n⏰ {event_date}"
+            return None
         except Exception as error:
-            logger.error("event %s",error)
+            self.logger.error("event %s",error)
     
     async def fetch_key_news(self):
         try:
@@ -100,45 +120,39 @@ class TalkyTrend:
                             'url': article['url']
                         }
                         key_news.append(news_item)
+                    self.logger.debug("key_news %s",key_news)
                     return key_news
         except Exception as error:
-            logger.error("news %s",error)
-#    async def scanner(self):
-#        while True:
-#            try:
-#                tasks = [self.fetch_key_events(), self.fetch_key_news()]
-#                results = await asyncio.gather(*tasks)
+            self.logger.error("news %s",error)
 
-#                if results[0] is not None:
-#                    print("Key event:", results[0])
-#                    return results[0]
-                
-#                if results[1] is not None:
-#                    if results[1]:
-#                        print("Key news:", results[1][0])
-#                        return results[1]
-
-#            except Exception as e:
-#                print(f"Error in scanner loop: {e}")
-            
-#            await asyncio.sleep(settings.scanner_frequency)
     async def scanner(self):
         while True:
             try:
-                tasks = [self.fetch_key_events(), self.fetch_key_news()]
+                tasks = [
+                    self.fetch_key_events(),
+                    self.fetch_key_news(),
+                    self.check_signal()
+                ]
                 results = await asyncio.gather(*tasks)
 
                 if results[0] is not None:
-                    logger.debug("Key event %s",results[0])
-                    yield results[0]  # Use 'yield' to return the result as an asynchronous iterator
+                    self.logger.debug("Key event %s", results[0])
+                    yield results[0]
 
-                if results[1] is not None:
-                    if results[1]:
-                        logger.debug("Key news %s",results[1][0])
-                        yield results[1]  # Use 'yield' to return the result as an asynchronous iterator
+                if results[1]:
+                    if results[1][0] is not None:
+                        self.logger.debug("Key news %s", results[1][0])
+                        yield results[1][0]
+
+                if results[2]:
+                    for signal in results[2]:
+                        message = f"New signal for {signal['symbol']} ({signal['interval']}): {signal['signal']}"
+                        self.logger.debug("Signal message %s", message)
+                        yield message
+
 
             except Exception as error:
-                logger.error("scanner %s",error)
-                
+                self.logger.error("scanner %s", error)
 
+            await asyncio.sleep(settings.scanner_frequency)
 

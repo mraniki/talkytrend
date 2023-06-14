@@ -22,13 +22,19 @@ async def main():
     """Main"""
     talky = TalkyTrend()
     print(talky)
-    result = await talky.check_signal()
-    print(result) #BUY
-    result = await talky.fetch_key_events()
-    print(result) # {'title': 'CPI m/m', 'country': 'USD', 'date': '2023-06-13T08:30:00-04:00', 'impact': 'High', 'forecast': '0.2%', 'previous': '0.4%'}
-    monitor = await talky.scanner()
-    # Key news: {'title': 'Fred Ryan to leave Washington Post after nine years as publisher',
-    # 'url': 'https://www.washingtonpost.com/media/2023/06/12/fred-ryan-publisher-leaves-washington-post/'}
+    #signal = await talky.check_signal()
+    #print("signal:\n",signal) 
+    #{'EURUSD': {'4h': 'STRONG_BUY'}, 'BTCUSD': {'4h': 'NEUTRAL'}}
+    #events = await talky.fetch_key_events()
+    #print("events:\n",events) 
+    # 💬 Core PPI m/m
+    # ⏰ 2023-06-14T08:30:00-04:00
+    while True:
+        async for message in talky.scanner():
+            print("scanner:\n", message)
+            #💬 Core PPI m/m
+            #⏰ 2023-06-14T08:30:00-04:00
+            #{'title': "Bud Light loses its title as America's top-selling beer", 'url': 'https://edition.cnn.com/2023/06/14/business/bud-light-modelo-top-selling-may-sales/index.html'}
 
 
 app = FastAPI()

@@ -1,5 +1,5 @@
 """
- IAmListening Config
+ TalkyTrend Config
 """
 import os
 
