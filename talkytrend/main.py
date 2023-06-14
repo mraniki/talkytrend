@@ -4,11 +4,9 @@
 
 import asyncio
 import logging
+from datetime import date
 import aiohttp
-from datetime import datetime, date
-
-from tradingview_ta import TA_Handler, Interval
-
+from tradingview_ta import TA_Handler
 from talkytrend import __version__
 from .config import settings
 
@@ -38,7 +36,7 @@ class TalkyTrend:
             analysis = handler.get_analysis()
             return analysis.summary["RECOMMENDATION"]
         except Exception as error:
-            logger.error("event %s",error)
+            self.logger.error("event %s",error)
 
     async def check_signal(self):
         try:
@@ -60,7 +58,7 @@ class TalkyTrend:
                     self.asset_signals[asset["id"]][asset["interval"]] = current_signal
             return messages
         except Exception as error:
-            logger.error("event %s",error)
+            self.logger.error("event %s",error)
 
 
     def get_asset_signals(self):
@@ -84,7 +82,7 @@ class TalkyTrend:
                                 if "OPEC" in title or "FOMC" in title:
                                     return f"💬 {title}\n⏰ {event_date}T{event.get('time')}"
         except Exception as error:
-            logger.error("event %s",error)
+            self.logger.error("event %s",error)
     
     async def fetch_key_news(self):
         try:
@@ -102,7 +100,7 @@ class TalkyTrend:
                         key_news.append(news_item)
                     return key_news
         except Exception as error:
-            logger.error("news %s",error)
+            self.logger.error("news %s",error)
 #    async def scanner(self):
 #        while True:
 #            try:
@@ -129,16 +127,14 @@ class TalkyTrend:
                 results = await asyncio.gather(*tasks)
 
                 if results[0] is not None:
-                    logger.debug("Key event %s",results[0])
+                    self.logger.debug("Key event %s",results[0])
                     yield results[0]  # Use 'yield' to return the result as an asynchronous iterator
 
                 if results[1] is not None:
                     if results[1]:
-                        logger.debug("Key news %s",results[1][0])
+                        self.logger.debug("Key news %s",results[1][0])
                         yield results[1]  # Use 'yield' to return the result as an asynchronous iterator
 
             except Exception as error:
-                logger.error("scanner %s",error)
+                self.logger.error("scanner %s",error)
                 
-
-

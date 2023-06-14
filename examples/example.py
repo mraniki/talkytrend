@@ -26,7 +26,9 @@ async def main():
     print(result) #BUY
     result = await talky.fetch_key_events()
     print(result) # {'title': 'CPI m/m', 'country': 'USD', 'date': '2023-06-13T08:30:00-04:00', 'impact': 'High', 'forecast': '0.2%', 'previous': '0.4%'}
-    monitor = await talky.scanner()
+    while True:
+        async for message in talky.scanner():
+            print(message)
     # Key news: {'title': 'Fred Ryan to leave Washington Post after nine years as publisher',
     # 'url': 'https://www.washingtonpost.com/media/2023/06/12/fred-ryan-publisher-leaves-washington-post/'}
 
