@@ -43,6 +43,8 @@ class TalkyTrend:
     async def check_signal(self):
         try:
             signals = []
+            table = PrettyTable()
+            table.field_names = ["Asset", "4h"]
             for asset in self.assets:
                 current_signal = await self.fetch_analysis(
                     asset_id=asset["id"],
@@ -58,16 +60,14 @@ class TalkyTrend:
                         "signal": current_signal
                     }
                     self.logger.debug("signal message %s", signal_item)
+                    print(asset["id"], current_signal)
                     self.update_signal(asset["id"], asset["interval"], current_signal)
+                    table.add_row([asset["id"], current_signal])
+                    self.logger.debug("table %s", table)
                     signals.append(signal_item)
                 self.logger.debug("asset_signals %s", self.asset_signals)
                 self.logger.debug("signals %s", signals)
             #return signals
-            # Create the table
-            table = PrettyTable()
-            table.field_names = ["Asset", "4h"]
-            for signal in signals:
-                table.add_row([signal["symbol"], signal["signal"]["4h"]])
             return str(table)
         except Exception as error:
             self.logger.error("check_signal %s", error)
