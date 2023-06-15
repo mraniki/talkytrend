@@ -6,7 +6,7 @@ import asyncio
 import logging
 from datetime import date
 import aiohttp
-from prettytable import PrettyTable
+from prettytable import PrettyTable, MARKDOWN
 from tradingview_ta import TA_Handler
 from talkytrend import __version__
 from talkytrend.config import settings
@@ -17,6 +17,7 @@ class TalkyTrend:
         self.enabled = settings.talkytrend_enabled
         if not self.enabled:
             return
+        #self.mode = settings_talkytrend_mode
         self.assets = settings.assets
         self.asset_signals = {}
         self.economic_calendar = settings.economic_calendar
@@ -70,7 +71,11 @@ class TalkyTrend:
                 self.logger.debug("asset_signals %s", self.asset_signals)
                 self.logger.debug("signals %s", signals)
             #return signals
-            return str(table)
+            #return str(table)
+            table.set_style(MARKDOWN)
+
+            table_text = table.get_string()
+            return table_text
         except Exception as error:
             self.logger.error("check_signal %s", error)
             return []
