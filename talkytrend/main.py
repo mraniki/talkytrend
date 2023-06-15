@@ -74,8 +74,7 @@ class TalkyTrend:
             #return str(table)
             table.set_style(MARKDOWN)
 
-            table_text = table.get_string()
-            return table_text
+            return table.get_string()
         except Exception as error:
             self.logger.error("check_signal %s", error)
             return []
