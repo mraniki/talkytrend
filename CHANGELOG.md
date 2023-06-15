@@ -2,6 +2,16 @@
 
 <!--next-version-placeholder-->
 
+## v1.3.0 (2023-06-15)
+
+### Feature
+
+* 🥚 Refactor TalkyTrend class and add Markdown support to table output ([`9a4105a`](https://github.com/mraniki/talkytrend/commit/9a4105ad13dea76e19fbff1e8fa72ef22cca568a))
+
+### Other
+
+* :wrench: Update scanner frequency and enable news in default settings. ([`0e48f29`](https://github.com/mraniki/talkytrend/commit/0e48f29c79512554785d7f41ed2f75e0d9cc72bf))
+
 ## v1.2.1 (2023-06-14)
 
 ### Fix
