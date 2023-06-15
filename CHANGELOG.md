@@ -2,6 +2,13 @@
 
 <!--next-version-placeholder-->
 
+## v1.3.1 (2023-06-15)
+
+### Fix
+
+* 🔧 config org and removed logs ([`6ac7f8f`](https://github.com/mraniki/talkytrend/commit/6ac7f8f60ad0e6eae94c7a4a99350e6f8be67cc4))
+* 🎨 code format ([`3678446`](https://github.com/mraniki/talkytrend/commit/36784460d05220ef82aadfc7e91ca6337cde4604))
+
 ## v1.3.0 (2023-06-15)
 
 ### Feature
