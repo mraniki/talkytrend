@@ -13,16 +13,19 @@ from talkytrend.config import settings
 
 class TalkyTrend:
     def __init__(self):
-        self.logger = logging.getLogger("TalkyTrend")
-        self.enabled = settings.talkytrend_enabled
-        if not self.enabled:
-            return
-        #self.mode = settings_talkytrend_mode
-        self.assets = settings.assets
-        self.asset_signals = {}
-        self.economic_calendar = settings.economic_calendar
-        self.news_url = f"{settings.news_url}{settings.news_api_key}" if settings.news_api_key else None
-        self.live_tv = settings.live_tv_url
+        try:
+            self.logger = logging.getLogger("TalkyTrend")
+            self.enabled = settings.talkytrend_enabled
+            if not self.enabled:
+                return
+            self.mode = settings.talkytrend_mode
+            self.assets = settings.assets
+            self.asset_signals = {}
+            self.economic_calendar = settings.economic_calendar
+            self.news_url = f"{settings.news_url}{settings.news_api_key}" if settings.news_api_key else None
+            self.live_tv = settings.live_tv_url
+        except Exception as error:
+            self.logger.error("TalkyTrend init error %s",error)
 
     async def fetch_analysis(
         self,
@@ -38,7 +41,6 @@ class TalkyTrend:
                 interval=interval
             )
             analysis = handler.get_analysis()
-            self.logger.debug("fetch_analysis summary %s",analysis.summary)
             return analysis.summary["RECOMMENDATION"]
         except Exception as error:
             self.logger.error("event %s",error)
@@ -55,23 +57,18 @@ class TalkyTrend:
                     screener=asset["screener"],
                     interval=asset["interval"]
                 )
-                self.logger.debug("fetch_analysis summary %s", current_signal)
                 if self.is_new_signal(asset["id"], asset["interval"], current_signal):
                     signal_item = {
                         "symbol": asset["id"],
                         "interval": asset["interval"],
                         "signal": current_signal
                     }
-                    self.logger.debug("signal message %s", signal_item)
-                    print(asset["id"], current_signal)
                     self.update_signal(asset["id"], asset["interval"], current_signal)
                     table.add_row([asset["id"], current_signal])
-                    self.logger.debug("table %s", table)
                     signals.append(signal_item)
-                self.logger.debug("asset_signals %s", self.asset_signals)
-                self.logger.debug("signals %s", signals)
             #return signals
             #return str(table)
+            # table.border = False
             table.set_style(MARKDOWN)
 
             table_text = table.get_string()
@@ -127,7 +124,6 @@ class TalkyTrend:
                     data = await response.json()
                     articles = data.get('articles', [])
                     key_news = [{'title': article['title'], 'url': article['url']} for article in articles]
-                    self.logger.debug("key_news %s", key_news)
                     last_item = key_news[-1]
                     return f"{last_item['title']} {last_item['url']}"
         except aiohttp.ClientError as error:
@@ -141,18 +137,18 @@ class TalkyTrend:
                 if settings.enable_events:
                     key_events = await self.fetch_key_events()
                     if key_events is not None:
-                        self.logger.debug("Key event %s", key_events)
+                        self.logger.debug("Key event\n%s", key_events)
                         yield key_events
                 if settings.enable_news:
                     key_news = await self.fetch_key_news()
                     if key_news is not None:
-                        self.logger.debug("Key news %s", key_news)
+                        self.logger.debug("Key news\n%s", key_news)
                         yield key_news
 
                 if settings.enable_signals:
                     signals = await self.check_signal()
                     if signals is not None:
-                        self.logger.debug("Signals %s", signals)
+                        self.logger.debug("Signals\n%s", signals)
                         yield signals
 
             except Exception as error:

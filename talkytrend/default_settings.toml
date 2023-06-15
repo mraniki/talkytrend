@@ -1,5 +1,8 @@
 [default]
 talkytrend_enabled = true
+talkytrend_mode = "scanner"
+talkytrend_scanner = false
+talkytrend_scheduler = false
 scanner_frequency = 86400
 enable_signals = true
 assets = [
@@ -15,7 +18,7 @@ economic_calendar = "https://nfs.faireconomy.media/ff_calendar_thisweek.json"
 enable_news = true
 news_url="https://gnews.io/api/v4/top-headlines?category=business&lang=en&country=us&max=2&apikey="
 news_api_key = ""
-live_tv_url = "http://sc2022.stream-link.org/list.php?id=e007"
+live_tv_url = "https://bloomberg-bloombergtv-1.samsung.wurl.com/manifest/playlist.m3u8"
 
 [testing]
 VALUE = "On Testing"
