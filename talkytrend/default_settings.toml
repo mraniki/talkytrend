@@ -18,7 +18,7 @@ economic_calendar = "https://nfs.faireconomy.media/ff_calendar_thisweek.json"
 enable_news = true
 news_url="https://gnews.io/api/v4/top-headlines?category=business&lang=en&country=us&max=2&apikey="
 news_api_key = ""
-live_tv_url = "https://bloomberg-bloombergtv-1.samsung.wurl.com/manifest/playlist.m3u8"
+live_tv_url = "https://bloomberg.com/media-manifest/streams/us.m3u8"
 
 [testing]
 VALUE = "On Testing"
