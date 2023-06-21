@@ -17,12 +17,12 @@ packages = [
 "Issues" =  "https://github.com/mraniki/talkytrend/issues"
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.11"
 asyncio = "*"
 dynaconf = "*"
 aiohttp = "*"
-tradingview_ta = "*"
-prettytable = "*"
+tradingview_ta = "^3.3.0"
+prettytable = "^3.8.0"
 
 [tool.poetry.dev-dependencies]
 python-semantic-release = "*"
