@@ -2,6 +2,25 @@
 
 <!--next-version-placeholder-->
 
+## v1.3.3 (2023-06-21)
+
+### Fix
+
+* :memo: docs ([`5f7d4ef`](https://github.com/mraniki/talkytrend/commit/5f7d4ef691faef18c4662f12417211ba8eb1002b))
+* Update Docs html ([`8709c1b`](https://github.com/mraniki/talkytrend/commit/8709c1b18b8c31ba0d674ad81839e5bb53f2ff6b))
+* :arrow_up: dep update ([`8ac66b0`](https://github.com/mraniki/talkytrend/commit/8ac66b07861be4c3c3d117977dbf8fd1bf2f4ddf))
+* :arrow_up:dep update ([`71d69e1`](https://github.com/mraniki/talkytrend/commit/71d69e159b8c2b2ecf2278d62f35f59749454807))
+* Update pyproject.toml ([`3df4d59`](https://github.com/mraniki/talkytrend/commit/3df4d59d48618afbdb80500fd8bba0da12729eb4))
+
+### Other
+
+* Merge pull request #46 from mraniki/dev ([`f73885e`](https://github.com/mraniki/talkytrend/commit/f73885eae52ce647b35ed6f8b0d367079ae1f90b))
+* Merge branch 'main' into dev ([`662bde9`](https://github.com/mraniki/talkytrend/commit/662bde951c021983149d422f42e321f7f2545332))
+* Create test.txt ([`0a37dca`](https://github.com/mraniki/talkytrend/commit/0a37dcac46d913b1119409ec21cce9ff7d58efef))
+* Delete html ([`f6d8b54`](https://github.com/mraniki/talkytrend/commit/f6d8b548e77be7fe67aa2057f949b98e823ed5f8))
+* Merge pull request #45 from mraniki/dev ([`3be012c`](https://github.com/mraniki/talkytrend/commit/3be012c62e501ac175f92c0d6f413da27b39fd7f))
+* Merge pull request #44 from mraniki/dev ([`78485c1`](https://github.com/mraniki/talkytrend/commit/78485c1b7173c8577438273c06e7e44f98251c9a))
+
 ## v1.3.2 (2023-06-17)
 
 ### Fix
