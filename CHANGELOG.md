@@ -2,6 +2,17 @@
 
 <!--next-version-placeholder-->
 
+## v1.3.4 (2023-06-22)
+
+### Fix
+
+* 💬 doc ([`9890909`](https://github.com/mraniki/talkytrend/commit/9890909b89f740d9a6abdceb66bd1d7420dce81b))
+* 💬 doc ([`49b8127`](https://github.com/mraniki/talkytrend/commit/49b8127e1ac2850d843a423c9706a408e84b004c))
+
+### Other
+
+* Merge pull request #50 from mraniki/dev ([`0f5cc2e`](https://github.com/mraniki/talkytrend/commit/0f5cc2ec81f66b4a2a32def745f413943482340b))
+
 ## v1.3.3 (2023-06-21)
 
 ### Fix
