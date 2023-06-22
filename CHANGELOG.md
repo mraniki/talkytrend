@@ -2,6 +2,18 @@
 
 <!--next-version-placeholder-->
 
+## v1.3.5 (2023-06-22)
+
+### Fix
+
+* :memo: docs ([`d93df5b`](https://github.com/mraniki/talkytrend/commit/d93df5b37b9e069bf35da9ae129b3ad228f5be34))
+* :memo: readthedocs ([`3b9998e`](https://github.com/mraniki/talkytrend/commit/3b9998e2c381b585d760d1a606b30ba377e788b8))
+
+### Other
+
+* Merge pull request #51 from mraniki/dev ([`a2191fa`](https://github.com/mraniki/talkytrend/commit/a2191fabdba69b545ce2c8a1380b8a799a933898))
+* Merge branch 'dev' of git@github.com:mraniki/talkytrend.git ([`d935804`](https://github.com/mraniki/talkytrend/commit/d935804921f14b70b4229f1ff62449a305cc07dd))
+
 ## v1.3.4 (2023-06-22)
 
 ### Fix
