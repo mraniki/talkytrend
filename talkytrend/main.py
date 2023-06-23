@@ -96,25 +96,35 @@ class TalkyTrend:
         return self.asset_signals
 
     async def fetch_key_events(self):
-        try:
-            async with aiohttp.ClientSession() as session:
-                async with session.get(self.economic_calendar, timeout=10) as response:
-                    if response.status == 200:
-                        event_list = await response.json()
-                        today = date.today().isoformat()
-                        for event in event_list:
-                            impact = event.get('impact')
-                            country = event.get('country')
-                            title = event.get('title')
-                            event_date = event.get('date')
-                            if event_date and event_date.startswith(today):
-                                if impact == 'High' and country in {'USD', 'ALL'}:
-                                    return f"💬 {title}\n⏰ {event_date}"
-                                if "OPEC" in title or "FOMC" in title:
-                                    return f"💬 {title}\n⏰ {event_date}"
-            return None
-        except Exception as error:
-            self.logger.error("event %s",error)
+        def filter_events(data, today):
+            return [event for event in data if event.get('date', '').startswith(today)]
+
+        def is_usd_high_impact(event):
+            return event.get('impact') == 'High' and event.get('country') in {'USD', 'ALL'}
+
+        def is_all_high_impact(event):
+            return event.get('impact') == 'High' and event.get('country') == 'ALL'
+
+        def is_opec_or_fomc(event):
+            return "OPEC" in event.get('title') or "FOMC" in event.get('title')
+
+        def format_event(event):
+            return f"💬 {event['title']}\n⏰ {event['date']}"
+    
+        async with aiohttp.ClientSession() as session:
+            async with session.get(self.economic_calendar, timeout=10) as response:
+                response.raise_for_status()
+                data = await response.json()
+                today = date.today().isoformat()
+                events = filter_events(data, today)
+                for event in events:
+                    if is_usd_high_impact(event) or is_all_high_impact(event):
+                        return format_event(event)
+                    if is_opec_or_fomc(event):
+                        return format_event(event)
+        return None
+
+
     
     async def fetch_key_news(self):
         try:

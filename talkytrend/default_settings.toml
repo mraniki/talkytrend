@@ -1,4 +1,5 @@
 [default]
+VALUE = "On Default"
 talkytrend_enabled = true
 talkytrend_mode = "scanner"
 talkytrend_scanner = false
