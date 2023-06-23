@@ -1,4 +1,5 @@
 [default]
+VALUE = "On Default"
 talkytrend_enabled = true
 talkytrend_mode = "scanner"
 talkytrend_scanner = false
@@ -15,6 +16,7 @@ assets = [
 ]
 enable_events = true
 economic_calendar = "https://nfs.faireconomy.media/ff_calendar_thisweek.json"
+fomc_decision_date = ["2023-07-26","2023-09-20","2023-11-01","2023-12-13"]
 enable_news = true
 news_url="https://gnews.io/api/v4/top-headlines?category=business&lang=en&country=us&max=2&apikey="
 news_api_key = ""
@@ -22,3 +24,19 @@ live_tv_url = "https://bloomberg.com/media-manifest/streams/us.m3u8"
 
 [testing]
 VALUE = "On Testing"
+talkytrend_enabled = true
+talkytrend_mode = "scanner"
+talkytrend_scanner = false
+talkytrend_scheduler = false
+scanner_frequency = 86400
+enable_signals = true
+assets = [
+    { id ="EURUSD", exchange='FX_IDC',screener="forex", interval = "4h" },
+]
+enable_events = true
+economic_calendar = "https://nfs.faireconomy.media/ff_calendar_thisweek.json"
+fomc_decision_date = ["2023-07-26","2023-09-20","2023-11-01","2023-12-13"]
+enable_news = true
+news_url="https://gnews.io/api/v4/top-headlines?category=business&lang=en&country=us&max=2&apikey="
+news_api_key = ""
+live_tv_url = "https://bloomberg.com/media-manifest/streams/us.m3u8"
