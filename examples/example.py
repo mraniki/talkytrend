@@ -29,9 +29,12 @@ async def main():
     #print("events:\n",events) 
     # 💬 Core PPI m/m
     # ⏰ 2023-06-14T08:30:00-04:00
-    while True:
-        async for message in talky.scanner():
-            print("scanner:\n", message)
+    # fomc_day = await talky.check_fomc()
+    # print(fomc_day)
+    #True
+    # while True:
+    #     async for message in talky.scanner():
+    #         print("scanner:\n", message)
             #💬 Core PPI m/m
             #⏰ 2023-06-14T08:30:00-04:00
             #{'title': "Bud Light loses its title as America's top-selling beer", 'url': 'https://edition.cnn.com/2023/06/14/business/bud-light-modelo-top-selling-may-sales/index.html'}
