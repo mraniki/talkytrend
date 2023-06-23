@@ -2,6 +2,24 @@
 
 <!--next-version-placeholder-->
 
+## v1.4.0 (2023-06-23)
+
+### Feature
+
+* 🥚fomc day ([`bc97764`](https://github.com/mraniki/talkytrend/commit/bc977641152814d5a8060a72b8079c8dbd92810c))
+
+### Fix
+
+* ✅ unit test ([`a0c8034`](https://github.com/mraniki/talkytrend/commit/a0c80347c86c8e51945acd5fd2952b21755b1c3a))
+
+### Other
+
+* Merge pull request #52 from mraniki/dev ([`4641813`](https://github.com/mraniki/talkytrend/commit/4641813d89259c6ee634112e146699a2031a52eb))
+* Merge pull request #54 from mraniki/sourcery/dev ([`672789d`](https://github.com/mraniki/talkytrend/commit/672789db9f281a23b4266e3baf8c090ae357bcec))
+* 'Refactored by Sourcery' ([`14bd2f8`](https://github.com/mraniki/talkytrend/commit/14bd2f8d8f6785b02a4d71cba2008e07b79303a3))
+* Merge pull request #53 from mraniki/sourcery/dev ([`1bfd73f`](https://github.com/mraniki/talkytrend/commit/1bfd73f9523c1d88bb686246ed74009c370a464b))
+* 'Refactored by Sourcery' ([`643ed12`](https://github.com/mraniki/talkytrend/commit/643ed1295338c6e17a44a34a4f392ce54973ab98))
+
 ## v1.3.5 (2023-06-22)
 
 ### Fix
