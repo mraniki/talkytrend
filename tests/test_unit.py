@@ -16,8 +16,7 @@ def set_test_settings():
 @pytest.fixture(name="talky")
 def talky_fixture():
     """return TrendPlugin"""
-    talky = TalkyTrend()
-    return talky
+    return TalkyTrend()
 
 
 @pytest.mark.asyncio
