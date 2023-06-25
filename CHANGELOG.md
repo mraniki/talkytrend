@@ -2,6 +2,16 @@
 
 <!--next-version-placeholder-->
 
+## v1.5.1 (2023-06-25)
+
+### Fix
+
+* Update dependabot.yml with commit message prefix ([`1ef1f0b`](https://github.com/mraniki/talkytrend/commit/1ef1f0b0c8f71e4b81b02519f2e7feb297ed9fdf))
+
+### Other
+
+* Merge pull request #55 from mraniki/dev ([`d45fc3a`](https://github.com/mraniki/talkytrend/commit/d45fc3abfcb3aad22ba66dc267d7c26c3507c6dc))
+
 ## v1.5.0 (2023-06-25)
 
 ### Feature
