@@ -2,6 +2,12 @@
 
 <!--next-version-placeholder-->
 
+## v1.5.0 (2023-06-25)
+
+### Feature
+
+* Update ✨Flow.yml ([`b631151`](https://github.com/mraniki/talkytrend/commit/b631151bc1867954dbd268c0730dec6d7ea3ab95))
+
 ## v1.4.0 (2023-06-23)
 
 ### Feature
