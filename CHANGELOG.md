@@ -2,6 +2,20 @@
 
 <!--next-version-placeholder-->
 
+## v1.5.2 (2023-06-26)
+
+### Fix
+
+* Update dependabot.yml ([`638241b`](https://github.com/mraniki/talkytrend/commit/638241b3904f6cf43ac7533a59867ac3e2411162))
+* Update README.md ([`40a3163`](https://github.com/mraniki/talkytrend/commit/40a31630a31da7cf5a869b242c4a8998c60dd222))
+* Update README.md ([`ea84818`](https://github.com/mraniki/talkytrend/commit/ea8481889084fd401c5d083a2c90d3ecad009596))
+
+### Other
+
+* Merge pull request #57 from mraniki/dev ([`7914960`](https://github.com/mraniki/talkytrend/commit/791496013d3472cb3bff1503ebd4f55f69a41ef7))
+* Merge pull request #56 from mraniki/dev ([`085da39`](https://github.com/mraniki/talkytrend/commit/085da3931426b09ef713c27d26d65f29658a30ab))
+* :construction_worker_man:‍♂️Flow.yml ([`33c66c4`](https://github.com/mraniki/talkytrend/commit/33c66c43770b83649d98d8e29b60b1cab879adee))
+
 ## v1.5.1 (2023-06-25)
 
 ### Fix
