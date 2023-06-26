@@ -18,10 +18,10 @@ updates:
       prefix: "⬆️ Dep"
 
   # Maintain dependencies for pip
-  - package-ecosystem: "pip"
-    directory: "/.requirements/"
-    schedule:
-      interval: "weekly"
-    commit-message:
-      prefix: "⬆️ Dep"
+  #- package-ecosystem: "pip"
+  #  directory: "/.requirements/"
+  #  schedule:
+  #    interval: "weekly"
+  #  commit-message:
+  #    prefix: "⬆️ Dep"
       
