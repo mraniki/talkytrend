@@ -2,6 +2,17 @@
 
 <!--next-version-placeholder-->
 
+## v1.5.3 (2023-06-27)
+
+### Fix
+
+* 🎨 code format ([`dc0ef52`](https://github.com/mraniki/talkytrend/commit/dc0ef520ed428481929420b379945a379bb1f3c4))
+* :art: Update default_settings.toml and main.py files ([`d3836cd`](https://github.com/mraniki/talkytrend/commit/d3836cd08d864b9feb3a70787c93b73581cb2d66))
+
+### Other
+
+* Merge pull request #58 from mraniki/dev ([`3832cd8`](https://github.com/mraniki/talkytrend/commit/3832cd802d8b722cce413aa5401894bedf8a86e7))
+
 ## v1.5.2 (2023-06-26)
 
 ### Fix
