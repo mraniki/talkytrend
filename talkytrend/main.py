@@ -133,7 +133,7 @@ class TalkyTrend:
                     articles = data.get('articles', [])
                     key_news = [{'title': article['title'], 'url': article['url']} for article in articles]
                     last_item = key_news[-1]
-                    return f"[{last_item['title']}]({last_item['url']})"
+                    return f"📰 [{last_item['title']}]({last_item['url']})"
         except aiohttp.ClientError as error:
             self.logger.error("news %s", error)
             return None
