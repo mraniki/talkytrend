@@ -2,6 +2,16 @@
 
 <!--next-version-placeholder-->
 
+## v1.5.4 (2023-07-02)
+
+### Fix
+
+* :art: Refactor TalkyTrend class and fix link formatting ([`4b1c2f6`](https://github.com/mraniki/talkytrend/commit/4b1c2f6924318b06eb9b2ca32c5d79741385550d))
+
+### Other
+
+* Merge pull request #59 from mraniki/dev ([`0754e8c`](https://github.com/mraniki/talkytrend/commit/0754e8cdbd501e6581bc0125523193f14aeab226))
+
 ## v1.5.3 (2023-06-27)
 
 ### Fix
