@@ -124,7 +124,7 @@ class TalkyTrend:
         return None
 
 
-    
+
     async def fetch_key_news(self):
         try:
             async with aiohttp.ClientSession() as session:
@@ -133,11 +133,13 @@ class TalkyTrend:
                     articles = data.get('articles', [])
                     key_news = [{'title': article['title'], 'url': article['url']} for article in articles]
                     last_item = key_news[-1]
-                    return f"📰 [{last_item['title']}]({last_item['url']})"
+                    return f"📰 <a href={last_item['url']}>{last_item['title']}</a>"
+                    
         except aiohttp.ClientError as error:
             self.logger.error("news %s", error)
             return None
 
+            
     async def check_fomc(self):
         event_dates = settings.fomc_decision_date
         current_date = date.today().isoformat()
