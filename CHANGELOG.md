@@ -2,6 +2,16 @@
 
 <!--next-version-placeholder-->
 
+## v1.5.5 (2023-07-02)
+
+### Fix
+
+* 🐛 html news link missing ' ([`1968474`](https://github.com/mraniki/talkytrend/commit/1968474f7f8ccd3bf138382ddbd49969721f6bbb))
+
+### Other
+
+* Merge pull request #60 from mraniki/dev ([`c4952a8`](https://github.com/mraniki/talkytrend/commit/c4952a8fe9a3d07a2dadb2bfd828ad3045b964fc))
+
 ## v1.5.4 (2023-07-02)
 
 ### Fix
