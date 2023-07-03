@@ -2,6 +2,18 @@
 
 <!--next-version-placeholder-->
 
+## v1.5.8 (2023-07-03)
+
+### Fix
+
+* :memo: Add trading view connectivity with signal scanner, news connectivity, and FOMC reminder ([`d774b02`](https://github.com/mraniki/talkytrend/commit/d774b02272aba452f19b9b664829e5503a99bea3))
+* ⚡ added getinfo ([`bf3a71a`](https://github.com/mraniki/talkytrend/commit/bf3a71a78c3ef8e00982c12a577412c44b0f7124))
+* 📝  Doc config ([`ee9e7a2`](https://github.com/mraniki/talkytrend/commit/ee9e7a236359f92564b618b18a36e5aecf217888))
+
+### Other
+
+* Merge pull request #61 from mraniki/dev ([`1abcd6a`](https://github.com/mraniki/talkytrend/commit/1abcd6ad56ac535d75a6eabb5849fb5a4332e1aa))
+
 ## v1.5.7 (2023-07-03)
 
 ### Fix
