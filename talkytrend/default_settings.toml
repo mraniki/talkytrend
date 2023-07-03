@@ -1,3 +1,18 @@
+###########################################
+###             DEFAULT SETTINGS        ###
+###########################################
+# Any of those settings can be overwritten 
+# by the user.
+# To overwrite a setting, create a settings.toml
+# or load the settings from .env file or vars.
+# As an example, to change the port settings:
+# settings.toml
+# [default]
+# scanner_frequency = 3600
+# or via ENVVARS 
+# export TT_SCANNER_FREQUENCY=3600
+
+
 [default]
 VALUE = "On Default"
 talkytrend_enabled = true
@@ -21,6 +36,8 @@ enable_news = true
 news_url="https://gnews.io/api/v4/top-headlines?category=business&lang=en&max=2&apikey="
 news_api_key = ""
 live_tv_url = "https://bloomberg.com/media-manifest/streams/us.m3u8"
+
+
 
 [testing]
 VALUE = "On Testing"
