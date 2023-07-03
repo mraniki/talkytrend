@@ -2,6 +2,12 @@
 
 <!--next-version-placeholder-->
 
+## v1.5.6 (2023-07-03)
+
+### Fix
+
+* 🔧  config  update ([`d963960`](https://github.com/mraniki/talkytrend/commit/d963960b83390d6c797ae2723aa9f1f9485ebf9f))
+
 ## v1.5.5 (2023-07-02)
 
 ### Fix
