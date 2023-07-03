@@ -2,6 +2,12 @@
 
 <!--next-version-placeholder-->
 
+## v1.5.7 (2023-07-03)
+
+### Fix
+
+* 👷 CI Change ([`8a2af72`](https://github.com/mraniki/talkytrend/commit/8a2af721abebb9de83ffba3c1d88b778a980e492))
+
 ## v1.5.6 (2023-07-03)
 
 ### Fix
