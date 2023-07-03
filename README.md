@@ -7,7 +7,9 @@
 
 Key features:
 
-- trading view connectivity
+- trading view connectivity with signal scanner
+- news connectivity 
+- FOMC reminder
 
 ## Install
 
