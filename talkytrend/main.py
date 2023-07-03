@@ -171,4 +171,5 @@ class TalkyTrend:
 
             await asyncio.sleep(settings.scanner_frequency)
 
-
+    async def get_info(self):
+        return f"{__class__.__name__} {__version__}\n"
