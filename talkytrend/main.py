@@ -41,7 +41,16 @@ class TalkyTrend:
                 interval=interval
             )
             analysis = handler.get_analysis()
-            return analysis.summary["RECOMMENDATION"]
+            if  analysis.summary["RECOMMENDATION"] =='BUY':
+                return "⬆️"
+            else if  analysis.summary["RECOMMENDATION"] == 'STRONG_BUY':
+                return "⬆️⬆️"
+            else if  analysis.summary["RECOMMENDATION"] =='SELL':
+                return "⬇️"
+            else if  analysis.summary["RECOMMENDATION"] == 'STRONG_SELL':
+                return "⬇️⬇️"
+            else:
+                return "➡️"
         except Exception as error:
             self.logger.error("event %s",error)
 
