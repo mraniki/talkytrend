@@ -59,7 +59,7 @@ class TalkyTrend:
         try:
             signals = []
             table = PrettyTable()
-            table.field_names = ["Asset", "4h"]
+            table.field_names = ["  Asset  ", "  4h  "]
             for asset in self.assets:
                 current_signal = await self.fetch_analysis(
                     asset_id=asset["id"],
