@@ -52,8 +52,7 @@ News connectivity<br>
 </pre>
 
 <h5>Example</h5>
-
-https://github.com/mraniki/talkytrend/blob/main/examples/example.py
+https://github.com/mraniki/talkytrend/blob/af472db335afec4e6a643077f7483d030e8511ac/examples/example.py#L1-L50
 
 </details>
 
