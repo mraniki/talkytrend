@@ -2,6 +2,17 @@
 
 <!--next-version-placeholder-->
 
+## v1.5.9 (2023-07-06)
+
+### Fix
+
+* Update README.md ([`f2af83d`](https://github.com/mraniki/talkytrend/commit/f2af83d8cf0fb70297fd7f3a449f1b3470c9e0c4))
+* 📝  Readme Alignment with Wiki structure ([`0bf02a4`](https://github.com/mraniki/talkytrend/commit/0bf02a4309d1b00a22d16cac72531ec84bea77b2))
+
+### Other
+
+* Merge pull request #62 from mraniki/dev ([`af472db`](https://github.com/mraniki/talkytrend/commit/af472db335afec4e6a643077f7483d030e8511ac))
+
 ## v1.5.8 (2023-07-03)
 
 ### Fix
