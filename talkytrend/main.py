@@ -23,8 +23,9 @@ class TalkyTrend:
             self.assets = settings.assets
             self.asset_signals = {}
             self.economic_calendar = settings.economic_calendar
-            self.news_url = f"{settings.news_url}{settings.news_api_key}" if settings.news_api_key else None
+            self.news_url = f"{settings.news_url}{settings.news_api_key}" if settings.news_api_key else settings.news_url
             self.live_tv = settings.live_tv_url
+            print(self.news_url)
         except Exception as error:
             self.logger.error("TalkyTrend init error %s", error)
 
@@ -42,16 +43,17 @@ class TalkyTrend:
                 interval=interval
             )
             analysis = handler.get_analysis()
+            # return analysis.summary["RECOMMENDATION"] as str
             if analysis.summary["RECOMMENDATION"] == 'BUY':
-                return "⬆️"
+                return "🔼"
             elif analysis.summary["RECOMMENDATION"] == 'STRONG_BUY':
-                return "⬆️⬆️"
+                return "⏫"
             elif analysis.summary["RECOMMENDATION"] == 'SELL':
-                return "⬇️"
+                return "🔽"
             elif analysis.summary["RECOMMENDATION"] == 'STRONG_SELL':
-                return "⬇️⬇️"
+                return "⏬"
             else:
-                return "➡️"
+                return "▶️"
         except Exception as error:
             self.logger.error("event %s", error)
 
@@ -59,7 +61,7 @@ class TalkyTrend:
         try:
             signals = []
             table = PrettyTable()
-            table.field_names = ["  Asset  ", "  4h  "]
+            table.field_names = ["   Asset  ","   4h  "]
             for asset in self.assets:
                 current_signal = await self.fetch_analysis(
                     asset_id=asset["id"],
@@ -136,7 +138,7 @@ class TalkyTrend:
                     articles = data.get('articles', [])
                     key_news = [{'title': article['title'], 'url': article['url']} for article in articles]
                     last_item = key_news[-1]
-                    return f"📰 <a href='{last_item['url']}'>{last_item['title']}</a>"
+                    return str(f"📰 <a href='{last_item['url']}'>{last_item['title']}</a>")
 
         except aiohttp.ClientError as error:
             self.logger.error("news %s", error)
@@ -153,22 +155,20 @@ class TalkyTrend:
                 if settings.enable_events:
                     key_events = await self.fetch_key_events()
                     if key_events is not None:
-                        self.logger.debug("Key event\n%s", key_events)
                         yield key_events
                 if settings.enable_news:
                     key_news = await self.fetch_key_news()
                     if key_news is not None:
-                        self.logger.debug("Key news\n%s", key_news)
                         yield key_news
 
                 if settings.enable_signals:
                     signals = await self.check_signal()
                     if signals is not None:
-                        self.logger.debug("Signals\n%s", signals)
                         yield signals
 
             except Exception as error:
-                self.logger.error("scanner %s", error)
+                print(error)
+                raise error
 
             await asyncio.sleep(settings.scanner_frequency)
 
