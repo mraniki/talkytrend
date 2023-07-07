@@ -2,6 +2,22 @@
 
 <!--next-version-placeholder-->
 
+## v1.6.0 (2023-07-07)
+
+### Feature
+
+* 🥚 Refactor TalkyTrend class to return appropriate arrows based on analysis summary recommendation. ([`9c68bd4`](https://github.com/mraniki/talkytrend/commit/9c68bd4c49492de78032ff0a5e133901fd86cfe2))
+
+### Fix
+
+* 🐛 Troubleshooting for news. ([`b13388e`](https://github.com/mraniki/talkytrend/commit/b13388e970ec61d4252c7421c335dd16e8172970))
+* :rotating_light: linter ([`a78ac49`](https://github.com/mraniki/talkytrend/commit/a78ac49ef2f4e49c8d7731174d492f41dcdab046))
+* 🚨 linter ([`91c34c1`](https://github.com/mraniki/talkytrend/commit/91c34c1d65cb939a1a19aa6976b8fb592a1f2402))
+
+### Other
+
+* Merge pull request #63 from mraniki/dev ([`d8bf47f`](https://github.com/mraniki/talkytrend/commit/d8bf47f9a5e43c31a380ca9a5a8fe54daa8b76b5))
+
 ## v1.5.9 (2023-07-06)
 
 ### Fix
