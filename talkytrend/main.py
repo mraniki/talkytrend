@@ -11,6 +11,7 @@ from tradingview_ta import TA_Handler
 from talkytrend import __version__
 from talkytrend.config import settings
 
+
 class TalkyTrend:
     def __init__(self):
         try:
@@ -22,10 +23,11 @@ class TalkyTrend:
             self.assets = settings.assets
             self.asset_signals = {}
             self.economic_calendar = settings.economic_calendar
-            self.news_url = f"{settings.news_url}{settings.news_api_key}" if settings.news_api_key else None
+            self.news_url = f"{settings.news_url}{settings.news_api_key}" if settings.news_api_key else settings.news_url
             self.live_tv = settings.live_tv_url
+            print(self.news_url)
         except Exception as error:
-            self.logger.error("TalkyTrend init error %s",error)
+            self.logger.error("TalkyTrend init error %s", error)
 
     async def fetch_analysis(
         self,
@@ -41,15 +43,25 @@ class TalkyTrend:
                 interval=interval
             )
             analysis = handler.get_analysis()
-            return analysis.summary["RECOMMENDATION"]
+            # return analysis.summary["RECOMMENDATION"] as str
+            if analysis.summary["RECOMMENDATION"] == 'BUY':
+                return "🔼"
+            elif analysis.summary["RECOMMENDATION"] == 'STRONG_BUY':
+                return "⏫"
+            elif analysis.summary["RECOMMENDATION"] == 'SELL':
+                return "🔽"
+            elif analysis.summary["RECOMMENDATION"] == 'STRONG_SELL':
+                return "⏬"
+            else:
+                return "▶️"
         except Exception as error:
-            self.logger.error("event %s",error)
+            self.logger.error("event %s", error)
 
     async def check_signal(self):
         try:
             signals = []
             table = PrettyTable()
-            table.field_names = ["Asset", "4h"]
+            table.field_names = ["   Asset  ","   4h  "]
             for asset in self.assets:
                 current_signal = await self.fetch_analysis(
                     asset_id=asset["id"],
@@ -66,16 +78,12 @@ class TalkyTrend:
                     self.update_signal(asset["id"], asset["interval"], current_signal)
                     table.add_row([asset["id"], current_signal])
                     signals.append(signal_item)
-            #return signals
-            #return str(table)
-            # table.border = False
             table.set_style(MARKDOWN)
 
             return table.get_string()
         except Exception as error:
             self.logger.error("check_signal %s", error)
             return []
-
 
     def is_new_signal(self, asset_id, interval, current_signal):
         if self.asset_signals.get(asset_id):
@@ -89,7 +97,6 @@ class TalkyTrend:
 
     def update_signal(self, asset_id, interval, current_signal):
         self.asset_signals[asset_id][interval] = current_signal
-
 
     def get_asset_signals(self):
         return self.asset_signals
@@ -109,7 +116,7 @@ class TalkyTrend:
 
         def format_event(event):
             return f"💬 {event['title']}\n⏰ {event['date']}"
-    
+
         async with aiohttp.ClientSession() as session:
             async with session.get(self.economic_calendar, timeout=10) as response:
                 response.raise_for_status()
@@ -123,8 +130,6 @@ class TalkyTrend:
                         return format_event(event)
         return None
 
-
-
     async def fetch_key_news(self):
         try:
             async with aiohttp.ClientSession() as session:
@@ -133,18 +138,16 @@ class TalkyTrend:
                     articles = data.get('articles', [])
                     key_news = [{'title': article['title'], 'url': article['url']} for article in articles]
                     last_item = key_news[-1]
-                    return f"📰 <a href='{last_item['url']}'>{last_item['title']}</a>"
-                    
+                    return str(f"📰 <a href='{last_item['url']}'>{last_item['title']}</a>")
+
         except aiohttp.ClientError as error:
             self.logger.error("news %s", error)
             return None
 
-            
     async def check_fomc(self):
         event_dates = settings.fomc_decision_date
         current_date = date.today().isoformat()
         return any(event.startswith(current_date) for event in event_dates)
-
 
     async def scanner(self):
         while True:
@@ -152,22 +155,20 @@ class TalkyTrend:
                 if settings.enable_events:
                     key_events = await self.fetch_key_events()
                     if key_events is not None:
-                        self.logger.debug("Key event\n%s", key_events)
                         yield key_events
                 if settings.enable_news:
                     key_news = await self.fetch_key_news()
                     if key_news is not None:
-                        self.logger.debug("Key news\n%s", key_news)
                         yield key_news
 
                 if settings.enable_signals:
                     signals = await self.check_signal()
                     if signals is not None:
-                        self.logger.debug("Signals\n%s", signals)
                         yield signals
 
             except Exception as error:
-                self.logger.error("scanner %s", error)
+                print(error)
+                raise error
 
             await asyncio.sleep(settings.scanner_frequency)
 
