@@ -2,7 +2,7 @@
 talkytrend Unit Testing
 """
 
-from unittest.mock import MagicMock
+from unittest.mock import AsyncMock
 import pytest
 from talkytrend.main import TalkyTrend
 from talkytrend.config import settings
@@ -59,9 +59,9 @@ async def test_check_fomc(talky):
 
 @pytest.mark.asyncio
 async def test_scanner(talky):
-    talky.fetch_key_events = MagicMock(return_value='Mocked key events')
-    talky.fetch_key_news = MagicMock(return_value='Mocked key news')
-    talky.fetch_key_feed = MagicMock(return_value='Mocked key feed')
-    talky.check_signal = MagicMock(return_value='Mocked signals')
+    talky.fetch_key_events = AsyncMock(return_value='Mocked key events')
+    talky.fetch_key_news = AsyncMock(return_value='Mocked key news')
+    talky.fetch_key_feed = AsyncMock(return_value='Mocked key feed')
+    talky.check_signal = AsyncMock(return_value='Mocked signals')
     async for result in talky.scanner():
         assert result is not None
