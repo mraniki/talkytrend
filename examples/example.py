@@ -3,20 +3,19 @@ Provides example for talkytrend
 """
 
 import asyncio
-import logging
+# import logging
 
 import uvicorn
 from fastapi import FastAPI
 from talkytrend import TalkyTrend, __version__
 
-logging.basicConfig(
-    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-    level="DEBUG"
-)
-
-logger = logging.getLogger(__name__)
-logging.getLogger('TalkyTrend').setLevel(logging.DEBUG)
-logging.getLogger('urllib3').setLevel(logging.WARNING)
+# logging.basicConfig(
+#     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+#     level="DEBUG"
+# )
+# logger = logging.getLogger(__name__)
+# logging.getLogger('TalkyTrend').setLevel(logging.DEBUG)
+# logging.getLogger('urllib3').setLevel(logging.WARNING)
 
 async def main():
     """Main"""
