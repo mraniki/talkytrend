@@ -163,6 +163,7 @@ class TalkyTrend:
             self.logger.error("news %s", error)
             return None
 
+
     async def check_fomc(self):
         event_dates = settings.fomc_decision_date
         current_date = date.today().isoformat()
