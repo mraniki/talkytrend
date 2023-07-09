@@ -179,8 +179,14 @@ class TalkyTrend:
         current_date = date.today().isoformat()
         return any(event.startswith(current_date) for event in event_dates)
 
+    async def stop_scanning(self, disable = False):
+        if disable
+            return True
+        return False
+        
     async def scanner(self):
-        while True:
+        scanning = True
+        while scanning:
             try:
                 if settings.enable_events:
                     key_events = await self.fetch_key_events()
@@ -204,6 +210,7 @@ class TalkyTrend:
                 raise error
 
             await asyncio.sleep(settings.scanner_frequency)
+            scanning = not await stop_scanning()
 
     async def get_info(self):
         return f"{__class__.__name__} {__version__}\n"
