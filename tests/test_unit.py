@@ -65,5 +65,7 @@ async def test_scanner(talky):
     talky.fetch_key_feed = AsyncMock(return_value='Mocked key feed')
     talky.check_signal = AsyncMock(return_value='Mocked signals')
     timeout = 5  
-    async for result in asyncio.wait_for(talky.scanner(), timeout=timeout):
-        assert result is not None
+    task = asyncio.create_task(talky.scanner())
+    done, pending = await asyncio.wait([task], timeout=timeout)
+    result = done.pop().result()  # Assuming only one task is created
+    assert result is not None
