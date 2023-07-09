@@ -6,7 +6,8 @@ import asyncio
 import logging
 from datetime import date
 import aiohttp
-from prettytable import PrettyTable, MARKDOWN
+import xml.etree.ElementTree as ET
+from prettytable import PrettyTable
 from tradingview_ta import TA_Handler
 from talkytrend import __version__
 from talkytrend.config import settings
@@ -61,7 +62,7 @@ class TalkyTrend:
         try:
             signals = []
             table = PrettyTable()
-            table.field_names = ["   Asset  ","   4h  "]
+            table.field_names = ["Asset","4h"]
             for asset in self.assets:
                 current_signal = await self.fetch_analysis(
                     asset_id=asset["id"],
@@ -78,9 +79,8 @@ class TalkyTrend:
                     self.update_signal(asset["id"], asset["interval"], current_signal)
                     table.add_row([asset["id"], current_signal])
                     signals.append(signal_item)
-            table.set_style(MARKDOWN)
 
-            return table.get_string()
+            return table.get_html_string()
         except Exception as error:
             self.logger.error("check_signal %s", error)
             return []
@@ -144,6 +144,22 @@ class TalkyTrend:
             self.logger.error("news %s", error)
             return None
 
+    async def fetch_key_feed(self):
+        try:
+            async with aiohttp.ClientSession() as session:
+                async with session.get(settings.news_feed, timeout=10) as response:
+                    data = await response.text()
+                    root = ET.fromstring(data)
+                    last_item = root.findall('.//item')[0]
+                    title = last_item.find('title').text
+                    link = last_item.find('link').text
+                    html_link = f"📰 <a href='{(link)}'>{(title)}</a>"
+                    return html_link
+
+        except aiohttp.ClientError as error:
+            self.logger.error("news %s", error)
+            return None
+
     async def check_fomc(self):
         event_dates = settings.fomc_decision_date
         current_date = date.today().isoformat()
@@ -160,7 +176,10 @@ class TalkyTrend:
                     key_news = await self.fetch_key_news()
                     if key_news is not None:
                         yield key_news
-
+                if settings.enable_feed:
+                    key_feed = await self.fetch_key_feed()
+                    if key_feed is not None:
+                        yield key_feed
                 if settings.enable_signals:
                     signals = await self.check_signal()
                     if signals is not None:

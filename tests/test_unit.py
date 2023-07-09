@@ -45,6 +45,12 @@ async def test_fetch_key_events(talky):
 #    print(result)
 #    assert result is not None
 
+@pytest.mark.asyncio
+async def test_fetch_key_feed(talky):
+   result = await talky.fetch_key_feed()
+   print(result)
+   assert result is not None
+
 
 @pytest.mark.asyncio
 async def test_check_fomc(talky):
