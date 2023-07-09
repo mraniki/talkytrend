@@ -67,5 +67,5 @@ async def test_scanner(talky):
     timeout = 5  
     task = asyncio.create_task(talky.scanner())
     done, pending = await asyncio.wait([task], timeout=timeout)
-    result = done.pop().result()  # Assuming only one task is created
+    result = done.pop().result()
     assert result is not None
