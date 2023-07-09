@@ -153,9 +153,7 @@ class TalkyTrend:
                     last_item = root.findall('.//item')[0]
                     title = last_item.find('title').text
                     link = last_item.find('link').text
-                    html_link = f"📰 <a href='{(link)}'>{(title)}</a>"
-                    return html_link
-
+                    return f"📰 <a href='{link}'>{title}</a>"
         except aiohttp.ClientError as error:
             self.logger.error("news %s", error)
             return None
