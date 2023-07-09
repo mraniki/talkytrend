@@ -6,7 +6,7 @@ import asyncio
 import logging
 from datetime import date
 import aiohttp
-import defusedxml.ElementTree as ET
+import xmltodict
 from prettytable import PrettyTable
 from tradingview_ta import TA_Handler
 from talkytrend import __version__
@@ -136,9 +136,12 @@ class TalkyTrend:
                 async with session.get(self.news_url, timeout=10) as response:
                     data = await response.json()
                     articles = data.get('articles', [])
-                    key_news = [{'title': article['title'], 'url': article['url']} for article in articles]
+                    key_news = [
+                        {'title': article['title'], 'url': article['url']}
+                        for article in articles
+                    ]
                     last_item = key_news[-1]
-                    return str(f"📰 <a href='{last_item['url']}'>{last_item['title']}</a>")
+                    return f"📰 <a href='{last_item['url']}'>{last_item['title']}</a>"
 
         except aiohttp.ClientError as error:
             self.logger.error("news %s", error)
@@ -148,11 +151,13 @@ class TalkyTrend:
         try:
             async with aiohttp.ClientSession() as session:
                 async with session.get(settings.news_feed, timeout=10) as response:
-                    data = await response.text()
-                    root = ET.fromstring(data)
-                    last_item = root.findall('.//item')[0]
-                    title = last_item.find('title').text
-                    link = last_item.find('link').text
+                    data = (
+                        xmltodict.parse(await response.text())
+                        .get('rss')
+                        .get('channel')['item'][0]
+                    )
+                    title = data['title']
+                    link = data['link']
                     return f"📰 <a href='{link}'>{title}</a>"
         except aiohttp.ClientError as error:
             self.logger.error("news %s", error)
