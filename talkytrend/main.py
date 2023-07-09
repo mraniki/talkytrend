@@ -6,7 +6,7 @@ import asyncio
 import logging
 from datetime import date
 import aiohttp
-import xml.etree.ElementTree as ET
+import defusedxml.ElementTree as ET
 from prettytable import PrettyTable
 from tradingview_ta import TA_Handler
 from talkytrend import __version__

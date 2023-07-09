@@ -29,6 +29,7 @@ aiohttp = "^3.8.4"
 tradingview_ta = "^3.3.0"
 prettytable = "^3.8.0"
 alphavantage_api_client = "^2.2.2"
+defusedxml = "^0.7.1"
 
 [tool.poetry.dev-dependencies]
 python-semantic-release = "^7.34.3"
