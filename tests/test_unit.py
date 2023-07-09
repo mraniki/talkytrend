@@ -4,6 +4,7 @@ talkytrend Unit Testing
 
 from unittest.mock import AsyncMock
 import pytest
+import asyncio
 from talkytrend.main import TalkyTrend
 from talkytrend.config import settings
 
@@ -63,5 +64,6 @@ async def test_scanner(talky):
     talky.fetch_key_news = AsyncMock(return_value='Mocked key news')
     talky.fetch_key_feed = AsyncMock(return_value='Mocked key feed')
     talky.check_signal = AsyncMock(return_value='Mocked signals')
-    async for result in talky.scanner():
+    timeout = 5  
+    async for result in asyncio.wait_for(talky.scanner(), timeout=timeout):
         assert result is not None
