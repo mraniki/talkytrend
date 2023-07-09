@@ -24,7 +24,11 @@ class TalkyTrend:
             self.assets = settings.assets
             self.asset_signals = {}
             self.economic_calendar = settings.economic_calendar
-            self.news_url = f"{settings.news_url}{settings.news_api_key}" if settings.news_api_key else settings.news_url
+            self.news_url = (
+                f"{settings.news_url}{settings.news_api_key}"
+                if settings.news_api_key
+                else settings.news_url
+            )
             self.live_tv = settings.live_tv_url
             print(self.news_url)
         except Exception as error:
@@ -87,7 +91,10 @@ class TalkyTrend:
 
     def is_new_signal(self, asset_id, interval, current_signal):
         if self.asset_signals.get(asset_id):
-            if self.asset_signals[asset_id].get(interval) and current_signal != self.asset_signals[asset_id][interval]:
+            if (
+                self.asset_signals[asset_id].get(interval)
+                and current_signal != self.asset_signals[asset_id][interval]
+            ):
                 self.asset_signals[asset_id][interval] = current_signal
                 return True
         else:
@@ -106,7 +113,10 @@ class TalkyTrend:
             return [event for event in data if event.get('date', '').startswith(today)]
 
         def is_usd_high_impact(event):
-            return event.get('impact') == 'High' and event.get('country') in {'USD', 'ALL'}
+            return (
+                event.get('impact') == 'High' and
+                event.get('country') in {'USD', 'ALL'}
+            )
 
         def is_all_high_impact(event):
             return event.get('impact') == 'High' and event.get('country') == 'ALL'
