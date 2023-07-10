@@ -62,9 +62,9 @@ async def test_scanner(talky):
         print("scanner:\n", message)
         assert message is not None
         assert ("📰" in message 
-            or "💬" in message 
-            or "BTCUSD" in message 
-            or "<" in message 
-            or message not None)
+                or "💬" in message 
+                or "BTCUSD" in message 
+                or "<" in message 
+                or message is None)
     stop_scanning_result = await talky.allow_scanning(enable=False)
     assert stop_scanning_result is True
