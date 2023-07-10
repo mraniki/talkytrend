@@ -186,13 +186,13 @@ class TalkyTrend:
         
     async def stop_scanning(self, disable=False):
         if disable:
-            self.stop_scanning = True
+            self.scanning = False
             return True
         return False
 
     async def scanner(self):
-        scanning = True
-        while scanning:
+        self.scanning = True 
+        while self.scanning:
             try:
                 if settings.enable_events:
                     key_events = await self.fetch_key_events()

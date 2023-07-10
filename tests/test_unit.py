@@ -58,9 +58,8 @@ async def test_check_fomc(talky):
 
 @pytest.mark.asyncio
 async def test_scanner(talky):
-    while talky.stop_scanning:
-        async for message in talky.scanner():
-            print("scanner:\n", message)
-            assert message is not None
-            stop_scanning_result = await talky.stop_scanning(disable=True)
-            assert stop_scanning_result is True
+    async for message in talky.scanner():
+        print("scanner:\n", message)
+        assert message is not None
+        stop_scanning_result = await talky.stop_scanning(disable=True)
+        assert stop_scanning_result is True
