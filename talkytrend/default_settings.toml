@@ -47,7 +47,7 @@ talkytrend_enabled = true
 talkytrend_mode = "scanner"
 talkytrend_scanner = false
 talkytrend_scheduler = false
-scanner_frequency = 30
+scanner_frequency = 2
 enable_signals = true
 assets = [
     { id ="BTCUSD",exchange="BINANCE",screener="crypto", interval = "4h"},

@@ -66,12 +66,13 @@ async def test_scanner(talky):
         await talky.allow_scanning(enable=False)
 
     async for message in talky.scanner():
-        print("scanner:\n", message)
-        await stop_scanning_fn()
+        assert settings.VALUE == "On Testing"
+        assert settings.scanner_frequency == 2
         assert message is not None
         assert ("📰" in message 
                 or "💬" in message 
                 or "BTCUSD" in message 
                 or "<" in message)
+        await stop_scanning_fn()
         if stop_scanning:
             break
