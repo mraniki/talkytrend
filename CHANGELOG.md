@@ -2,6 +2,16 @@
 
 <!--next-version-placeholder-->
 
+## v1.7.1 (2023-07-10)
+
+### Fix
+
+* 🚑 removing HTML for signal trend due to chat limitation ([`b2f741b`](https://github.com/mraniki/talkytrend/commit/b2f741baa08ca88a286d630c12f4cf15840b3bd1))
+
+### Other
+
+* Merge pull request #71 from mraniki/dev ([`88b5e36`](https://github.com/mraniki/talkytrend/commit/88b5e3675f14adaedca46329d9ae3cf475de83f7))
+
 ## v1.7.0 (2023-07-10)
 
 ### Feature
