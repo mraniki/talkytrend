@@ -60,6 +60,7 @@ async def test_check_fomc(talky):
 
 @pytest.mark.asyncio
 async def test_scanner(talky):
+    talky.fetch_key_news = AsyncMock(return_value='Mocked key news')
     async for message in talky.scanner():
         print("scanner:\n", message)
         assert message is not None
