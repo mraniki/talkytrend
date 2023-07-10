@@ -178,21 +178,14 @@ class TalkyTrend:
         event_dates = settings.fomc_decision_date
         current_date = date.today().isoformat()
         return any(event.startswith(current_date) for event in event_dates)
-
-    async def stop_scanning(self, disable = False):
-        if disable:
-            return True
-        return False
-        
+     
     async def stop_scanning(self, disable=False):
-        if disable:
-            self.scanning = False
-            return True
-        return False
+        return bool(disable)
 
     async def scanner(self):
-        self.scanning = True 
-        while self.scanning:
+        while True:
+            if not await self.stop_scanning():
+                break
             try:
                 if settings.enable_events:
                     key_events = await self.fetch_key_events()
