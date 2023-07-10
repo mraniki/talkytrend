@@ -184,6 +184,12 @@ class TalkyTrend:
             return True
         return False
         
+    async def stop_scanning(self, disable=False):
+        if disable:
+            self.stop_scanning = True
+            return True
+        return False
+
     async def scanner(self):
         scanning = True
         while scanning:

@@ -2,7 +2,6 @@
 talkytrend Unit Testing
 """
 
-# from unittest.mock import AsyncMock
 import pytest
 from talkytrend.main import TalkyTrend
 from talkytrend.config import settings
@@ -59,7 +58,6 @@ async def test_check_fomc(talky):
 
 @pytest.mark.asyncio
 async def test_scanner(talky):
-    # talky.fetch_key_news = AsyncMock(return_value='Mocked key news')
     while talky.stop_scanning:
         async for message in talky.scanner():
             print("scanner:\n", message)
