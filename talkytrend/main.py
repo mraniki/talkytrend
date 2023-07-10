@@ -183,31 +183,24 @@ class TalkyTrend:
         return bool(disable)
 
     async def scanner(self):
-        while True:
-            if not await self.stop_scanning():
-                break
+        while await self.stop_scanning():
             try:
                 if settings.enable_events:
-                    key_events = await self.fetch_key_events()
-                    if key_events is not None:
-                        yield key_events
+                    if await self.fetch_key_events() is not None:
+                        yield await self.fetch_key_events()
                 if settings.enable_news:
-                    key_news = await self.fetch_key_news()
-                    if key_news is not None:
-                        yield key_news
+                    if await self.fetch_key_news() is not None:
+                        yield await self.fetch_key_news()
                 if settings.enable_feed:
-                    key_feed = await self.fetch_key_feed()
-                    if key_feed is not None:
-                        yield key_feed
+                    if await self.fetch_key_feed() is not None:
+                        yield await self.fetch_key_feed()
                 if settings.enable_signals:
-                    signals = await self.check_signal()
-                    if signals is not None:
-                        yield signals
+                    if await self.check_signal() is not None:
+                        yield await self.check_signal()
 
                 await asyncio.sleep(settings.scanner_frequency)
 
             except Exception as error:
-                print(error)
                 raise error
 
     async def get_info(self):
