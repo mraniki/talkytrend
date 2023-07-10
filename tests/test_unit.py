@@ -4,7 +4,6 @@ talkytrend Unit Testing
 
 from unittest.mock import AsyncMock
 import pytest
-import asyncio
 from talkytrend.main import TalkyTrend
 from talkytrend.config import settings
 
