@@ -180,9 +180,7 @@ class TalkyTrend:
         return any(event.startswith(current_date) for event in event_dates)
 
     async def stop_scanning(self, disable = False):
-        if disable:
-            return True
-        return False
+        return bool(disable)
         
     async def scanner(self):
         scanning = True
