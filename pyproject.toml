@@ -29,6 +29,7 @@ aiohttp = "^3.8.4"
 tradingview_ta = "^3.3.0"
 prettytable = "^3.8.0"
 alphavantage_api_client = "^2.2.2"
+xmltodict = "*"
 
 [tool.poetry.dev-dependencies]
 python-semantic-release = "^7.34.3"
@@ -43,12 +44,14 @@ pytest-mock = "^3.11.1"
 optional = true
 
 [tool.poetry.group.docs.dependencies]
-sphinx = "^6.0.0"
+sphinx = "^7.0.0"
 sphinx_bootstrap_theme = "^0.8.1"
 sphinx-autoapi = "^2.1.1"
 sphinx-copybutton= "^0.5.2"
 myst-parser = "^2.0.0"
-sphinx-notfound-page = "*"
+sphinx-notfound-page = "^0.8.3"
+sphinxext-remoteliteralinclude = "^0.4.0"
+sphinx-togglebutton = "*"
 
 [tool.pytest.ini_options]
 pythonpath = "."

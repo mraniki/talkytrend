@@ -3,46 +3,74 @@ Provides example for talkytrend
 """
 
 import asyncio
-import logging
-
 import uvicorn
 from fastapi import FastAPI
-from talkytrend import TalkyTrend, __version__
-
-logging.basicConfig(
-    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-    level="DEBUG"
-)
-
-logger = logging.getLogger(__name__)
-logging.getLogger('TalkyTrend').setLevel(logging.DEBUG)
-logging.getLogger('urllib3').setLevel(logging.WARNING)
+from talkytrend import TalkyTrend
 
 async def main():
     """Main"""
     talky = TalkyTrend()
-    # print(talky)
-    #signal = await talky.check_signal()
-    #print("signal:\n",signal) 
-    #{'EURUSD': {'4h': 'STRONG_BUY'}, 'BTCUSD': {'4h': 'NEUTRAL'}}
-    #events = await talky.fetch_key_events()
-    #print("events:\n",events) 
+    print(talky)
+
+    signal = await talky.check_signal()
+    print("signal:\n",signal) 
+    #  <table>
+    #     <thead>
+    #         <tr>
+    #             <th>Asset</th>
+    #             <th>4h</th>
+    #         </tr>
+    #     </thead>
+    #     <tbody>
+    #         <tr>
+    #             <td>EURUSD</td>
+    #             <td>🔼</td>
+    #         </tr>
+    #         <tr>
+    #             <td>BTCUSD</td>
+    #             <td>🔽</td>
+    #         </tr>
+    #     </tbody>
+    # </table>
+
+    feed = await talky.fetch_key_feed()
+    print("feed:\n",feed)
+    #  📰 <a href='https://www.zerohedge.com/political/one-third-seattle-residents-may-flee-city-over-crime-costs'>
+    # One-Third Of Seattle Residents May Flee City Over Crime, Costs</a>
+    events = await talky.fetch_key_events()
+    print("events:\n",events) 
     # 💬 Core PPI m/m
     # ⏰ 2023-06-14T08:30:00-04:00
-    # fomc_day = await talky.check_fomc()
-    # print(fomc_day)
-    #True
-    while True:
-        async for message in talky.scanner():
-            print("scanner:\n", message)
-            #💬 Core PPI m/m
-            #⏰ 2023-06-14T08:30:00-04:00
-            #{'title': "Bud Light loses its title as America's top-selling beer", 'url': 'https://edition.cnn.com/2023/06/14/business/bud-light-modelo-top-selling-may-sales/index.html'}
-            # |    Asset   |    4h   |
-            # |:----------:|:-------:|
-            # |   EURUSD   |    ⏫   |
-            # |   BTCUSD   |    ▶️    |
+    fomc_day = await talky.check_fomc()
+    print(fomc_day)
+    #False
 
+    async for message in talky.scanner():
+        print("scanner:\n", message)
+        await talky.allow_scanning(enable=False)
+        # scanner:
+        #  💬 FOMC Member Barr Speaks
+        # ⏰ 2023-07-10T10:00:00-04:00
+        #  📰 <a href='https://www.zerohedge.com/political/one-third-seattle-residents-may-flee-city-over-crime-costs'>
+        # One-Third Of Seattle Residents May Flee City Over Crime, Costs</a>
+        #  <table>
+        #     <thead>
+        #         <tr>
+        #             <th>Asset</th>
+        #             <th>4h</th>
+        #         </tr>
+        #     </thead>
+        #     <tbody>
+        #         <tr>
+        #             <td>EURUSD</td>
+        #             <td>🔼</td>
+        #         </tr>
+        #         <tr>
+        #             <td>BTCUSD</td>
+        #             <td>🔽</td>
+        #         </tr>
+        #     </tbody>
+        # </table>
 
 app = FastAPI()
 

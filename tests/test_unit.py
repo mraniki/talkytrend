@@ -2,7 +2,6 @@
 talkytrend Unit Testing
 """
 
-# from unittest.mock import patch, Mock
 import pytest
 from talkytrend.main import TalkyTrend
 from talkytrend.config import settings
@@ -15,7 +14,6 @@ def set_test_settings():
 
 @pytest.fixture(name="talky")
 def talky_fixture():
-    """return TrendPlugin"""
     return TalkyTrend()
 
 
@@ -38,12 +36,17 @@ async def test_fetch_key_events(talky):
     result = await talky.fetch_key_events()
     assert result is None or isinstance(result, str)
 
-
 #@pytest.mark.asyncio
 #async def test_fetch_key_news(talky):
 #    result = await talky.fetch_key_news()
 #    print(result)
 #    assert result is not None
+
+@pytest.mark.asyncio
+async def test_fetch_key_feed(talky):
+   result = await talky.fetch_key_feed()
+   print(result)
+   assert result is not None
 
 
 @pytest.mark.asyncio
@@ -53,3 +56,23 @@ async def test_check_fomc(talky):
     assert result is not None
  
 
+@pytest.mark.asyncio
+async def test_scanner(talky):
+    stop_scanning = False
+
+    async def stop_scanning_fn():
+        nonlocal stop_scanning
+        stop_scanning = True
+        await talky.allow_scanning(enable=False)
+
+    async for message in talky.scanner():
+        assert settings.VALUE == "On Testing"
+        assert settings.scanner_frequency == 2
+        assert message is not None
+        assert ("📰" in message 
+                or "💬" in message 
+                or "BTCUSD" in message 
+                or "<" in message)
+        await stop_scanning_fn()
+        if stop_scanning:
+            break

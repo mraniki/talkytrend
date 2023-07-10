@@ -6,7 +6,8 @@ import asyncio
 import logging
 from datetime import date
 import aiohttp
-from prettytable import PrettyTable, MARKDOWN
+import xmltodict
+from prettytable import PrettyTable
 from tradingview_ta import TA_Handler
 from talkytrend import __version__
 from talkytrend.config import settings
@@ -23,7 +24,11 @@ class TalkyTrend:
             self.assets = settings.assets
             self.asset_signals = {}
             self.economic_calendar = settings.economic_calendar
-            self.news_url = f"{settings.news_url}{settings.news_api_key}" if settings.news_api_key else settings.news_url
+            self.news_url = (
+                f"{settings.news_url}{settings.news_api_key}"
+                if settings.news_api_key
+                else settings.news_url
+            )
             self.live_tv = settings.live_tv_url
             print(self.news_url)
         except Exception as error:
@@ -61,7 +66,7 @@ class TalkyTrend:
         try:
             signals = []
             table = PrettyTable()
-            table.field_names = ["   Asset  ","   4h  "]
+            table.field_names = ["Asset","4h"]
             for asset in self.assets:
                 current_signal = await self.fetch_analysis(
                     asset_id=asset["id"],
@@ -78,16 +83,18 @@ class TalkyTrend:
                     self.update_signal(asset["id"], asset["interval"], current_signal)
                     table.add_row([asset["id"], current_signal])
                     signals.append(signal_item)
-            table.set_style(MARKDOWN)
 
-            return table.get_string()
+            return table.get_html_string()
         except Exception as error:
             self.logger.error("check_signal %s", error)
             return []
 
     def is_new_signal(self, asset_id, interval, current_signal):
         if self.asset_signals.get(asset_id):
-            if self.asset_signals[asset_id].get(interval) and current_signal != self.asset_signals[asset_id][interval]:
+            if (
+                self.asset_signals[asset_id].get(interval)
+                and current_signal != self.asset_signals[asset_id][interval]
+            ):
                 self.asset_signals[asset_id][interval] = current_signal
                 return True
         else:
@@ -106,7 +113,10 @@ class TalkyTrend:
             return [event for event in data if event.get('date', '').startswith(today)]
 
         def is_usd_high_impact(event):
-            return event.get('impact') == 'High' and event.get('country') in {'USD', 'ALL'}
+            return (
+                event.get('impact') == 'High' and
+                event.get('country') in {'USD', 'ALL'}
+            )
 
         def is_all_high_impact(event):
             return event.get('impact') == 'High' and event.get('country') == 'ALL'
@@ -136,41 +146,62 @@ class TalkyTrend:
                 async with session.get(self.news_url, timeout=10) as response:
                     data = await response.json()
                     articles = data.get('articles', [])
-                    key_news = [{'title': article['title'], 'url': article['url']} for article in articles]
+                    key_news = [
+                        {'title': article['title'], 'url': article['url']}
+                        for article in articles
+                    ]
                     last_item = key_news[-1]
-                    return str(f"📰 <a href='{last_item['url']}'>{last_item['title']}</a>")
+                    return f"📰 <a href='{last_item['url']}'>{last_item['title']}</a>"
 
         except aiohttp.ClientError as error:
             self.logger.error("news %s", error)
             return None
 
+    async def fetch_key_feed(self):
+        try:
+            async with aiohttp.ClientSession() as session:
+                async with session.get(settings.news_feed, timeout=10) as response:
+                    data = (
+                        xmltodict.parse(await response.text())
+                        .get('rss')
+                        .get('channel')['item'][0]
+                    )
+                    title = data['title']
+                    link = data['link']
+                    return f"📰 <a href='{link}'>{title}</a>"
+        except aiohttp.ClientError as error:
+            self.logger.error("news %s", error)
+            return None
+
+
     async def check_fomc(self):
         event_dates = settings.fomc_decision_date
         current_date = date.today().isoformat()
         return any(event.startswith(current_date) for event in event_dates)
+     
+    async def allow_scanning(self, enable=True):
+        return bool(enable)
 
     async def scanner(self):
-        while True:
+        while await self.allow_scanning():
             try:
                 if settings.enable_events:
-                    key_events = await self.fetch_key_events()
-                    if key_events is not None:
-                        yield key_events
+                    if await self.fetch_key_events() is not None:
+                        yield await self.fetch_key_events()
                 if settings.enable_news:
-                    key_news = await self.fetch_key_news()
-                    if key_news is not None:
-                        yield key_news
-
+                    if await self.fetch_key_news() is not None:
+                        yield await self.fetch_key_news()
+                if settings.enable_feed:
+                    if await self.fetch_key_feed() is not None:
+                        yield await self.fetch_key_feed()
                 if settings.enable_signals:
-                    signals = await self.check_signal()
-                    if signals is not None:
-                        yield signals
+                    if await self.check_signal() is not None:
+                        yield await self.check_signal()
+
+                await asyncio.sleep(settings.scanner_frequency)
 
             except Exception as error:
-                print(error)
                 raise error
-
-            await asyncio.sleep(settings.scanner_frequency)
 
     async def get_info(self):
         return f"{__class__.__name__} {__version__}\n"
