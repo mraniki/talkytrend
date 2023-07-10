@@ -179,11 +179,11 @@ class TalkyTrend:
         current_date = date.today().isoformat()
         return any(event.startswith(current_date) for event in event_dates)
      
-    async def stop_scanning(self, disable=False):
-        return bool(disable)
+    async def allow_scanning(self, enable=True):
+        return bool(enable)
 
     async def scanner(self):
-        while await self.stop_scanning():
+        while await self.allow_scanning():
             try:
                 if settings.enable_events:
                     if await self.fetch_key_events() is not None:
