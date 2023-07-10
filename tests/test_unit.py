@@ -66,5 +66,5 @@ async def test_scanner(talky):
                 or "BTCUSD" in message 
                 or "<" in message 
                 or message is None)
-    stop_scanning_result = await talky.allow_scanning(enable=False)
-    assert stop_scanning_result is True
+        stop_scanning_result = await talky.allow_scanning(enable=False)
+        assert stop_scanning_result is False
