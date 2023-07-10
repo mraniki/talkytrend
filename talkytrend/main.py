@@ -210,7 +210,7 @@ class TalkyTrend:
                 raise error
 
             await asyncio.sleep(settings.scanner_frequency)
-            scanning = not await stop_scanning()
+            scanning = not await self.stop_scanning()
 
     async def get_info(self):
         return f"{__class__.__name__} {__version__}\n"
