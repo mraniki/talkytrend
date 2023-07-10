@@ -83,8 +83,8 @@ class TalkyTrend:
                     self.update_signal(asset["id"], asset["interval"], current_signal)
                     table.add_row([asset["id"], current_signal])
                     signals.append(signal_item)
-
-            return table.get_html_string()
+            return table.get_string()
+            # return table.get_html_string()
         except Exception as error:
             self.logger.error("check_signal %s", error)
             return []
