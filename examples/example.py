@@ -7,7 +7,7 @@ import asyncio
 
 import uvicorn
 from fastapi import FastAPI
-from talkytrend import TalkyTrend, __version__
+from talkytrend import TalkyTrend
 
 # logging.basicConfig(
 #     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
@@ -39,7 +39,8 @@ async def main():
     #         print("scanner:\n", message)
             #💬 Core PPI m/m
             #⏰ 2023-06-14T08:30:00-04:00
-            #{'title': "Bud Light loses its title as America's top-selling beer", 'url': 'https://edition.cnn.com/2023/06/14/business/bud-light-modelo-top-selling-may-sales/index.html'}
+            #{'title': "Bud Light loses its title as America's top-selling beer",
+            #  'url': 'https://edition.cnn.com/2023/06/14/business/bud-light-modelo-top-selling-may-sales/index.html'}
             # |    Asset   |    4h   |
             # |:----------:|:-------:|
             # |   EURUSD   |    ⏫   |
