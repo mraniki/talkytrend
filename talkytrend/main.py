@@ -211,11 +211,11 @@ class TalkyTrend:
                     if signals is not None:
                         yield signals
 
+                await asyncio.sleep(settings.scanner_frequency)
+
             except Exception as error:
                 print(error)
                 raise error
-
-            await asyncio.sleep(settings.scanner_frequency)
 
     async def get_info(self):
         return f"{__class__.__name__} {__version__}\n"
