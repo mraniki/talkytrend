@@ -2,6 +2,64 @@
 
 <!--next-version-placeholder-->
 
+## v1.7.0 (2023-07-10)
+
+### Feature
+
+* :sparkles: Added  stop_scanning method and test_unit.py ([`32f97b6`](https://github.com/mraniki/talkytrend/commit/32f97b6e92ec87523597d17dfd99b6c79d4c836f))
+* ✨ 💄 Delivery of the trading view trend as html table + feeds news ([`36ba590`](https://github.com/mraniki/talkytrend/commit/36ba590d2f73db16cb26fede0cdeb94848fc9edd))
+
+### Fix
+
+* ✅ scanner test ([`0cc962b`](https://github.com/mraniki/talkytrend/commit/0cc962bdd65659a9a53399c95fe78e4e2d657191))
+* 🔧 testing ([`d0279dc`](https://github.com/mraniki/talkytrend/commit/d0279dc9ba891f92428b61b197269fbf3ff0d3da))
+* ✅  scanner update ([`a9ca19e`](https://github.com/mraniki/talkytrend/commit/a9ca19e7c972c40569b4a9621f3486005ab0c573))
+* ✅ ♻️  unit test loop break ([`1303c70`](https://github.com/mraniki/talkytrend/commit/1303c70d60ca9c34eeee571b50aac2b1d51ba3dd))
+* ✅  linter ([`d43b8f0`](https://github.com/mraniki/talkytrend/commit/d43b8f0856562322e072f6c76cf0cf4f7a7c82e3))
+* 🚨 linter ([`d59f931`](https://github.com/mraniki/talkytrend/commit/d59f93130b7f1c4badd63f0d438ace57137c892f))
+* ✅ unit test and example ([`d56d0bc`](https://github.com/mraniki/talkytrend/commit/d56d0bc83b903f452524cfe9dbb3ed12303886c0))
+* ✅  increase test unit ([`2b6a24a`](https://github.com/mraniki/talkytrend/commit/2b6a24aa047d76b153ddbc5d098f995449b3af32))
+* ♻️ Reinforce the scanner stop capability ([`b4aed6d`](https://github.com/mraniki/talkytrend/commit/b4aed6d180e7c201f06482f22ebfdf951fdfb866))
+* 🐛 updating the scanning freq in the try except and fix the test ([`d066b83`](https://github.com/mraniki/talkytrend/commit/d066b83e2f084a010a643e3fef8899c61913cc35))
+* ♻️ self scanning cleanup ([`856368f`](https://github.com/mraniki/talkytrend/commit/856368fd41b52531d5c2e54247c70ef8cd5fdc99))
+* ♻️ self.scanning attribute ([`2db5b0d`](https://github.com/mraniki/talkytrend/commit/2db5b0d463b74339d3dfbb6d8f6884fdd0bc1218))
+* ✅ ([`440f0b7`](https://github.com/mraniki/talkytrend/commit/440f0b7577088ef923acd313423b565e12db8351))
+* ✅  improve the test scanner ([`4d7442c`](https://github.com/mraniki/talkytrend/commit/4d7442cc50c255466363fc3139b21885e6439226))
+* ✅  test update ([`eb54f74`](https://github.com/mraniki/talkytrend/commit/eb54f74fa9bc2a349d67f9a6f62899b855abe908))
+* 🔧  setting update ([`ad37f98`](https://github.com/mraniki/talkytrend/commit/ad37f98500952733992afde65db9036775403666))
+* 🔧 settings updated for frequency ([`401567a`](https://github.com/mraniki/talkytrend/commit/401567a10449287cba613ac913ff8f6bcf0eae52))
+* ✅  for news ([`7387e31`](https://github.com/mraniki/talkytrend/commit/7387e31897b1427fa70392a3eb15026311842a11))
+* :rotating_light: linter ([`afa8591`](https://github.com/mraniki/talkytrend/commit/afa8591c3427ffa68a7bdcdb69b670117b5313b0))
+* :rotating_light: linter ([`20642eb`](https://github.com/mraniki/talkytrend/commit/20642ebb13392b918091a190594f1ca09c14e23b))
+* :white_check_mark:  unit test for scanner ([`7c2ba5b`](https://github.com/mraniki/talkytrend/commit/7c2ba5b866dbc339010d8e47fc23cd993473f0f8))
+* ✅ ([`450f630`](https://github.com/mraniki/talkytrend/commit/450f630c8bc77d3abde2790600385c1f423034b3))
+* ✅ scanner unit test ([`c50b973`](https://github.com/mraniki/talkytrend/commit/c50b9730c0a244fd4a2db713ddf0210814206fbe))
+* 🚨  linter cleanup ([`089706f`](https://github.com/mraniki/talkytrend/commit/089706f3675b1f741e578cc0dda5c1c2259bc848))
+* ♻️  xmltodict ([`11d0c2c`](https://github.com/mraniki/talkytrend/commit/11d0c2c34085750d97de58e5100b1ffe65a9776e))
+* ✅ added test timeout ([`829a8cc`](https://github.com/mraniki/talkytrend/commit/829a8cc810a5dbbb028957b8cf68d20cc16ad872))
+* ✅  unit test case update ([`9abc0a9`](https://github.com/mraniki/talkytrend/commit/9abc0a912e631454882f5d8096a76d20e2748c05))
+* 🐛 xmltodict version issue ([`26403a7`](https://github.com/mraniki/talkytrend/commit/26403a705cf20cab41d96865605d82272c95fcb2))
+* ✅  added unit test ([`5d85c42`](https://github.com/mraniki/talkytrend/commit/5d85c426a8775809a6f5f5a57c6ae767836e880c))
+* 🔒 fix the xml security issue by parsing with dict instead. ([`60fb19a`](https://github.com/mraniki/talkytrend/commit/60fb19a5c3d22ee262907c211a3cf89355448590))
+* Update README.md ([`b2bbbdb`](https://github.com/mraniki/talkytrend/commit/b2bbbdbce68a9846db6324b25a372a6c6736051b))
+* 🔥 removing test ([`7cf199a`](https://github.com/mraniki/talkytrend/commit/7cf199a40a296981591807e4a74dc17ae0eadaa2))
+* :memo:  Update Requirements ([`006c5fb`](https://github.com/mraniki/talkytrend/commit/006c5fb31434191039dedb82d6b14ff16ccafea0))
+* :memo: pyproject doc related update ([`a6ced18`](https://github.com/mraniki/talkytrend/commit/a6ced18ac8cba70f7fc12e962585bef748723d94))
+* :memo: readmydocs updated config ([`84035c9`](https://github.com/mraniki/talkytrend/commit/84035c9ae64942119b2c27b7921811ba79d1ec3b))
+* 📝 readmydocs updated config ([`a676ea4`](https://github.com/mraniki/talkytrend/commit/a676ea44de87bbd2b79d83970649ae9c29369157))
+
+### Other
+
+* Merge pull request #66 from mraniki/dev ([`6d81cb4`](https://github.com/mraniki/talkytrend/commit/6d81cb458e25ed19064326d4fec246ca5f7726ac))
+* Merge branch 'main' into dev ([`e99c05e`](https://github.com/mraniki/talkytrend/commit/e99c05e2c4fbba9eaaf4731d3e8cac5053a3475e))
+* Delete poetry.lock ([`5def6c6`](https://github.com/mraniki/talkytrend/commit/5def6c608eca1b51f7fe96f85a6ea405c7e157a5))
+* :private: defusedxml ([`8cb807b`](https://github.com/mraniki/talkytrend/commit/8cb807bffca8167641e66c3fa536068665a8d272))
+* Merge pull request #67 from mraniki/sourcery/dev ([`6aaada6`](https://github.com/mraniki/talkytrend/commit/6aaada6a81c351946028e34f9c18610fce2c4573))
+* 'Refactored by Sourcery' ([`58961df`](https://github.com/mraniki/talkytrend/commit/58961dff715fa6e2e4229860bd42db6db1822bfd))
+* Merge pull request #65 from mraniki/dev ([`98f1cb1`](https://github.com/mraniki/talkytrend/commit/98f1cb156c43fbad64358b913e6709acba3c82d1))
+* Updating Requirements ([`9f18870`](https://github.com/mraniki/talkytrend/commit/9f1887053f4f95c4f53a5751e4c4cee0d9754dbc))
+* Merge pull request #64 from mraniki/dev ([`9a3d209`](https://github.com/mraniki/talkytrend/commit/9a3d209a333cd50063ace30b31a3e5817cf37a1b))
+
 ## v1.6.0 (2023-07-07)
 
 ### Feature
