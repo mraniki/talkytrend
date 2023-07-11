@@ -2,6 +2,18 @@
 
 <!--next-version-placeholder-->
 
+## v1.7.2 (2023-07-11)
+
+### Fix
+
+* ⚡ improving for plugin capability ([`fb86d2b`](https://github.com/mraniki/talkytrend/commit/fb86d2b90dd5024a74bb29537bafcf3e2a83914d))
+
+### Other
+
+* Merge pull request #72 from mraniki/dev ([`f25626b`](https://github.com/mraniki/talkytrend/commit/f25626b75b8e7b1f30fbb05e01f661c5ee3b1928))
+* Merge pull request #73 from mraniki/sourcery/dev ([`79b861d`](https://github.com/mraniki/talkytrend/commit/79b861d9ae50e57131c2b0718b9c8b82cc7cc47a))
+* 'Refactored by Sourcery' ([`e50fecf`](https://github.com/mraniki/talkytrend/commit/e50fecfb10353eb63702321307c0a7a4c2a22e58))
+
 ## v1.7.1 (2023-07-10)
 
 ### Fix
