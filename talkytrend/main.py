@@ -204,4 +204,7 @@ class TalkyTrend:
                 raise error
 
     async def get_info(self):
-        return f"{__class__.__name__} {__version__}\n"
+        # help_message = f"📺:\n{settings.bot_prefix}{settings.bot_command_news}"
+        info_message = (__class__.__name__ + " "+  __version__
+            + "\n"+ f"📺: {__version__}")
+        return info_message
