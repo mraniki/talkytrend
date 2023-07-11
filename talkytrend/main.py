@@ -204,4 +204,4 @@ class TalkyTrend:
                 raise error
 
     async def get_info(self):
-        return f"{__class__.__name__} {__version__}\n"
+        return f"{__class__.__name__} {__version__}" + "\n" + f"📺: {__version__}"
