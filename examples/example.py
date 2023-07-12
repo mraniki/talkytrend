@@ -11,27 +11,11 @@ async def main():
     """Main"""
     talky = TalkyTrend()
     print(talky)
-
-    signal = await talky.check_signal()
-    print("signal:\n",signal) 
-    #  <table>
-    #     <thead>
-    #         <tr>
-    #             <th>Asset</th>
-    #             <th>4h</th>
-    #         </tr>
-    #     </thead>
-    #     <tbody>
-    #         <tr>
-    #             <td>EURUSD</td>
-    #             <td>🔼</td>
-    #         </tr>
-    #         <tr>
-    #             <td>BTCUSD</td>
-    #             <td>🔽</td>
-    #         </tr>
-    #     </tbody>
-    # </table>
+    # signal:
+    #  +--------+----+
+    # | Asset  | 4h |
+    # +--------+----+
+    # | EURUSD | 🔼 |
 
     feed = await talky.fetch_key_feed()
     print("feed:\n",feed)

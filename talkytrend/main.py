@@ -83,27 +83,38 @@ class TalkyTrend:
                     self.update_signal(asset["id"], asset["interval"], current_signal)
                     table.add_row([asset["id"], current_signal])
                     signals.append(signal_item)
-            return table.get_string()
-            # return table.get_html_string()
+                    return table.get_string()
         except Exception as error:
             self.logger.error("check_signal %s", error)
-            return []
 
     def is_new_signal(self, asset_id, interval, current_signal):
-        if self.asset_signals.get(asset_id):
-            if (
-                self.asset_signals[asset_id].get(interval)
-                and current_signal != self.asset_signals[asset_id][interval]
-            ):
-                self.asset_signals[asset_id][interval] = current_signal
-                return True
-        else:
-            self.asset_signals[asset_id] = {interval: current_signal}
+        # if self.asset_signals.get(asset_id):
+        #     if (
+        #         self.asset_signals[asset_id].get(interval)
+        #         and current_signal != self.asset_signals[asset_id][interval]
+        #     ):
+        #         self.asset_signals[asset_id][interval] = current_signal
+        #         return True
+        # else:
+        #     self.asset_signals[asset_id] = {interval: current_signal}
+        if asset_id not in self.asset_signals:
+            self.asset_signals[asset_id] = {}
+        if interval not in self.asset_signals[asset_id]:
+            self.asset_signals[asset_id][interval] = current_signal
+            return True
+        elif current_signal != self.asset_signals[asset_id][interval]:
+            self.asset_signals[asset_id][interval] = current_signal
             return True
         return False
 
     def update_signal(self, asset_id, interval, current_signal):
-        self.asset_signals[asset_id][interval] = current_signal
+        # self.asset_signals[asset_id][interval] = current_signal
+        if asset_id not in self.asset_signals:
+            self.asset_signals[asset_id] = {}
+        if interval not in self.asset_signals[asset_id]:
+            self.asset_signals[asset_id][interval] = current_signal
+        else:
+            self.asset_signals[asset_id][interval] = current_signal
 
     def get_asset_signals(self):
         return self.asset_signals
@@ -170,7 +181,7 @@ class TalkyTrend:
                     link = data['link']
                     return f"📰 <a href='{link}'>{title}</a>"
         except aiohttp.ClientError as error:
-            self.logger.error("news %s", error)
+            self.logger.error("feed %s", error)
             return None
 
 
