@@ -15,24 +15,21 @@ from talkytrend.config import settings
 
 class TalkyTrend:
     def __init__(self):
-        try:
-            self.logger = logging.getLogger("TalkyTrend")
-            self.enabled = settings.talkytrend_enabled
-            if not self.enabled:
-                return
-            self.mode = settings.talkytrend_mode
-            self.assets = settings.assets
-            self.asset_signals = {}
-            self.economic_calendar = settings.economic_calendar
-            self.news_url = (
-                f"{settings.news_url}{settings.news_api_key}"
-                if settings.news_api_key
-                else settings.news_url
-            )
-            self.live_tv = settings.live_tv_url
-            print(self.news_url)
-        except Exception as error:
-            self.logger.error("TalkyTrend init error %s", error)
+        self.logger = logging.getLogger("TalkyTrend")
+        self.enabled = settings.talkytrend_enabled
+        if not self.enabled:
+            return
+        self.mode = settings.talkytrend_mode
+        self.assets = settings.assets
+        self.asset_signals = {}
+        self.economic_calendar = settings.economic_calendar
+        self.news_url = (
+            f"{settings.news_url}{settings.news_api_key}"
+            if settings.news_api_key
+            else settings.news_url
+        )
+        self.live_tv = settings.live_tv_url
+
 
     async def fetch_analysis(
         self,
@@ -63,40 +60,28 @@ class TalkyTrend:
             self.logger.error("event %s", error)
 
     async def check_signal(self):
-        try:
-            signals = []
-            table = PrettyTable()
-            table.field_names = ["Asset","4h"]
-            for asset in self.assets:
-                current_signal = await self.fetch_analysis(
-                    asset_id=asset["id"],
-                    exchange=asset["exchange"],
-                    screener=asset["screener"],
-                    interval=asset["interval"]
-                )
-                if self.is_new_signal(asset["id"], asset["interval"], current_signal):
-                    signal_item = {
-                        "symbol": asset["id"],
-                        "interval": asset["interval"],
-                        "signal": current_signal
-                    }
-                    self.update_signal(asset["id"], asset["interval"], current_signal)
-                    table.add_row([asset["id"], current_signal])
-                    signals.append(signal_item)
-                    return table.get_string()
-        except Exception as error:
-            self.logger.error("check_signal %s", error)
+        signals = []
+        table = PrettyTable()
+        table.field_names = ["Asset","4h"]
+        for asset in self.assets:
+            current_signal = await self.fetch_analysis(
+                asset_id=asset["id"],
+                exchange=asset["exchange"],
+                screener=asset["screener"],
+                interval=asset["interval"]
+            )
+            if self.is_new_signal(asset["id"], asset["interval"], current_signal):
+                signal_item = {
+                    "symbol": asset["id"],
+                    "interval": asset["interval"],
+                    "signal": current_signal
+                }
+                self.update_signal(asset["id"], asset["interval"], current_signal)
+                table.add_row([asset["id"], current_signal])
+                signals.append(signal_item)
+                return table.get_string()
 
     def is_new_signal(self, asset_id, interval, current_signal):
-        # if self.asset_signals.get(asset_id):
-        #     if (
-        #         self.asset_signals[asset_id].get(interval)
-        #         and current_signal != self.asset_signals[asset_id][interval]
-        #     ):
-        #         self.asset_signals[asset_id][interval] = current_signal
-        #         return True
-        # else:
-        #     self.asset_signals[asset_id] = {interval: current_signal}
         if asset_id not in self.asset_signals:
             self.asset_signals[asset_id] = {}
         if interval not in self.asset_signals[asset_id]:
@@ -108,7 +93,6 @@ class TalkyTrend:
         return False
 
     def update_signal(self, asset_id, interval, current_signal):
-        # self.asset_signals[asset_id][interval] = current_signal
         if asset_id not in self.asset_signals:
             self.asset_signals[asset_id] = {}
         if interval not in self.asset_signals[asset_id]:
@@ -195,24 +179,21 @@ class TalkyTrend:
 
     async def scanner(self):
         while await self.allow_scanning():
-            try:
-                if settings.enable_events:
-                    if await self.fetch_key_events() is not None:
-                        yield await self.fetch_key_events()
-                if settings.enable_news:
-                    if await self.fetch_key_news() is not None:
-                        yield await self.fetch_key_news()
-                if settings.enable_feed:
-                    if await self.fetch_key_feed() is not None:
-                        yield await self.fetch_key_feed()
-                if settings.enable_signals:
-                    if await self.check_signal() is not None:
-                        yield await self.check_signal()
+            if settings.enable_events:
+                if await self.fetch_key_events() is not None:
+                    yield await self.fetch_key_events()
+            if settings.enable_news:
+                if await self.fetch_key_news() is not None:
+                    yield await self.fetch_key_news()
+            if settings.enable_feed:
+                if await self.fetch_key_feed() is not None:
+                    yield await self.fetch_key_feed()
+            if settings.enable_signals:
+                if await self.check_signal() is not None:
+                    yield await self.check_signal()
 
-                await asyncio.sleep(settings.scanner_frequency)
+            await asyncio.sleep(settings.scanner_frequency)
 
-            except Exception as error:
-                raise error
 
     async def get_info(self):
         return f"{__class__.__name__} {__version__}" + "\n" + f"📺: {__version__}"
