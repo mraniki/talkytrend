@@ -95,10 +95,7 @@ class TalkyTrend:
     def update_signal(self, asset_id, interval, current_signal):
         if asset_id not in self.asset_signals:
             self.asset_signals[asset_id] = {}
-        if interval not in self.asset_signals[asset_id]:
-            self.asset_signals[asset_id][interval] = current_signal
-        else:
-            self.asset_signals[asset_id][interval] = current_signal
+        self.asset_signals[asset_id][interval] = current_signal
 
     def get_asset_signals(self):
         return self.asset_signals
