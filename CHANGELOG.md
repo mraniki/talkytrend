@@ -2,6 +2,19 @@
 
 <!--next-version-placeholder-->
 
+## v1.7.3 (2023-07-12)
+
+### Fix
+
+* ✅ improve unit test ([`f025c49`](https://github.com/mraniki/talkytrend/commit/f025c4911e0e238b612d0f7ce36ca31ea8d8b2ed))
+* 🚑 check signal _hotfix ([`084582d`](https://github.com/mraniki/talkytrend/commit/084582deaa8d1890e7eb932d09b88eed836e23dc))
+
+### Other
+
+* Merge pull request #74 from mraniki/dev ([`0d818c4`](https://github.com/mraniki/talkytrend/commit/0d818c427aaa051783bdcf28fd5ac1c37ccd818f))
+* Merge pull request #75 from mraniki/sourcery/dev ([`9de9187`](https://github.com/mraniki/talkytrend/commit/9de9187f48238cf026dfb8945bb453f08bbe7121))
+* 'Refactored by Sourcery' ([`1ce1f56`](https://github.com/mraniki/talkytrend/commit/1ce1f56707dc33e4c30034b0379813f6ed26d4fa))
+
 ## v1.7.2 (2023-07-11)
 
 ### Fix
