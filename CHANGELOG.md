@@ -2,6 +2,16 @@
 
 <!--next-version-placeholder-->
 
+## v1.7.4 (2023-07-13)
+
+### Fix
+
+* :wrench: Financialjuice feed ([`98a6077`](https://github.com/mraniki/talkytrend/commit/98a60775a5ae314b6267d4a9f83a6c346205009b))
+
+### Other
+
+* Merge pull request #77 from mraniki/dev ([`8f3d043`](https://github.com/mraniki/talkytrend/commit/8f3d043aa18406d4e4208d6c1f5cc93bfe0a59c2))
+
 ## v1.7.3 (2023-07-12)
 
 ### Fix
