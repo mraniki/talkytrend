@@ -175,8 +175,8 @@ class TalkyTrend:
         return any(event.startswith(current_date) for event in event_dates)
 
     async def get_tv(self):
-        if self.trend.live_tv:
-            return f"📺: {self.self.live_tv}"
+        if self.live_tv:
+            return f"📺: {self.live_tv}"
 
     async def allow_scanning(self, enable=True):
         return bool(enable)
