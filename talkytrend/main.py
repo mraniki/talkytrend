@@ -176,7 +176,7 @@ class TalkyTrend:
 
     async def get_tv(self):
         if self.trend.live_tv:
-            return f"📺: {self.trend.live_tv}"
+            return f"📺: {self.self.live_tv}"
 
     async def allow_scanning(self, enable=True):
         return bool(enable)
