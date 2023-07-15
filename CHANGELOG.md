@@ -2,6 +2,23 @@
 
 <!--next-version-placeholder-->
 
+## v1.8.0 (2023-07-15)
+
+### Feature
+
+* ✨ adding get_tv function ([`eb0840e`](https://github.com/mraniki/talkytrend/commit/eb0840e3c3d751d24b96266e6188a698f9122fa2))
+
+### Fix
+
+* Update main.py ([`8fbe860`](https://github.com/mraniki/talkytrend/commit/8fbe8602be48be6f809ab27ce0a164ba439d0f59))
+* Update test_unit.py ([`9601ce8`](https://github.com/mraniki/talkytrend/commit/9601ce8a3347a294008718cdd53f10cf2825bec7))
+* Update main.py ([`9683b03`](https://github.com/mraniki/talkytrend/commit/9683b03f4a9da4c01b4fee9f193707c6d4024e54))
+* :art: help message ([`e817668`](https://github.com/mraniki/talkytrend/commit/e81766810746df80ed7b4318019708d3f3ae1b8c))
+
+### Other
+
+* Merge pull request #78 from mraniki/dev ([`26df11b`](https://github.com/mraniki/talkytrend/commit/26df11b372e6e654919afbb79c1d9307b934cd03))
+
 ## v1.7.4 (2023-07-13)
 
 ### Fix
