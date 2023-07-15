@@ -2,6 +2,16 @@
 
 <!--next-version-placeholder-->
 
+## v1.8.1 (2023-07-15)
+
+### Fix
+
+* 🐛 info help function ([`c4f7713`](https://github.com/mraniki/talkytrend/commit/c4f7713269bc3ed665cd9af2d4a21ddde0f5080e))
+
+### Other
+
+* Merge pull request #79 from mraniki/dev ([`4fd2e70`](https://github.com/mraniki/talkytrend/commit/4fd2e707cf9459941e64d647e2619bcb6ee9ffc5))
+
 ## v1.8.0 (2023-07-15)
 
 ### Feature
