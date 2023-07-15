@@ -193,4 +193,4 @@ class TalkyTrend:
 
 
     async def get_info(self):
-        return f"{__class__.__name__} {__version__}" + "\n" + f"📺: {__version__}"
+        return (f"ℹ️ {__class__.__name__} {__version__}\n")
