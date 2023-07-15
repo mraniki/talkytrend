@@ -56,7 +56,13 @@ async def test_check_fomc(talky):
     result = await talky.check_fomc()
     print(result)
     assert result is not None
- 
+
+@pytest.mark.asyncio
+async def test_get_tv(talky):
+    result = await talky.get_tv()
+    print(result)
+    assert result is not None
+
 
 @pytest.mark.asyncio
 async def test_scanner(talky):

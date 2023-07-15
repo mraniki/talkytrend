@@ -59,6 +59,10 @@ class TalkyTrend:
         except Exception as error:
             self.logger.error("event %s", error)
 
+
+    async def get_info(self):
+        return (f"ℹ️ {__class__.__name__} {__version__}\n")
+
     async def check_signal(self):
         signals = []
         table = PrettyTable()
@@ -165,12 +169,15 @@ class TalkyTrend:
             self.logger.error("feed %s", error)
             return None
 
-
     async def check_fomc(self):
         event_dates = settings.fomc_decision_date
         current_date = date.today().isoformat()
         return any(event.startswith(current_date) for event in event_dates)
-     
+
+    async def get_tv(self):
+        if self.live_tv:
+            return f"📺: {self.live_tv}"
+
     async def allow_scanning(self, enable=True):
         return bool(enable)
 
@@ -191,6 +198,3 @@ class TalkyTrend:
 
             await asyncio.sleep(settings.scanner_frequency)
 
-
-    async def get_info(self):
-        return f"{__class__.__name__} {__version__}" + "\n" + f"📺: {__version__}"
