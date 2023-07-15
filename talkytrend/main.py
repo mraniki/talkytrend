@@ -60,7 +60,7 @@ class TalkyTrend:
             self.logger.error("event %s", error)
 
 
-    async def get_info(self):
+    async def get_talkytrend_info(self):
         return (f"ℹ️ {__class__.__name__} {__version__}\n")
 
     async def check_signal(self):
