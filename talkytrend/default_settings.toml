@@ -43,7 +43,7 @@ news_feed = "https://www.dailyfx.com/feeds/market-news"
 ###      TESTING SETTINGS   ###
 ###############################
 # Any of those settings are used 
-# as part of the testing environment.
+# for testing purpose.
 # It can be ignored. 
 
 [testing]
