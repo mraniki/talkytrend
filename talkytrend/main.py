@@ -57,7 +57,7 @@ class TalkyTrend:
             else:
                 return "▶️"
         except Exception as error:
-            self.logger.error("event %s", error)
+            self.logger.warning("event %s", error)
 
 
     async def get_talkytrend_info(self):
@@ -150,7 +150,7 @@ class TalkyTrend:
                     return f"📰 <a href='{last_item['url']}'>{last_item['title']}</a>"
 
         except aiohttp.ClientError as error:
-            self.logger.error("news %s", error)
+            self.logger.warning("news %s", error)
             return None
 
     async def fetch_key_feed(self):
@@ -166,7 +166,7 @@ class TalkyTrend:
                     link = data['link']
                     return f"📰 <a href='{link}'>{title}</a>"
         except Exception as error:
-            self.logger.error("feed %s", error)
+            self.logger.warning("feed %s", error)
             return None
 
     async def check_fomc(self):
