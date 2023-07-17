@@ -157,14 +157,18 @@ class TalkyTrend:
         try:
             async with aiohttp.ClientSession() as session:
                 async with session.get(settings.news_feed, timeout=10) as response:
-                    data = (
-                        xmltodict.parse(await response.text())
-                        .get('rss')
-                        .get('channel')['item'][0]
-                    )
-                    title = data['title']
-                    link = data['link']
-                    return f"📰 <a href='{link}'>{title}</a>"
+                    try:
+                        data = (
+                            xmltodict.parse(await response.text())
+                            .get('rss')
+                            .get('channel')['item'][0]
+                        )
+                        title = data['title']
+                        link = data['link']
+                        return f"📰 <a href='{link}'>{title}</a>"
+                    except xml.parsers.expat.ExpatError:
+                        self.logger.error("Invalid XML format")
+                        return None
         except aiohttp.ClientError as error:
             self.logger.error("feed %s", error)
             return None
