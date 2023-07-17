@@ -29,20 +29,28 @@ async def test_check_signal(talky):
     result = await talky.check_signal()
     print(result)
     assert result is not None
-    assert "4h" in result
+    assert "EURUSD" in result 
+
+@pytest.mark.asyncio
+async def test_interval_check_signal(talky):
+    print(talky)
+    result = await talky.check_signal(interval="1D")
+    print(result)
+    assert result is not None
+    assert "EURUSD" in result 
+
+@pytest.mark.asyncio
+async def test_invalid_interval_check_signal(talky):
+    print(talky)
+    result = await talky.check_signal(interval="3T")
+    print(result)
+    assert result is not None
     assert "EURUSD" in result 
 
 @pytest.mark.asyncio
 async def test_fetch_key_events(talky):
     result = await talky.fetch_key_events()
     assert result is None or isinstance(result, str)
-
-
-#@pytest.mark.asyncio
-#async def test_fetch_key_news(talky):
-#    result = await talky.fetch_key_news()
-#    print(result)
-#    assert result is not None
 
 @pytest.mark.asyncio
 async def test_fetch_key_feed(talky):
@@ -56,6 +64,7 @@ async def test_check_fomc(talky):
     result = await talky.check_fomc()
     print(result)
     assert result is not None
+    assert result is False
 
 @pytest.mark.asyncio
 async def test_get_tv(talky):
@@ -63,6 +72,13 @@ async def test_get_tv(talky):
     print(result)
     assert result is not None
 
+@pytest.mark.asyncio
+async def test_get_talkytrend_info(talky):
+    result = await talky.get_talkytrend_info()
+    print(result)
+    assert result is not None
+    assert "ℹ️" in result 
+    assert "TalkyTrend" in result 
 
 @pytest.mark.asyncio
 async def test_scanner(talky):

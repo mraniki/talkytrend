@@ -11,6 +11,9 @@ async def main():
     """Main"""
     talky = TalkyTrend()
     print(talky)
+
+    trend = await talky.check_signal()
+    print("trend:\n",trend)
     # signal:
     #  +--------+----+
     # | Asset  | 4h |
@@ -26,7 +29,7 @@ async def main():
     # 💬 Core PPI m/m
     # ⏰ 2023-06-14T08:30:00-04:00
     fomc_day = await talky.check_fomc()
-    print(fomc_day)
+    print("is it FOMC today:\n",fomc_day)
     #False
 
     async for message in talky.scanner():
