@@ -19,7 +19,6 @@ class TalkyTrend:
         self.enabled = settings.talkytrend_enabled
         if not self.enabled:
             return
-        self.mode = settings.talkytrend_mode
         self.assets = settings.assets
         self.asset_signals = {}
         self.economic_calendar = settings.economic_calendar
