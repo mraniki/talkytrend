@@ -40,10 +40,10 @@ enable_signals = true
 assets = [
     { id ="EURUSD", exchange='FX_IDC',screener="forex"},
     { id ="BTCUSD",exchange="BINANCE",screener="crypto"},
-    # { id ="GOLD",exchange="TVC",screener="cfd", interval = "4h"},
-    # { id ="USOIL",exchange="FX",screener="cfd", interval = "4h"},
-    # { id ="ETHUSD",exchange="BINANCE",screener="crypto", interval = "4h"},
-    #use https://tvdb.brianthe.dev/ to get details
+    # { id ="GOLD",exchange="TVC",screener="cfd"},
+    # { id ="USOIL",exchange="FX",screener="cfd"},
+    # { id ="ETHUSD",exchange="BINANCE",screener="crypto"},
+    # use https://tvdb.brianthe.dev/ to get details
 ]
 enable_events = true
 economic_calendar = "https://nfs.faireconomy.media/ff_calendar_thisweek.json"
