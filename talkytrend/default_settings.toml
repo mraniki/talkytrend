@@ -35,11 +35,12 @@ fomc_decision_date = ["2023-09-20","2023-11-01","2023-12-13"]
 enable_news = false
 news_url="https://gnews.io/api/v4/top-headlines?category=business&lang=en&max=2&apikey="
 news_api_key = ""
-enable_feed = true
-#news_feed="http://feeds.feedburner.com/zerohedge/feed"
-news_feed="https://www.financialjuice.com/feed.ashx?xy=rss"
 live_tv_url = "https://bloomberg.com/media-manifest/streams/us.m3u8"
-
+enable_feed = true
+news_feed = "https://www.dailyfx.com/feeds/market-news"
+#news_feed="http://feeds.feedburner.com/zerohedge/feed"
+# news_feed="https://www.financialjuice.com/feed.ashx?xy=rss"
+# https://www.reutersagency.com/feed/?taxonomy=best-sectors&post_type=best
 
 
 [testing]
@@ -60,5 +61,5 @@ enable_news = false
 news_url="https://gnews.io/api/v4/top-headlines?category=business&lang=en&country=us&max=2&apikey="
 news_api_key = ""
 enable_feed = true
-news_feed="https://www.financialjuice.com/feed.ashx?xy=rss"
+news_feed = "http://feeds.feedburner.com/zerohedge/feed/"
 live_tv_url = "https://bloomberg.com/media-manifest/streams/us.m3u8"

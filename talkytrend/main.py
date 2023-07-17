@@ -166,7 +166,7 @@ class TalkyTrend:
                     link = data['link']
                     return f"📰 <a href='{link}'>{title}</a>"
         except Exception as error:
-            self.logger.error("event %s", error)
+            self.logger.error("feed %s", error)
             return None
 
     async def check_fomc(self):
