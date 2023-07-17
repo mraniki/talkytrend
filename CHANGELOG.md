@@ -2,6 +2,17 @@
 
 <!--next-version-placeholder-->
 
+## v1.8.2 (2023-07-17)
+
+### Fix
+
+* 🥅 incorrect xml ([`056b996`](https://github.com/mraniki/talkytrend/commit/056b996a82e2f56e5117ba99271a0c9ece3f27e6))
+* 🐛  error handling in case feed is not valid xml ([`c616e36`](https://github.com/mraniki/talkytrend/commit/c616e36f2b179c5016c074b3aff2141db69e0443))
+
+### Other
+
+* Merge pull request #80 from mraniki/dev ([`be9f057`](https://github.com/mraniki/talkytrend/commit/be9f057b4cb55f959b12ed9077590e1292ae5fc5))
+
 ## v1.8.1 (2023-07-15)
 
 ### Fix
