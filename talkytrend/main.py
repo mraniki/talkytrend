@@ -165,8 +165,8 @@ class TalkyTrend:
                     title = data['title']
                     link = data['link']
                     return f"📰 <a href='{link}'>{title}</a>"
-        except aiohttp.ClientError as error:
-            self.logger.error("feed %s", error)
+        except Exception as error:
+            self.logger.error("event %s", error)
             return None
 
     async def check_fomc(self):
