@@ -15,10 +15,7 @@
 [default]
 VALUE = "On Default"
 talkytrend_enabled = true
-talkytrend_mode = "scanner"
-talkytrend_scanner = true
-talkytrend_scheduler = false
-scanner_frequency = 86400
+scanner_frequency = 7200
 enable_signals = true
 assets = [
     { id ="EURUSD", exchange='FX_IDC',screener="forex"},
@@ -27,10 +24,10 @@ assets = [
 enable_events = true
 economic_calendar = "https://nfs.faireconomy.media/ff_calendar_thisweek.json"
 fomc_decision_date = ["2023-09-20","2023-11-01","2023-12-13"]
+live_tv_url = "https://bloomberg.com/media-manifest/streams/us.m3u8"
 enable_news = false
 news_url="https://gnews.io/api/v4/top-headlines?category=business&lang=en&max=2&apikey="
 news_api_key = ""
-live_tv_url = "https://bloomberg.com/media-manifest/streams/us.m3u8"
 enable_feed = true
 news_feed = "https://www.dailyfx.com/feeds/market-news"
 
@@ -38,9 +35,6 @@ news_feed = "https://www.dailyfx.com/feeds/market-news"
 [testing]
 VALUE = "On Testing"
 talkytrend_enabled = true
-talkytrend_mode = "scanner"
-talkytrend_scanner = false
-talkytrend_scheduler = false
 scanner_frequency = 2
 enable_signals = true
 assets = [
