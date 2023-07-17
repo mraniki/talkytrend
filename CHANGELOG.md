@@ -2,6 +2,16 @@
 
 <!--next-version-placeholder-->
 
+## v1.8.3 (2023-07-17)
+
+### Fix
+
+* ⬆️(deps): update dependency python-semantic-release to v8 ([`ea8dac5`](https://github.com/mraniki/talkytrend/commit/ea8dac5cb04d0e8bd750ddaa5ad0a85276971d2a))
+
+### Other
+
+* Merge pull request #81 from mraniki/renovate/python-semantic-release-8.x ([`b0bbad4`](https://github.com/mraniki/talkytrend/commit/b0bbad49ef39a4e8c2f1b4776dcaad65881ea946))
+
 ## v1.8.2 (2023-07-17)
 
 ### Fix
