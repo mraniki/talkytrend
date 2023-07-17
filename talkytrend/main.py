@@ -30,6 +30,8 @@ class TalkyTrend:
         )
         self.live_tv = settings.live_tv_url
 
+    async def get_talkytrend_info(self):
+        return (f"ℹ️ {__class__.__name__} {__version__}\n")
 
     async def fetch_analysis(
         self,
@@ -59,34 +61,26 @@ class TalkyTrend:
         except Exception as error:
             self.logger.warning("event %s", error)
 
-
-    async def get_talkytrend_info(self):
-        return (f"ℹ️ {__class__.__name__} {__version__}\n")
-
-    async def check_signal(self):
+    async def check_signal(self, interval="4h"):
         signals = []
         table = PrettyTable()
-        table.field_names = ["Asset", "Interval", "Signal"]
+        table.field_names = [" Trend ", interval]
 
         for asset in self.assets:
             current_signal = await self.fetch_analysis(
                 asset_id=asset["id"],
                 exchange=asset["exchange"],
                 screener=asset["screener"],
-                interval=asset["interval"]
+                interval=interval
             )
-
             if current_signal:
                 signal_item = {
                     "symbol": asset["id"],
-                    "interval": asset["interval"],
+                    "interval": interval,
                     "signal": current_signal
                 }
-                table.add_row([asset["id"], asset["interval"], current_signal])
+                table.add_row([asset["id"], current_signal])
                 signals.append(signal_item)
-
-        if not signals:
-            table.add_row(["No signals found", "-", "-"])
 
         return table.get_string()
 
@@ -122,23 +116,6 @@ class TalkyTrend:
                         return format_event(event)
         return None
 
-    async def fetch_key_news(self):
-        try:
-            async with aiohttp.ClientSession() as session:
-                async with session.get(self.news_url, timeout=10) as response:
-                    data = await response.json()
-                    articles = data.get('articles', [])
-                    key_news = [
-                        {'title': article['title'], 'url': article['url']}
-                        for article in articles
-                    ]
-                    last_item = key_news[-1]
-                    return f"📰 <a href='{last_item['url']}'>{last_item['title']}</a>"
-
-        except aiohttp.ClientError as error:
-            self.logger.warning("news %s", error)
-            return None
-
     async def fetch_key_feed(self):
         try:
             async with aiohttp.ClientSession() as session:
@@ -154,6 +131,23 @@ class TalkyTrend:
         except Exception as error:
             self.logger.warning("feed %s", error)
             return None
+
+    # async def fetch_key_news(self):
+    #     try:
+    #         async with aiohttp.ClientSession() as session:
+    #             async with session.get(self.news_url, timeout=10) as response:
+    #                 data = await response.json()
+    #                 articles = data.get('articles', [])
+    #                 key_news = [
+    #                     {'title': article['title'], 'url': article['url']}
+    #                     for article in articles
+    #                 ]
+    #                 last_item = key_news[-1]
+    #                 return f"📰 <a href='{last_item['url']}'>{last_item['title']}</a>"
+
+    #     except aiohttp.ClientError as error:
+    #         self.logger.warning("news %s", error)
+    #         return None
 
     async def check_fomc(self):
         event_dates = settings.fomc_decision_date
@@ -172,9 +166,9 @@ class TalkyTrend:
             if settings.enable_events:
                 if await self.fetch_key_events() is not None:
                     yield await self.fetch_key_events()
-            if settings.enable_news:
-                if await self.fetch_key_news() is not None:
-                    yield await self.fetch_key_news()
+            # if settings.enable_news:
+            #     if await self.fetch_key_news() is not None:
+            #         yield await self.fetch_key_news()
             if settings.enable_feed:
                 if await self.fetch_key_feed() is not None:
                     yield await self.fetch_key_feed()
@@ -183,4 +177,3 @@ class TalkyTrend:
                     yield await self.check_signal()
 
             await asyncio.sleep(settings.scanner_frequency)
-

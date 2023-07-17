@@ -31,27 +31,27 @@ prettytable = "^3.8.0"
 alphavantage_api_client = "^2.2.2"
 xmltodict = "*"
 
-[tool.poetry.dev-dependencies]
+[tool.poetry.group.dev.dependencies]
 python-semantic-release = "^8.0.0"
+ruff = "^0.0.278"
+
+[tool.ruff]
+# select = [
+#   "E",  # pycodestyle
+#   "F",  # pyflakes
+#   "I",  # isort
+# ]
+exclude = [
+  ".github/*",
+  "docs/*",
+]
+ignore = ["E401"]
 
 [tool.poetry.group.test.dependencies]
 pytest = "^7.0"
 pytest-cov = "^4.1"
 pytest-asyncio = "^0.21.0"
 pytest-mock = "^3.11.1"
-
-[tool.poetry.group.docs]
-optional = true
-
-[tool.poetry.group.docs.dependencies]
-sphinx = "^7.0.0"
-sphinx_bootstrap_theme = "^0.8.1"
-sphinx-autoapi = "^2.1.1"
-sphinx-copybutton= "^0.5.2"
-myst-parser = "^2.0.0"
-sphinx-notfound-page = "^0.8.3"
-sphinxext-remoteliteralinclude = "^0.4.0"
-sphinx-togglebutton = "*"
 
 [tool.pytest.ini_options]
 pythonpath = "."
@@ -67,6 +67,19 @@ omit = [
     "docs/*",
     "*/config.py"
 ]
+
+[tool.poetry.group.docs]
+optional = true
+
+[tool.poetry.group.docs.dependencies]
+sphinx = "^7.0.0"
+sphinx_bootstrap_theme = "^0.8.1"
+sphinx-autoapi = "^2.1.1"
+sphinx-copybutton= "^0.5.2"
+myst-parser = "^2.0.0"
+sphinx-notfound-page = "^0.8.3"
+sphinxext-remoteliteralinclude = "^0.4.0"
+sphinx-togglebutton = "*"
 
 [tool.semantic_release]
 version_variable = ["pyproject.toml:version","talkytrend/__init__.py:__version__"]
