@@ -2,6 +2,25 @@
 
 <!--next-version-placeholder-->
 
+## v1.9.0 (2023-07-17)
+
+### Feature
+
+* ✨ updated check_signal function  and 🚨 updated ruff ([`e2b6899`](https://github.com/mraniki/talkytrend/commit/e2b68992624615847c6e79f8f941bb47b161fd6a))
+
+### Fix
+
+* :wrench: cleanup ([`ac959c2`](https://github.com/mraniki/talkytrend/commit/ac959c228deb1dfaab4912c46f3f515ca9a56c13))
+* 🔧 cleanup ([`7492e14`](https://github.com/mraniki/talkytrend/commit/7492e14eb0223e64a5ed7cc2739c077f59a9382b))
+* 🔧 updating config ([`9acf690`](https://github.com/mraniki/talkytrend/commit/9acf690df8b53f1a8d84db909b247c519bb7fa8a))
+* ⚡ simplify the check signal ([`8f99455`](https://github.com/mraniki/talkytrend/commit/8f99455f02dfee776e28113fb67ca017e9031296))
+* ⚡ warning instead of error ([`5141295`](https://github.com/mraniki/talkytrend/commit/514129507cc6e4c08439c557ae95e0243a085a16))
+* 🔧 feed config update ([`1f579e2`](https://github.com/mraniki/talkytrend/commit/1f579e29e3572853a1951a70dc4e5460d3066cf8))
+
+### Other
+
+* Merge pull request #82 from mraniki/dev ([`b363075`](https://github.com/mraniki/talkytrend/commit/b36307549288f47353721f10cea5308c2a55fe75))
+
 ## v1.8.3 (2023-07-17)
 
 ### Fix
