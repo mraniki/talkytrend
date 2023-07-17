@@ -32,7 +32,7 @@ alphavantage_api_client = "^2.2.2"
 xmltodict = "*"
 
 [tool.poetry.dev-dependencies]
-python-semantic-release = "^7.34.3"
+python-semantic-release = "^8.0.0"
 
 [tool.poetry.group.test.dependencies]
 pytest = "^7.0"
