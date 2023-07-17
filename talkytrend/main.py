@@ -66,7 +66,8 @@ class TalkyTrend:
     async def check_signal(self):
         signals = []
         table = PrettyTable()
-        table.field_names = ["Asset","4h"]
+        table.field_names = ["Asset", "Interval", "Signal"]
+
         for asset in self.assets:
             current_signal = await self.fetch_analysis(
                 asset_id=asset["id"],
@@ -74,35 +75,20 @@ class TalkyTrend:
                 screener=asset["screener"],
                 interval=asset["interval"]
             )
-            if self.is_new_signal(asset["id"], asset["interval"], current_signal):
+
+            if current_signal:
                 signal_item = {
                     "symbol": asset["id"],
                     "interval": asset["interval"],
                     "signal": current_signal
                 }
-                self.update_signal(asset["id"], asset["interval"], current_signal)
-                table.add_row([asset["id"], current_signal])
+                table.add_row([asset["id"], asset["interval"], current_signal])
                 signals.append(signal_item)
-                return table.get_string()
 
-    def is_new_signal(self, asset_id, interval, current_signal):
-        if asset_id not in self.asset_signals:
-            self.asset_signals[asset_id] = {}
-        if interval not in self.asset_signals[asset_id]:
-            self.asset_signals[asset_id][interval] = current_signal
-            return True
-        elif current_signal != self.asset_signals[asset_id][interval]:
-            self.asset_signals[asset_id][interval] = current_signal
-            return True
-        return False
+        if not signals:
+            table.add_row(["No signals found", "-", "-"])
 
-    def update_signal(self, asset_id, interval, current_signal):
-        if asset_id not in self.asset_signals:
-            self.asset_signals[asset_id] = {}
-        self.asset_signals[asset_id][interval] = current_signal
-
-    def get_asset_signals(self):
-        return self.asset_signals
+        return table.get_string()
 
     async def fetch_key_events(self):
         def filter_events(data, today):

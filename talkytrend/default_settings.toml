@@ -23,7 +23,9 @@ scanner_frequency = 86400
 enable_signals = true
 assets = [
     { id ="EURUSD", exchange='FX_IDC',screener="forex", interval = "4h" },
+    { id ="EURUSD", exchange='FX_IDC',screener="forex", interval = "1D" },
     { id ="BTCUSD",exchange="BINANCE",screener="crypto", interval = "4h"},
+    { id ="BTCUSD",exchange="BINANCE",screener="crypto", interval = "1D"},
     # { id ="GOLD",exchange="TVC",screener="cfd", interval = "4h"},
     # { id ="USOIL",exchange="FX",screener="cfd", interval = "4h"},
     # { id ="ETHUSD",exchange="BINANCE",screener="crypto", interval = "4h"},
@@ -39,8 +41,7 @@ live_tv_url = "https://bloomberg.com/media-manifest/streams/us.m3u8"
 enable_feed = true
 news_feed = "https://www.dailyfx.com/feeds/market-news"
 #news_feed="http://feeds.feedburner.com/zerohedge/feed"
-# news_feed="https://www.financialjuice.com/feed.ashx?xy=rss"
-# https://www.reutersagency.com/feed/?taxonomy=best-sectors&post_type=best
+#news_feed="https://www.reutersagency.com/feed/?taxonomy=best-sectors&post_type=best"
 
 
 [testing]
@@ -52,7 +53,12 @@ talkytrend_scheduler = false
 scanner_frequency = 2
 enable_signals = true
 assets = [
+    { id ="EURUSD", exchange='FX_IDC',screener="forex", interval = "4h" },
     { id ="BTCUSD",exchange="BINANCE",screener="crypto", interval = "4h"},
+    # { id ="GOLD",exchange="TVC",screener="cfd", interval = "4h"},
+    # { id ="USOIL",exchange="FX",screener="cfd", interval = "4h"},
+    # { id ="ETHUSD",exchange="BINANCE",screener="crypto", interval = "4h"},
+    #use https://tvdb.brianthe.dev/ to get details
 ]
 enable_events = true
 economic_calendar = "https://nfs.faireconomy.media/ff_calendar_thisweek.json"
@@ -62,4 +68,5 @@ news_url="https://gnews.io/api/v4/top-headlines?category=business&lang=en&countr
 news_api_key = ""
 enable_feed = true
 news_feed = "http://feeds.feedburner.com/zerohedge/feed/"
+# news_feed="https://www.financialjuice.com/feed.ashx?xy=rss"
 live_tv_url = "https://bloomberg.com/media-manifest/streams/us.m3u8"
