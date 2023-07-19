@@ -84,6 +84,9 @@ class TalkyTrend:
 
         return table.get_string()
 
+    async def fetch_sentiment(self):
+        return None
+
     async def fetch_key_events(self):
         def filter_events(data, today):
             return [event for event in data if event.get('date', '') > today]
