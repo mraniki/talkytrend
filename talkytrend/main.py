@@ -4,7 +4,7 @@
 
 import asyncio
 import logging
-from datetime import date
+from datetime import date, datetime, timezone
 
 import aiohttp
 import xmltodict
@@ -88,7 +88,7 @@ class TalkyTrend:
 
     async def fetch_key_events(self):
         def filter_events(data, today):
-            return [event for event in data if event.get('date', '').startswith(today)]
+            return [event for event in data if event.get('date', '') > today]
 
         def is_usd_high_impact(event):
             return (
@@ -109,7 +109,7 @@ class TalkyTrend:
             async with session.get(self.economic_calendar, timeout=10) as response:
                 response.raise_for_status()
                 data = await response.json()
-                today = date.today().isoformat()
+                today = datetime.now().isoformat()
                 events = filter_events(data, today)
                 for event in events:
                     if is_usd_high_impact(event) or is_all_high_impact(event):
