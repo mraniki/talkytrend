@@ -3,8 +3,9 @@ talkytrend Unit Testing
 """
 
 import pytest
-from talkytrend.main import TalkyTrend
+
 from talkytrend.config import settings
+from talkytrend.main import TalkyTrend
 
 
 @pytest.fixture(scope="session", autouse=True)
