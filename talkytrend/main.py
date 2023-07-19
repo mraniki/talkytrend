@@ -34,6 +34,7 @@ class TalkyTrend:
     async def get_talkytrend_info(self):
         return (f"ℹ️ {__class__.__name__} {__version__}\n")
 
+
     async def fetch_analysis(
         self,
         asset_id,

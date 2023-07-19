@@ -26,14 +26,15 @@ packages = [
 python = "^3.10"
 dynaconf = "^3.1.12"
 aiohttp = "^3.8.4"
-tradingview_ta = "^3.3.0"
-prettytable = "^3.8.0"
-alphavantage_api_client = "^2.2.2"
 xmltodict = "*"
-
+prettytable = "^3.8.0"
+tradingview_ta = "^3.3.0"
+alphavantage_api_client = "^2.2.2"
+finnhub-python = "^2.4.18"
+twelvedata = "^1.2.12"
 
 [tool.poetry.group.dev.dependencies]
-python-semantic-release = "^8.0.1"
+python-semantic-release = "^8.0.2"
 ruff = "^0.0.278"
 
 [tool.ruff]

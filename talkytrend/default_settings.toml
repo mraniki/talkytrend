@@ -30,9 +30,9 @@ news_url="https://gnews.io/api/v4/top-headlines?category=business&lang=en&max=2&
 news_api_key = ""
 enable_feed = true
 news_feed = "https://www.dailyfx.com/feeds/market-news"
-
-
-
+finnhub_api_key=""
+alphavantage_api_key = "demo"
+twelvedata_api_key = ""
 
 
 
@@ -71,3 +71,6 @@ news_feed = "http://feeds.feedburner.com/zerohedge/feed/"
 # news_feed="https://www.financialjuice.com/feed.ashx?xy=rss"
 # news_feed = "https://www.dailyfx.com/feeds/market-news"
 #news_feed="https://www.reutersagency.com/feed/?taxonomy=best-sectors&post_type=best"
+finnhub_api_key= ""
+alphavantage_api_key = "demo"
+twelvedata_api_key = ""
