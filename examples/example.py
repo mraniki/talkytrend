@@ -3,9 +3,12 @@ Provides example for talkytrend
 """
 
 import asyncio
+
 import uvicorn
 from fastapi import FastAPI
+
 from talkytrend import TalkyTrend
+
 
 async def main():
     """Main"""

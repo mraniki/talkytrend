@@ -5,10 +5,12 @@
 import asyncio
 import logging
 from datetime import date
+
 import aiohttp
 import xmltodict
 from prettytable import PrettyTable
 from tradingview_ta import TA_Handler
+
 from talkytrend import __version__
 from talkytrend.config import settings
 
