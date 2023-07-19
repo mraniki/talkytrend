@@ -32,6 +32,20 @@ enable_feed = true
 news_feed = "https://www.dailyfx.com/feeds/market-news"
 
 
+
+
+
+
+
+
+
+###############################
+###      TESTING SETTINGS   ###
+###############################
+# Any of those settings are used 
+# for testing purpose.
+# It can be ignored. 
+
 [testing]
 VALUE = "On Testing"
 talkytrend_enabled = true
