@@ -22,7 +22,6 @@ class TalkyTrend:
         if not self.enabled:
             return
         self.assets = settings.assets
-        self.asset_signals = {}
         self.economic_calendar = settings.economic_calendar
         self.news_url = (
             f"{settings.news_url}{settings.news_api_key}"
@@ -33,7 +32,6 @@ class TalkyTrend:
 
     async def get_talkytrend_info(self):
         return (f"ℹ️ {__class__.__name__} {__version__}\n")
-
 
     async def fetch_analysis(
         self,
