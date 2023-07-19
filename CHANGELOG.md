@@ -2,6 +2,43 @@
 
 
 
+## v1.9.2 (2023-07-19)
+
+### Other
+
+* Merge pull request #92 from mraniki/dev
+
+Update Requirements ([`ace27b5`](https://github.com/mraniki/talkytrend/commit/ace27b5c0a1ef1d61e5ebbc45f71b5cb1a25f327))
+
+* Merge branch &#39;main&#39; into dev ([`5e26f2d`](https://github.com/mraniki/talkytrend/commit/5e26f2d84068ec73bb73c0194d3c72e726c4ddd6))
+
+* Merge branch &#39;main&#39; into dev ([`e36fbb6`](https://github.com/mraniki/talkytrend/commit/e36fbb613a99a5a28b8b5cb24c93b5041818ac5a))
+
+* Merge pull request #91 from mraniki/dev
+
+👷 CI Change test ([`64b95f9`](https://github.com/mraniki/talkytrend/commit/64b95f9ce6e859c439397d9b98b80fecaa218c2c))
+
+* Merge pull request #90 from mraniki/dev
+
+👷 CI Change testing CI update ([`ead25f3`](https://github.com/mraniki/talkytrend/commit/ead25f31ef56f4f25e2f0c10980213399e5d64bf))
+
+### Update
+
+* Update Requirements ([`d10f5e5`](https://github.com/mraniki/talkytrend/commit/d10f5e560012b10faa6476b3d3c697982ac40cb3))
+
+* Update Requirements ([`7355f77`](https://github.com/mraniki/talkytrend/commit/7355f77e7f98cd5bf7a84a9d544753288e0dacd3))
+
+* Update Requirements ([`7e94c8c`](https://github.com/mraniki/talkytrend/commit/7e94c8c6fe2768bb949bd6499ee74efcc059c397))
+
+* Update Requirements ([`2bee78a`](https://github.com/mraniki/talkytrend/commit/2bee78a916e12cf164621f4ac611c3c5e75cfa5e))
+
+### 👷
+
+* 👷 CI Change test ([`d2ec946`](https://github.com/mraniki/talkytrend/commit/d2ec94663e86eca799c8f7eb9e44d8980157ec6d))
+
+* 👷 CI Change testing CI update ([`8ab2d3f`](https://github.com/mraniki/talkytrend/commit/8ab2d3f1b46874e916065e3e8ea2edd3ab31f2c8))
+
+
 ## v1.9.1 (2023-07-19)
 
 ### Other
