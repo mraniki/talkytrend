@@ -8,12 +8,13 @@ from datetime import date, datetime, timezone
 
 import aiohttp
 import xmltodict
+import yfinance as yf
 from prettytable import PrettyTable
 from tradingview_ta import TA_Handler
 
 from talkytrend import __version__
 from talkytrend.config import settings
-import yfinance as yf
+
 
 class TalkyTrend:
     def __init__(self):
