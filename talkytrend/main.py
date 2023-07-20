@@ -29,13 +29,14 @@ class TalkyTrend:
             else settings.news_url
         )
         self.live_tv = settings.live_tv_url
+        self.commands = settings.talkytrend_commands
 
     async def get_talkytrend_info(self):
         return (f"ℹ️ TalkyTrend v{__version__}\n")
 
 
     async def get_talkytrend_help(self):
-        return (f"{self.talkytrend_commands}\n")
+        return (f"{self.commands}\n")
 
     async def get_info(self):
         try:
