@@ -101,8 +101,7 @@ class TalkyTrend:
 
     async def fetch_instrument_info(self, ticker_reference="MSFT"):
         ticker = yf.Ticker(ticker_reference)
-        news = ticker.news
-        if news:
+        if news := ticker.news:
             title = news[0].get("title")
             link = news[0].get("link")
             return f"{title} - {link}"
