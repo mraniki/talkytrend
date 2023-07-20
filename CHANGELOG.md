@@ -2,6 +2,27 @@
 
 
 
+## v1.10.0 (2023-07-20)
+
+### Other
+
+* Merge pull request #93 from mraniki/dev
+
+🔧  config alignment ([`6f84999`](https://github.com/mraniki/talkytrend/commit/6f849991895b005a1b4e5b22eca68c7b965f1b22))
+
+### ✅
+
+* ✅ unit test update ([`9c30cc7`](https://github.com/mraniki/talkytrend/commit/9c30cc7c7a9200b9f02be9a6fd8c5285034dd2e8))
+
+### 🔧
+
+* 🔧  config alignment ([`312c754`](https://github.com/mraniki/talkytrend/commit/312c754ae5b6072cf028bb2b8ff98875bdb40d5d))
+
+### 🥚
+
+* 🥚 adding command add module level ([`018f023`](https://github.com/mraniki/talkytrend/commit/018f023654af314732f03ac88642e35e7a928996))
+
+
 ## v1.9.2 (2023-07-19)
 
 ### Other
