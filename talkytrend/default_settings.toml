@@ -87,7 +87,7 @@ assets = [
 ]
 enable_events = true
 economic_calendar = "https://nfs.faireconomy.media/ff_calendar_thisweek.json"
-fomc_decision_date = ["2023-07-26","2023-09-20","2023-11-01","2023-12-13"]
+fomc_decision_date = ["2023-09-20","2023-11-01","2023-12-13"]
 live_tv_url = "https://bloomberg.com/media-manifest/streams/us.m3u8"
 enable_news = false
 news_url="https://gnews.io/api/v4/top-headlines?category=business&lang=en&country=us&max=2&apikey="
