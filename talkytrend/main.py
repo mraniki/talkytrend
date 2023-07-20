@@ -13,7 +13,7 @@ from tradingview_ta import TA_Handler
 
 from talkytrend import __version__
 from talkytrend.config import settings
-
+import yfinance as yf
 
 class TalkyTrend:
     def __init__(self):
@@ -98,8 +98,13 @@ class TalkyTrend:
 
         return table.get_string()
 
-    async def fetch_sentiment(self):
-        return None
+    async def fetch_instrument_info(self, ticker_reference="MSFT"):
+        ticker = yf.Ticker(ticker_reference)
+        news = ticker.news
+        if news:
+            title = news[0].get("title")
+            link = news[0].get("link")
+            return f"{title} - {link}"
 
     async def fetch_key_events(self):
         def filter_events(data, today):

@@ -15,6 +15,9 @@ async def main():
     talky = TalkyTrend()
     print(talky)
 
+    instrument_info = await talky.fetch_instrument_info()
+    print("instrument_info:\n",instrument_info)
+
     trend = await talky.check_signal()
     print("trend:\n",trend)
     # signal:
