@@ -31,11 +31,20 @@ class TalkyTrend:
         self.live_tv = settings.live_tv_url
 
     async def get_talkytrend_info(self):
-        return (f"ℹ️ {__class__.__name__} {__version__}\n")
+        return (f"ℹ️ TalkyTrend v{__version__}\n")
 
 
     async def get_talkytrend_help(self):
-        return ("🆘 /live /trend\n")
+        return (f"{self.talkytrend_commands}\n")
+
+    async def get_info(self):
+        try:
+            return (f"ℹ️ DexSwap v{__version__}\n"
+                    f"💱 {await self.get_name()}\n"
+                    f"🪪 {self.account_number}")
+        except Exception as error:
+            return error
+
 
     async def fetch_analysis(
         self,
