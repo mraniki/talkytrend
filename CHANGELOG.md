@@ -2,6 +2,13 @@
 
 
 
+## v1.10.1 (2023-07-22)
+
+### Update
+
+* Update pyproject.toml ([`9900de5`](https://github.com/mraniki/talkytrend/commit/9900de5e5566d38ff02de79c6bc4d07a24e22e55))
+
+
 ## v1.10.0 (2023-07-20)
 
 ### Other
