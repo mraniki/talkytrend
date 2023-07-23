@@ -24,11 +24,6 @@ class TalkyTrend:
             return
         self.assets = settings.assets
         self.economic_calendar = settings.economic_calendar
-        self.news_url = (
-            f"{settings.news_url}{settings.news_api_key}"
-            if settings.news_api_key
-            else settings.news_url
-        )
         self.live_tv = settings.live_tv_url
         self.commands = settings.talkytrend_commands
 
@@ -154,23 +149,6 @@ class TalkyTrend:
             self.logger.warning("feed %s", error)
             return None
 
-    # async def fetch_key_news(self):
-    #     try:
-    #         async with aiohttp.ClientSession() as session:
-    #             async with session.get(self.news_url, timeout=10) as response:
-    #                 data = await response.json()
-    #                 articles = data.get('articles', [])
-    #                 key_news = [
-    #                     {'title': article['title'], 'url': article['url']}
-    #                     for article in articles
-    #                 ]
-    #                 last_item = key_news[-1]
-    #                 return f"📰 <a href='{last_item['url']}'>{last_item['title']}</a>"
-
-    #     except aiohttp.ClientError as error:
-    #         self.logger.warning("news %s", error)
-    #         return None
-
     async def check_fomc(self):
         event_dates = settings.fomc_decision_date
         current_date = date.today().isoformat()
@@ -188,9 +166,6 @@ class TalkyTrend:
             if settings.enable_events:
                 if await self.fetch_key_events() is not None:
                     yield await self.fetch_key_events()
-            # if settings.enable_news:
-            #     if await self.fetch_key_news() is not None:
-            #         yield await self.fetch_key_news()
             if settings.enable_feed:
                 if await self.fetch_key_feed() is not None:
                     yield await self.fetch_key_feed()
