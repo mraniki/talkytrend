@@ -3,12 +3,14 @@
 """
 
 import asyncio
-import logging
 from datetime import date, datetime, timezone
 
 import aiohttp
 import xmltodict
 import yfinance as yf
+
+# import logging
+from loguru import logger
 from prettytable import PrettyTable
 from tradingview_ta import TA_Handler
 
@@ -18,7 +20,8 @@ from talkytrend.config import settings
 
 class TalkyTrend:
     def __init__(self):
-        self.logger = logging.getLogger("TalkyTrend")
+        self.logger = logger
+        # logging.getLogger("TalkyTrend")
         self.enabled = settings.talkytrend_enabled
         if not self.enabled:
             return
@@ -69,7 +72,7 @@ class TalkyTrend:
             else:
                 return "▶️"
         except Exception as error:
-            self.logger.warning("event %s", error)
+            self.logger.warning("event {}", error)
 
     async def check_signal(self, interval="4h"):
         signals = []
@@ -146,7 +149,7 @@ class TalkyTrend:
                     link = data['link']
                     return f"📰 <a href='{link}'>{title}</a>"
         except Exception as error:
-            self.logger.warning("feed %s", error)
+            self.logger.warning("feed {}", error)
             return None
 
     async def check_fomc(self):
