@@ -3,11 +3,14 @@
 """
 
 import asyncio
-import logging
 from datetime import date, datetime, timezone
 
 import aiohttp
 import xmltodict
+import yfinance as yf
+
+# import logging
+from loguru import logger
 from prettytable import PrettyTable
 from tradingview_ta import TA_Handler
 
@@ -17,17 +20,13 @@ from talkytrend.config import settings
 
 class TalkyTrend:
     def __init__(self):
-        self.logger = logging.getLogger("TalkyTrend")
+        self.logger = logger
+        # logging.getLogger("TalkyTrend")
         self.enabled = settings.talkytrend_enabled
         if not self.enabled:
             return
         self.assets = settings.assets
         self.economic_calendar = settings.economic_calendar
-        self.news_url = (
-            f"{settings.news_url}{settings.news_api_key}"
-            if settings.news_api_key
-            else settings.news_url
-        )
         self.live_tv = settings.live_tv_url
         self.commands = settings.talkytrend_commands
 
@@ -73,7 +72,7 @@ class TalkyTrend:
             else:
                 return "▶️"
         except Exception as error:
-            self.logger.warning("event %s", error)
+            self.logger.warning("event {}", error)
 
     async def check_signal(self, interval="4h"):
         signals = []
@@ -98,8 +97,12 @@ class TalkyTrend:
 
         return table.get_string()
 
-    async def fetch_sentiment(self):
-        return None
+    async def fetch_instrument_info(self, ticker_reference="MSFT"):
+        ticker = yf.Ticker(ticker_reference)
+        if news := ticker.news:
+            title = news[0].get("title")
+            link = news[0].get("link")
+            return f"{title} - {link}"
 
     async def fetch_key_events(self):
         def filter_events(data, today):
@@ -146,25 +149,8 @@ class TalkyTrend:
                     link = data['link']
                     return f"📰 <a href='{link}'>{title}</a>"
         except Exception as error:
-            self.logger.warning("feed %s", error)
+            self.logger.warning("feed {}", error)
             return None
-
-    # async def fetch_key_news(self):
-    #     try:
-    #         async with aiohttp.ClientSession() as session:
-    #             async with session.get(self.news_url, timeout=10) as response:
-    #                 data = await response.json()
-    #                 articles = data.get('articles', [])
-    #                 key_news = [
-    #                     {'title': article['title'], 'url': article['url']}
-    #                     for article in articles
-    #                 ]
-    #                 last_item = key_news[-1]
-    #                 return f"📰 <a href='{last_item['url']}'>{last_item['title']}</a>"
-
-    #     except aiohttp.ClientError as error:
-    #         self.logger.warning("news %s", error)
-    #         return None
 
     async def check_fomc(self):
         event_dates = settings.fomc_decision_date
@@ -183,9 +169,6 @@ class TalkyTrend:
             if settings.enable_events:
                 if await self.fetch_key_events() is not None:
                     yield await self.fetch_key_events()
-            # if settings.enable_news:
-            #     if await self.fetch_key_news() is not None:
-            #         yield await self.fetch_key_news()
             if settings.enable_feed:
                 if await self.fetch_key_feed() is not None:
                     yield await self.fetch_key_feed()

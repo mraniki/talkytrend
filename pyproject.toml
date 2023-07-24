@@ -25,13 +25,12 @@ packages = [
 [tool.poetry.dependencies]
 python = "^3.10"
 dynaconf = "^3.1.12"
+loguru = "^0.7.0"
 aiohttp = "^3.8.4"
 xmltodict = "*"
 prettytable = "^3.8.0"
 tradingview_ta = "^3.3.0"
-alphavantage_api_client = "^2.2.2"
-finnhub-python = "^2.4.18"
-twelvedata = "^1.2.12"
+yfinance = "^0.2.25"
 
 [tool.poetry.group.dev.dependencies]
 python-semantic-release = "^8.0.2"
