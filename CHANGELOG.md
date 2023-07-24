@@ -2,11 +2,58 @@
 
 
 
+## v1.11.0 (2023-07-24)
+
+### Other
+
+* Merge pull request #94 from mraniki/dev
+
+⚗️ experimenting yfinance ([`465ec23`](https://github.com/mraniki/talkytrend/commit/465ec237e277dd5c671e4bdd1e6c0c41a3e35f5d))
+
+* Merge branch &#39;main&#39; into dev ([`2e7cdeb`](https://github.com/mraniki/talkytrend/commit/2e7cdeb18d8195d23fc240e5edde457dee472c81))
+
+### Update
+
+* Update Requirements ([`93e73be`](https://github.com/mraniki/talkytrend/commit/93e73be3d484c3f6b17ff4b1ab91af894d980519))
+
+* Update Requirements ([`7cda2ef`](https://github.com/mraniki/talkytrend/commit/7cda2efa45a78e19677e5e8b40a972a415fa5d2c))
+
+### 🔥
+
+* 🔥  remove news until stabilize ([`b1b4fad`](https://github.com/mraniki/talkytrend/commit/b1b4fad27be0f58d3db3725ba2089d6b86415177))
+
+### 🥚
+
+* 🥚 🔊 loguru implementation ([`d3e8c7d`](https://github.com/mraniki/talkytrend/commit/d3e8c7db8429c926df41e0d4b150c8f57241c8cf))
+
+
 ## v1.10.1 (2023-07-22)
+
+### Other
+
+* Merge pull request #95 from mraniki/sourcery/dev
+
+⚗️ experimenting yfinance (Sourcery refactored) ([`27cc642`](https://github.com/mraniki/talkytrend/commit/27cc6427569f8fb457b4fa4eded3c9c06e88be73))
+
+* &#39;Refactored by Sourcery&#39; ([`dece064`](https://github.com/mraniki/talkytrend/commit/dece064070bfd587984181280842dde9f8cac468))
 
 ### Update
 
 * Update pyproject.toml ([`9900de5`](https://github.com/mraniki/talkytrend/commit/9900de5e5566d38ff02de79c6bc4d07a24e22e55))
+
+* Update Requirements ([`147eac4`](https://github.com/mraniki/talkytrend/commit/147eac4196675b602fc4da4ef82e89111081e25b))
+
+### ⚗️
+
+* ⚗️ experimenting yfinance ([`e157bf7`](https://github.com/mraniki/talkytrend/commit/e157bf717ac66fe245a8441d115a669fdfe00c65))
+
+### 🔧
+
+* 🔧 cleanup ([`54aa9e2`](https://github.com/mraniki/talkytrend/commit/54aa9e2bf31f3c97442c89edd8c11505b79c152e))
+
+### 🚨
+
+* 🚨 ([`060e8e2`](https://github.com/mraniki/talkytrend/commit/060e8e2b1df2b7f29b57d51e14d8592e3ebabcd0))
 
 
 ## v1.10.0 (2023-07-20)
