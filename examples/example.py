@@ -3,11 +3,16 @@ Provides example for talkytrend
 """
 
 import asyncio
+import sys
 
 import uvicorn
 from fastapi import FastAPI
+from loguru import logger
 
 from talkytrend import TalkyTrend
+
+logger.remove()
+logger.add(sys.stderr, level="INFO")
 
 
 async def main():
