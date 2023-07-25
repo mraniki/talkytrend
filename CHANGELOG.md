@@ -2,6 +2,39 @@
 
 
 
+## v1.12.0 (2023-07-25)
+
+### Other
+
+* Merge pull request #98 from mraniki/dev
+
+♻️✅ remove scanner, added monitor now ([`cc7f2d4`](https://github.com/mraniki/talkytrend/commit/cc7f2d4b586cfe193db8b69aa1a4fd21c6f725ff))
+
+### ✅
+
+* ✅ ([`e792dbf`](https://github.com/mraniki/talkytrend/commit/e792dbf343732b5ec049112dd56260580e0119d1))
+
+* ✅ ([`478bd9c`](https://github.com/mraniki/talkytrend/commit/478bd9c8dfa6b655782738ac84069ac801c13ee5))
+
+* ✅ updated monitor unit test ([`94fd15c`](https://github.com/mraniki/talkytrend/commit/94fd15cef7416eac91a0f463047dd09b6bacc87b))
+
+* ✅ unit test for monitor ([`a90bab1`](https://github.com/mraniki/talkytrend/commit/a90bab195b2fd401cf091b341c06bc69bbf3d4d1))
+
+* ✅ loguru pytest ([`94724cb`](https://github.com/mraniki/talkytrend/commit/94724cbd18453045717bb5376679d89b4fefc4c1))
+
+### ✨
+
+* ✨ deprecate scanner in favor of monitor. ([`154ea12`](https://github.com/mraniki/talkytrend/commit/154ea12f5785586a8416b35a9f86a1c84d614c7e))
+
+### 🔧
+
+* 🔧 updated config and example ([`23ebbc3`](https://github.com/mraniki/talkytrend/commit/23ebbc3bb430a7efba2a6c38a6ad8bec0dd9e387))
+
+### 🚨
+
+* 🚨 ([`ae708b8`](https://github.com/mraniki/talkytrend/commit/ae708b8c6be64b7dd444b404540eda215a4e8fd9))
+
+
 ## v1.11.0 (2023-07-24)
 
 ### Other
