@@ -75,6 +75,13 @@ async def test_check_fomc(talky):
     assert result is False
 
 @pytest.mark.asyncio
+async def test_fetch_instrument_info(talky):
+   result = await talky.fetch_instrument_info()
+   print(result)
+   assert result is not None
+   assert any("Microsoft" in item for item in result)
+
+@pytest.mark.asyncio
 async def test_get_tv(talky):
     result = await talky.get_tv()
     print(result)
