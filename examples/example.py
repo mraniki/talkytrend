@@ -44,7 +44,7 @@ async def main():
     #False
 
     monitor = await talky.monitor()
-
+    print("monitor:\n",monitor)
 
 app = FastAPI()
 
