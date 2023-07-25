@@ -85,4 +85,6 @@ async def test_monitor(talky):
     result = await talky.monitor()
     print(result)
     assert result is not None
-    assert result is False
+    assert "💬" in result 
+    assert "📰" in result 
+    assert "EURUSD" in result 
