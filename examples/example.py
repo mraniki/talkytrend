@@ -43,32 +43,8 @@ async def main():
     print("is it FOMC today:\n",fomc_day)
     #False
 
-    async for message in talky.scanner():
-        print("scanner:\n", message)
-        await talky.allow_scanning(enable=False)
-        # scanner:
-        #  💬 FOMC Member Barr Speaks
-        # ⏰ 2023-07-10T10:00:00-04:00
-        #  📰 <a href='https://www.zerohedge.com/political/one-third-seattle-residents-may-flee-city-over-crime-costs'>
-        # One-Third Of Seattle Residents May Flee City Over Crime, Costs</a>
-        #  <table>
-        #     <thead>
-        #         <tr>
-        #             <th>Asset</th>
-        #             <th>4h</th>
-        #         </tr>
-        #     </thead>
-        #     <tbody>
-        #         <tr>
-        #             <td>EURUSD</td>
-        #             <td>🔼</td>
-        #         </tr>
-        #         <tr>
-        #             <td>BTCUSD</td>
-        #             <td>🔽</td>
-        #         </tr>
-        #     </tbody>
-        # </table> 
+    monitor = await talky.monitor()
+
 
 app = FastAPI()
 

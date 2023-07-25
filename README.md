@@ -26,7 +26,7 @@
     </td>
     <td align="left"> 
 Retrieve asset trend and economic data.<br>
-Trading view connectivity with signal scanner<br>
+Trading view connectivity<br>
 News connectivity<br>
        FOMC reminder<br>
     </td>
@@ -44,7 +44,7 @@ News connectivity<br>
     print(result)
     #  Title:  FDA advisers say new Alzheimer’s drug lecanemab slows cognitive decline
     # Description:  Panel’s opinion could pave way for full regulatory approval next month for treatment of disease that affects 6.5m Americans
-    monitor = await talky.scanner() #ongoing monitoring
+    monitor = await talky.monitor() #ongoing monitoring
     # New signal for BTCUSD (4h): STRONG_SELL
     # Key event: {'title': 'OPEC-JMMC Meetings', 'country': 'ALL', 'date': '2023-06-04T06:15:00-04:00', 'impact': 'High', 'forecast': '', 'previous': ''}\
     # Key news: FDA advisers say new Alzheimer’s drug lecanemab slows cognitive decline
