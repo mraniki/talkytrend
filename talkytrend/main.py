@@ -74,7 +74,7 @@ class TalkyTrend:
         except Exception as error:
             self.logger.warning("event {}", error)
 
-    async def check_signal(self, interval="4h"):
+    async def fetch_signal(self, interval="4h"):
         signals = []
         table = PrettyTable()
         table.field_names = [" Trend ", interval]
@@ -104,7 +104,7 @@ class TalkyTrend:
             link = news[0].get("link")
             return f"{title} - {link}"
 
-    async def fetch_key_events(self):
+    async def fetch_event(self):
         def filter_events(data, today):
             return [event for event in data if event.get('date', '') > today]
 
@@ -135,8 +135,8 @@ class TalkyTrend:
                     if is_opec_or_fomc(event):
                         return format_event(event)
         return None
-
-    async def fetch_key_feed(self):
+ 
+    async def fetch_feed(self):
         try:
             async with aiohttp.ClientSession() as session:
                 async with session.get(settings.news_feed, timeout=10) as response:
@@ -161,19 +161,19 @@ class TalkyTrend:
         if self.live_tv:
             return f"📺: {self.live_tv}"
 
-    async def allow_scanning(self, enable=True):
-        return bool(enable)
+    async def monitor(self):
+        results = []
 
-    async def scanner(self):
-        while await self.allow_scanning():
-            if settings.enable_events:
-                if await self.fetch_key_events() is not None:
-                    yield await self.fetch_key_events()
-            if settings.enable_feed:
-                if await self.fetch_key_feed() is not None:
-                    yield await self.fetch_key_feed()
-            if settings.enable_signals:
-                if await self.check_signal() is not None:
-                    yield await self.check_signal()
+        if settings.enable_events:
+            if event := await self.fetch_event():
+                results.append(event)
 
-            await asyncio.sleep(settings.scanner_frequency)
+        if settings.enable_feed:
+            if feed := await self.fetch_feed():
+                results.append(feed)
+
+        if settings.enable_signals:
+            if signal := await self.fetch_signal():
+                results.append(signal)
+
+        return results

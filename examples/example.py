@@ -23,7 +23,7 @@ async def main():
     instrument_info = await talky.fetch_instrument_info()
     print("instrument_info:\n",instrument_info)
 
-    trend = await talky.check_signal()
+    trend = await talky.fetch_signal()
     print("trend:\n",trend)
     # signal:
     #  +--------+----+
@@ -31,11 +31,11 @@ async def main():
     # +--------+----+
     # | EURUSD | 🔼 |
 
-    feed = await talky.fetch_key_feed()
+    feed = await talky.fetch_feed()
     print("feed:\n",feed)
     #  📰 <a href='https://www.zerohedge.com/political/one-third-seattle-residents-may-flee-city-over-crime-costs'>
     # One-Third Of Seattle Residents May Flee City Over Crime, Costs</a>
-    events = await talky.fetch_key_events()
+    events = await talky.fetch_event()
     print("events:\n",events) 
     # 💬 Core PPI m/m
     # ⏰ 2023-06-14T08:30:00-04:00

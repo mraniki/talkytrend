@@ -38,9 +38,9 @@ News connectivity<br>
 <pre>
 <code>
     talky = TalkyTrend()
-    result = await talky.check_signal()
+    result = await talky.fetch_signal()
     #  BUY
-    result = await talky.fetch_key_events()
+    result = await talky.fetch_event()
     print(result)
     #  Title:  FDA advisers say new Alzheimer’s drug lecanemab slows cognitive decline
     # Description:  Panel’s opinion could pave way for full regulatory approval next month for treatment of disease that affects 6.5m Americans
