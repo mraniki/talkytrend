@@ -2,6 +2,21 @@
 
 
 
+## v1.12.1 (2023-07-25)
+
+### Other
+
+* Merge pull request #99 from mraniki/dev
+
+✅ test_fetch_instrument_info ([`6037226`](https://github.com/mraniki/talkytrend/commit/6037226063e657212b758a85760489cbb4290fa0))
+
+### ✅
+
+* ✅ ([`770af84`](https://github.com/mraniki/talkytrend/commit/770af84502d4cf81a2f99774ca87770955d019ae))
+
+* ✅ test_fetch_instrument_info ([`06b0633`](https://github.com/mraniki/talkytrend/commit/06b063395a320ebd14a8e8a3716850acc9f005f4))
+
+
 ## v1.12.0 (2023-07-25)
 
 ### Other
