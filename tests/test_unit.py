@@ -23,6 +23,13 @@ async def test_talkytrend(talky):
     assert talky is not None
     assert settings.VALUE == "On Testing"
 
+@pytest.mark.asyncio
+async def test_get_talkytrend_info(talky):
+    result = await talky.get_talkytrend_info()
+    print(result)
+    assert result is not None
+    assert "ℹ️" in result 
+    assert "TalkyTrend" in result
 
 @pytest.mark.asyncio
 async def test_fetch_signal(talky):
@@ -74,30 +81,8 @@ async def test_get_tv(talky):
     assert result is not None
 
 @pytest.mark.asyncio
-async def test_get_talkytrend_info(talky):
-    result = await talky.get_talkytrend_info()
+async def test_monitor(talky):
+    result = await talky.monitor()
     print(result)
     assert result is not None
-    assert "ℹ️" in result 
-    assert "TalkyTrend" in result 
-
-@pytest.mark.asyncio
-async def test_scanner(talky):
-    stop_scanning = False
-
-    async def stop_scanning_fn():
-        nonlocal stop_scanning
-        stop_scanning = True
-        await talky.allow_scanning(enable=False)
-
-    async for message in talky.scanner():
-        assert settings.VALUE == "On Testing"
-        assert settings.scanner_frequency == 2
-        assert message is not None
-        assert ("📰" in message 
-                or "💬" in message 
-                or "BTCUSD" in message 
-                or "<" in message)
-        await stop_scanning_fn()
-        if stop_scanning:
-            break
+    assert result is False
