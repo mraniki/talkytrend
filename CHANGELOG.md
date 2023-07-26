@@ -2,6 +2,27 @@
 
 
 
+## v1.12.3 (2023-07-26)
+
+### Other
+
+* Merge pull request #102 from mraniki/dev
+
+✅ Unit Test ([`006f16b`](https://github.com/mraniki/talkytrend/commit/006f16b1b0403bbcd8e650722ae07d46da067c1e))
+
+* Merge pull request #101 from mraniki/sourcery/dev
+
+:zap: monitor output tweak (Sourcery refactored) ([`11b6a66`](https://github.com/mraniki/talkytrend/commit/11b6a66226a276443d9b8d790ff6bebe752d3f93))
+
+### ✅
+
+* ✅ Unit Test ([`f49483d`](https://github.com/mraniki/talkytrend/commit/f49483de36b0b36b42da85faaf2578f3a34addd2))
+
+* ✅ Unit Test ([`dde5d23`](https://github.com/mraniki/talkytrend/commit/dde5d2353222e4ccdad5109f454a67ecfc5000ac))
+
+* ✅ Unit Test ([`4b953aa`](https://github.com/mraniki/talkytrend/commit/4b953aa50de988c10d336ca3d9fb393d1610d439))
+
+
 ## v1.12.2 (2023-07-26)
 
 ### :zap:
@@ -9,6 +30,8 @@
 * :zap: monitor output tweak ([`bdc86a9`](https://github.com/mraniki/talkytrend/commit/bdc86a96974ac0188d04c99a6261cbc20be9d2d1))
 
 ### Other
+
+* &#39;Refactored by Sourcery&#39; ([`0ab751a`](https://github.com/mraniki/talkytrend/commit/0ab751a99b13e64ba9dde02d685f5e5a09c0fce8))
 
 * Merge pull request #100 from mraniki/dev
 
