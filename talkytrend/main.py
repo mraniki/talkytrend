@@ -167,4 +167,5 @@ class TalkyTrend:
             if signal := await self.fetch_signal():
                 results.append(signal)
 
-        return results
+        content = "\n".join(results)
+        return content
