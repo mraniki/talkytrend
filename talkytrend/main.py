@@ -159,13 +159,12 @@ class TalkyTrend:
             if event := await self.fetch_event():
                 results.append(event)
 
-        if settings.enable_feed:
-            if feed := await self.fetch_feed():
+        if feed := await self.fetch_feed():
+            if settings.enable_feed:
                 results.append(feed)
 
-        if settings.enable_signals:
-            if signal := await self.fetch_signal():
+        if signal := await self.fetch_signal():
+            if settings.enable_signals:
                 results.append(signal)
 
-        content = "\n".join(results)
-        return content
+        return "\n".join(results)
