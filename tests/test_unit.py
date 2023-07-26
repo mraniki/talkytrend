@@ -23,13 +23,23 @@ async def test_talkytrend(talky):
     assert talky is not None
     assert settings.VALUE == "On Testing"
 
+
 @pytest.mark.asyncio
 async def test_get_talkytrend_info(talky):
     result = await talky.get_talkytrend_info()
     print(result)
     assert result is not None
+    assert "/news" in result 
+
+
+@pytest.mark.asyncio
+async def test_get_talkytrend_help(talky):
+    result = await talky.get_talkytrend_help()
+    print(result)
+    assert result is not None
     assert "ℹ️" in result 
     assert "TalkyTrend" in result
+
 
 @pytest.mark.asyncio
 async def test_fetch_signal(talky):
