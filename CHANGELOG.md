@@ -2,6 +2,19 @@
 
 
 
+## v1.12.2 (2023-07-26)
+
+### :zap:
+
+* :zap: monitor output tweak ([`bdc86a9`](https://github.com/mraniki/talkytrend/commit/bdc86a96974ac0188d04c99a6261cbc20be9d2d1))
+
+### Other
+
+* Merge pull request #100 from mraniki/dev
+
+:zap: monitor output tweak ([`9e09ae4`](https://github.com/mraniki/talkytrend/commit/9e09ae430030809673ab7bf28ea3bb601f733934))
+
+
 ## v1.12.1 (2023-07-25)
 
 ### Other
