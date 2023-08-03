@@ -2,6 +2,15 @@
 
 
 
+## v1.12.5 (2023-08-03)
+
+### Other
+
+* Merge pull request #104 from mraniki/dependabot/pip/ruff-gte-0.0.280-and-lt-0.0.283
+
+⬆️ Dep: Update ruff requirement from ^0.0.280 to &gt;=0.0.280,&lt;0.0.283 ([`51ab0a1`](https://github.com/mraniki/talkytrend/commit/51ab0a1bc50d7d92aac63e39b680371697ba4370))
+
+
 ## v1.12.4 (2023-08-03)
 
 ### Other
@@ -13,6 +22,23 @@
 ### Update
 
 * Update Requirements ([`4474f6f`](https://github.com/mraniki/talkytrend/commit/4474f6f7598998a0c4032019a210ba834e81754b))
+
+* Update Requirements ([`5c87328`](https://github.com/mraniki/talkytrend/commit/5c87328453bfd37a972d6ebaf87a0bf37250c79a))
+
+* :arrow_up: Dep: Update ruff requirement
+
+Updates the requirements on [ruff](https://github.com/astral-sh/ruff) to permit the latest version.
+- [Release notes](https://github.com/astral-sh/ruff/releases)
+- [Changelog](https://github.com/astral-sh/ruff/blob/main/BREAKING_CHANGES.md)
+- [Commits](https://github.com/astral-sh/ruff/compare/v0.0.280...v0.0.282)
+
+---
+updated-dependencies:
+- dependency-name: ruff
+  dependency-type: direct:development
+...
+
+Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`f4b9c77`](https://github.com/mraniki/talkytrend/commit/f4b9c7728e69d631226ef8865ae64caca75c8624))
 
 ### 📝
 
