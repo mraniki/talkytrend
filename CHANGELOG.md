@@ -2,6 +2,29 @@
 
 
 
+## v1.12.4 (2023-08-03)
+
+### Other
+
+* Merge pull request #105 from mraniki/dev
+
+📝 RTD initial release ([`d4968e7`](https://github.com/mraniki/talkytrend/commit/d4968e7a15dde26f19f069e46b56bf7c62d8a9f9))
+
+### Update
+
+* Update Requirements ([`4474f6f`](https://github.com/mraniki/talkytrend/commit/4474f6f7598998a0c4032019a210ba834e81754b))
+
+### 📝
+
+* 📝 ([`06652de`](https://github.com/mraniki/talkytrend/commit/06652de3b96d4921eb61eb9f5343fef6d958320a))
+
+* 📝 RTD ([`48db4ba`](https://github.com/mraniki/talkytrend/commit/48db4ba8012027b37d85822d45fa5e3d97fa85ec))
+
+* 📝 RTD update ([`7b95cc0`](https://github.com/mraniki/talkytrend/commit/7b95cc0f537d94b07995f1451b322e52499e9ee6))
+
+* 📝 RTD initial release ([`4b3d239`](https://github.com/mraniki/talkytrend/commit/4b3d2390f8f63fbbac3befe26e5a6e08de15cc6b))
+
+
 ## v1.12.3 (2023-07-26)
 
 ### Other
