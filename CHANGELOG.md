@@ -2,6 +2,33 @@
 
 
 
+## v1.12.6 (2023-08-04)
+
+### :bug:
+
+* :memo::bug: ([`a380012`](https://github.com/mraniki/talkytrend/commit/a38001260bffe66b29adb5fde4d91a18af4b7b3c))
+
+### Other
+
+* Merge pull request #108 from mraniki/dev
+
+:memo::bug: ([`dc4898b`](https://github.com/mraniki/talkytrend/commit/dc4898b8b81ea7ca105241da4bc22740dc54826b))
+
+### Update
+
+* Update Requirements ([`1e505c2`](https://github.com/mraniki/talkytrend/commit/1e505c216c741aa76f7da211d3e8a9034c2044e1))
+
+### ✅
+
+* ✅ Unit Test ([`d35b85b`](https://github.com/mraniki/talkytrend/commit/d35b85b6d0ed3c1dbf03994d816f23d6d49ac5a6))
+
+### 📝
+
+* 📝 ([`dfd3a7a`](https://github.com/mraniki/talkytrend/commit/dfd3a7a0521c7239904f3625e5fa78c131a300b1))
+
+* 📝 RTD update ([`6649ae2`](https://github.com/mraniki/talkytrend/commit/6649ae20a12905c874c0311f4be910a08fba843e))
+
+
 ## v1.12.5 (2023-08-03)
 
 ### Other
