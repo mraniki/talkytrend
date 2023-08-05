@@ -2,6 +2,13 @@
 
 
 
+## v1.12.7 (2023-08-05)
+
+### Update
+
+* Update README.md ([`85f4706`](https://github.com/mraniki/talkytrend/commit/85f4706ae4069620f3726cb33a90a4aec8bae977))
+
+
 ## v1.12.6 (2023-08-04)
 
 ### :bug:
