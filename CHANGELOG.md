@@ -2,6 +2,27 @@
 
 
 
+## v1.12.9 (2023-08-06)
+
+### Other
+
+* Merge pull request #110 from mraniki/dev
+
+📝 intersphinx setup ([`cd68c2e`](https://github.com/mraniki/talkytrend/commit/cd68c2eecefcf05fdb2102de27a639a54acd3650))
+
+* Merge branch &#39;main&#39; into dev ([`dbff80c`](https://github.com/mraniki/talkytrend/commit/dbff80c3c9f16ebe49546912880530f60666a409))
+
+* Delete IMG_3091.png ([`e7e12d8`](https://github.com/mraniki/talkytrend/commit/e7e12d80b00def1c2812d7ee01ab905a76724f6a))
+
+### 📝
+
+* 📝 intersphinx setup ([`8c9fb4d`](https://github.com/mraniki/talkytrend/commit/8c9fb4d3b1ced6de6393f68342e41fc89b7a4dbe))
+
+### 🧐
+
+* 🧐 ([`fc521f8`](https://github.com/mraniki/talkytrend/commit/fc521f861a947fc502d6764a4f43a8fd768b5fbb))
+
+
 ## v1.12.8 (2023-08-06)
 
 ### Other
@@ -9,6 +30,8 @@
 * Delete logo-full.png ([`4cd999f`](https://github.com/mraniki/talkytrend/commit/4cd999fc5054395c3c08e7cb1544d4aa4df5ae3e))
 
 * Add files via upload ([`d0448e8`](https://github.com/mraniki/talkytrend/commit/d0448e89a4f2cca13a87d3337a31f3b24dc93d2c))
+
+* Merge branch &#39;main&#39; into dev ([`1919763`](https://github.com/mraniki/talkytrend/commit/1919763eb46267b3917ed72db28d213be9892c89))
 
 ### Update
 
@@ -20,6 +43,10 @@
 ### Update
 
 * Update README.md ([`85f4706`](https://github.com/mraniki/talkytrend/commit/85f4706ae4069620f3726cb33a90a4aec8bae977))
+
+### 🎨
+
+* 🎨 ([`20cfe0e`](https://github.com/mraniki/talkytrend/commit/20cfe0eb94ea411a0bcf3c2ec00433c6c6106a5c))
 
 
 ## v1.12.6 (2023-08-04)
