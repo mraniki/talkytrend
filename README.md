@@ -49,11 +49,12 @@ News connectivity<br>
     # Key news: FDA advisers say new Alzheimer’s drug lecanemab slows cognitive decline
 </code>
 </pre>
-
-<h5>Example</h5>
-https://github.com/mraniki/talkytrend/blob/af472db335afec4e6a643077f7483d030e8511ac/examples/example.py#L1-L50
-
 </details>
+
+
+<h5>Documentation</h5>
+<a href="https://talky.readthedocs.io/projects/talkytrend/en/latest/"><img src="https://img.shields.io/badge/Documentation-000000?style=for-the-badge&logo=readthedocs&logoColor=white"></a><br>
+
 
 
 </div>
