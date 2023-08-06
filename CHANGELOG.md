@@ -2,6 +2,19 @@
 
 
 
+## v1.12.8 (2023-08-06)
+
+### Other
+
+* Delete logo-full.png ([`4cd999f`](https://github.com/mraniki/talkytrend/commit/4cd999fc5054395c3c08e7cb1544d4aa4df5ae3e))
+
+* Add files via upload ([`d0448e8`](https://github.com/mraniki/talkytrend/commit/d0448e89a4f2cca13a87d3337a31f3b24dc93d2c))
+
+### Update
+
+* Update README.md ([`4feb165`](https://github.com/mraniki/talkytrend/commit/4feb1652386bacdb07cfb76424acaefc869075ec))
+
+
 ## v1.12.7 (2023-08-05)
 
 ### Update
