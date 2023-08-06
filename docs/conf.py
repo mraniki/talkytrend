@@ -23,6 +23,7 @@ extensions = [
     'sphinx.ext.napoleon',
     'sphinx.ext.viewcode',  
     "sphinx.ext.intersphinx",
+    "hoverxref.extension",
 ]
 
 
@@ -42,6 +43,13 @@ intersphinx_mapping = {
     "talkytrend": ("https://talky.readthedocs.io/projects/talkytrend/en/latest", None),
     "myllm": ("https://talky.readthedocs.io/projects/myllm/en/latest", None),
 }
+intersphinx_disabled_reftypes = ["*"]
+hoverxref_auto_ref = True
+hoverxref_intersphinx = [
+    'readthedocs',
+    'sphinx',
+    'python',
+]
 
 napoleon_google_docstring = True
 autosummary_generate = True
@@ -85,18 +93,6 @@ html_theme_options = {
 
     'navbar_links': [
         ("TalkyTrader", "https://talkytrader.github.io/wiki/",True),
-        ("_menu",  "🗿 Talky",[
-            ("🪙 Get started",  "https://talky.rtfd.io/01_start",True),
-            ("⚙️ Config",  "https://talky.rtfd.io/02_config",True),
-        ]),
-        ("_menu",  "🔌 Plugins",[
-            ("👂 IamListening",  "https://iamlistening.rtfd.io/", True),
-            ("🔎 FindMyOrder",  "https://findmyorder.rtfd.io/", True),
-            ("⛓️ DXSP", "https://dxsp.rtfd.io/", True),
-            ("💱 CEX",  "index",True),
-            ("💁 Helper",  "index",True),
-            ("📰 Talkytrend",  "https://talkytrend.rtfd.io/", True),
-        ]),
         ("_menu",  "➕ More",[
             ("🆕 What's new?",  "https://github.com/mraniki/tt",True),
             ("💬 Connect",  "https://talky.rtfd.io",True),
