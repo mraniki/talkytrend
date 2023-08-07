@@ -2,6 +2,19 @@
 
 
 
+## v1.12.11 (2023-08-07)
+
+### Other
+
+* Merge pull request #112 from mraniki/dev
+
+💬 readme update ([`1dce943`](https://github.com/mraniki/talkytrend/commit/1dce943f8fcddbb9194cb96d80b53e3608a9c6ff))
+
+### 💬
+
+* 💬 readme update ([`314424f`](https://github.com/mraniki/talkytrend/commit/314424fbebad5cf137fe1cb89764d66d376bf351))
+
+
 ## v1.12.10 (2023-08-07)
 
 ### Fix
