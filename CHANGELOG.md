@@ -2,6 +2,31 @@
 
 
 
+## v1.12.10 (2023-08-07)
+
+### Fix
+
+* 📝 intersphinx fix ([`21ba799`](https://github.com/mraniki/talkytrend/commit/21ba79902de2880e037e87ad3c1af8617a6d0108))
+
+* 📝  fix ([`a8ba095`](https://github.com/mraniki/talkytrend/commit/a8ba095db6d7175aa4c9cf8f7d82e996d04da06e))
+
+### Other
+
+* Merge pull request #111 from mraniki/dev
+
+📝  sphinx.ext.extlinks ([`76f4a3f`](https://github.com/mraniki/talkytrend/commit/76f4a3f80a1a8e4b052e8d61c03f6e1fb4ca6182))
+
+### 🎨
+
+* 🎨 improve docs with hovering ([`beeee54`](https://github.com/mraniki/talkytrend/commit/beeee54fab34f8c3eb1e10dbe5f537995e4f178e))
+
+### 📝
+
+* 📝 updating docs template and sphinx ([`bfeaac0`](https://github.com/mraniki/talkytrend/commit/bfeaac09366c57551e8ad33532ffa5ff21827e2e))
+
+* 📝  sphinx.ext.extlinks ([`243ef4b`](https://github.com/mraniki/talkytrend/commit/243ef4b9acdca3aaa6e649e265015a94d4fc7077))
+
+
 ## v1.12.9 (2023-08-06)
 
 ### Other
