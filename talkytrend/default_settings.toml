@@ -39,6 +39,11 @@ assets = [
     { id ="BTCUSD", exchange='BINANCE',screener="crypto"},
 ]
 
+enable_yfinance = true
+# yahoo finance ticker reference
+# to retrieve company news
+ticker_reference = "MSFT"
+
 # Events Enable/Disable
 enable_events = true
 # Events calendar

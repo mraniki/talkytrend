@@ -20,8 +20,8 @@ async def main():
     talky = TalkyTrend()
     print(talky)
 
-    instrument_info = await talky.fetch_instrument_info()
-    print("instrument_info:\n",instrument_info)
+    ticker_info = await talky.fetch_ticker_info()
+    print("ticker_info:\n",ticker_info)
 
     trend = await talky.fetch_signal()
     print("trend:\n",trend)
