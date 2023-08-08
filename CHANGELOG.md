@@ -2,6 +2,31 @@
 
 
 
+## v1.13.0 (2023-08-08)
+
+### :memo:
+
+* :memo: ([`fb80ffe`](https://github.com/mraniki/talkytrend/commit/fb80ffee73aecc37fb2289f68f06250f6cc336c0))
+
+### Other
+
+* Merge pull request #113 from mraniki/dev
+
+📝 🔧 settings documentation ([`775dcd0`](https://github.com/mraniki/talkytrend/commit/775dcd020848c410fb5c51e2f76fcce537437f1c))
+
+### ✨
+
+* ✨ added yfinance ticker as part of the monitor ([`2ff386c`](https://github.com/mraniki/talkytrend/commit/2ff386c5f54d9fdca8a6720e5bb9b4d62793110e))
+
+### 📝
+
+* 📝 conf update for intersphinx ([`3054aab`](https://github.com/mraniki/talkytrend/commit/3054aaba851ef4c35ac4d5bd51a5aded290d5f1a))
+
+### 🔧
+
+* 📝 🔧  settings documentation ([`7cf7612`](https://github.com/mraniki/talkytrend/commit/7cf76125004232901b38ddfbe5c953699fd1bcbc))
+
+
 ## v1.12.11 (2023-08-07)
 
 ### Other

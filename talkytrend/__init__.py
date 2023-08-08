@@ -1,7 +1,7 @@
 """
  Versioning
 """
-__version__ = "1.12.11"
+__version__ = "1.13.0"
 
 from .config import settings
 from .main import TalkyTrend
