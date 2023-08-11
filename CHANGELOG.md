@@ -2,6 +2,29 @@
 
 
 
+## v1.13.2 (2023-08-11)
+
+### :wrench:
+
+* :memo: :wrench:  settings documentation ([`f3228b9`](https://github.com/mraniki/talkytrend/commit/f3228b9031bca94bf03c61b594726ecc371b98ea))
+
+### Other
+
+* Merge pull request #116 from mraniki/dev ([`742a4f7`](https://github.com/mraniki/talkytrend/commit/742a4f700fdaa2824d1be6f7dfa4bd41b04c252f))
+
+### Update
+
+* Update Requirements ([`699cab4`](https://github.com/mraniki/talkytrend/commit/699cab43296d1faed43cf1f95f8b72e9f63c19bd))
+
+### 👷
+
+* 👷 CI Change ([`b98bca6`](https://github.com/mraniki/talkytrend/commit/b98bca6725c2681f4c8c3a77cbe42ee9cfb08c7b))
+
+### 🔊
+
+* 🔊 added better debug logging ([`4a706ad`](https://github.com/mraniki/talkytrend/commit/4a706adae03732e6299284f124c5f99a95757884))
+
+
 ## v1.13.1 (2023-08-09)
 
 ### Other
