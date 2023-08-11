@@ -77,6 +77,13 @@ class TalkyTrend:
                 - Any other value: "▶️"
         """
         try:
+            self.logger.debug(
+                "Fetching analysis for {} at {} with screener {} and interval {}.",
+                asset_id,
+                exchange,
+                screener,
+                interval,
+            )
             handler = TA_Handler(
                 symbol=asset_id, exchange=exchange, screener=screener, interval=interval
             )
@@ -108,6 +115,7 @@ class TalkyTrend:
         signals = []
         table = PrettyTable()
         table.field_names = [" Trend ", interval]
+        self.logger.debug("Fetching signal for interval {}", interval)
 
         for asset in self.assets:
             current_signal = await self.fetch_analysis(
@@ -127,9 +135,7 @@ class TalkyTrend:
 
         return table.get_string()
 
-    async def fetch_ticker_info(
-        self, 
-        ticker=settings.ticker_reference):
+    async def fetch_ticker_info(self, ticker=settings.ticker_reference):
         """
         Fetches the information for a given instrument from
         yahoo finance. Not yet implemented.
@@ -143,6 +149,7 @@ class TalkyTrend:
             and link of the latest news article for the instrument.
                  Returns None if there is no news available.
         """
+        self.logger.debug("Fetching news for {}", ticker)
         ticker = yf.Ticker(ticker)
         if news := ticker.news:
             title = news[0].get("title")
@@ -178,6 +185,7 @@ class TalkyTrend:
 
         async with aiohttp.ClientSession() as session:
             async with session.get(self.economic_calendar, timeout=10) as response:
+                self.logger.debug("Fetching events from {}", self.economic_calendar)
                 response.raise_for_status()
                 data = await response.json()
                 today = datetime.now().isoformat()
@@ -197,6 +205,7 @@ class TalkyTrend:
         """
         async with aiohttp.ClientSession() as session:
             async with session.get(settings.news_feed, timeout=10) as response:
+                self.logger.debug("Fetching news from {}", settings.news_feed)
                 data = (
                     xmltodict.parse(await response.text())
                     .get("rss")
@@ -218,6 +227,7 @@ class TalkyTrend:
             bool: True if there is an FOMC decision
             on the current date, False otherwise.
         """
+        self.logger.debug("Checking for FOMC decision")
         event_dates = settings.fomc_decision_date
         current_date = date.today().isoformat()
         return any(event.startswith(current_date) for event in event_dates)
@@ -244,7 +254,7 @@ class TalkyTrend:
              of the retrieved data sources.
         """
         results = []
-
+        self.logger.debug("Monitoring")
         if settings.enable_events:
             if event := await self.fetch_event():
                 results.append(event)
