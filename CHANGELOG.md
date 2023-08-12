@@ -2,6 +2,23 @@
 
 
 
+## v1.13.3 (2023-08-12)
+
+### :memo:
+
+* :memo: ([`b3000ef`](https://github.com/mraniki/talkytrend/commit/b3000ef1c4c6c16f59f52f4e43282d734abf5db9))
+
+### Other
+
+* Merge pull request #117 from mraniki/dev
+
+📝 Documentation update ([`783a98a`](https://github.com/mraniki/talkytrend/commit/783a98a49632b383308015ebbac2ae2c4cb849c9))
+
+### 🐛
+
+* 🐛  logo update ([`0ac0a7c`](https://github.com/mraniki/talkytrend/commit/0ac0a7cdd82a06283cd3308e9eca1e22f37e889d))
+
+
 ## v1.13.2 (2023-08-11)
 
 ### :wrench:
