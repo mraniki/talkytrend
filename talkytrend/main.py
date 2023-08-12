@@ -57,6 +57,8 @@ class TalkyTrend:
         Fetches from Trading View the analysis
         of a given asset from a specified exchange
         and screener at a specified interval.
+        more info: 
+        https://github.com/AnalyzerREST/python-tradingview-ta
 
         Args:
             asset_id (str): The ID of the asset.
