@@ -2,6 +2,49 @@
 
 
 
+## v1.14.0 (2023-08-18)
+
+### :arrow_up:
+
+* :arrow_up: ([`7725803`](https://github.com/mraniki/talkytrend/commit/772580346421a56a7198207aed9b4b2fd005692d))
+
+### :bug:
+
+* :bug: settings name ([`be9dff8`](https://github.com/mraniki/talkytrend/commit/be9dff841c9a3bf0a7ca1bb1c0bb97cbe7686dd1))
+
+* :bug: var name ([`01e8f5d`](https://github.com/mraniki/talkytrend/commit/01e8f5dee93a6bb0a751be44e348a1ec4c4e0e00))
+
+### :rotating_light:
+
+* :rotating_light: ([`67a2bfb`](https://github.com/mraniki/talkytrend/commit/67a2bfb4c52393ecaf513463982e47f74348cfc1))
+
+### :wrench:
+
+* :wrench: help message ([`922a371`](https://github.com/mraniki/talkytrend/commit/922a3712976728337b64178fec960a4b84796948))
+
+* :wrench: help message ([`a04bc4e`](https://github.com/mraniki/talkytrend/commit/a04bc4e027f855a5b38e198284e5096cb722d1df))
+
+* :wrench:jackson hall meeting ([`5892b34`](https://github.com/mraniki/talkytrend/commit/5892b34fbe157e3b626a39e7de859bd95683927c))
+
+### Feat
+
+* :sparkles: feat: Add dependencies and settings for SERP API ([`81f5e05`](https://github.com/mraniki/talkytrend/commit/81f5e054635cd73221c66df57d48ed432e989b0b))
+
+### Other
+
+* Merge pull request #122 from mraniki/dev ([`c9bda24`](https://github.com/mraniki/talkytrend/commit/c9bda24d85f1948e374346dec2819778b2122976))
+
+* Merge branch &#39;dev&#39; of git@github.com:mraniki/talkytrend.git ([`6aeece9`](https://github.com/mraniki/talkytrend/commit/6aeece94745addab42bbe2f3a4fe2669034676de))
+
+### Update
+
+* Update Requirements ([`cf33e05`](https://github.com/mraniki/talkytrend/commit/cf33e05ea1320e5803007346d5547838775335cf))
+
+### ⚡
+
+* ⚡ adding indicator ([`6e8918a`](https://github.com/mraniki/talkytrend/commit/6e8918acf56ae497d3037533a7cda0853829cc31))
+
+
 ## v1.13.4 (2023-08-18)
 
 ### :recycle:
