@@ -11,7 +11,7 @@ import yfinance as yf
 from loguru import logger
 from prettytable import PrettyTable
 from tradingview_ta import TA_Handler
-
+from serpapi import SerpApiClient, GoogleSearch
 from talkytrend import __version__
 from talkytrend.config import settings
 
@@ -102,6 +102,42 @@ class TalkyTrend:
                 return "▶️"
         except Exception as error:
             self.logger.warning("event {}", error)
+
+    async def fetch_indicator(self, asset_id, exchange, screener, interval):
+        """
+        Fetches from Trading View the indicator
+        for a given asset from a specified exchange
+
+        Args:
+            asset_id (str): The ID of the asset.
+            exchange (str): The exchange on which
+            the asset is traded.
+            screener (str): The screener used
+            for analysis.
+            interval (str): The interval at which
+            the analysis is performed.
+
+        Returns:
+            str: The indicator dictionary
+
+        """
+        try:
+            self.logger.debug(
+                "Fetching analysis for {} at {} with screener {} and interval {}.",
+                asset_id,
+                exchange,
+                screener,
+                interval,
+            )
+            handler = TA_Handler(
+                symbol=asset_id, exchange=exchange, screener=screener, interval=interval
+            )
+            analysis = handler.get_analysis()
+            return analysis.indicators
+
+        except Exception as error:
+            self.logger.warning("event {}", error)
+
 
     async def fetch_signal(self, interval="4h"):
         """
@@ -274,3 +310,29 @@ class TalkyTrend:
                 results.append(signal)
 
         return "\n".join(results)
+        
+        
+    async def fetch_gnews(self, query):
+        """
+       
+        """
+        search = GoogleSearch({
+            "q": query,   # search search
+            "tbm": "nws",  # news
+            "tbs": "qdr:d", # last 24h
+            "num": 1,
+            "api_key": settings.serpapi_key})
+        data = search.get_dict()
+        return data['news_results'][0]['link']
+            
+        
+    async def fetch_web_search(self, query):
+        """
+       
+        """
+        search = SerpApiClient({
+            "q": query,
+            "api_key": settings.serpapi_key,
+            "engine": settings.serpapi_engine})
+        return search.get_dict()
+        
