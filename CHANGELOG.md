@@ -2,6 +2,23 @@
 
 
 
+## v1.13.4 (2023-08-18)
+
+### :recycle:
+
+* :recycle::arrow_up:dep downgrade ([`854c549`](https://github.com/mraniki/talkytrend/commit/854c5499b982a357f177011190ece1d5acb4c075))
+
+### Other
+
+* Merge pull request #118 from mraniki/dev
+
+:recycle::arrow_up:dep downgrade ([`a5215e4`](https://github.com/mraniki/talkytrend/commit/a5215e40ceac0e00a029371964006b9c8a9f25ec))
+
+### Update
+
+* Update Requirements ([`4661887`](https://github.com/mraniki/talkytrend/commit/46618878ddea5ef7aa95d2defdde13df3419a832))
+
+
 ## v1.13.3 (2023-08-12)
 
 ### :memo:
