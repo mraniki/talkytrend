@@ -20,14 +20,20 @@ VALUE = "On Default"
 talkytrend_enabled = true
 
 # help message listing the commands available
-talkytrend_commands = "📺 /live\n📰 /news\n📊 /trend"
-
+talkytrend_commands = """
+📺 /live\n
+📰 /news\n
+📊 /trend
+🚸 /indicator"
+"""
 # bot command for tv feed
 bot_command_tv = "live"
 # bot command for trading view trend
 bot_command_trend = "trend"
 # bot command for news feeds
 bot_command_news = "news"
+# bot command for volume
+bot_command_indicator = "indicator"
 
 # Signals Enable/Disable
 enable_signals = true
@@ -43,7 +49,7 @@ enable_yfinance = true
 # yahoo finance ticker reference
 # to retrieve company news
 # or index news
-ticker_reference = "^GSPC"
+ticker_reference = "MSFT"
 
 # Events Enable/Disable
 enable_events = true
