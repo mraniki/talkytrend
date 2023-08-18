@@ -36,6 +36,8 @@ bot_command_news = "news"
 # bot command for volume
 bot_command_indicator = "indicator"
 
+bot_command_search= "search"
+
 # Signals Enable/Disable
 enable_signals = true
 # instrument monitored under trend
