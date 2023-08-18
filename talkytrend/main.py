@@ -321,7 +321,7 @@ class TalkyTrend:
             "tbm": "nws",  # news
             "tbs": "qdr:d", # last 24h
             "num": 1,
-            "api_key": settings.llm_serpapi_key})
+            "api_key": settings.serpapi_key})
         data = search.get_dict()
         return data['news_results'][0]['link']
             
