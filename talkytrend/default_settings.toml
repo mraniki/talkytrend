@@ -23,8 +23,9 @@ talkytrend_enabled = true
 talkytrend_commands = """
 📺 /live\n
 📰 /news\n
-📊 /trend
-🚸 /indicator"
+📊 /trend\n
+🚸 /indicator\n
+🔍 /search
 """
 # bot command for tv feed
 bot_command_tv = "live"
