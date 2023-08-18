@@ -66,6 +66,12 @@ enable_feed = true
 # Feeds RSS url
 news_feed = "https://www.dailyfx.com/feeds/market-news"
 
+# SERP API Key 
+serpapi-key = ""
+
+# SERP API Engine
+serpapi-engine = "google"
+
 # News Enable/Disable
 enable_news = false
 # News API key

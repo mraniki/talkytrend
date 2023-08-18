@@ -11,7 +11,7 @@ import yfinance as yf
 from loguru import logger
 from prettytable import PrettyTable
 from tradingview_ta import TA_Handler
-
+from serpapi import SerpApiClient
 from talkytrend import __version__
 from talkytrend.config import settings
 
@@ -310,3 +310,31 @@ class TalkyTrend:
                 results.append(signal)
 
         return "\n".join(results)
+        
+        
+    async def fetch_gnews(self, query):
+        """
+       
+        """
+        search = GoogleSearch({
+            "q": query,   # search search
+            "tbm": "nws",  # news
+            "tbs": "qdr:d", # last 24h
+            "num": 1,
+            "api_key": settings.llm_serpapi-key,
+            })
+        data = search.get_dict()
+        return data['news_results'][0]['link']
+            
+        
+    async def fetch_web_search(self, query):
+        """
+       
+        """
+        search = SerpApiClient({
+            "q": query,
+            "api_key": settings.serpapi-key,
+            "engine": settings.serpapi-engine
+          })
+        return search.get_dict()
+        
