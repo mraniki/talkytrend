@@ -2,6 +2,13 @@
 
 
 
+## v1.14.2 (2023-08-20)
+
+### Update
+
+* Update renovate.json ([`573374c`](https://github.com/mraniki/talkytrend/commit/573374cbbbba7137be0244fb04465dd4de812a10))
+
+
 ## v1.14.1 (2023-08-20)
 
 ### Update
