@@ -2,6 +2,17 @@
 
 
 
+## v1.14.1 (2023-08-20)
+
+### Update
+
+* Update pyproject.toml ([`8efbce1`](https://github.com/mraniki/talkytrend/commit/8efbce10db683ca82722d1cf8026f26201ad4066))
+
+### ⬆️
+
+* ⬆️(deps): update dependency sphinx to v7.2.2 ([`17490ad`](https://github.com/mraniki/talkytrend/commit/17490ad2d8119fda982ff26bcf7163fe1f46bdc9))
+
+
 ## v1.14.0 (2023-08-18)
 
 ### :arrow_up:
