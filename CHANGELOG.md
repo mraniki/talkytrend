@@ -2,7 +2,26 @@
 
 
 
+## v1.14.3 (2023-08-21)
+
+### Other
+
+* Merge pull request #126 from mraniki/dev
+
+👷‍♂️Flow.yml ([`e31c23f`](https://github.com/mraniki/talkytrend/commit/e31c23fb9be62acfb778df4af208ffc2c4bb71cc))
+
+* Merge branch &#39;main&#39; into dev ([`c50c652`](https://github.com/mraniki/talkytrend/commit/c50c65232aaf7344b645beeadf3479a02a410f30))
+
+### Update
+
+* Updated GitHub Actions workflow file for publishing and inheriting secrets. ([`06bb787`](https://github.com/mraniki/talkytrend/commit/06bb787d1d9d952b5a975eee48f8e28ce6b2e511))
+
+
 ## v1.14.2 (2023-08-20)
+
+### Other
+
+* Merge branch &#39;main&#39; into dev ([`8b9f3b9`](https://github.com/mraniki/talkytrend/commit/8b9f3b9e315e2af2a5a83116ebfeb6729c4d9d55))
 
 ### Update
 
@@ -10,6 +29,16 @@
 
 
 ## v1.14.1 (2023-08-20)
+
+### :fire:
+
+* :fire: ([`9284554`](https://github.com/mraniki/talkytrend/commit/9284554f5e843abcb93a515b241c7900662a66c7))
+
+### Other
+
+* Merge branch &#39;main&#39; into dev ([`f557a20`](https://github.com/mraniki/talkytrend/commit/f557a200a0e0b9349bf0afe1cf47fdbec89c93d9))
+
+* Merge branch &#39;main&#39; into dev ([`b7573f8`](https://github.com/mraniki/talkytrend/commit/b7573f8fc23695a59b0c4f3c1a40ebeb772c1fb0))
 
 ### Update
 
