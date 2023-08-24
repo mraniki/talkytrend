@@ -2,6 +2,31 @@
 
 
 
+## v1.14.5 (2023-08-24)
+
+### Other
+
+* Merge pull request #131 from mraniki/dev
+
+🔥 cleanup ([`da68322`](https://github.com/mraniki/talkytrend/commit/da683221f02f0922737f706a2d67d07f920c9923))
+
+### Update
+
+* Update GitHub Actions dependencies ([`bad020e`](https://github.com/mraniki/talkytrend/commit/bad020ed4065418e4722371876816131424079fc))
+
+* Update dependabot.yml ([`590019d`](https://github.com/mraniki/talkytrend/commit/590019d01f1e72c9132e7092822171842f5c28d0))
+
+* Update renovate.json ([`877b378`](https://github.com/mraniki/talkytrend/commit/877b3781a8be0100583967ec09b4f5d66d9fbe4e))
+
+### 👷
+
+* 👷 CI cleanup ([`1b47fbe`](https://github.com/mraniki/talkytrend/commit/1b47fbebeef1734be73ba04deb2650137cff0c5b))
+
+### 🔥
+
+* 🔥 cleanup ([`9eb771f`](https://github.com/mraniki/talkytrend/commit/9eb771f0c28b6fbd8e37e160d824f30736526b26))
+
+
 ## v1.14.4 (2023-08-24)
 
 ### Other
