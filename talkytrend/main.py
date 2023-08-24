@@ -151,8 +151,8 @@ class TalkyTrend:
             str: The signal table as a string.
         """
         signals = []
-        table = PrettyTable()
-        table.field_names = [" Trend ", interval]
+        table = PrettyTable(header=False)
+        # table.field_names = [" Trend ", interval]
         self.logger.debug("Fetching signal for interval {}", interval)
 
         for asset in self.assets:
