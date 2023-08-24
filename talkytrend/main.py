@@ -312,27 +312,3 @@ class TalkyTrend:
         return "\n".join(results)
         
         
-    async def fetch_gnews(self, query):
-        """
-       
-        """
-        search = GoogleSearch({
-            "q": query,   # search search
-            "tbm": "nws",  # news
-            "tbs": "qdr:d", # last 24h
-            "num": 1,
-            "api_key": settings.serpapi_key})
-        data = search.get_dict()
-        return data['news_results'][0]['link']
-            
-        
-    async def fetch_web_search(self, query):
-        """
-       
-        """
-        search = SerpApiClient({
-            "q": query,
-            "api_key": settings.serpapi_key,
-            "engine": settings.serpapi_engine})
-        return search.get_dict()
-        
