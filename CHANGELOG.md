@@ -2,6 +2,31 @@
 
 
 
+## v1.14.4 (2023-08-24)
+
+### Other
+
+* Merge pull request #128 from mraniki/dev
+
+⚡  Various small improvement ([`c607d48`](https://github.com/mraniki/talkytrend/commit/c607d48085b3dc7d50b93512c405c4017183af39))
+
+### Update
+
+* Update main.py for table trend data (no header) ([`cdc4f88`](https://github.com/mraniki/talkytrend/commit/cdc4f8859edae5d8a2642fd4fc78d57a3e56cca3))
+
+* Update main.py for the ticker yfinance ([`7fdaa6b`](https://github.com/mraniki/talkytrend/commit/7fdaa6b761f598dad188c6ed3aab81c90ed125e8))
+
+* Update pyproject.toml ([`02ba443`](https://github.com/mraniki/talkytrend/commit/02ba4432cfdcb061cb8de18fdf689d074df0704f))
+
+* Update test_unit.py ([`c612aac`](https://github.com/mraniki/talkytrend/commit/c612aac281bca3ee2edd5f51d590e2c828641955))
+
+* Update main.py ([`90b8854`](https://github.com/mraniki/talkytrend/commit/90b8854c272fc5fff5b4ccc255fb9be4a149b188))
+
+### ⬆️
+
+* ⬆️(deps): update dependency sphinx to v7.1.2 ([`3cf48e9`](https://github.com/mraniki/talkytrend/commit/3cf48e92c3fcb58b38100fe2ed1037c763c3e6e6))
+
+
 ## v1.14.3 (2023-08-21)
 
 ### Other
