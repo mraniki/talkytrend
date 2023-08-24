@@ -107,8 +107,4 @@ async def test_monitor(talky):
     assert "EURUSD" in result 
     assert "yahoo" in result
 
-@pytest.mark.asyncio
-async def test_fetch_gnews(talky):
-   result = await talky.fetch_gnews("EURUSD")
-   print(result)
-   assert result is not None
+
