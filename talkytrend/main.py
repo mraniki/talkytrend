@@ -192,7 +192,7 @@ class TalkyTrend:
         if news := ticker.news:
             title = news[0].get("title")
             link = news[0].get("link")
-            return f"{title} - {link}"
+            return f"🗞️ <a href='{link}'>{title}</a>"
 
     async def fetch_event(self):
         """
