@@ -151,8 +151,8 @@ class TalkyTrend:
             str: The signal table as a string.
         """
         signals = []
-        table = PrettyTable()
-        table.field_names = [" Trend ", interval]
+        table = PrettyTable(header=False)
+        # table.field_names = [" Trend ", interval]
         self.logger.debug("Fetching signal for interval {}", interval)
 
         for asset in self.assets:
@@ -192,7 +192,7 @@ class TalkyTrend:
         if news := ticker.news:
             title = news[0].get("title")
             link = news[0].get("link")
-            return f"{title} - {link}"
+            return f"🗞️ <a href='{link}'>{title}</a>"
 
     async def fetch_event(self):
         """
@@ -311,28 +311,4 @@ class TalkyTrend:
 
         return "\n".join(results)
         
-        
-    async def fetch_gnews(self, query):
-        """
-       
-        """
-        search = GoogleSearch({
-            "q": query,   # search search
-            "tbm": "nws",  # news
-            "tbs": "qdr:d", # last 24h
-            "num": 1,
-            "api_key": settings.serpapi_key})
-        data = search.get_dict()
-        return data['news_results'][0]['link']
-            
-        
-    async def fetch_web_search(self, query):
-        """
-       
-        """
-        search = SerpApiClient({
-            "q": query,
-            "api_key": settings.serpapi_key,
-            "engine": settings.serpapi_engine})
-        return search.get_dict()
         
