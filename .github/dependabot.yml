@@ -1,15 +1,7 @@
 version: 2
 updates:
 
-  # Maintain dependencies for GitHub Actions
-  - package-ecosystem: "github-actions"
-    directory: "/"
-    target-branch: "dev"
-    schedule:
-      interval: "weekly"
-    commit-message:
-      prefix: "⬆️ Dep"
-
+    
   # Maintain dependencies for poetry
   - package-ecosystem: "pip"
     directory: "/"
@@ -17,7 +9,17 @@ updates:
     schedule:
       interval: "daily"
     commit-message:
-      prefix: "⬆️ Dep"
+        prefix: "⬆️ 🤖 Dependencies"
+
+
+  # Maintain dependencies for GitHub Actions
+  # - package-ecosystem: "github-actions"
+  #   directory: "/"
+  #   #target-branch: "dev"
+  #   schedule:
+  #     interval: "weekly"
+  #   commit-message:
+  #     prefix: "⬆️ Dep"
 
   # Maintain dependencies for pip
   #- package-ecosystem: "pip"
@@ -26,4 +28,3 @@ updates:
   #    interval: "weekly"
   #  commit-message:
   #    prefix: "⬆️ Dep"
-      
