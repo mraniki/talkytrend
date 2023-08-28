@@ -2,9 +2,20 @@
 
 
 
+## v1.14.8 (2023-08-28)
+
+### Other
+
+* Merge pull request #134 from mraniki/dev ([`cea0e7b`](https://github.com/mraniki/talkytrend/commit/cea0e7b52d628489683497da2cdf45fe83b2587a))
+
+* Merge branch &#39;main&#39; into dev ([`cfccd8f`](https://github.com/mraniki/talkytrend/commit/cfccd8fb0dd542826761f8b8ecf29e5cfdcadbb4))
+
+
 ## v1.14.7 (2023-08-28)
 
 ### Other
+
+* Merge branch &#39;main&#39; into dev ([`b68afc7`](https://github.com/mraniki/talkytrend/commit/b68afc75e26116d55d2d89404c5d09db8b7b3843))
 
 * Merge pull request #132 from mraniki/renovate/ruff-0.x
 
@@ -25,6 +36,10 @@
 * ⬆️ 🛠️(deps): update dependency sphinx to v7.2.4 ([`6ec9c82`](https://github.com/mraniki/talkytrend/commit/6ec9c82def0b2aa1ade9886cfb1edbbd44b6e515))
 
 * ⬆️ 🛠️(deps): update dependency ruff to &gt;=0.0.286,&lt;0.0.287 ([`bdd641e`](https://github.com/mraniki/talkytrend/commit/bdd641e938843bbcf8faa16a5589faa4c80b0ccb))
+
+### 🐛
+
+* 🐛 📝  extension error ([`3fc57ce`](https://github.com/mraniki/talkytrend/commit/3fc57ce6e3699aac0bec01caea1ec5f9a8a25efe))
 
 
 ## v1.14.6 (2023-08-24)
