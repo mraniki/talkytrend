@@ -2,6 +2,23 @@
 
 
 
+## v1.14.10 (2023-08-31)
+
+### Other
+
+* Merge pull request #135 from mraniki/renovate/sphinx-7.x
+
+⬆️ 🛠️(deps): update dependency sphinx to v7.2.5 ([`230e211`](https://github.com/mraniki/talkytrend/commit/230e21154a9bd8b758eb42742f36ad5fcaba3c58))
+
+### Update
+
+* Update Requirements ([`5ca6d1a`](https://github.com/mraniki/talkytrend/commit/5ca6d1a4f3f541fad27cbec34994576ebc748936))
+
+### ⬆️
+
+* ⬆️ 🛠️(deps): update dependency sphinx to v7.2.5 ([`4c6dbbb`](https://github.com/mraniki/talkytrend/commit/4c6dbbbcc072e46ae64188213f24efae95b749b6))
+
+
 ## v1.14.9 (2023-08-30)
 
 ### Update
