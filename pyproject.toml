@@ -37,7 +37,7 @@ google-search-results = "^2.4.2"
 [tool.poetry.group.dev.dependencies]
 
 python-semantic-release = "^8.0.2"
-ruff = ">=0.0.286,<0.0.287"
+ruff = ">=0.0.287,<0.0.288"
 
 [tool.ruff]
 select = [
