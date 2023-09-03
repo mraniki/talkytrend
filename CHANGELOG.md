@@ -2,6 +2,19 @@
 
 
 
+## v1.14.11 (2023-09-03)
+
+### Other
+
+* Merge pull request #137 from mraniki/renovate/ruff-0.x
+
+⬆️ 🛠️(deps): update dependency ruff to &gt;=0.0.287,&lt;0.0.288 ([`8aeeaea`](https://github.com/mraniki/talkytrend/commit/8aeeaea93d5f3901874435945acf815f5cc2aa24))
+
+### ⬆️
+
+* ⬆️ 🛠️(deps): update dependency ruff to &gt;=0.0.287,&lt;0.0.288 ([`bdc272b`](https://github.com/mraniki/talkytrend/commit/bdc272b42d373557db7e6c5618a2eb2262f37ca2))
+
+
 ## v1.14.10 (2023-08-31)
 
 ### Other
