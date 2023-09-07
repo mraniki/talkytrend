@@ -2,6 +2,33 @@
 
 
 
+## v1.14.12 (2023-09-07)
+
+### Other
+
+* Merge pull request #138 from mraniki/dev
+
+🔥 cleanup import ([`ce25a68`](https://github.com/mraniki/talkytrend/commit/ce25a6807685da8ba10bc6402b66bb07815d9c9f))
+
+* Merge branch &#39;main&#39; into dev ([`b72fad2`](https://github.com/mraniki/talkytrend/commit/b72fad2b6f338bf93508ffff4cdaf80f2f394538))
+
+### Update
+
+* Update README.md ([`afc1603`](https://github.com/mraniki/talkytrend/commit/afc16033b7c000bd9d58fe8664ca6fb4fa24cb5f))
+
+* Update Requirements ([`844ef6c`](https://github.com/mraniki/talkytrend/commit/844ef6c430adcce3e0c254ae629c9a74f7eb44fa))
+
+### ⬆️
+
+* ⬆️ ([`6b17bc7`](https://github.com/mraniki/talkytrend/commit/6b17bc73269a8b2d52ad37f04c6e6fe60ba8df8b))
+
+### 🔥
+
+* 🔥 cleanup import ([`353f90c`](https://github.com/mraniki/talkytrend/commit/353f90c54b990cfec41ff816e91f91c63ffb04ff))
+
+* 🔧 🔥 ([`2fb2821`](https://github.com/mraniki/talkytrend/commit/2fb2821bee65fad2c5663842e91a9ed6ca3fb51f))
+
+
 ## v1.14.11 (2023-09-03)
 
 ### Other
@@ -9,6 +36,10 @@
 * Merge pull request #137 from mraniki/renovate/ruff-0.x
 
 ⬆️ 🛠️(deps): update dependency ruff to &gt;=0.0.287,&lt;0.0.288 ([`8aeeaea`](https://github.com/mraniki/talkytrend/commit/8aeeaea93d5f3901874435945acf815f5cc2aa24))
+
+* Merge pull request #136 from mraniki/dependabot/pip/dev/sphinx-7.2.5
+
+⬆️ 🤖 Dependencies: Update sphinx requirement from 7.2.4 to 7.2.5 ([`b6fb361`](https://github.com/mraniki/talkytrend/commit/b6fb3612c3305601d8535bb577088f64db02e0c7))
 
 ### ⬆️
 
@@ -24,6 +55,23 @@
 ⬆️ 🛠️(deps): update dependency sphinx to v7.2.5 ([`230e211`](https://github.com/mraniki/talkytrend/commit/230e21154a9bd8b758eb42742f36ad5fcaba3c58))
 
 ### Update
+
+* Update Requirements ([`7d5ea1f`](https://github.com/mraniki/talkytrend/commit/7d5ea1fe741b64725e335e137e4e2f4d1ebbc19a))
+
+* :arrow_up: 🤖 Dependencies: Update sphinx requirement from 7.2.4 to 7.2.5
+
+Updates the requirements on [sphinx](https://github.com/sphinx-doc/sphinx) to permit the latest version.
+- [Release notes](https://github.com/sphinx-doc/sphinx/releases)
+- [Changelog](https://github.com/sphinx-doc/sphinx/blob/master/CHANGES)
+- [Commits](https://github.com/sphinx-doc/sphinx/compare/v7.2.4...v7.2.5)
+
+---
+updated-dependencies:
+- dependency-name: sphinx
+  dependency-type: direct:development
+...
+
+Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`4b0ea36`](https://github.com/mraniki/talkytrend/commit/4b0ea36711f1df6ee4cd4cf550f33998154ed369))
 
 * Update Requirements ([`5ca6d1a`](https://github.com/mraniki/talkytrend/commit/5ca6d1a4f3f541fad27cbec34994576ebc748936))
 
