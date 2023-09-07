@@ -11,7 +11,7 @@ import yfinance as yf
 from loguru import logger
 from prettytable import PrettyTable
 from tradingview_ta import TA_Handler
-from serpapi import SerpApiClient, GoogleSearch
+
 from talkytrend import __version__
 from talkytrend.config import settings
 
@@ -57,7 +57,7 @@ class TalkyTrend:
         Fetches from Trading View the analysis
         of a given asset from a specified exchange
         and screener at a specified interval.
-        more info: 
+        more info:
         https://github.com/AnalyzerREST/python-tradingview-ta
 
         Args:
@@ -137,7 +137,6 @@ class TalkyTrend:
 
         except Exception as error:
             self.logger.warning("event {}", error)
-
 
     async def fetch_signal(self, interval="4h"):
         """
@@ -310,5 +309,3 @@ class TalkyTrend:
                 results.append(signal)
 
         return "\n".join(results)
-        
-        
