@@ -1,8 +1,4 @@
 <br>
-
-
-<h4>TalkyTrend</h4>
-<br>
 <table style="border: 1px solid transparent">
   <tr>
     <td>
