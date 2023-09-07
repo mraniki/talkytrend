@@ -2,9 +2,28 @@
 
 
 
+## v1.14.13 (2023-09-07)
+
+### Other
+
+* Merge pull request #140 from mraniki/dev
+
+Merge pull request #139 from mraniki/main ([`25d168a`](https://github.com/mraniki/talkytrend/commit/25d168a1b5da8b73829b835e2dabd208f2268606))
+
+* Merge branch &#39;main&#39; into dev ([`2cb2058`](https://github.com/mraniki/talkytrend/commit/2cb2058a0da1cc1e13005dc7ca2c6930295eb243))
+
+### Update
+
+* Update README.md ([`b66ff71`](https://github.com/mraniki/talkytrend/commit/b66ff7137e02862e672587e31b150afac5834f4f))
+
+
 ## v1.14.12 (2023-09-07)
 
 ### Other
+
+* Merge pull request #139 from mraniki/main
+
+Merge pull request #138 from mraniki/dev ([`f611759`](https://github.com/mraniki/talkytrend/commit/f6117597ab61306d25d5bb911985e04a0b2938ca))
 
 * Merge pull request #138 from mraniki/dev
 
