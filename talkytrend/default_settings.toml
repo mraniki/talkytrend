@@ -33,10 +33,6 @@ bot_command_tv = "live"
 bot_command_trend = "trend"
 # bot command for news feeds
 bot_command_news = "news"
-# bot command for volume
-bot_command_indicator = "indicator"
-
-bot_command_search= "search"
 
 # Signals Enable/Disable
 enable_signals = true
@@ -68,19 +64,6 @@ live_tv_url = "https://bloomberg.com/media-manifest/streams/us.m3u8"
 enable_feed = true
 # Feeds RSS url
 news_feed = "https://www.dailyfx.com/feeds/market-news"
-
-# SERP API Key 
-serpapi_key = ""
-
-# SERP API Engine
-serpapi_engine = "google"
-
-# News Enable/Disable
-enable_news = false
-# News API key
-news_api_key = ""
-# News API endpoint
-news_url="https://gnews.io/api/v4/top-headlines?category=business&lang=en&max=2&apikey="
 
 
 ########################################
