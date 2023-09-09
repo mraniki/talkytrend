@@ -2,6 +2,19 @@
 
 
 
+## v1.14.14 (2023-09-09)
+
+### Other
+
+* Merge pull request #141 from mraniki/dev
+
+👷 CI Change ([`de1dc72`](https://github.com/mraniki/talkytrend/commit/de1dc72cd783db49d6b574daa9d2c401862e6950))
+
+### 👷
+
+* 👷 CI Change ([`2f37660`](https://github.com/mraniki/talkytrend/commit/2f37660fb34e6d8e680355c4a07fc8d436795e5d))
+
+
 ## v1.14.13 (2023-09-07)
 
 ### Other
