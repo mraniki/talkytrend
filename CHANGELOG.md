@@ -2,6 +2,29 @@
 
 
 
+## v1.14.15 (2023-09-19)
+
+### Other
+
+* Merge pull request #145 from mraniki/dev
+
+⬆️ 🛠️(deps) ([`88cd1d7`](https://github.com/mraniki/talkytrend/commit/88cd1d7efb68cba8dbdd9cce43185c50c45142e8))
+
+* Merge pull request #143 from mraniki/renovate/pydata-sphinx-theme-0.x
+
+⬆️ 🛠️(deps): update dependency pydata-sphinx-theme to ^0.14.0 ([`24ef649`](https://github.com/mraniki/talkytrend/commit/24ef649cc2068d8e66a5f14099b6506e550a1877))
+
+* Merge pull request #142 from mraniki/renovate/sphinx-7.x
+
+⬆️ 🛠️(deps): update dependency sphinx to v7.2.6 ([`1b23343`](https://github.com/mraniki/talkytrend/commit/1b233433eeb23df6283523ba075f1a2647479d02))
+
+### ⬆️
+
+* ⬆️ 🛠️(deps): update dependency pydata-sphinx-theme to ^0.14.0 ([`b0f40a9`](https://github.com/mraniki/talkytrend/commit/b0f40a9d403bdc5934055ac8ac1f9e7777ff124a))
+
+* ⬆️ 🛠️(deps): update dependency sphinx to v7.2.6 ([`5e2d7ef`](https://github.com/mraniki/talkytrend/commit/5e2d7efd1a57cdbfdef604f735684de5be2a9dc4))
+
+
 ## v1.14.14 (2023-09-09)
 
 ### Other
