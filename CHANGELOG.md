@@ -2,6 +2,23 @@
 
 
 
+## v1.14.18 (2023-09-27)
+
+### Other
+
+* Merge pull request #148 from mraniki/dev
+
+🚨 Linter cleanup ([`2d2e162`](https://github.com/mraniki/talkytrend/commit/2d2e162df50fcc55ef0e31f8b6fbeee07a305118))
+
+### 🔥
+
+* 🔥 removing fetch_indicator ([`f2f58aa`](https://github.com/mraniki/talkytrend/commit/f2f58aaba4129606d46948b8343aca8d44755425))
+
+### 🚨
+
+* 🚨 ([`4bf2c27`](https://github.com/mraniki/talkytrend/commit/4bf2c27c3870632d65121a1c37dcfeee869b3e9e))
+
+
 ## v1.14.17 (2023-09-27)
 
 ### Other
