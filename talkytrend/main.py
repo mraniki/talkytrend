@@ -102,40 +102,43 @@ class TalkyTrend:
         except Exception as error:
             self.logger.warning("event {}", error)
 
-    async def fetch_indicator(self, asset_id, exchange, screener, interval):
-        """
-        Fetches from Trading View the indicator
-        for a given asset from a specified exchange
+    # async def fetch_indicator(self, asset_id, exchange, screener, interval):
+    #     """
+    #     Fetches from Trading View the indicator
+    #     for a given asset from a specified exchange
 
-        Args:
-            asset_id (str): The ID of the asset.
-            exchange (str): The exchange on which
-            the asset is traded.
-            screener (str): The screener used
-            for analysis.
-            interval (str): The interval at which
-            the analysis is performed.
+    #     Args:
+    #         asset_id (str): The ID of the asset.
+    #         exchange (str): The exchange on which
+    #         the asset is traded.
+    #         screener (str): The screener used
+    #         for analysis.
+    #         interval (str): The interval at which
+    #         the analysis is performed.
 
-        Returns:
-            str: The indicator dictionary
+    #     Returns:
+    #         str: The indicator dictionary
 
-        """
-        try:
-            self.logger.debug(
-                "Fetching analysis for {} at {} with screener {} and interval {}.",
-                asset_id,
-                exchange,
-                screener,
-                interval,
-            )
-            handler = TA_Handler(
-                symbol=asset_id, exchange=exchange, screener=screener, interval=interval
-            )
-            analysis = handler.get_analysis()
-            return analysis.indicators
+    #     """
+    #     try:
+    #         self.logger.debug(
+    #             "Fetching analysis for {} at {} with screener {} and interval {}.",
+    #             asset_id,
+    #             exchange,
+    #             screener,
+    #             interval,
+    #         )
+    #         handler = TA_Handler(
+    #             symbol=asset_id,
+    #             exchange=exchange,
+    #             screener=screener,
+    #             interval=interval
+    #         )
+    #         analysis = handler.get_analysis()
+    #         return analysis.indicators
 
-        except Exception as error:
-            self.logger.warning("event {}", error)
+    #     except Exception as error:
+    #         self.logger.warning("event {}", error)
 
     async def fetch_signal(self, interval="4h"):
         """
