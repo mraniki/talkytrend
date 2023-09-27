@@ -2,6 +2,19 @@
 
 
 
+## v1.14.17 (2023-09-27)
+
+### Other
+
+* Merge pull request #147 from mraniki/dev
+
+🩹 version declaration ([`d65256b`](https://github.com/mraniki/talkytrend/commit/d65256b4663de991c4221ff5024e565bf7154d63))
+
+### 🩹
+
+* 🩹 version declaration ([`3d78d23`](https://github.com/mraniki/talkytrend/commit/3d78d23d3e0c1a183b60031dc7bb4bff76291b7a))
+
+
 ## v1.14.16 (2023-09-27)
 
 ### Other
