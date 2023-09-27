@@ -2,8 +2,7 @@
  TalkyTrend Main
 """
 
-import asyncio
-from datetime import date, datetime, timezone
+from datetime import date, datetime
 
 import aiohttp
 import xmltodict
