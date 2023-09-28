@@ -2,6 +2,23 @@
 
 
 
+## v1.14.19 (2023-09-28)
+
+### Other
+
+* Merge pull request #149 from mraniki/dev
+
+🚨 ([`9ea4795`](https://github.com/mraniki/talkytrend/commit/9ea47952b203cbbee2265d2d8f781cee4541e556))
+
+### 🐛
+
+* 🐛 ([`269aefd`](https://github.com/mraniki/talkytrend/commit/269aefdf719e1584b16704041af93aa9e4b0048b))
+
+### 🚨
+
+* 🚨 ([`cacba86`](https://github.com/mraniki/talkytrend/commit/cacba8631fdb2863e5bf4c513eafd9ba87c97d69))
+
+
 ## v1.14.18 (2023-09-27)
 
 ### Other
