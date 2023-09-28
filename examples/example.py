@@ -21,10 +21,10 @@ async def main():
     print(talky)
 
     ticker_info = await talky.fetch_ticker_info()
-    print("ticker_info:\n",ticker_info)
+    print("ticker_info:\n", ticker_info)
 
     trend = await talky.fetch_signal()
-    print("trend:\n",trend)
+    print("trend:\n", trend)
     # signal:
     #  +--------+----+
     # | Asset  | 4h |
@@ -32,19 +32,20 @@ async def main():
     # | EURUSD | 🔼 |
 
     feed = await talky.fetch_feed()
-    print("feed:\n",feed)
+    print("feed:\n", feed)
     #  📰 <a href='https://www.zerohedge.com/political/one-third-seattle-residents-may-flee-city-over-crime-costs'>
     # One-Third Of Seattle Residents May Flee City Over Crime, Costs</a>
     events = await talky.fetch_event()
-    print("events:\n",events) 
+    print("events:\n", events)
     # 💬 Core PPI m/m
     # ⏰ 2023-06-14T08:30:00-04:00
     fomc_day = await talky.check_fomc()
-    print("is it FOMC today:\n",fomc_day)
-    #False
+    print("is it FOMC today:\n", fomc_day)
+    # False
 
     monitor = await talky.monitor()
-    print("monitor:\n",monitor)
+    print("monitor:\n", monitor)
+
 
 app = FastAPI()
 
