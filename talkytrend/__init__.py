@@ -3,5 +3,11 @@
 """
 __version__ = "1.14.18"
 
-from .config import settings
-from .main import TalkyTrend
+
+from cefi.main import CexTrader
+
+from talkytrend.main import TalkyTrend
+
+__all__ = [
+    "TalkyTrend",
+]
