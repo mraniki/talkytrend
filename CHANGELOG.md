@@ -2,6 +2,27 @@
 
 
 
+## v1.14.20 (2023-10-01)
+
+### Other
+
+* Merge pull request #150 from mraniki/dev
+
+♻️ Cleanup and refactoring ([`848bc46`](https://github.com/mraniki/talkytrend/commit/848bc46d0c234fc248d4b5c123eef445ccf7f75d))
+
+### Update
+
+* Update Requirements ([`f4acfe9`](https://github.com/mraniki/talkytrend/commit/f4acfe9053f73c4910e3a6af95af6206d7bfa327))
+
+### ♻️
+
+* ♻️ Cleanup and refactoring ([`cad45d1`](https://github.com/mraniki/talkytrend/commit/cad45d1133d30b50ef5fee529c688ab00885371f))
+
+### 👷
+
+* 👷 CI Change ([`5e9ea6a`](https://github.com/mraniki/talkytrend/commit/5e9ea6ab0247f59e02ea1cef0f5cdcca7abf92f3))
+
+
 ## v1.14.19 (2023-09-28)
 
 ### Other
