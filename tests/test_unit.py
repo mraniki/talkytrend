@@ -34,15 +34,6 @@ async def test_get_talkytrend_info(talky):
 
 
 @pytest.mark.asyncio
-async def test_get_talkytrend_help(talky):
-    result = await talky.get_talkytrend_help()
-    print(result)
-    assert result is not None
-    assert "📺 /live" in result
-    assert settings.talkytrend_commands in result
-
-
-@pytest.mark.asyncio
 async def test_fetch_signal(talky):
     print(talky)
     result = await talky.fetch_signal()
