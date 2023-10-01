@@ -33,7 +33,6 @@ class TalkyTrend:
         self.assets = settings.assets
         self.economic_calendar = settings.economic_calendar
         self.live_tv = settings.live_tv_url
-        self.commands = settings.talkytrend_commands
 
     async def get_talkytrend_info(self):
         """
@@ -42,14 +41,6 @@ class TalkyTrend:
         :return: A string containing the TalkyTrend version.
         """
         return f"ℹ️ TalkyTrend v{__version__}\n"
-
-    async def get_talkytrend_help(self):
-        """
-        Return the help message for the "get_talkytrend" command.
-
-        :return: A string representing the help message.
-        """
-        return f"{self.commands}\n"
 
     async def fetch_analysis(self, asset_id, exchange, screener, interval):
         """
