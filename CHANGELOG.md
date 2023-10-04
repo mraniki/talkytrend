@@ -2,6 +2,19 @@
 
 
 
+## v1.15.0 (2023-10-04)
+
+### Other
+
+* Merge pull request #152 from mraniki/dev
+
+🥚Add support for .op.toml configuration file ([`fda71c1`](https://github.com/mraniki/talkytrend/commit/fda71c10b37c7eaa020e6a555badcd9ecb96640c))
+
+### 🥚
+
+* 🥚Add support for .op.toml configuration file ([`70b3f06`](https://github.com/mraniki/talkytrend/commit/70b3f060e0c8ea316137c843931003f226af16b1))
+
+
 ## v1.14.20 (2023-10-01)
 
 ### Other
