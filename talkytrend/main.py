@@ -26,7 +26,6 @@ class TalkyTrend:
         """
         Initialize the TalkyTrend class
         """
-        self.logger = logger
         self.enabled = settings.talkytrend_enabled
         if not self.enabled:
             return
@@ -69,7 +68,7 @@ class TalkyTrend:
                 - Any other value: "▶️"
         """
         try:
-            self.logger.debug(
+            logger.debug(
                 "Fetching analysis for {} at {} with screener {} and interval {}.",
                 asset_id,
                 exchange,
@@ -91,45 +90,7 @@ class TalkyTrend:
             else:
                 return "▶️"
         except Exception as error:
-            self.logger.warning("event {}", error)
-
-    # async def fetch_indicator(self, asset_id, exchange, screener, interval):
-    #     """
-    #     Fetches from Trading View the indicator
-    #     for a given asset from a specified exchange
-
-    #     Args:
-    #         asset_id (str): The ID of the asset.
-    #         exchange (str): The exchange on which
-    #         the asset is traded.
-    #         screener (str): The screener used
-    #         for analysis.
-    #         interval (str): The interval at which
-    #         the analysis is performed.
-
-    #     Returns:
-    #         str: The indicator dictionary
-
-    #     """
-    #     try:
-    #         self.logger.debug(
-    #             "Fetching analysis for {} at {} with screener {} and interval {}.",
-    #             asset_id,
-    #             exchange,
-    #             screener,
-    #             interval,
-    #         )
-    #         handler = TA_Handler(
-    #             symbol=asset_id,
-    #             exchange=exchange,
-    #             screener=screener,
-    #             interval=interval
-    #         )
-    #         analysis = handler.get_analysis()
-    #         return analysis.indicators
-
-    #     except Exception as error:
-    #         self.logger.warning("event {}", error)
+            logger.warning("event {}", error)
 
     async def fetch_signal(self, interval="4h"):
         """
@@ -144,8 +105,7 @@ class TalkyTrend:
         """
         signals = []
         table = PrettyTable(header=False)
-        # table.field_names = [" Trend ", interval]
-        self.logger.debug("Fetching signal for interval {}", interval)
+        logger.debug("Fetching signal for interval {}", interval)
 
         for asset in self.assets:
             current_signal = await self.fetch_analysis(
@@ -179,7 +139,7 @@ class TalkyTrend:
             and link of the latest news article for the instrument.
                  Returns None if there is no news available.
         """
-        self.logger.debug("Fetching news for {}", ticker)
+        logger.debug("Fetching news for {}", ticker)
         ticker = yf.Ticker(ticker)
         if news := ticker.news:
             title = news[0].get("title")
@@ -215,7 +175,7 @@ class TalkyTrend:
 
         async with aiohttp.ClientSession() as session:
             async with session.get(self.economic_calendar, timeout=10) as response:
-                self.logger.debug("Fetching events from {}", self.economic_calendar)
+                logger.debug("Fetching events from {}", self.economic_calendar)
                 response.raise_for_status()
                 data = await response.json()
                 today = datetime.now().isoformat()
@@ -235,7 +195,7 @@ class TalkyTrend:
         """
         async with aiohttp.ClientSession() as session:
             async with session.get(settings.news_feed, timeout=10) as response:
-                self.logger.debug("Fetching news from {}", settings.news_feed)
+                logger.debug("Fetching news from {}", settings.news_feed)
                 data = (
                     xmltodict.parse(await response.text())
                     .get("rss")
@@ -257,7 +217,7 @@ class TalkyTrend:
             bool: True if there is an FOMC decision
             on the current date, False otherwise.
         """
-        self.logger.debug("Checking for FOMC decision")
+        logger.debug("Checking for FOMC decision")
         event_dates = settings.fomc_decision_date
         current_date = date.today().isoformat()
         return any(event.startswith(current_date) for event in event_dates)
@@ -284,7 +244,7 @@ class TalkyTrend:
              of the retrieved data sources.
         """
         results = []
-        self.logger.debug("Monitoring")
+        logger.debug("Monitoring")
         if settings.enable_events:
             if event := await self.fetch_event():
                 results.append(event)
