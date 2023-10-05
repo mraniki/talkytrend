@@ -2,13 +2,46 @@
 
 
 
+## v1.15.1 (2023-10-05)
+
+### Other
+
+* Merge pull request #154 from mraniki/dev
+
+Dev ([`1fda525`](https://github.com/mraniki/talkytrend/commit/1fda525c60d83ce7ba31af21158a0228a5e7cb1d))
+
+* Merge pull request #153 from mraniki/renovate/pytest-loguru-0.x
+
+⬆️ 🛠️(deps): update dependency pytest-loguru to ^0.3.0 ([`6c5f9ac`](https://github.com/mraniki/talkytrend/commit/6c5f9aca594043e8f03e8311a0a184414d33eab0))
+
+* Merge branch &#39;main&#39; into dev ([`6c921f5`](https://github.com/mraniki/talkytrend/commit/6c921f53a6b7ec64f539414cc489e711495a9f98))
+
+### Update
+
+* Update Requirements ([`977ab9a`](https://github.com/mraniki/talkytrend/commit/977ab9a6d5ce72f9e03c777ba842b9a45113f62d))
+
+### ♻️
+
+* ♻️ ([`477a0f9`](https://github.com/mraniki/talkytrend/commit/477a0f922b699389086e4b4a7cacbe6608efcf09))
+
+### ⬆️
+
+* ⬆️ 🛠️(deps): update dependency pytest-loguru to ^0.3.0 ([`c45c651`](https://github.com/mraniki/talkytrend/commit/c45c65196cbef7d67e81e726f3257f4273a8e795))
+
+
 ## v1.15.0 (2023-10-04)
 
 ### Other
 
+* Merge branch &#39;main&#39; into dev ([`af50b41`](https://github.com/mraniki/talkytrend/commit/af50b41ef26b7acec5f70eb5d5de908b0477d021))
+
 * Merge pull request #152 from mraniki/dev
 
 🥚Add support for .op.toml configuration file ([`fda71c1`](https://github.com/mraniki/talkytrend/commit/fda71c10b37c7eaa020e6a555badcd9ecb96640c))
+
+### Update
+
+* Update Requirements ([`c04e8ec`](https://github.com/mraniki/talkytrend/commit/c04e8ec05497b9e579825e20d4ae3ffaf2e70d1d))
 
 ### 🥚
 
