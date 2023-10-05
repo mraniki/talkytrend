@@ -39,7 +39,7 @@ class TalkyTrend:
 
         :return: A string containing the TalkyTrend version.
         """
-        return f"ℹ️ TalkyTrend v{__version__}\n"
+        return f"ℹ️ {type(self).__name__} {__version__}\n"
 
     async def fetch_analysis(self, asset_id, exchange, screener, interval):
         """
