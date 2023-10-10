@@ -2,6 +2,41 @@
 
 
 
+## v1.15.2 (2023-10-10)
+
+### Other
+
+* Merge pull request #155 from mraniki/dev
+
+Update pyproject.toml ([`d1e2321`](https://github.com/mraniki/talkytrend/commit/d1e23215a9a29b167375b2c542c34e9bbc4ec02b))
+
+### Update
+
+* Update Requirements ([`1469cfa`](https://github.com/mraniki/talkytrend/commit/1469cfaf8a5eea51fb1edb68fe359292df563942))
+
+* Update pyproject.toml
+
+- Update python-semantic-release version to &#34;&gt;=8.0.8&#34;
+- Update ruff version to &#34;^0.0.292&#34;
+- Add black version &#34;^23.3.0&#34;
+- Add pre-commit version &#34;^3.3.1&#34;
+- Add tool.black configuration for line-length and target-version
+- Add tool.bandit configuration for exclude_dirs and skips
+- Add pytest-loguru configuration for pythonpath, testpaths,
+python_clas
+ses, log_format, and log_level
+- Add tool.coverage.run configuration for omit
+- Remove sphinx_design dependency ([`0addadb`](https://github.com/mraniki/talkytrend/commit/0addadb328dc79fd18763478f07987e062652b5c))
+
+* Update Mergify and pre-commit configurations ([`f71579a`](https://github.com/mraniki/talkytrend/commit/f71579ac9d01574bfe54606375edcec1ff70efbe))
+
+* Update pyproject.toml ignore and format settings ([`1ae6718`](https://github.com/mraniki/talkytrend/commit/1ae67183936efabf00bf3e899441daeb0dda0d9a))
+
+### 💬
+
+* 💬 ([`68f55cc`](https://github.com/mraniki/talkytrend/commit/68f55ccbdce5e48bdd2bf78703bc5e8a0f9cfb17))
+
+
 ## v1.15.1 (2023-10-05)
 
 ### Other
