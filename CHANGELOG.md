@@ -2,6 +2,45 @@
 
 
 
+## v1.15.3 (2023-10-17)
+
+### Other
+
+* Merge pull request #159 from mraniki/dev
+
+Dev ([`662fff2`](https://github.com/mraniki/talkytrend/commit/662fff2aaf2596254dbf8160ea1d89b3f1e9d6d7))
+
+* Merge pull request #158 from mraniki/renovate/ruff-0.x
+
+⬆️ 🛠️(deps): update dependency ruff to ^0.1.0 ([`731b46a`](https://github.com/mraniki/talkytrend/commit/731b46a6c4d7fdbddf2f060794de525f3a0805d9))
+
+* :construction_worker_man: Remove .github/.mergify.yml and add gitIgnoredAuthors to .github/renovate.json
+
+git commit -m &#34;Remove .github/.mergify.yml and add gitIgnoredAuthors ([`76800eb`](https://github.com/mraniki/talkytrend/commit/76800eb56908c4ce75227a84af31a0b140efdaf0))
+
+* Merge pull request #157 from mraniki/dev
+
+:construction_worker_man: CI Change ([`bfc9fd8`](https://github.com/mraniki/talkytrend/commit/bfc9fd8f134129e7cc2c6e14ba037fbed6b3768a))
+
+* :construction_worker_man: CI Change ([`69f5ca9`](https://github.com/mraniki/talkytrend/commit/69f5ca9f416fe9eeb4c0467d4bd834a69746324d))
+
+* Merge pull request #156 from mraniki/mergify/mraniki/config-update
+
+ci(Mergify): configuration update ([`df54d0e`](https://github.com/mraniki/talkytrend/commit/df54d0e60c3fb6b96c07d6a0728c40cad86d5d14))
+
+* ci(Mergify): configuration update
+
+Signed-off-by: null &lt;null&gt; ([`59867ca`](https://github.com/mraniki/talkytrend/commit/59867ca0787240f3811dcf3747dd88f170893938))
+
+### Update
+
+* Update Requirements ([`2bbf330`](https://github.com/mraniki/talkytrend/commit/2bbf330d67c70ef6f3a5346870772a2200a8081a))
+
+### ⬆️
+
+* ⬆️ 🛠️(deps): update dependency ruff to ^0.1.0 ([`6bcf03b`](https://github.com/mraniki/talkytrend/commit/6bcf03b79806e514eb0d21ec03a4ae510bdba58b))
+
+
 ## v1.15.2 (2023-10-10)
 
 ### Other
