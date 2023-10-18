@@ -5,7 +5,7 @@
     ":semanticCommitTypeAll(⬆️ 🛠️)",
     ":disableDependencyDashboard"
   ],
-    "gitIgnoredAuthors": ["githubaction@githubaction.com","github-actions[bot]","8766259+mraniki@users.noreply.github.com"],
+  "gitIgnoredAuthors": ["githubaction@githubaction.com","github-actions[bot]","8766259+mraniki@users.noreply.github.com"],
   "semanticCommits": "enabled",
   "labels": ["dependencies"],
   "baseBranches": ["dev"],
@@ -21,7 +21,7 @@
     },
     {
       "matchUpdateTypes": ["major"],
-      "automerge": false,
+      "automerge": true,
       "minimumReleaseAge": "30 days"
     }
   ]
