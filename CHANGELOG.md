@@ -2,9 +2,30 @@
 
 
 
+## v1.15.4 (2023-10-20)
+
+### Other
+
+* Merge pull request #160 from mraniki/dev
+
+👷 CI Change ([`c80a70e`](https://github.com/mraniki/talkytrend/commit/c80a70e3f3c880f8826ef7ad6591f85ebd56ec61))
+
+* Merge branch &#39;main&#39; into dev ([`95d6b01`](https://github.com/mraniki/talkytrend/commit/95d6b014fe15637f84ff6cdf819ff13623453223))
+
+### 👷
+
+* 👷 CI Change ([`a36496c`](https://github.com/mraniki/talkytrend/commit/a36496c94f8d28ea674d50b51537c5a655a9e430))
+
+* 👷 CI Change ([`785ae15`](https://github.com/mraniki/talkytrend/commit/785ae15f091b7d66318b82b34abe4ba769cad7f5))
+
+* 👷 CI Change ([`1438b94`](https://github.com/mraniki/talkytrend/commit/1438b94a3aa3b8ee3618385c72b16a92786a3b73))
+
+
 ## v1.15.3 (2023-10-17)
 
 ### Other
+
+* Merge branch &#39;main&#39; into dev ([`79ffd49`](https://github.com/mraniki/talkytrend/commit/79ffd4932ae4862cbbb5395ab044f4861487dc60))
 
 * Merge pull request #159 from mraniki/dev
 
@@ -33,6 +54,8 @@ ci(Mergify): configuration update ([`df54d0e`](https://github.com/mraniki/talkyt
 Signed-off-by: null &lt;null&gt; ([`59867ca`](https://github.com/mraniki/talkytrend/commit/59867ca0787240f3811dcf3747dd88f170893938))
 
 ### Update
+
+* Update Requirements ([`2566046`](https://github.com/mraniki/talkytrend/commit/2566046b6e534f282db890dd89d3847434723799))
 
 * Update Requirements ([`2bbf330`](https://github.com/mraniki/talkytrend/commit/2bbf330d67c70ef6f3a5346870772a2200a8081a))
 
