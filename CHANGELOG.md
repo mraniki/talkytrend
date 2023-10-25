@@ -2,6 +2,23 @@
 
 
 
+## v1.15.5 (2023-10-25)
+
+### Other
+
+* Auto ([`68a9bc7`](https://github.com/mraniki/talkytrend/commit/68a9bc76a8364a792c627efafb2af6094afd8273))
+
+* Merge pull request #161 from mraniki/dev
+
+⬆️ 🤖 - Auto Release ([`7fc5986`](https://github.com/mraniki/talkytrend/commit/7fc59864b45b6586632263cedc8a9a66a7c4d7e8))
+
+* Auto ([`b750609`](https://github.com/mraniki/talkytrend/commit/b750609f758c3bb26d06907edea0a93dfa1ad0ec))
+
+### Update
+
+* Update Requirements ([`133b849`](https://github.com/mraniki/talkytrend/commit/133b849fdaf098a4728d9b36275583d5c23a1cf7))
+
+
 ## v1.15.4 (2023-10-20)
 
 ### Other
