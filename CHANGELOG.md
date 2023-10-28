@@ -2,6 +2,71 @@
 
 
 
+## v1.15.6 (2023-10-28)
+
+### Other
+
+* Merge pull request #173 from mraniki/dev
+
+Update README.md ([`0320991`](https://github.com/mraniki/talkytrend/commit/03209919a1725d6988619fc9a66514ce5ed6d5e9))
+
+* Merge pull request #172 from mraniki/dev
+
+Update README.md ([`3dbaecf`](https://github.com/mraniki/talkytrend/commit/3dbaecf6c4e374a55002d5f3cad0f8d8ba0955e5))
+
+* Merge pull request #171 from mraniki/dev
+
+Update README.md ([`49ec766`](https://github.com/mraniki/talkytrend/commit/49ec766edf8fe538158a5f68023c3ecffa7ed676))
+
+* Merge pull request #170 from mraniki/dev
+
+Merge pull request #169 from mraniki/main ([`d2a91be`](https://github.com/mraniki/talkytrend/commit/d2a91be73ed97d15f7773325e02b4a3de6fe7136))
+
+* Merge pull request #169 from mraniki/main
+
+Merge ([`bc9b66a`](https://github.com/mraniki/talkytrend/commit/bc9b66ab6656f8538cf703c3ef476fabf8270824))
+
+* Merge pull request #168 from mraniki/mraniki-patch-1
+
+Update README.md ([`4a628e9`](https://github.com/mraniki/talkytrend/commit/4a628e9069b742a039025eeb1201e42018fb51d1))
+
+* Merge pull request #167 from mraniki/dev
+
+Update README.md ([`2cbb78b`](https://github.com/mraniki/talkytrend/commit/2cbb78b512fd3caa104f5ec302826f02aa9c0cc0))
+
+* Merge pull request #166 from mraniki/dev
+
+Dev ([`386a024`](https://github.com/mraniki/talkytrend/commit/386a0242dd10f00083a3038ff8c59234da8de046))
+
+* Merge pull request #163 from mraniki/dev
+
+⬆️ 🤖 - Auto Release ([`15acb22`](https://github.com/mraniki/talkytrend/commit/15acb224cd2f71431986e16ff13d95785a28aa5e))
+
+* Auto ([`f44cb41`](https://github.com/mraniki/talkytrend/commit/f44cb4108e90cb4a4dc95c2792f6d0d7310f30a6))
+
+### Update
+
+* Update README.md ([`6fc9aa7`](https://github.com/mraniki/talkytrend/commit/6fc9aa7d56b672d3e997a764d5e4fe0d6cc52270))
+
+* Update README.md ([`134fb39`](https://github.com/mraniki/talkytrend/commit/134fb39122a8d66acc07070796fc83172f97b136))
+
+* Update README.md ([`5ef2652`](https://github.com/mraniki/talkytrend/commit/5ef2652d8f9b94ba8afaa1dae551d4395629dcf2))
+
+* Update README.md ([`cd48804`](https://github.com/mraniki/talkytrend/commit/cd48804d948395509450adbc897e3606a191c764))
+
+* Update README.md ([`6045c99`](https://github.com/mraniki/talkytrend/commit/6045c992e23a399f863d417f8bc20175a8fffd9b))
+
+* Update README.md ([`7956a88`](https://github.com/mraniki/talkytrend/commit/7956a88fdea2e07d4d61e2ba8accabe82dc247f8))
+
+* ⬆️ Update Requirements and Version ([`f491fae`](https://github.com/mraniki/talkytrend/commit/f491faea92032ad3ff9cfe56592c151d23249c72))
+
+* ⬆️ Update Requirements and Version ([`99a9b9c`](https://github.com/mraniki/talkytrend/commit/99a9b9c262068edd00a7714f4bed9d618f24fe00))
+
+### 🔧
+
+* 🔧 ([`4e1d214`](https://github.com/mraniki/talkytrend/commit/4e1d214febcf19693d0be3828c172fcefe2702e9))
+
+
 ## v1.15.5 (2023-10-25)
 
 ### Other
