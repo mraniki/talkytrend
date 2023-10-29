@@ -2,6 +2,27 @@
 
 
 
+## v1.15.7 (2023-10-29)
+
+### Other
+
+* Merge pull request #175 from mraniki/dev
+
+⬆️ 🤖 - Q	Why should you always serve a Southern Carolina football man ([`29f02d8`](https://github.com/mraniki/talkytrend/commit/29f02d8a8caee6bc727ad1ae5603634987f1edb5))
+
+* Merge pull request #174 from mraniki/dev
+
+⬆️ 🤖 - (fortune -s) ([`6eff9f3`](https://github.com/mraniki/talkytrend/commit/6eff9f3a7f1ccd136cd3fd9311da2874aaf5c130))
+
+### Update
+
+* Updated GitHub workflow file for merge job. ([`e424f88`](https://github.com/mraniki/talkytrend/commit/e424f88630f1d973b32bae5510908ea4823f59f4))
+
+### 👷
+
+* 👷 CI Change ([`f246905`](https://github.com/mraniki/talkytrend/commit/f2469056cf36b007befd8076166ec16d0c813104))
+
+
 ## v1.15.6 (2023-10-28)
 
 ### Other
