@@ -3,16 +3,8 @@ Provides example for talkytrend
 """
 
 import asyncio
-import sys
-
-import uvicorn
-from fastapi import FastAPI
-from loguru import logger
 
 from talkytrend import TalkyTrend
-
-logger.remove()
-logger.add(sys.stderr, level="INFO")
 
 
 async def main():
@@ -47,26 +39,5 @@ async def main():
     print("monitor:\n", monitor)
 
 
-app = FastAPI()
-
-
-@app.on_event("startup")
-async def start():
-    """startup"""
-    asyncio.create_task(main())
-
-
-@app.get("/")
-def read_root():
-    """root"""
-    return {"online"}
-
-
-@app.get("/health")
-def health_check():
-    """healthcheck"""
-    return {"online"}
-
-
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8089)
+    asyncio.run(main())
