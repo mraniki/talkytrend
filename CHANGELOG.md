@@ -2,6 +2,91 @@
 
 
 
+## v1.15.8 (2023-12-10)
+
+### Other
+
+* Merge pull request #192 from mraniki/dev
+
+⬆️ 🤖 - Be careful of reading health books you might die of a misprint ([`9234207`](https://github.com/mraniki/talkytrend/commit/9234207c6d71f07ce1a7ac293cefadccfcf91566))
+
+* Merge pull request #190 from mraniki/renovate/pytest-asyncio-0.x
+
+⬆️ 🛠️(deps): update dependency pytest-asyncio to ^0.23.0 ([`ec4a016`](https://github.com/mraniki/talkytrend/commit/ec4a016d5a05559eeafee602e3fb58d376c07f1c))
+
+* Merge pull request #189 from mraniki/dev
+
+⬆️ 🤖 - You will be divorced within a year ([`1178aba`](https://github.com/mraniki/talkytrend/commit/1178abae88435b0e3baa4d164d96c12aff1861be))
+
+* Merge pull request #188 from mraniki/main
+
+Merge pull request #187 from mraniki/dev ([`b32e988`](https://github.com/mraniki/talkytrend/commit/b32e988d6b9748c39dfd449e5b6520132040da84))
+
+* Merge pull request #187 from mraniki/dev
+
+⬆️ 🤖 - Your lucky color has faded ([`5e664e3`](https://github.com/mraniki/talkytrend/commit/5e664e3e929ad7e1fe73ef2da42d12b052f44a48))
+
+* Merge pull request #186 from mraniki/main
+
+Merge pull request #185 from mraniki/dev ([`de22a49`](https://github.com/mraniki/talkytrend/commit/de22a49d9cd0932452454369cf1d122440a217ef))
+
+* Merge pull request #185 from mraniki/dev
+
+⬆️ 🤖 - You had some happiness once but your parents moved away and you had to ([`5c137e9`](https://github.com/mraniki/talkytrend/commit/5c137e9e4f67ca1d477159b5f9fd01eff53e7997))
+
+* Merge pull request #184 from mraniki/main
+
+Merge pull request #183 from mraniki/dev ([`927fa81`](https://github.com/mraniki/talkytrend/commit/927fa81b349ec8df3425351506fac96604ba541f))
+
+* Merge pull request #183 from mraniki/dev
+
+⬆️ 🤖 - You will never know hunger ([`ea3e5a9`](https://github.com/mraniki/talkytrend/commit/ea3e5a9da5c5a659596be21ac06255f6fc3f28cb))
+
+* Merge pull request #182 from mraniki/main
+
+Align ([`21d0fd7`](https://github.com/mraniki/talkytrend/commit/21d0fd734a226255c9aa1cb89cd5d0d9dd213d86))
+
+* Merge pull request #180 from mraniki/dev
+
+⬆️ 🤖 - Be different conform ([`6d58f75`](https://github.com/mraniki/talkytrend/commit/6d58f75aeddd3c7f208e438101465ef78307a54c))
+
+* Delete .mergify.yml ([`ca54982`](https://github.com/mraniki/talkytrend/commit/ca54982e4faeeb77f92b7ae0eb9479d6f1b79ea0))
+
+* Delete requirements.txt ([`9b70fef`](https://github.com/mraniki/talkytrend/commit/9b70fef51066a689eaab514e55cfbeea2edcd431))
+
+* Delete poetry.lock ([`36b9831`](https://github.com/mraniki/talkytrend/commit/36b98317645616762927cb76b282dde72ef0ed27))
+
+* Merge pull request #181 from mraniki/renovate/ruff-0.x-lockfile
+
+⬆️ 🛠️(deps): update dependency ruff to v0.1.4 ([`110cff4`](https://github.com/mraniki/talkytrend/commit/110cff4e0f3cf13cd4001e061cc8e447dda2d69c))
+
+* Delete .mergify.yml ([`5824a34`](https://github.com/mraniki/talkytrend/commit/5824a34a95e8e0a14f672e7086aafa34573db6d3))
+
+* Delete requirements.txt ([`08716c8`](https://github.com/mraniki/talkytrend/commit/08716c87b72055e328d863171f92efb897c902b9))
+
+* Delete poetry.lock ([`b5855d5`](https://github.com/mraniki/talkytrend/commit/b5855d5af2a51d185a33f805631723f8127e9969))
+
+* Merge pull request #177 from mraniki/renovate/pydata-sphinx-theme-0.x-lockfile
+
+⬆️ 🛠️(deps): update dependency pydata-sphinx-theme to v0.14.3 ([`7a8522b`](https://github.com/mraniki/talkytrend/commit/7a8522bc227959dc2c7b76f13fb220c96f8fb64d))
+
+### ♻️
+
+* ♻️ ([`7f30b68`](https://github.com/mraniki/talkytrend/commit/7f30b689604f22ee4e1defdb1f6ab105b522d87e))
+
+* ♻️ simplify example ([`b9ea5d1`](https://github.com/mraniki/talkytrend/commit/b9ea5d18c5c828772db9387de55e80e8384e1361))
+
+### ⬆️
+
+* ⬆️ 🛠️(deps): update dependency pytest-asyncio to ^0.23.0 ([`c442bff`](https://github.com/mraniki/talkytrend/commit/c442bff72af99d222d3bf541599bcb0326a5ace5))
+
+* ⬆️ 🛠️(deps): update dependency ruff to v0.1.4 ([`03b6915`](https://github.com/mraniki/talkytrend/commit/03b69159e4a130744c4e02dbd379df59968353aa))
+
+* ⬆️ 🛠️(deps): update dependency dynaconf to v3.2.4 ([`c2b91ce`](https://github.com/mraniki/talkytrend/commit/c2b91cef48f0262e4bc292bc9bed1b69b6c66171))
+
+* ⬆️ 🛠️(deps): update dependency pydata-sphinx-theme to v0.14.3 ([`44e2cbd`](https://github.com/mraniki/talkytrend/commit/44e2cbd54264f3cd004b59326afd95b728e89aca))
+
+
 ## v1.15.7 (2023-10-29)
 
 ### Other
