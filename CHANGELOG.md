@@ -2,6 +2,23 @@
 
 
 
+## v1.15.9 (2024-01-05)
+
+### Other
+
+* Merge pull request #194 from mraniki/dev
+
+⬆️ 🤖 - Q	What do monsters eat ([`9e9d057`](https://github.com/mraniki/talkytrend/commit/9e9d05781202310ef13aab33c3d56aa9d665e289))
+
+* Merge pull request #193 from mraniki/renovate/pydata-sphinx-theme-0.x
+
+⬆️ 🛠️(deps): update dependency pydata-sphinx-theme to ^0.15.0 ([`2969efc`](https://github.com/mraniki/talkytrend/commit/2969efcc762ae82b53a5dc6119b99be255c29296))
+
+### ⬆️
+
+* ⬆️ 🛠️(deps): update dependency pydata-sphinx-theme to ^0.15.0 ([`722d151`](https://github.com/mraniki/talkytrend/commit/722d1515a6b2cab986484614c7c9386f2b79fea1))
+
+
 ## v1.15.8 (2023-12-10)
 
 ### Other
