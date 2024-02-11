@@ -2,6 +2,21 @@
 
 
 
+## v1.16.0 (2024-02-11)
+
+### Other
+
+* Merge pull request #201 from mraniki/dev
+
+✨ adding finnhub support for news and a simple web scraper ([`ce607c9`](https://github.com/mraniki/talkytrend/commit/ce607c95a057dc787d28ed7a98609aeff599943e))
+
+### ✨
+
+* ✨ simple web scraper ([`d210303`](https://github.com/mraniki/talkytrend/commit/d210303f01cd74ef29b16225df7412138608bd7e))
+
+* ✨ adding finnhub support for news ([`fb4c7d7`](https://github.com/mraniki/talkytrend/commit/fb4c7d705e54a2c50ea23a6b55169116afb30f32))
+
+
 ## v1.15.10 (2024-02-07)
 
 ### Other
