@@ -9,6 +9,7 @@ from talkytrend import TalkyTrend
 
 async def main():
     """Main"""
+
     talky = TalkyTrend()
     print(talky)
 
@@ -34,6 +35,12 @@ async def main():
     fomc_day = await talky.check_fomc()
     print("is it FOMC today:\n", fomc_day)
     # False
+
+    news_data = await talky.get_finnhub_news()
+    print(news_data)
+
+    scrape = await talky.scrape_page()
+    print(scrape)
 
     monitor = await talky.monitor()
     print("monitor:\n", monitor)

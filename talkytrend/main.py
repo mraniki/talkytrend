@@ -5,8 +5,11 @@
 from datetime import date, datetime
 
 import aiohttp
+import finnhub
+import requests
 import xmltodict
 import yfinance as yf
+from bs4 import BeautifulSoup
 from loguru import logger
 from prettytable import PrettyTable
 from tradingview_ta import TA_Handler
@@ -260,5 +263,52 @@ class TalkyTrend:
         if signal := await self.fetch_signal():
             if settings.enable_signals:
                 results.append(signal)
+        if settings.enable_scraper:
+            if news := await self.scrape_page():
+                results.append(news)
 
         return "\n".join(results)
+
+    async def get_finnhub_news(self):
+        """ """
+        try:
+            finnhub_client = finnhub.Client(api_key=settings.finnhub_api_key)
+            news_data = finnhub_client.general_news(
+                settings.finnhub_news_category, min_id=0
+            )
+            # Create HTML formatted string for each news item
+            news_summary_html = (
+                f"<a href='{item['url']}' target='_blank'>{item['headline']}</a>"
+                f"<br/><p>{item['summary']}</p>"
+                for item in news_data
+                if "headline" in item and "url" in item and "summary" in item
+            )
+
+            return "<br/>".join(news_summary_html)
+        except Exception as e:
+            logger.error("Error getting finnhub news: {}", e)
+
+    async def scrape_page(self):
+        try:
+            if settings.enable_scraper:
+                if settings.market_page_url:
+                    headers = {
+                        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                        "AppleWebKit/537.36 (KHTML, like Gecko) "
+                        "Chrome/58.0.3029.110 Safari/537.3"
+                    }
+
+                    response = requests.get(settings.market_page_url, headers=headers)
+                    response.raise_for_status()
+                    soup = BeautifulSoup(response.content, "html.parser")
+                    if settings.market_page_id:
+                        description_element = soup.select(settings.market_page_id)
+                        main_content = description_element[0].get_text()
+                    else:
+                        main_content = soup.prettify()
+                    return main_content
+
+        except requests.HTTPError as http_err:
+            print(f"HTTP error occurred: {http_err}")
+        except Exception as e:
+            print(f"An error occurred: {e}")
