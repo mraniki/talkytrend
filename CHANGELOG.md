@@ -2,6 +2,27 @@
 
 
 
+## v1.16.1 (2024-02-11)
+
+### Other
+
+* Merge pull request #203 from mraniki/dev
+
+⬆️ 🤖 - The man who sets out to carry a cat by its tail learns something that ([`0ed2cc7`](https://github.com/mraniki/talkytrend/commit/0ed2cc79bf6e33ce364425798bd2b637fa2bd4e7))
+
+* Merge pull request #202 from mraniki/dev
+
+⬆️ 🤖 - You have a deep interest in all that is artistic ([`ea23850`](https://github.com/mraniki/talkytrend/commit/ea23850b2f2cb4d1f28667afb531ee7eecc3d602))
+
+### Update
+
+* Update default_settings.toml file ([`cef4483`](https://github.com/mraniki/talkytrend/commit/cef4483b0c241abafb1a853dc164bc5dc3d94731))
+
+### 🐛
+
+* 🐛 ([`45f2ca6`](https://github.com/mraniki/talkytrend/commit/45f2ca6941612db6ad45b9ab5566f8501c9a76d7))
+
+
 ## v1.16.0 (2024-02-11)
 
 ### Other
