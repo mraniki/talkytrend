@@ -36,11 +36,15 @@ async def main():
     print("is it FOMC today:\n", fomc_day)
     # False
 
+    news_data = await talky.get_finnhub_news()
+    print(news_data)
+
+    scrape = await talky.scrape_page()
+    print(scrape)
+
     monitor = await talky.monitor()
     print("monitor:\n", monitor)
 
-    news_data = await talky.get_finnhub_news()
-    print(news_data)
 
 if __name__ == "__main__":
     asyncio.run(main())

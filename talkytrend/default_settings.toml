@@ -58,6 +58,9 @@ enable_finnhub = true
 finnhub_api_key = ""
 finnhub_news_category = "forex"
 
+enable_scraper = true
+market_page_url = ""
+market_page_id = "#description"
 
 ########################################
 ###     END OF DEFAULT SETTINGS      ###
