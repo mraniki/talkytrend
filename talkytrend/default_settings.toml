@@ -50,7 +50,6 @@ enable_feed = true
 # Feeds RSS url
 news_feed = "https://www.dailyfx.com/feeds/market-news"
 
-
 # Finnhub news fetcher
 enable_finnhub = false
 finnhub_api_key = ""
