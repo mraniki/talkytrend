@@ -51,6 +51,14 @@ enable_feed = true
 news_feed = "https://www.dailyfx.com/feeds/market-news"
 
 
+# Tradings economics
+enable_finnhub = true
+# Tradingeconomics api key 
+# replace with your own
+finnhub_api_key = ""
+finnhub_news_category = "forex"
+
+
 ########################################
 ###     END OF DEFAULT SETTINGS      ###
 ########################################

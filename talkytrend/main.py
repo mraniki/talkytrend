@@ -5,6 +5,7 @@
 from datetime import date, datetime
 
 import aiohttp
+import finnhub
 import xmltodict
 import yfinance as yf
 from loguru import logger
@@ -262,3 +263,22 @@ class TalkyTrend:
                 results.append(signal)
 
         return "\n".join(results)
+
+    async def get_finnhub_news(self):
+        """ """
+        try:
+            finnhub_client = finnhub.Client(api_key=settings.finnhub_api_key)
+            news_data = finnhub_client.general_news(
+                settings.finnhub_news_category, min_id=0
+            )
+            # Create HTML formatted string for each news item
+            news_summary_html = (
+                f"<a href='{item['url']}' target='_blank'>{item['headline']}</a>"
+                f"<br/><p>{item['summary']}</p>"
+                for item in news_data
+                if "headline" in item and "url" in item and "summary" in item
+            )
+
+            return "<br/>".join(news_summary_html)
+        except Exception as e:
+            logger.error("Error getting finnhub news: {}", e)

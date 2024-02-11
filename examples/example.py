@@ -9,6 +9,7 @@ from talkytrend import TalkyTrend
 
 async def main():
     """Main"""
+
     talky = TalkyTrend()
     print(talky)
 
@@ -38,6 +39,8 @@ async def main():
     monitor = await talky.monitor()
     print("monitor:\n", monitor)
 
+    news_data = await talky.get_finnhub_news()
+    print(news_data)
 
 if __name__ == "__main__":
     asyncio.run(main())
