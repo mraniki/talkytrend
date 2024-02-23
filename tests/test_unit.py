@@ -105,3 +105,13 @@ async def test_monitor(talky):
     assert "📰" in result
     assert "EURUSD" in result
     assert "yahoo" in result
+
+@pytest.mark.asyncio
+async def test_get_finnhub_news(talky):
+    result = await talky.get_finnhub_news()
+    assert result is not None 
+
+@pytest.mark.asyncio
+async def test_scrape_page(talky):
+    result = await talky.scrape_page()
+    assert result is not None 
