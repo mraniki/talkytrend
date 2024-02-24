@@ -2,6 +2,27 @@
 
 
 
+## v1.16.2 (2024-02-24)
+
+### :white_check_mark:
+
+* :white_check_mark: Add unit tests for get_finnhub_news and scrape_page functions ([`e1afa9b`](https://github.com/mraniki/talkytrend/commit/e1afa9b846594fc92b8a9f00f87c9a8f5be9840f))
+
+### Other
+
+* Merge pull request #204 from mraniki/dev
+
+⬆️ 🤖 - Q	What is the burning question on the mind of every dyslexic ([`a2e6859`](https://github.com/mraniki/talkytrend/commit/a2e685921f5dab2e591023d1a2e387b58681c652))
+
+* Refactor test_scrape_page function in test_unit.py ([`1cf3068`](https://github.com/mraniki/talkytrend/commit/1cf306852c92e0f62faf82fd1bd7447211fb3e26))
+
+* Add print statement to test_scrape_page function. ([`c638a74`](https://github.com/mraniki/talkytrend/commit/c638a7429c0c0fcb9188d55c9c722a3aa629f2d0))
+
+### 🙈
+
+* 🙈 ([`33adfdc`](https://github.com/mraniki/talkytrend/commit/33adfdc5f4c124b000d651d392c2c4bc42c6daf0))
+
+
 ## v1.16.1 (2024-02-11)
 
 ### Other
