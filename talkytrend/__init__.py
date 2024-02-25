@@ -1,7 +1,7 @@
 """
  Versioning
 """
-__version__ = "1.16.2"
+__version__ = "1.16.3"
 
 
 from talkytrend.main import TalkyTrend

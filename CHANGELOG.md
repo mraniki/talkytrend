@@ -2,6 +2,25 @@
 
 
 
+## v1.16.3 (2024-02-25)
+
+### Other
+
+* Merge pull request #206 from mraniki/dev
+
+♻️ ✅ Unit Test &amp; Refactor ([`1fcd515`](https://github.com/mraniki/talkytrend/commit/1fcd515cbda1e18bef931d4fa4af2ed3e80a0849))
+
+* Remove unnecessary whitespace in TalkyTrend class. ([`e09894b`](https://github.com/mraniki/talkytrend/commit/e09894ba1f7998670f8fa0ef5dcd7f0c06ff33eb))
+
+### ♻️
+
+* ♻️ ✅ Unit Test &amp; Refactor ([`c16103d`](https://github.com/mraniki/talkytrend/commit/c16103dd4e21ee70b593854a5114643ae1411baf))
+
+### ⬆️
+
+* ⬆️ 🛠️(deps): update dependency black to v24 ([`8413709`](https://github.com/mraniki/talkytrend/commit/84137092d5b190a60d33a39875e95cefa39029b9))
+
+
 ## v1.16.2 (2024-02-24)
 
 ### :white_check_mark:
