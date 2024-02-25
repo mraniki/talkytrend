@@ -290,24 +290,19 @@ class TalkyTrend:
 
     async def scrape_page(self):
         try:
-            if settings.enable_scraper:
-                if settings.market_page_url:
-                    headers = {
-                        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-                        "AppleWebKit/537.36 (KHTML, like Gecko) "
-                        "Chrome/58.0.3029.110 Safari/537.3"
-                    }
-
-                    response = requests.get(settings.market_page_url, headers=headers)
-                    response.raise_for_status()
-                    soup = BeautifulSoup(response.content, "html.parser")
-                    if settings.market_page_id:
-                        description_element = soup.select(settings.market_page_id)
-                        main_content = description_element[0].get_text()
-                    else:
-                        main_content = soup.prettify()
-                    return main_content
-
+            if settings.market_enable_scraper and settings.market_page_url:
+                headers = {
+                    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                    "AppleWebKit/537.36 (KHTML, like Gecko) "
+                    "Chrome/58.0.3029.110 Safari/537.3"
+                }
+                response = requests.get(settings.market_page_url, headers=headers)
+                response.raise_for_status()
+                soup = BeautifulSoup(response.content, "html.parser")
+                if not settings.market_page_id:
+                    return soup.prettify()
+                description_element = soup.select(settings.market_page_id)
+                return description_element[0].get_text()
         except requests.HTTPError as http_err:
             print(f"HTTP error occurred: {http_err}")
         except Exception as e:
