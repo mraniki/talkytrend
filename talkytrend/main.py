@@ -296,7 +296,6 @@ class TalkyTrend:
                     "AppleWebKit/537.36 (KHTML, like Gecko) "
                     "Chrome/58.0.3029.110 Safari/537.3"
                 }
-            
                 response = requests.get(settings.market_page_url, headers=headers)
                 response.raise_for_status()
                 soup = BeautifulSoup(response.content, "html.parser")
