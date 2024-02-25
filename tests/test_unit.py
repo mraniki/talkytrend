@@ -111,8 +111,8 @@ async def test_get_finnhub_news(talky):
     result = await talky.get_finnhub_news()
     assert result is not None 
 
-# @pytest.mark.asyncio
-# async def test_scrape_page(talky):
-#     result = await talky.scrape_page()
-#     print(result) 
-#     assert result is not None 
+@pytest.mark.asyncio
+async def test_scrape_page(talky):
+    result = await talky.scrape_page()
+    print(result) 
+    assert result is not None 
