@@ -29,6 +29,7 @@ class TalkyTrend:
         """
         Initialize the TalkyTrend class
         """
+        #todo add all settings here
         self.enabled = settings.talkytrend_enabled
         if not self.enabled:
             return
@@ -42,7 +43,9 @@ class TalkyTrend:
 
         :return: A string containing the TalkyTrend version.
         """
+        #todo include settings
         return f"ℹ️ {type(self).__name__} {__version__}\n"
+        
 
     async def fetch_analysis(self, asset_id, exchange, screener, interval):
         """
