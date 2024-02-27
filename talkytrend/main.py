@@ -283,7 +283,9 @@ class TalkyTrend:
                 results.append(feed)
 
         if self.enable_yfinance:
-            if ticker_info := await self.fetch_ticker_info(ticker=self.assets):
+            if ticker_info := await self.fetch_ticker_info(
+                ticker=self.yfinance_ticker_reference
+            ):
                 results.append(ticker_info)
 
         if self.enable_signals:

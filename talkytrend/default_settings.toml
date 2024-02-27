@@ -41,8 +41,19 @@ enable_events = true
 # Events calendar
 economic_calendar = "https://nfs.faireconomy.media/ff_calendar_thisweek.json"
 # Adhoc date to add in event tracker
-fomc_decision_date = ["2023-11-01","2023-12-13","2024-01-31","2024-03-20","2024-05-01","2024-06-12","2024-07-31","2024-09-18","2024-11-07","2024-12-18","2025-01-29"]
-
+fomc_decision_date = [
+    "2023-11-01",
+    "2023-12-13",
+    "2024-01-31",
+    "2024-03-20",
+    "2024-05-01",
+    "2024-06-12",
+    "2024-07-31",
+    "2024-09-18",
+    "2024-11-07",
+    "2024-12-18",
+    "2025-01-29"
+    ]
 # TV url
 live_tv_url = "https://bloomberg.com/media-manifest/streams/us.m3u8"
 
