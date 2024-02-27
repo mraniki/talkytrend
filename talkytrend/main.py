@@ -32,9 +32,27 @@ class TalkyTrend:
         self.enabled = settings.talkytrend_enabled
         if not self.enabled:
             return
+        self.enable_signals = settings.enable_signals
         self.assets = settings.assets
+
+        self.enable_yfinance = settings.enable_yfinance
+        self.yfinance_ticker_reference = settings.yfinance_ticker_reference
+
+        self.enable_events = settings.enable_events
         self.economic_calendar = settings.economic_calendar
+        self.fomc_decision_date = settings.fomc_decision_date
         self.live_tv = settings.live_tv_url
+
+        self.enable_feed = settings.enable_feed
+        self.feed_url = settings.feed_url
+
+        self.enable_finnhub = settings.enable_finnhub
+        self.finnhub_api_key = settings.finnhub_api_key
+        self.finnhub_news_category = settings.finnhub_news_category
+
+        self.enable_scraper = settings.enable_scraper
+        self.scraper_page_url = settings.scraper_page_url
+        self.scraper_page_id = settings.scraper_page_id
 
     async def get_talkytrend_info(self):
         """
@@ -42,7 +60,14 @@ class TalkyTrend:
 
         :return: A string containing the TalkyTrend version.
         """
-        return f"ℹ️ {type(self).__name__} {__version__}\n"
+        _info = f"ℹ️ {type(self).__name__} {__version__}\n"
+        _info += f"signals enabled: {self.enable_signals}\n"
+        _info += f"yfinance enabled: {self.enable_yfinance}\n"
+        _info += f"events enabled: {self.enable_events}\n"
+        _info += f"feed enabled: {self.enable_feed}\n"
+        _info += f"scraper enabled: {self.enable_scraper}\n"
+
+        return _info
 
     async def fetch_analysis(self, asset_id, exchange, screener, interval):
         """
@@ -128,10 +153,10 @@ class TalkyTrend:
 
         return table.get_string()
 
-    async def fetch_ticker_info(self, ticker=settings.ticker_reference):
+    async def fetch_ticker_info(self, ticker=None):
         """
         Fetches the information for a given instrument from
-        yahoo finance. Not yet implemented.
+        yahoo finance.
 
         Args:
             ticker_reference (str): The ticker symbol or
@@ -142,6 +167,8 @@ class TalkyTrend:
             and link of the latest news article for the instrument.
                  Returns None if there is no news available.
         """
+        if not ticker:
+            ticker = self.yfinance_ticker_reference
         logger.debug("Fetching news for {}", ticker)
         ticker = yf.Ticker(ticker)
         if news := ticker.news:
@@ -197,8 +224,8 @@ class TalkyTrend:
         :rtype: str or None
         """
         async with aiohttp.ClientSession() as session:
-            async with session.get(settings.news_feed, timeout=10) as response:
-                logger.debug("Fetching news from {}", settings.news_feed)
+            async with session.get(self.feed_url, timeout=10) as response:
+                logger.debug("Fetching news from {}", self.feed_url)
                 data = (
                     xmltodict.parse(await response.text())
                     .get("rss")
@@ -221,7 +248,7 @@ class TalkyTrend:
             on the current date, False otherwise.
         """
         logger.debug("Checking for FOMC decision")
-        event_dates = settings.fomc_decision_date
+        event_dates = self.fomc_decision_date
         current_date = date.today().isoformat()
         return any(event.startswith(current_date) for event in event_dates)
 
@@ -248,22 +275,25 @@ class TalkyTrend:
         """
         results = []
         logger.debug("Monitoring")
-        if settings.enable_events:
+        if self.enable_events:
             if event := await self.fetch_event():
                 results.append(event)
 
-        if feed := await self.fetch_feed():
-            if settings.enable_feed:
+        if self.enable_feed:
+            if feed := await self.fetch_feed():
                 results.append(feed)
 
-        if settings.enable_yfinance:
-            if ticker_info := await self.fetch_ticker_info():
+        if self.enable_yfinance:
+            if ticker_info := await self.fetch_ticker_info(
+                ticker=self.yfinance_ticker_reference
+            ):
                 results.append(ticker_info)
 
-        if signal := await self.fetch_signal():
-            if settings.enable_signals:
+        if self.enable_signals:
+            if signal := await self.fetch_signal():
                 results.append(signal)
-        if settings.enable_scraper:
+
+        if self.enable_scraper:
             if news := await self.scrape_page():
                 results.append(news)
 
@@ -272,9 +302,9 @@ class TalkyTrend:
     async def get_finnhub_news(self):
         """ """
         try:
-            finnhub_client = finnhub.Client(api_key=settings.finnhub_api_key)
+            finnhub_client = finnhub.Client(api_key=self.finnhub_api_key)
             news_data = finnhub_client.general_news(
-                settings.finnhub_news_category, min_id=0
+                self.finnhub_news_category, min_id=0
             )
             # Create HTML formatted string for each news item
             news_summary_html = (
@@ -290,18 +320,18 @@ class TalkyTrend:
 
     async def scrape_page(self):
         try:
-            if settings.market_enable_scraper and settings.market_page_url:
+            if self.enable_scraper and self.scraper_page_url:
                 headers = {
                     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
                     "AppleWebKit/537.36 (KHTML, like Gecko) "
                     "Chrome/58.0.3029.110 Safari/537.3"
                 }
-                response = requests.get(settings.market_page_url, headers=headers)
+                response = requests.get(self.scraper_page_url, headers=headers)
                 response.raise_for_status()
                 soup = BeautifulSoup(response.content, "html.parser")
-                if not settings.market_page_id:
+                if not self.scraper_page_id:
                     return soup.prettify()
-                description_element = soup.select(settings.market_page_id)
+                description_element = soup.select(self.scraper_page_id)
                 return description_element[0].get_text()
         except requests.HTTPError as http_err:
             print(f"HTTP error occurred: {http_err}")
