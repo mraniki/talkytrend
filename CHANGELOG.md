@@ -2,6 +2,23 @@
 
 
 
+## v2.0.1 (2024-02-27)
+
+### Other
+
+* Merge pull request #210 from mraniki/dev
+
+⬆️ 🤖 - Look afar and see the end from the beginning ([`6c21a37`](https://github.com/mraniki/talkytrend/commit/6c21a37c698e3e2d7a75afab464760df13350850))
+
+### ⬆️
+
+* ⬆️ 📝 ([`e1b7be6`](https://github.com/mraniki/talkytrend/commit/e1b7be6a78e906f201f81e60551cca744ad42d9a))
+
+### 📝
+
+* 📝 ([`63e01af`](https://github.com/mraniki/talkytrend/commit/63e01af5ec2c6f18430f698afdc560dd63465ae5))
+
+
 ## v2.0.0 (2024-02-27)
 
 ### :recycle:
