@@ -2,6 +2,19 @@
 
 
 
+## v1.16.4 (2024-02-27)
+
+### Other
+
+* Merge pull request #208 from mraniki/dev
+
+⬆️ 🤖 - Youll be sorry ([`e485f0e`](https://github.com/mraniki/talkytrend/commit/e485f0e75ea98757be8aded06938f142c17ede8d))
+
+### ⬆️
+
+* ⬆️ 🛠️(deps): update dependency pytest to v8 ([`3d42425`](https://github.com/mraniki/talkytrend/commit/3d424250cf9bc993fdffe3ce6b00ddbf0eede263))
+
+
 ## v1.16.3 (2024-02-25)
 
 ### Other
