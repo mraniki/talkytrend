@@ -329,7 +329,7 @@ class TalkyTrend:
                 response = requests.get(self.scraper_page_url, headers=headers)
                 response.raise_for_status()
                 soup = BeautifulSoup(response.content, "html.parser")
-                if not settings.market_page_id:
+                if not self.scraper_page_id:
                     return soup.prettify()
                 description_element = soup.select(self.scraper_page_id)
                 return description_element[0].get_text()
