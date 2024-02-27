@@ -224,7 +224,7 @@ class TalkyTrend:
         """
         async with aiohttp.ClientSession() as session:
             async with session.get(self.feed_url, timeout=10) as response:
-                logger.debug("Fetching news from {}", settings.news_feed)
+                logger.debug("Fetching news from {}", self.feed_url)
                 data = (
                     xmltodict.parse(await response.text())
                     .get("rss")
