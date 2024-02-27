@@ -29,7 +29,6 @@ class TalkyTrend:
         """
         Initialize the TalkyTrend class
         """
-        # todo add all settings here
         self.enabled = settings.talkytrend_enabled
         if not self.enabled:
             return
@@ -168,6 +167,8 @@ class TalkyTrend:
             and link of the latest news article for the instrument.
                  Returns None if there is no news available.
         """
+        if not ticker:
+            ticker = self.yfinance_ticker_reference
         logger.debug("Fetching news for {}", ticker)
         ticker = yf.Ticker(ticker)
         if news := ticker.news:
