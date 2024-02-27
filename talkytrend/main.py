@@ -33,9 +33,27 @@ class TalkyTrend:
         self.enabled = settings.talkytrend_enabled
         if not self.enabled:
             return
+        self.enable_signals = settings.enable_signals
         self.assets = settings.assets
+
+        self.enable_yfinance = settings.enable_yfinance
+        self.ticker_reference = settings.ticker_reference
+
+        self.enable_events = settings.enable_events
         self.economic_calendar = settings.economic_calendar
+        self.fomc_decision_date = settings.fomc_decision_date
         self.live_tv = settings.live_tv_url
+
+        self.enable_feed = settings.enable_feed
+        self.news_feed = settings.news_feed
+
+        self.enable_finnhub = settings.enable_finnhub
+        self.finnhub_api_key = settings.finnhub_api_key
+        self.finnhub_news_category = settings.finnhub_news_category
+
+        self.enable_scraper = settings.enable_scraper
+        self.market_page_url = settings.market_page_url
+        self.market_page_id = settings.market_page_url
 
     async def get_talkytrend_info(self):
         """
