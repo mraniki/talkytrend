@@ -37,7 +37,7 @@ finnhub-python = "2.4.19"
 [tool.poetry.group.dev.dependencies]
 python-semantic-release = ">=8.0.8"
 ruff = "^0.2.0"
-black = "^24.0.0"
+#black = "^24.0.0"
 pre-commit = "^3.3.1"
 
 [tool.ruff]
@@ -87,7 +87,7 @@ skips = ["B101","B104"]
 
 
 [tool.poetry.group.test.dependencies]
-pytest = "^8.0.0"
+pytest = "^7.0"
 pytest-cov = "^4.1"
 pytest-asyncio = "^0.23.0"
 pytest-mock = "^3.11.1"
