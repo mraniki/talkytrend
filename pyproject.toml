@@ -87,7 +87,7 @@ skips = ["B101","B104"]
 
 
 [tool.poetry.group.test.dependencies]
-pytest = "^7.0"
+pytest = "^8.0.0"
 pytest-cov = "^4.1"
 pytest-asyncio = "^0.23.0"
 pytest-mock = "^3.11.1"
