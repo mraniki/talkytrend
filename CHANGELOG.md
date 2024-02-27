@@ -2,6 +2,19 @@
 
 
 
+## v2.0.2 (2024-02-27)
+
+### Other
+
+* Merge pull request #212 from mraniki/dev
+
+⬆️ 🤖 - You will inherit some money or a small piece of land ([`77b7952`](https://github.com/mraniki/talkytrend/commit/77b7952fdee0f91bbb08af6985c01b30d4e151c1))
+
+### ⬆️
+
+* ⬆️ ([`7e053a3`](https://github.com/mraniki/talkytrend/commit/7e053a3803e8617f93039ecb695413765454cd58))
+
+
 ## v2.0.1 (2024-02-27)
 
 ### Other
