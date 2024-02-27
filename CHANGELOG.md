@@ -2,6 +2,37 @@
 
 
 
+## v2.0.0 (2024-02-27)
+
+### :recycle:
+
+* :recycle: Add settings in init for yfinance, events, fomc, feed, finnhub, scraper ([`1807119`](https://github.com/mraniki/talkytrend/commit/1807119a0876d6eb56f8734eb87d7e65ab79da65))
+
+### Other
+
+* Merge pull request #209 from mraniki/dev
+
+💥 breaking: settings naming convention change and refactoring ([`de58422`](https://github.com/mraniki/talkytrend/commit/de58422abe0cb5a9245a95e9cdb17077d6f9c144))
+
+* Add settings to TalkyTrend class. ([`29835be`](https://github.com/mraniki/talkytrend/commit/29835beda9f17eaad5ad89e14e2f2eac6efbca72))
+
+### ♻️
+
+* ♻️ ([`e7876ba`](https://github.com/mraniki/talkytrend/commit/e7876baaff9df689ddcaeb6765dfb98ecc2f9c9c))
+
+### 🐛
+
+* 🐛 ([`f5b0194`](https://github.com/mraniki/talkytrend/commit/f5b01942cfb1641403c8d7c6454318f8b5b6e3bc))
+
+* 🐛 ([`fdc9837`](https://github.com/mraniki/talkytrend/commit/fdc98373bde2b4e80efb7888aa208ba7ff125461))
+
+* 🐛 ([`1ba2537`](https://github.com/mraniki/talkytrend/commit/1ba25371d05870acdad5852a2254eb5c0437e094))
+
+### 💥
+
+* 💥 breaking: settings naming convention change and refactoring ([`c8cf897`](https://github.com/mraniki/talkytrend/commit/c8cf8978bb425303caef9a0d9aaa602745f3fa3b))
+
+
 ## v1.16.4 (2024-02-27)
 
 ### Other
