@@ -2,6 +2,23 @@
 
 
 
+## v2.0.3 (2024-02-28)
+
+### Other
+
+* Merge pull request #214 from mraniki/dev
+
+⬆️ 🤖 - The fashion wears out more apparel than the man ([`5afe50f`](https://github.com/mraniki/talkytrend/commit/5afe50fc19dbb67a5f7f0f92d6e2213ca90521dd))
+
+### Update
+
+* Update pydata-sphinx-theme version to ^0.15.0 ([`c4bd356`](https://github.com/mraniki/talkytrend/commit/c4bd3563948682c6d6940de24df0366d8d4184e2))
+
+* Update dependencies versions in pyproject.toml file ([`b34bc46`](https://github.com/mraniki/talkytrend/commit/b34bc46d7858013f76b85d4719eac2162251d0cf))
+
+* Update pytest version to 7.0 in pyproject.toml ([`c9591d7`](https://github.com/mraniki/talkytrend/commit/c9591d74b320a5f5aa87a51669b1c147d1c3a8ca))
+
+
 ## v2.0.2 (2024-02-27)
 
 ### Other
