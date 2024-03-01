@@ -2,6 +2,23 @@
 
 
 
+## v2.0.4 (2024-03-01)
+
+### Other
+
+* Merge pull request #216 from mraniki/dev
+
+⬆️ 🤖 - The very ink with which all history is written is merely fluid prejudice ([`5864577`](https://github.com/mraniki/talkytrend/commit/5864577fcf2270c8f68d22c77fc516a0f09725dc))
+
+* Merge pull request #215 from mraniki/renovate/ruff-0.x
+
+⬆️ 🛠️(deps): update dependency ruff to ^0.3.0 ([`ddb35f5`](https://github.com/mraniki/talkytrend/commit/ddb35f58d9a0b9842dc3712cd148fb48023d6b22))
+
+### ⬆️
+
+* ⬆️ 🛠️(deps): update dependency ruff to ^0.3.0 ([`251801b`](https://github.com/mraniki/talkytrend/commit/251801b33c2af8c444e0c40d5899fd1887ceee83))
+
+
 ## v2.0.3 (2024-02-28)
 
 ### Other
