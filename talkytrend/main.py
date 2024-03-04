@@ -130,7 +130,7 @@ class TalkyTrend:
             to fetch the signal. Defaults to "4h".
 
         Returns:
-            str: The signal table as a string.
+            str: The signal table as a string or HTML formatted
         """
         signals = []
         table = PrettyTable(header=False)
