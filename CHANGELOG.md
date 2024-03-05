@@ -2,6 +2,23 @@
 
 
 
+## v2.0.5 (2024-03-05)
+
+### Other
+
+* Merge pull request #217 from mraniki/dev
+
+⬆️ 🤖 - Expect a letter from a friend who will ask a favor of you ([`0de20e1`](https://github.com/mraniki/talkytrend/commit/0de20e152c63e765c3d13d83fadbfed4b396bda6))
+
+### ⚡
+
+* ⚡ adding html format for signal table ([`a411d05`](https://github.com/mraniki/talkytrend/commit/a411d05887de4a4804dfe246d4f716423b9bc27f))
+
+### 💬
+
+* 💬 ([`5ba1c10`](https://github.com/mraniki/talkytrend/commit/5ba1c10e558f6233ef5d748c059f695a6ea02e82))
+
+
 ## v2.0.4 (2024-03-01)
 
 ### Other
