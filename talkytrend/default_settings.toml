@@ -30,6 +30,7 @@ assets = [
     { id ="GOLD", exchange='TVC',screener="cfd"},
     { id ="BTCUSD", exchange='BINANCE',screener="crypto"},
 ]
+format = ""
 
 # yahoo finance ticker reference
 # to retrieve company news or index news

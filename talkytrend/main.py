@@ -34,6 +34,7 @@ class TalkyTrend:
             return
         self.enable_signals = settings.enable_signals
         self.assets = settings.assets
+        self.format = settings.format or None
 
         self.enable_yfinance = settings.enable_yfinance
         self.yfinance_ticker_reference = settings.yfinance_ticker_reference
@@ -129,7 +130,7 @@ class TalkyTrend:
             to fetch the signal. Defaults to "4h".
 
         Returns:
-            str: The signal table as a string.
+            str: The signal table as a string or HTML formatted
         """
         signals = []
         table = PrettyTable(header=False)
@@ -150,8 +151,7 @@ class TalkyTrend:
                 }
                 table.add_row([asset["id"], current_signal])
                 signals.append(signal_item)
-
-        return table.get_string()
+        return table.get_html_string() if self.format == "HTML" else table.get_string()
 
     async def fetch_ticker_info(self, ticker=None):
         """
