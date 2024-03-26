@@ -2,6 +2,19 @@
 
 
 
+## v2.0.6 (2024-03-26)
+
+### Other
+
+* Merge pull request #221 from mraniki/dev
+
+⬆️ 🤖 - He is now rising from affluence to poverty ([`a483520`](https://github.com/mraniki/talkytrend/commit/a483520ac7064fb709dd7e44b091c7be968cbc1a))
+
+### 🚨
+
+* 🚨 Linter setup update ([`de7da4e`](https://github.com/mraniki/talkytrend/commit/de7da4e9b3d7c07abf5055548b60ff475e969476))
+
+
 ## v2.0.5 (2024-03-05)
 
 ### Other
