@@ -1,6 +1,7 @@
 """
  TalkyTrend Config
 """
+
 import os
 
 from dynaconf import Dynaconf
