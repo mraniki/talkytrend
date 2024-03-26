@@ -2,6 +2,19 @@
 
 
 
+## v2.0.7 (2024-03-26)
+
+### Other
+
+* Merge pull request #222 from mraniki/dev
+
+🚨 ([`2b8c1f4`](https://github.com/mraniki/talkytrend/commit/2b8c1f4443acd990a80ecbc22a2bc83acad2937e))
+
+### 🚨
+
+* 🚨 ([`cedb3be`](https://github.com/mraniki/talkytrend/commit/cedb3bedeb74cea6573ee55a05efb0ca63509b98))
+
+
 ## v2.0.6 (2024-03-26)
 
 ### Other
