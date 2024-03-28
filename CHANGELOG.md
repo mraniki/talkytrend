@@ -2,6 +2,19 @@
 
 
 
+## v2.0.8 (2024-03-28)
+
+### Other
+
+* Merge pull request #223 from mraniki/dev
+
+Update installation and dependency commands in .readthedocs.yaml ([`84ce7f1`](https://github.com/mraniki/talkytrend/commit/84ce7f13defada471aa04cc6c09c782529381d4b))
+
+### Update
+
+* Update installation and dependency commands in .readthedocs.yaml ([`291ba16`](https://github.com/mraniki/talkytrend/commit/291ba1619f306079d6e097abb5a50be98ae168aa))
+
+
 ## v2.0.7 (2024-03-26)
 
 ### Other
