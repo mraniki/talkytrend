@@ -2,6 +2,19 @@
 
 
 
+## v2.0.9 (2024-04-17)
+
+### Other
+
+* Merge pull request #225 from mraniki/dev
+
+⬆️ 🤖 - Big book big bore ([`ee631c9`](https://github.com/mraniki/talkytrend/commit/ee631c94941501636e6cd765fd0691366425672b))
+
+### ⬆️
+
+* ⬆️ 🛠️(deps): update dependency sphinx to v7.3.1 ([`407fa8c`](https://github.com/mraniki/talkytrend/commit/407fa8c366bb96dd851cc4f73e1074f725ddb585))
+
+
 ## v2.0.8 (2024-03-28)
 
 ### Other
