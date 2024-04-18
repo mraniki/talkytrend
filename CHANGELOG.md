@@ -2,6 +2,21 @@
 
 
 
+## v2.0.10 (2024-04-18)
+
+### Other
+
+* Merge pull request #229 from mraniki/dev
+
+⬆️ 🤖 - Q	How many Marxists does it take to screw in a light bulb ([`131ba39`](https://github.com/mraniki/talkytrend/commit/131ba39ed270f9f3fbaa8bfbfdbf0a15452a3a2a))
+
+### ⬆️
+
+* ⬆️ 🛠️(deps): update dependency sphinx to v7.3.6 ([`d8e3f3c`](https://github.com/mraniki/talkytrend/commit/d8e3f3c2d2761c7132a01d241eb2423c46fcd56c))
+
+* ⬆️ 🛠️(deps): update dependency sphinx to v7.3.5 ([`678e781`](https://github.com/mraniki/talkytrend/commit/678e781a294943aa7a4e9eec0acd34f7afb96485))
+
+
 ## v2.0.9 (2024-04-17)
 
 ### Other
@@ -11,6 +26,8 @@
 ⬆️ 🤖 - Big book big bore ([`ee631c9`](https://github.com/mraniki/talkytrend/commit/ee631c94941501636e6cd765fd0691366425672b))
 
 ### ⬆️
+
+* ⬆️ 🛠️(deps): update dependency sphinx to v7.3.4 ([`0d6f4df`](https://github.com/mraniki/talkytrend/commit/0d6f4dfcaffee79708c20387d4f526097aff148d))
 
 * ⬆️ 🛠️(deps): update dependency sphinx to v7.3.1 ([`407fa8c`](https://github.com/mraniki/talkytrend/commit/407fa8c366bb96dd851cc4f73e1074f725ddb585))
 
