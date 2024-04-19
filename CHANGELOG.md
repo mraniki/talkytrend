@@ -2,6 +2,23 @@
 
 
 
+## v2.0.11 (2024-04-19)
+
+### Other
+
+* Merge pull request #231 from mraniki/dev
+
+⬆️ 🤖 - Living your life is a task so difficult it has never been attempted before ([`1f4ddfc`](https://github.com/mraniki/talkytrend/commit/1f4ddfc4c8295729c85c2f534df388b145fa75c7))
+
+* Merge pull request #230 from mraniki/renovate/ruff-0.x
+
+⬆️ 🛠️(deps): update dependency ruff to ^0.4.0 ([`9b09986`](https://github.com/mraniki/talkytrend/commit/9b099865a4780dd57c1bf68d9a0140749f24672b))
+
+### ⬆️
+
+* ⬆️ 🛠️(deps): update dependency ruff to ^0.4.0 ([`89d9ea0`](https://github.com/mraniki/talkytrend/commit/89d9ea01b01603ac5d29363b1e7bea01310356f9))
+
+
 ## v2.0.10 (2024-04-18)
 
 ### Other
