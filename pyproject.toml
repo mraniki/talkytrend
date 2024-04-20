@@ -6,7 +6,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "talkytrend"
-version = "2.0.11"
+version = "2.0.12"
 description = "A python package to retrieve  economic data such as Trend for any financial symbol."
 authors = ["mraniki <8766259+mraniki@users.noreply.github.com>"]
 license = "MIT License"
@@ -103,6 +103,7 @@ skips = ["B101","B104"]
 
 
 
+
 [tool.poetry.group.test.dependencies]
 pytest = "^7.0"
 pytest-cov = "^4.1"
@@ -124,6 +125,7 @@ omit = [
   "docs/*",
   "*/config.py"
   ]
+
 
 
 

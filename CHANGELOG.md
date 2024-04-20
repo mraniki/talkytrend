@@ -2,6 +2,19 @@
 
 
 
+## v2.0.12 (2024-04-20)
+
+### Other
+
+* Merge pull request #233 from mraniki/dev
+
+⬆️ 🤖 - So this is it  Were going to die ([`769ce60`](https://github.com/mraniki/talkytrend/commit/769ce60d0eac219c65f3f8809b74d179bf295c9a))
+
+### ⬆️
+
+* ⬆️ 🛠️(deps): update dependency sphinx to v7.3.7 ([`ff8e085`](https://github.com/mraniki/talkytrend/commit/ff8e085f3d55b2b893c34399edaccc5d858cec84))
+
+
 ## v2.0.11 (2024-04-19)
 
 ### Other
