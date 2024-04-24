@@ -2,6 +2,19 @@
 
 
 
+## v2.0.13 (2024-04-24)
+
+### Other
+
+* Merge pull request #235 from mraniki/dev
+
+⬆️ 🤖 - For courage mounteth with occasion ([`192347b`](https://github.com/mraniki/talkytrend/commit/192347b78c74fd336e74af2ba02b4d6b499cb2a2))
+
+### ⬆️
+
+* ⬆️ 🛠️(deps): update dependency pytest-cov to v5 ([`1869049`](https://github.com/mraniki/talkytrend/commit/1869049a2a1cbd75ddbbc7e69fcf21c3acd447e7))
+
+
 ## v2.0.12 (2024-04-20)
 
 ### Other
