@@ -164,7 +164,7 @@ pydata-sphinx-theme = "^0.15.0"
 sphinx-hoverxref = "^1.3.0"
 sphinx_design = "^0.6.0"
 sphinx_copybutton = "^0.5.2"
-myst_parser = "^2.0.0"
+myst_parser = "^3.0.0"
 
 [tool.semantic_release]
 version_variables = ["talkytrend/__init__.py:__version__"]
