@@ -2,6 +2,25 @@
 
 
 
+## v2.0.14 (2024-05-24)
+
+### Other
+
+* Merge pull request #239 from mraniki/dev
+
+⬆️ 🤖 - Q	Why did the tachyon cross the road ([`6c2788a`](https://github.com/mraniki/talkytrend/commit/6c2788a680f69d73ee2d7a6bec84b8c9ecc8e136))
+
+* Merge pull request #237 from mraniki/renovate/sphinx_design-0.x
+
+⬆️ 🛠️(deps): update dependency sphinx_design to ^0.6.0 ([`9978291`](https://github.com/mraniki/talkytrend/commit/9978291a7732192627c57b45495a5842d4c4d209))
+
+### ⬆️
+
+* ⬆️ 🛠️(deps): update dependency myst_parser to v3 ([`eec6c7d`](https://github.com/mraniki/talkytrend/commit/eec6c7db9ca35a3d360744e4da4c65aaa4fb1ebf))
+
+* ⬆️ 🛠️(deps): update dependency sphinx_design to ^0.6.0 ([`5f3a9fa`](https://github.com/mraniki/talkytrend/commit/5f3a9fadad5debae5bf97954edf6c9b2ef29aa52))
+
+
 ## v2.0.13 (2024-04-24)
 
 ### Other
