@@ -2,6 +2,19 @@
 
 
 
+## v2.0.15 (2024-05-27)
+
+### Other
+
+* Merge pull request #240 from mraniki/dev
+
+🎨 chore: update default_settings.toml ([`eed5799`](https://github.com/mraniki/talkytrend/commit/eed5799aee6e8b07fd2967ce0f025dd5a99a18ae))
+
+### 🎨
+
+* 🎨 chore: update default_settings.toml ([`98e30f4`](https://github.com/mraniki/talkytrend/commit/98e30f4bb31876b6b04f87dd5993f68da0252baa))
+
+
 ## v2.0.14 (2024-05-24)
 
 ### Other
