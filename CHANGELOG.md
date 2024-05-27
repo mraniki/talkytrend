@@ -2,6 +2,19 @@
 
 
 
+## v2.0.16 (2024-05-27)
+
+### Other
+
+* Merge pull request #241 from mraniki/dev
+
+📝 update main.py ([`b652672`](https://github.com/mraniki/talkytrend/commit/b652672e05a10e943d6bab74d99115f9379e80e6))
+
+### 📝
+
+* 📝 update main.py ([`71cf33a`](https://github.com/mraniki/talkytrend/commit/71cf33a86cad58e2f7eea1b6b680971692d04891))
+
+
 ## v2.0.15 (2024-05-27)
 
 ### Other
