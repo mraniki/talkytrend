@@ -186,21 +186,83 @@ class TalkyTrend:
         """
 
         def filter_events(data, today):
+            """
+            Filters a list of events based on their date.
+
+            Args:
+                data (list): A list of dictionaries representing events.
+                today (str): The date to compare the event dates against.
+
+            Returns:
+                list: A list of events with a date greater than today.
+            """
             return [event for event in data if event.get("date", "") > today]
 
         def is_usd_high_impact(event):
-            return event.get("impact") == "High" and event.get("country") in {
+            """
+            Check if the given event is a high-impact event for the USD or ALL currency.
+
+            Parameters:
+                event (dict): The event to check.
+
+            Returns:
+                bool: True if the event is a high-impact event
+                for the USD or ALL currency and False otherwise.
+            """
+            return event.get("impact") in {
+                "High",
+                "Holiday",
+            } and event.get("country") in {
                 "USD",
                 "ALL",
             }
 
         def is_all_high_impact(event):
-            return event.get("impact") == "High" and event.get("country") == "ALL"
+            """
+            Check if the given event is a high-impact event for the "ALL" country.
+
+            Args:
+                event (dict): The event to check.
+
+            Returns:
+                bool: True if the event has a "High" or "Holiday" impact
+                and is for the "ALL" country, False otherwise.
+            """
+            return (
+                event.get("impact")
+                in {
+                    "High",
+                    "Holiday",
+                }
+                and event.get("country") == "ALL"
+            )
 
         def is_opec_or_fomc(event):
+            """
+            Check if the given event is related to OPEC
+            (Organization of the Petroleum Exporting Countries)
+            or FOMC (Federal Open Market Committee).
+
+            Parameters:
+                event (dict): The event to check.
+
+            Returns:
+                bool: True if the event is related to OPEC or FOMC, False otherwise.
+            """
             return "OPEC" in event.get("title") or "FOMC" in event.get("title")
 
         def format_event(event):
+            """
+            Formats an event into a string representation.
+
+            Args:
+                event (dict): A dictionary representing
+                an event with 'title' and 'date' keys.
+
+            Returns:
+                str: A formatted string representing the event,
+                with the title and date separated by a newline character.
+            """
             return f"💬 {event['title']}\n⏰ {event['date']}"
 
         async with aiohttp.ClientSession() as session:
@@ -300,7 +362,14 @@ class TalkyTrend:
         return "\n".join(results)
 
     async def get_finnhub_news(self):
-        """ """
+        """
+        Asynchronously retrieves news articles from the Finnhub API
+        based on the specified category and API key.
+
+        :return: A string containing HTML formatted news summaries
+        linked to their respective URLs.
+        Returns None if an error occurs while retrieving the news.
+        """
         try:
             finnhub_client = finnhub.Client(api_key=self.finnhub_api_key)
             news_data = finnhub_client.general_news(
@@ -319,6 +388,18 @@ class TalkyTrend:
             logger.error("Error getting finnhub news: {}", e)
 
     async def scrape_page(self):
+        """
+        Asynchronously scrapes a webpage and retrieves
+        the content specified by the scraper_page_url
+        and scraper_page_id attributes.
+
+        :return: The content of the webpage as a string,
+        formatted using BeautifulSoup.
+        If the scraper_page_id is not specified,
+        the entire webpage is returned.
+
+        :rtype: str
+        """
         try:
             if self.enable_scraper and self.scraper_page_url:
                 headers = {
