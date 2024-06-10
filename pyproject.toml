@@ -31,7 +31,7 @@ xmltodict = "*"
 prettytable = "^3.8.0"
 tradingview_ta = "^3.3.0"
 yfinance = "^0.2.25"
-finnhub-python = "2.4.19"
+finnhub-python = "2.4.20"
 
 
 [tool.poetry.group.dev.dependencies]
