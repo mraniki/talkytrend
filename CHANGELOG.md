@@ -2,6 +2,19 @@
 
 
 
+## v2.0.17 (2024-06-11)
+
+### Other
+
+* Merge pull request #243 from mraniki/dev
+
+⬆️ 🤖 - I have never let my schooling interfere with my education ([`bfbf6c0`](https://github.com/mraniki/talkytrend/commit/bfbf6c0751b68f15d89aebbd7f215c5bd950eb66))
+
+### ⬆️
+
+* ⬆️ 🛠️(deps): update dependency finnhub-python to v2.4.20 ([`2e2e1ab`](https://github.com/mraniki/talkytrend/commit/2e2e1abaeda68fb555852bbd509d1cb2b810b3d5))
+
+
 ## v2.0.16 (2024-05-27)
 
 ### Other
