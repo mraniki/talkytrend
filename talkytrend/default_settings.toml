@@ -18,6 +18,26 @@ VALUE = "On Default"
 
 # Module Enable/Disable
 # talkytrend_enabled = true
+# # Tradingview Parameters
+[default.talkytrend.template]
+# Signals Enable/Disable
+enabled = true
+library = "tradingview"
+# instrument monitored under trend
+# use https://tvdb.brianthe.dev
+# to update the list for your instrument
+instrument = [
+    { id ="EURUSD", exchange='FX_IDC',screener="forex"},
+    { id ="GOLD", exchange='TVC',screener="cfd"},
+    { id ="SPX", exchange='SP',screener="cfd"},
+    { id ="UKOIL", exchange='FX',screener="cfd"},
+    { id ="BTCUSD", exchange='BINANCE',screener="crypto"},
+]
+# Tradingview Prettytable Format
+# default format is flat table
+# other option is "HTML"
+# see https://pypi.org/project/prettytable/
+format = ""
 
 # # Tradingview Parameters
 # [default.talkytrend.tradingview]
