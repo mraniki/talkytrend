@@ -46,3 +46,15 @@ class YfinanceHandler(Client):
             title = news[0].get("title")
             link = news[0].get("link")
             return f"🗞️ <a href='{link}'>{title}</a>"
+
+    async def monitor(self):
+        """
+        Asynchronously monitors the system and retrieves
+        various data sources based on the configured settings.
+        Cover Events, Feed, and Signal.
+
+        Returns:
+            str: A string containing the concatenated results
+             of the retrieved data sources.
+        """
+        return await self.fetch_ticker_info(ticker=self.yfinance_ticker_reference)

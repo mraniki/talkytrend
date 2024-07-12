@@ -106,3 +106,16 @@ class TradingviewHandler(Client):
                 table.add_row([asset["id"], current_signal])
                 signals.append(signal_item)
         return table.get_html_string() if self.format == "HTML" else table.get_string()
+
+    async def monitor(self):
+        """
+        Asynchronously monitors the system and retrieves
+        various data sources based on the configured settings.
+        Cover Events, Feed, and Signal.
+
+        Returns:
+            str: A string containing the concatenated results
+             of the retrieved data sources.
+        """
+
+        return await self.fetch_signal()

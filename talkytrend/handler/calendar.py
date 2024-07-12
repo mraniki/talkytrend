@@ -144,3 +144,16 @@ class CalendarHandler(Client):
         event_dates = self.fomc_decision_date
         current_date = date.today().isoformat()
         return any(event.startswith(current_date) for event in event_dates)
+
+    async def monitor(self):
+        """
+        Asynchronously monitors the system and retrieves
+        various data sources based on the configured settings.
+        Cover Events, Feed, and Signal.
+
+        Returns:
+            str: A string containing the concatenated results
+             of the retrieved data sources.
+        """
+
+        return await self.fetch_event()

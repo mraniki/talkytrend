@@ -129,18 +129,14 @@ class TalkyTrend:
 
     async def get_talkytrend_info(self):
         """
-        Get information about the TalkyTrend version.
+        Get information about the
+        TalkyTrend version and clients.
 
         :return: A string containing the TalkyTrend version.
         """
-        _info = f"ℹ️ {type(self).__name__} {__version__}\n"
-        _info += f"signals enabled: {self.enable_signals}\n"
-        _info += f"yfinance enabled: {self.enable_yfinance}\n"
-        _info += f"events enabled: {self.enable_events}\n"
-        _info += f"feed enabled: {self.enable_feed}\n"
-        _info += f"scraper enabled: {self.enable_scraper}\n"
-
-        return _info
+        version_info = f"ℹ️ {type(self).__name__} {__version__}\n"
+        client_info = "".join(f"🤖 {client.name}\n" for client in self.clients)
+        return version_info + client_info.strip()
 
     async def monitor(self):
         """
@@ -154,26 +150,10 @@ class TalkyTrend:
         """
         results = []
         logger.debug("Monitoring")
-        if self.enable_events:
-            if event := await self.fetch_event():
-                results.append(event)
 
-        if self.enable_feed:
-            if feed := await self.fetch_feed():
-                results.append(feed)
-
-        if self.enable_yfinance:
-            if ticker_info := await self.fetch_ticker_info(
-                ticker=self.yfinance_ticker_reference
-            ):
-                results.append(ticker_info)
-
-        if self.enable_signals:
-            if signal := await self.fetch_signal():
-                results.append(signal)
-
-        if self.enable_scraper:
-            if news := await self.scrape_page():
-                results.append(news)
-
+        for client in self.clients:
+            if client:
+                result = await client.monitor()
+                if result:
+                    results.append(result)
         return "\n".join(results)

@@ -36,3 +36,15 @@ class TalkyTrendClient:
         self.scraper_page_url = kwargs.get("scraper_page_url")
         self.scraper_page_id = kwargs.get("scraper_page_id")
         self.client = None
+
+    async def monitor(self):
+        """
+        Asynchronously monitors the system and retrieves
+        various data sources based on the configured settings.
+        Cover Events, Feed, and Signal.
+
+        Returns:
+            str: A string containing the concatenated results
+             of the retrieved data sources.
+        """
+

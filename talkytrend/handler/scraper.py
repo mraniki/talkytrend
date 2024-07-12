@@ -54,3 +54,16 @@ class ScraperHandler(Client):
             print(f"HTTP error occurred: {http_err}")
         except Exception as e:
             print(f"An error occurred: {e}")
+
+    async def monitor(self):
+        """
+        Asynchronously monitors the system and retrieves
+        various data sources based on the configured settings.
+        Cover Events, Feed, and Signal.
+
+        Returns:
+            str: A string containing the concatenated results
+             of the retrieved data sources.
+        """
+
+        return await self.scrape_page()
