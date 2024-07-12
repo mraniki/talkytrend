@@ -28,5 +28,5 @@ class LivetvHandler(Client):
             str: An URL representing the live TV
             url if available, otherwise None.
         """
-        if self.live_tv:
+        if self.live_tv and self.url:
             return f"📺: {self.url}"

@@ -93,11 +93,7 @@ class TalkyTrend:
         """
         library = (
             kwargs.get("library")
-            or kwargs.get("platform")
-            or kwargs.get("protocol")
-            or kwargs.get("parser_library")
-            or kwargs.get("llm_library")
-            or "g4f"
+            or "livetv"
         )
         cls = self.client_classes.get((f"{library.capitalize()}Handler"))
         return None if cls is None else cls(**kwargs)
