@@ -19,7 +19,7 @@ class Client:
         self.instrument = kwargs.get("instrument", None)
         self.format = kwargs.get("format", None)
         self.url = kwargs.get("url", None)
-        self.date = kwargs.get("date", None)
+        # self.date = kwargs.get("date", None)
         self.api_key = kwargs.get("api_key", None)
         self.category = kwargs.get("category", None)
         self.scraper_page_id = kwargs.get("scraper_page_id", None)

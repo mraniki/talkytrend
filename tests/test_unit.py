@@ -47,6 +47,7 @@ async def test_monitor(talky):
     assert result is not None
     assert "EURUSD" in result
     assert "📰" in result
+    assert "📺" in result
 
 
 # @pytest.mark.asyncio

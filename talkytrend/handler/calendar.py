@@ -128,22 +128,22 @@ class CalendarHandler(Client):
                     if is_opec_or_fomc(event):
                         return format_event(event)
 
-    async def check_fomc(self):
-        """
-        Check if there is an FOMC (Federal Open Market Committee)
-        decision on the current date. settings.fomc_decision_date
-        is taking a list of dates.
+    # async def check_fomc(self):
+    #     """
+    #     Check if there is an FOMC (Federal Open Market Committee)
+    #     decision on the current date. settings.fomc_decision_date
+    #     is taking a list of dates.
 
-        This function takes no parameters.
+    #     This function takes no parameters.
 
-        Returns:
-            bool: True if there is an FOMC decision
-            on the current date, False otherwise.
-        """
-        logger.debug("Checking for FOMC decision")
-        event_dates = self.fomc_decision_date
-        current_date = date.today().isoformat()
-        return any(event.startswith(current_date) for event in event_dates)
+    #     Returns:
+    #         bool: True if there is an FOMC decision
+    #         on the current date, False otherwise.
+    #     """
+    #     logger.debug("Checking for FOMC decision")
+    #     event_dates = self.fomc_decision_date
+    #     current_date = date.today().isoformat()
+    #     return any(event.startswith(current_date) for event in event_dates)
 
     async def monitor(self):
         """
