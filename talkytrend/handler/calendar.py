@@ -24,7 +24,7 @@ class CalendarHandler(Client):
 
         super().__init__(**kwargs)
         if self.enabled:
-            self.client = "calendar"
+            self.client = "Calendar"
 
     async def fetch_event(self):
         """

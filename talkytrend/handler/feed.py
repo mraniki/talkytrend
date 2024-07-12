@@ -23,7 +23,7 @@ class FeedHandler(Client):
 
         super().__init__(**kwargs)
         if self.enabled:
-            self.client = "feed"
+            self.client = "Feed"
 
     async def fetch_feed(self):
         """

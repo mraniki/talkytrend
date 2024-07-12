@@ -22,7 +22,7 @@ class YfinanceHandler(Client):
 
         super().__init__(**kwargs)
         if self.enabled:
-            self.client = "yfinance"
+            self.client = "Yfinance"
 
     async def fetch_ticker_info(self, ticker=None):
         """

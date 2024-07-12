@@ -1,7 +1,7 @@
 from .client import Client
 
 
-class TelevisionHandler(Client):
+class LivetvHandler(Client):
     """
     Class for handling live TV.
 
@@ -18,7 +18,7 @@ class TelevisionHandler(Client):
 
         super().__init__(**kwargs)
         if self.enabled:
-            self.client = "Tradingview"
+            self.client = "LiveTV"
 
     async def get_tv(self):
         """
