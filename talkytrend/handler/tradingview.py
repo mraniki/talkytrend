@@ -22,7 +22,6 @@ class TradingviewHandler(Client):
 
         super().__init__(**kwargs)
         logger.debug("Initializing TradingviewHandler")
-        logger.debug("kwargs: {}", kwargs)
         if self.enabled:
             self.client = "Tradingview"
 

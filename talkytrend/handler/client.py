@@ -12,6 +12,7 @@ class Client:
         """
 
         logger.info("Initializing Client")
+        logger.debug("kwargs: {}", kwargs)
         self.name = kwargs.get("name", None)
         self.enabled = kwargs.get("enabled", True)
         self.library = kwargs.get("library", None)
