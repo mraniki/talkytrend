@@ -23,7 +23,7 @@ talkytrend_enabled = true
 [default.talkytrend.tradingview]
 # Signals Enable/Disable
 enabled = true
-library = "Tradingview"
+library = "tradingview"
 # instrument monitored under trend
 # use https://tvdb.brianthe.dev
 # to update the list for your instrument
@@ -44,14 +44,14 @@ format = ""
 # to retrieve company news or index news
 [default.talkytrend.yfinance]
 enabled = true
-library = "Yfinance"
+library = "yfinance"
 instrument = "MSFT"
 
 
 # Events calendar
 [default.talkytrend.calendar]
 enabled = true
-library = "Calendar"
+library = "calendar"
 url = "https://nfs.faireconomy.media/ff_calendar_thisweek.json"
 # Adhoc date to add in event tracker
 date = [
@@ -64,26 +64,26 @@ date = [
 # Live TV
 [default.talkytrend.livetv]
 enabled = true
-library = "LiveTV"
+library = "livetv"
 url = "https://bloomberg.com/media-manifest/streams/us.m3u8"
 
 # RSS Feeds
 [default.talkytrend.feed]
 enabled = true
-library = "Feed"
+library = "feed"
 url = "https://www.dailyfx.com/feeds/market-news"
 
 # Finnhub news fetcher
 [default.talkytrend.finnhub]
 enabled = false
-library = "Finnhub"
+library = "finnhub"
 api_key = ""
 category = "forex"
 
 # web scraper
 [default.talkytrend.scraper]
 enabled = false
-library = "Scraper"
+library = "scraper"
 url = ""
 scraper_page_id = ""
 
