@@ -34,7 +34,7 @@ class FeedHandler(Client):
         """
         async with aiohttp.ClientSession() as session:
             async with session.get(self.url, timeout=10) as response:
-                logger.debug("Fetching news from {}", self.feed_url)
+                logger.debug("Fetching news from {}", self.url)
                 data = (
                     xmltodict.parse(await response.text())
                     .get("rss")
