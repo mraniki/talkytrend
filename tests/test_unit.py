@@ -30,6 +30,7 @@ async def test_talkytrend(talky):
         assert callable(cli.monitor)
         assert callable(cli.fetch)
 
+
 @pytest.mark.asyncio
 async def test_get_info(talky):
     result = await talky.get_info()
@@ -38,6 +39,7 @@ async def test_get_info(talky):
     assert "TalkyTrend" in result
     assert "ℹ️" in result
 
+
 @pytest.mark.asyncio
 async def test_monitor(talky):
     result = await talky.monitor()
@@ -45,6 +47,7 @@ async def test_monitor(talky):
     assert result is not None
     assert "EURUSD" in result
     assert "📰" in result
+
 
 # @pytest.mark.asyncio
 # async def test_fetch_signal(talky):
