@@ -91,7 +91,7 @@ class TradingviewHandler(Client):
         table = PrettyTable(header=False)
         logger.debug("Fetching signal for interval {}", interval)
 
-        for asset in self.assets:
+        for asset in self.instrument:
             current_signal = await self.fetch_analysis(
                 asset_id=asset["id"],
                 exchange=asset["exchange"],

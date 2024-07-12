@@ -116,8 +116,8 @@ class CalendarHandler(Client):
             return f"💬 {event['title']}\n⏰ {event['date']}"
 
         async with aiohttp.ClientSession() as session:
-            async with session.get(self.economic_calendar, timeout=10) as response:
-                logger.debug("Fetching events from {}", self.economic_calendar)
+            async with session.get(self.url, timeout=10) as response:
+                logger.debug("Fetching events from {}", self.url)
                 response.raise_for_status()
                 data = await response.json()
                 today = datetime.now().isoformat()

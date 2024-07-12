@@ -29,4 +29,4 @@ class TelevisionHandler(Client):
             url if available, otherwise None.
         """
         if self.live_tv:
-            return f"📺: {self.live_tv}"
+            return f"📺: {self.url}"

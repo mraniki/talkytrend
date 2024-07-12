@@ -33,9 +33,9 @@
 #         Returns None if an error occurs while retrieving the news.
 #         """
 #         try:
-#             finnhub_client = finnhub.Client(api_key=self.finnhub_api_key)
+#             finnhub_client = finnhub.Client(api_key=self.api_key)
 #             news_data = finnhub_client.general_news(
-#                 self.finnhub_news_category, min_id=0
+#                 self.category, min_id=0
 #             )
 #             # Create HTML formatted string for each news item
 #             news_summary_html = (

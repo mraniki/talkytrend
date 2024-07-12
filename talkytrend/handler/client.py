@@ -16,18 +16,13 @@ class TalkyTrendClient:
         self.enabled = kwargs.get("enabled", True)
         self.library = kwargs.get("library", None)
 
-        self.assets = kwargs.get("assets", None)
+        self.instrument = kwargs.get("instrument", None)
         self.format = kwargs.get("format", None)
-        self.yfinance_ticker_reference = kwargs.get("yfinance_ticker_reference", None)
-        self.economic_calendar = kwargs.get("economic_calendar", None)
-        self.fomc_decision_date = kwargs.get("fomc_decision_date", None)
-        self.live_tv = kwargs.get("live_tv_url", None)
-        self.feed_url = kwargs.get("feed_url", None)
-        self.scraper_page_url = kwargs.get("scraper_page_url", None)
+        self.url = kwargs.get("url", None)
+        self.date = kwargs.get("date", None)
+        self.api_key = kwargs.get("api_key", None)
+        self.category = kwargs.get("category", None)
         self.scraper_page_id = kwargs.get("scraper_page_id", None)
-
-        # self.api_key = kwargs.get("finnhub_api_key", None)
-        # self.finnhub_news_category = kwargs.get("finnhub_news_category", None)
 
         self.client = None
 

@@ -26,61 +26,60 @@ enabled = true
 # instrument monitored under trend
 # use https://tvdb.brianthe.dev
 # to update the list for your instrument
-assets = [
-    # { id ="EURUSD", exchange='FX_IDC',screener="forex"},
-    # { id ="UKOIL", exchange='FX',screener="cfd"},
-    # { id ="GOLD", exchange='TVC',screener="cfd"},
-    # { id ="BTCUSD", exchange='BINANCE',screener="crypto"},
+instrument = [
+    { id ="EURUSD", exchange='FX_IDC',screener="forex"},
+    { id ="GOLD", exchange='TVC',screener="cfd"},
+    { id ="SPX", exchange='SP',screener="cfd"},
+    { id ="UKOIL", exchange='FX',screener="cfd"},
+    { id ="BTCUSD", exchange='BINANCE',screener="crypto"},
 ]
+# Tradingview Prettytable Format
+# default format is flat table
+# other option is "HTML"
+# see https://pypi.org/project/prettytable/
+
 format = ""
 
 # yahoo finance ticker reference
 # to retrieve company news or index news
 [default.talkytrend.yfinance]
 enabled = true
-yfinance_ticker_reference = "MSFT"
+instrument = "MSFT"
 
 
 [default.talkytrend.calendar]
 # Events Enable/Disable
-enable_events = true
+enabled = true
 # Events calendar
-economic_calendar = "https://nfs.faireconomy.media/ff_calendar_thisweek.json"
+url = "https://nfs.faireconomy.media/ff_calendar_thisweek.json"
 # Adhoc date to add in event tracker
-fomc_decision_date = [
-    "2023-11-01",
-    "2023-12-13",
-    "2024-01-31",
-    "2024-03-20",
-    "2024-05-01",
-    "2024-06-12",
-    "2024-07-31",
-    "2024-09-18",
-    "2024-11-07",
-    "2024-12-18",
-    "2025-01-29"
+date = [
+    "2023-11-01", "2023-12-13", "2024-01-31",
+    "2024-03-20", "2024-05-01","2024-06-12", 
+    "2024-07-31", "2024-09-18","2024-11-07", 
+    "2024-12-18", "2025-01-29"
     ]
 
 # TV url
 [default.talkytrend.livetv]
 enabled = true
-live_tv_url = "https://bloomberg.com/media-manifest/streams/us.m3u8"
+url = "https://bloomberg.com/media-manifest/streams/us.m3u8"
 
 # RSS Feeds Enable/Disable
 [default.talkytrend.feed]
 enabled = true
-feed_url = "https://www.dailyfx.com/feeds/market-news"
+url = "https://www.dailyfx.com/feeds/market-news"
 
 # Finnhub news fetcher
 [default.talkytrend.finnhub]
 enabled = false
-finnhub_api_key = ""
-finnhub_news_category = "forex"
+api_key = ""
+category = "forex"
 
 # web scraper
 [default.talkytrend.scraper]
 enabled = false
-scraper_page_url = ""
+url = ""
 scraper_page_id = ""
 
 ########################################

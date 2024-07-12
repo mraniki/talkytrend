@@ -39,7 +39,7 @@ class YfinanceHandler(Client):
                  Returns None if there is no news available.
         """
         if not ticker:
-            ticker = self.yfinance_ticker_reference
+            ticker = self.instrument
         logger.debug("Fetching news for {}", ticker)
         ticker = yf.Ticker(ticker)
         if news := ticker.news:
@@ -57,4 +57,4 @@ class YfinanceHandler(Client):
             str: A string containing the concatenated results
              of the retrieved data sources.
         """
-        return await self.fetch_ticker_info(ticker=self.yfinance_ticker_reference)
+        return await self.fetch_ticker_info(ticker=self.instrument)

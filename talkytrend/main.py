@@ -22,18 +22,15 @@ class TalkyTrend:
         Initialize the TalkyTrend class
         """
         self.enabled = settings.talkytrend_enabled
-        if not self.enabled:
-            return
-
-        # Create a mapping of library names to client classes
-        self.client_classes = self.get_all_client_classes()
-        # logger.debug("client_classes available {}", self.client_classes)
 
         if not self.enabled:
             logger.info("Module is disabled. No Client will be created.")
             return
-        self.clients = []
 
+        self.clients = []
+        # Create a mapping of library names to client classes
+        self.client_classes = self.get_all_client_classes()
+        # logger.debug("client_classes available {}", self.client_classes)
         # Create a client for each client in settings.myllm
         for name, client_config in settings.talkytrend.items():
             if (

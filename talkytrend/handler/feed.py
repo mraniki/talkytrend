@@ -33,7 +33,7 @@ class FeedHandler(Client):
         :rtype: str or None
         """
         async with aiohttp.ClientSession() as session:
-            async with session.get(self.feed_url, timeout=10) as response:
+            async with session.get(self.url, timeout=10) as response:
                 logger.debug("Fetching news from {}", self.feed_url)
                 data = (
                     xmltodict.parse(await response.text())
