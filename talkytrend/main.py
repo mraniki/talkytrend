@@ -124,7 +124,7 @@ class TalkyTrend:
             if isinstance(cls, type)
         }
 
-    async def get_talkytrend_info(self):
+    async def get_info(self):
         """
         Get information about the
         TalkyTrend version and clients.

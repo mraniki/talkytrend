@@ -23,7 +23,7 @@
 #         if self.enabled:
 #             self.client = "Finnhub"
 
-#     async def get_finnhub_news(self):
+#     async def fetch(self):
 #         """
 #         Asynchronously retrieves news articles from the Finnhub API
 #         based on the specified category and API key.

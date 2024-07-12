@@ -24,7 +24,7 @@ class YfinanceHandler(Client):
         if self.enabled:
             self.client = "Yfinance"
 
-    async def fetch_ticker_info(self, ticker=None):
+    async def fetch(self, ticker=None):
         """
         Fetches the information for a given instrument from
         yahoo finance.

@@ -26,7 +26,7 @@ class CalendarHandler(Client):
         if self.enabled:
             self.client = "Calendar"
 
-    async def fetch_event(self):
+    async def fetch(self):
         """
         Retrieves the next high-impact economic event
         from the economic calendar.

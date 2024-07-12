@@ -23,7 +23,7 @@ class ScraperHandler(Client):
         if self.enabled:
             self.client = "Scraper"
 
-    async def scrape_page(self):
+    async def fetch(self):
         """
         Asynchronously scrapes a webpage and retrieves
         the content specified by the scraper_page_url

@@ -25,7 +25,7 @@ class FeedHandler(Client):
         if self.enabled:
             self.client = "Feed"
 
-    async def fetch_feed(self):
+    async def fetch(self):
         """
         Asynchronously fetches a news rss feed from the specified URL.
 

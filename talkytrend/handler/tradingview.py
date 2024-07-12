@@ -76,7 +76,7 @@ class TradingviewHandler(Client):
         except Exception as error:
             logger.warning("event {}", error)
 
-    async def fetch_signal(self, interval="4h"):
+    async def fetch(self, interval="4h"):
         """
         Fetches the signal for a given interval.
 

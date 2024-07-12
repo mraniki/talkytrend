@@ -20,7 +20,7 @@ class LivetvHandler(Client):
         if self.enabled:
             self.client = "LiveTV"
 
-    async def get_tv(self):
+    async def fetch(self):
         """
         Asynchronously retrieves the URL for TV feed.
 

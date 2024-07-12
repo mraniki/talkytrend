@@ -28,25 +28,23 @@ async def test_talkytrend(talky):
     for cli in talky.clients:
         assert cli is not None
         assert callable(cli.monitor)
-        if cli.client == "Tradingview":
-            assert callable(cli.fetch_signal())
-        elif cli.client == "Yfinance":
-            assert callable(cli.fetch_ticker_info())
-        elif cli.client == "Calendar":
-            assert callable(cli.fetch_event())
-        elif cli.client == "Feed":
-            assert callable(cli.fetch_feed())
-        elif cli.client == "Scraper":
-            assert callable(cli.scrape_page())
+        assert callable(cli.fetch)
 
 @pytest.mark.asyncio
-async def test_get_talkytrend_info(talky):
-    result = await talky.get_talkytrend_info()
+async def test_get_info(talky):
+    result = await talky.get_info()
     print(result)
     assert result is not None
     assert "TalkyTrend" in result
     assert "ℹ️" in result
 
+@pytest.mark.asyncio
+async def test_monitor(talky):
+    result = await talky.monitor()
+    print(result)
+    assert result is not None
+    assert "EURUSD" in result
+    assert "📰" in result
 
 # @pytest.mark.asyncio
 # async def test_fetch_signal(talky):

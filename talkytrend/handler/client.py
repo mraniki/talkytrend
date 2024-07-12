@@ -26,6 +26,18 @@ class TalkyTrendClient:
 
         self.client = None
 
+    async def fetch(self):
+        """
+        Asynchronously fetches data from the source
+        using the configured settings.
+
+        Returns:
+            str: A string containing the concatenated results
+             of the retrieved data sources.
+        """
+
+
+
     async def monitor(self):
         """
         Asynchronously monitors the system and retrieves
@@ -36,3 +48,4 @@ class TalkyTrendClient:
             str: A string containing the concatenated results
              of the retrieved data sources.
         """
+
