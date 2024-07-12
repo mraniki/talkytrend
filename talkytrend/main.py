@@ -22,6 +22,7 @@ class TalkyTrend:
         Initialize the TalkyTrend class
         """
         self.enabled = settings.talkytrend_enabled
+        self.settings = settings.talkytrend
 
         if not self.enabled:
             logger.info("Module is disabled. No Client will be created.")
@@ -32,24 +33,25 @@ class TalkyTrend:
         self.client_classes = self.get_all_client_classes()
         # logger.debug("client_classes available {}", self.client_classes)
         # Create a client for each client in settings.myllm
-        for name, client_config in settings.talkytrend.items():
-            if (
-                # Skip empty client configs
-                client_config is None
-                # Skip non-dict client configs
-                or not isinstance(client_config, dict)
-                # Skip template and empty string client names
-                or name in ["", "template"]
-                # Skip disabled clients
-                or not client_config.get("enabled")
-            ):
-                continue
-                # Create the client
-            logger.debug("Creating client {}", name)
-            client = self._create_client(**client_config, name=name)
-            # If the client has a valid client attribute, append it to the list
-            if client and getattr(client, "client", None):
-                self.clients.append(client)
+        if self.settings is not None:
+          for name, client_config in self.settings.items():
+              if (
+                  # Skip empty client configs
+                  client_config is None
+                  # Skip non-dict client configs
+                  or not isinstance(client_config, dict)
+                  # Skip template and empty string client names
+                  or name in ["", "template"]
+                  # Skip disabled clients
+                  or not client_config.get("enabled")
+              ):
+                  continue
+                  # Create the client
+              logger.debug("Creating client {}", name)
+              client = self._create_client(**client_config, name=name)
+              # If the client has a valid client attribute, append it to the list
+              if client and getattr(client, "client", None):
+                  self.clients.append(client)
 
         # Log the number of clients that were created
         logger.info(f"Loaded {len(self.clients)} clients")
