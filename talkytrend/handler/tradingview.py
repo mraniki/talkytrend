@@ -21,11 +21,12 @@ class TradingviewHandler(Client):
         """
 
         super().__init__(**kwargs)
+        logger.debug("Initializing TradingviewHandler")
+        logger.debug("kwargs: {}", kwargs)
         if self.enabled:
             self.client = "Tradingview"
 
-
-    async def fetch_analysis(self, asset_id, exchange, screener, interval):
+    async def fetch_tv_data(self, asset_id, exchange, screener, interval):
         """
         Fetches from Trading View the analysis
         of a given asset from a specified exchange
@@ -92,7 +93,7 @@ class TradingviewHandler(Client):
         logger.debug("Fetching signal for interval {}", interval)
 
         for asset in self.instrument:
-            current_signal = await self.fetch_analysis(
+            current_signal = await self.fetch_tv_data(
                 asset_id=asset["id"],
                 exchange=asset["exchange"],
                 screener=asset["screener"],
