@@ -24,6 +24,7 @@ class TradingviewHandler(Client):
         if self.enabled:
             self.client = "Tradingview"
 
+
     async def fetch_analysis(self, asset_id, exchange, screener, interval):
         """
         Fetches from Trading View the analysis

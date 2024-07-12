@@ -12,29 +12,23 @@ class TalkyTrendClient:
         """
 
         logger.info("Initializing Client")
+        self.name = kwargs.get("name", None)
+        self.enabled = kwargs.get("enabled", True)
+        self.library = kwargs.get("library", None)
 
-        self.enable_signals = kwargs.get("enable_signals")
-        self.assets = kwargs.get("assets")
-        self.format = kwargs.get("format")
+        self.assets = kwargs.get("assets", None)
+        self.format = kwargs.get("format", None)
+        self.yfinance_ticker_reference = kwargs.get("yfinance_ticker_reference", None)
+        self.economic_calendar = kwargs.get("economic_calendar", None)
+        self.fomc_decision_date = kwargs.get("fomc_decision_date", None)
+        self.live_tv = kwargs.get("live_tv_url", None)
+        self.feed_url = kwargs.get("feed_url", None)
+        self.scraper_page_url = kwargs.get("scraper_page_url", None)
+        self.scraper_page_id = kwargs.get("scraper_page_id", None)
 
-        self.enable_yfinance = kwargs.get("enable_yfinance")
-        self.yfinance_ticker_reference = kwargs.get("yfinance_ticker_reference")
+        # self.api_key = kwargs.get("finnhub_api_key", None)
+        # self.finnhub_news_category = kwargs.get("finnhub_news_category", None)
 
-        self.enable_events = kwargs.get("enable_events")
-        self.economic_calendar = kwargs.get("economic_calendar")
-        self.fomc_decision_date = kwargs.get("fomc_decision_date")
-        self.live_tv = kwargs.get("live_tv_url")
-
-        self.enable_feed = kwargs.get("enable_feed")
-        self.feed_url = kwargs.get("feed_url")
-
-        self.enable_finnhub = kwargs.get("enable_finnhub")
-        self.finnhub_api_key = kwargs.get("finnhub_api_key")
-        self.finnhub_news_category = kwargs.get("finnhub_news_category")
-
-        self.enable_scraper = kwargs.get("enable_scraper")
-        self.scraper_page_url = kwargs.get("scraper_page_url")
-        self.scraper_page_id = kwargs.get("scraper_page_id")
         self.client = None
 
     async def monitor(self):
@@ -47,4 +41,3 @@ class TalkyTrendClient:
             str: A string containing the concatenated results
              of the retrieved data sources.
         """
-
