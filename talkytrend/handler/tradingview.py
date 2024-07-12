@@ -119,4 +119,4 @@ class TradingviewHandler(Client):
              of the retrieved data sources.
         """
 
-        return await self.fetch_signal()
+        return await self.fetch()

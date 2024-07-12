@@ -66,4 +66,4 @@ class ScraperHandler(Client):
              of the retrieved data sources.
         """
 
-        return await self.scrape_page()
+        return await self.fetch()

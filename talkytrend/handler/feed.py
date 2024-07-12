@@ -55,4 +55,4 @@ class FeedHandler(Client):
              of the retrieved data sources.
         """
 
-        return await self.fetch_feed()
+        return await self.fetch()

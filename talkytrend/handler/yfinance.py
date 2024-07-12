@@ -57,4 +57,4 @@ class YfinanceHandler(Client):
             str: A string containing the concatenated results
              of the retrieved data sources.
         """
-        return await self.fetch_ticker_info(ticker=self.instrument)
+        return await self.fetch(ticker=self.instrument)

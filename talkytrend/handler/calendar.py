@@ -156,4 +156,4 @@ class CalendarHandler(Client):
              of the retrieved data sources.
         """
 
-        return await self.fetch_event()
+        return await self.fetch()
