@@ -100,9 +100,6 @@ omit = [
   "*/config.py"
   ]
 
-asyncio_mode = "auto"
-
-
 
 [tool.poetry.group.docs]
 optional = true
