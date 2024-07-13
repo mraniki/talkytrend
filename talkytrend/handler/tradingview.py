@@ -58,17 +58,17 @@ class TradingviewHandler(Client):
             "SELL": "🔽",
             "STRONG_SELL": "⏬",
         }
-        try:
-            handler = TA_Handler(
-                symbol=asset_id, exchange=exchange, screener=screener, interval=interval
-            )
-            analysis = await asyncio.get_event_loop().run_in_executor(
-                None, handler.get_analysis
-            )
-            return recommendation_map.get(analysis.summary["RECOMMENDATION"], "▶️")
-        except Exception as error:
-            logger.warning(f"Error fetching analysis: {error}")
-            return "Error"
+        # try:
+        handler = TA_Handler(
+            symbol=asset_id, exchange=exchange, screener=screener, interval=interval
+        )
+        analysis = await asyncio.get_event_loop().run_in_executor(
+            None, handler.get_analysis
+        )
+        return recommendation_map.get(analysis.summary["RECOMMENDATION"], "▶️")
+        # except Exception as error:
+        #     logger.warning(f"Error fetching analysis: {error}")
+        #     return "Error"
 
     async def fetch(self, interval="4h"):
         """
