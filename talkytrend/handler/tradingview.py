@@ -51,7 +51,7 @@ class TradingviewHandler(Client):
                 - 'STRONG_SELL': "⏬"
                 - Any other value: "▶️"
         """
-        logger.debug(f"Analysis for {asset_id} at {exchange} for {interval}.")
+        # logger.debug(f"Analysis for {asset_id} at {exchange} for {interval}.")
         recommendation_map = {
             "BUY": "🔼",
             "STRONG_BUY": "⏫",
@@ -62,7 +62,6 @@ class TradingviewHandler(Client):
             handler = TA_Handler(
                 symbol=asset_id, exchange=exchange, screener=screener, interval=interval
             )
-            logger.debug("handler: {}", handler)
             analysis = await asyncio.get_event_loop().run_in_executor(
                 None, handler.get_analysis
             )

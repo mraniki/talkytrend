@@ -92,10 +92,7 @@ class TalkyTrend:
             library is not supported.
 
         """
-        library = (
-            kwargs.get("library")
-            or "livetv"
-        )
+        library = kwargs.get("library") or "livetv"
         cls = self.client_classes.get((f"{library.capitalize()}Handler"))
         return None if cls is None else cls(**kwargs)
 
@@ -151,3 +148,46 @@ class TalkyTrend:
                 if result:
                     results.append(result)
         return "\n".join(results)
+
+    async def fetch_signal(self):
+        results = []
+        for client in self.clients:
+            if client.client == "Tradingview":
+                result = await client.fetch()
+                if result:
+                    results.append(result)
+        return "\n".join(results)
+
+    async def fetch_feed(self):
+
+        results = []
+        for client in self.clients:
+            if client.client == "Feed":
+                result = await client.fetch()
+                if result:
+                    results.append(result)
+        return "\n".join(results)
+
+    async def fetch_page(self):
+
+        results = []
+        for client in self.clients:
+            if client.client == "Scraper":
+                result = await client.fetch()
+                if result:
+                    results.append(result)
+        return "\n".join(results)
+
+    scrape_page = fetch_page
+
+    async def fetch_tv(self):
+
+        results = []
+        for client in self.clients:
+            if client.client == "LiveTV":
+                result = await client.fetch()
+                if result:
+                    results.append(result)
+        return "\n".join(results)
+
+    get_tv = fetch_tv

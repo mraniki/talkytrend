@@ -24,11 +24,15 @@ async def test_talkytrend(talky):
     assert talky.clients is not None
     assert callable(talky.get_info)
     assert callable(talky.monitor)
+    assert callable(talky.fetch_signal)
+    assert callable(talky.fetch_feed)
+    assert callable(talky.fetch_page)
+    assert callable(talky.fetch_tv)
     assert settings.VALUE == "On Testing"
     for cli in talky.clients:
         assert cli is not None
-        assert callable(cli.monitor)
         assert callable(cli.fetch)
+        assert callable(cli.monitor)
 
 
 @pytest.mark.asyncio
