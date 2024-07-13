@@ -36,15 +36,12 @@ class ScraperHandler(Client):
 
         :rtype: str
         """
-        if not self.enabled or not self.url:
-            return ""
-
-        headers = {
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-            "AppleWebKit/537.36 (KHTML, like Gecko) "
-            "Chrome/58.0.3029.110 Safari/537.3"
-        }
-        try:
+        if self.enabled and self.url:
+            headers = {
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                "AppleWebKit/537.36 (KHTML, like Gecko) "
+                "Chrome/58.0.3029.110 Safari/537.3"
+            }
             async with aiohttp.ClientSession() as session:
                 async with session.get(
                     self.url, headers=headers, timeout=10
@@ -55,10 +52,6 @@ class ScraperHandler(Client):
                         return soup.prettify()
                     description_element = soup.select_one(self.url_element)
                     return description_element.get_text() if description_element else ""
-        except aiohttp.ClientError as e:
-            print(f"An error occurred while making the request: {e}")
-        except Exception as e:
-            print(f"An error occurred: {e}")
 
     async def monitor(self):
         """

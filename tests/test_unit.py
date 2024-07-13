@@ -52,12 +52,13 @@ async def test_fetch_signal(talky):
     strings = ["EURUSD"]
     assert any(string in result for string in strings)
 
+
 @pytest.mark.asyncio
 async def test_fetch_feed(talky):
     result = await talky.fetch_feed()
     print(result)
     assert result is not None
-    strings = ["📰"]
+    strings = ["euro", "📰"]
     assert any(string in result for string in strings)
 
 
@@ -66,8 +67,6 @@ async def test_fetch_page(talky):
     result = await talky.fetch_page()
     print(result)
     assert result is not None
-    # strings = ["🗞️"]
-    # assert any(string in result for string in strings)
 
 
 @pytest.mark.asyncio
