@@ -30,17 +30,15 @@ class TradingviewHandler(Client):
         Fetches from Trading View the analysis
         of a given asset from a specified exchange
         and screener at a specified interval.
+        Utilizes asynchronous handling to improve efficiency.
         more info:
         https://github.com/AnalyzerREST/python-tradingview-ta
 
         Args:
             asset_id (str): The ID of the asset.
-            exchange (str): The exchange on which
-            the asset is traded.
-            screener (str): The screener used
-            for analysis.
-            interval (str): The interval at which
-            the analysis is performed.
+            exchange (str): The exchange on which the asset is traded.
+            screener (str): The screener used for analysis.
+            interval (str): The interval at which the analysis is performed.
 
         Returns:
             str: The recommendation based on the analysis.
@@ -51,30 +49,22 @@ class TradingviewHandler(Client):
                 - 'STRONG_SELL': "⏬"
                 - Any other value: "▶️"
         """
-        # try:
-        logger.debug(
-            "Fetching analysis for {} at {} with screener {} and interval {}.",
-            asset_id,
-            exchange,
-            screener,
-            interval,
-        )
-        handler = TA_Handler(
-            symbol=asset_id, exchange=exchange, screener=screener, interval=interval
-        )
-        analysis = handler.get_analysis()
-        if analysis.summary["RECOMMENDATION"] == "BUY":
-            return "🔼"
-        elif analysis.summary["RECOMMENDATION"] == "STRONG_BUY":
-            return "⏫"
-        elif analysis.summary["RECOMMENDATION"] == "SELL":
-            return "🔽"
-        elif analysis.summary["RECOMMENDATION"] == "STRONG_SELL":
-            return "⏬"
-        else:
-            return "▶️"
-        # except Exception as error:
-        #     logger.warning("event {}", error)
+        logger.debug(f"Analysis for {asset_id} at {exchange} for {interval}.")
+        recommendation_map = {
+            "BUY": "🔼",
+            "STRONG_BUY": "⏫",
+            "SELL": "🔽",
+            "STRONG_SELL": "⏬",
+        }
+        try:
+            handler = TA_Handler(
+                symbol=asset_id, exchange=exchange, screener=screener, interval=interval
+            )
+            analysis = await self.loop.run_in_executor(None, handler.get_analysis)
+            return recommendation_map.get(analysis.summary["RECOMMENDATION"], "▶️")
+        except Exception as error:
+            logger.warning(f"Error fetching analysis: {error}")
+            return "Error"
 
     async def fetch(self, interval="4h"):
         """

@@ -46,7 +46,7 @@ class ScraperHandler(Client):
                 response = requests.get(self.url, headers=headers)
                 response.raise_for_status()
                 soup = BeautifulSoup(response.content, "html.parser")
-                if not self.scraper_page_id:
+                if not self.url_element:
                     return soup.prettify()
                 description_element = soup.select(self.url_element)
                 return description_element[0].get_text()

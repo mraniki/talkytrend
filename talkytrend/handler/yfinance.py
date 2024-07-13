@@ -38,14 +38,13 @@ class YfinanceHandler(Client):
             and link of the latest news article for the instrument.
                  Returns None if there is no news available.
         """
-        if not ticker:
-            return None
-        logger.debug("Fetching news for {}", ticker)
-        ticker = yf.Ticker(ticker)
-        if news := ticker.news:
-            title = news[0].get("title")
-            link = news[0].get("link")
-            return f"🗞️ <a href='{link}'>{title}</a>"
+        if ticker:
+            logger.debug("Fetching news for {}", ticker)
+            ticker = yf.Ticker(ticker)
+            if news := ticker.news:
+                title = news[0].get("title")
+                link = news[0].get("link")
+                return f"🗞️ <a href='{link}'>{title}</a>"
 
     async def monitor(self):
         """
