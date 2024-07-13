@@ -73,13 +73,7 @@ format = ""
 # enabled = true
 # library = "calendar"
 # url = "https://nfs.faireconomy.media/ff_calendar_thisweek.json"
-# # Adhoc date to add in event tracker
-# date = [
-#     "2023-11-01", "2023-12-13", "2024-01-31",
-#     "2024-03-20", "2024-05-01","2024-06-12", 
-#     "2024-07-31", "2024-09-18","2024-11-07", 
-#     "2024-12-18", "2025-01-29"
-#     ]
+
 
 # # Live TV
 # [default.talkytrend.livetv]
@@ -98,14 +92,14 @@ format = ""
 # enabled = false
 # library = "finnhub"
 # api_key = ""
-# category = "forex"
+# api_category = "forex"
 
 # # web scraper
 # [default.talkytrend.scraper]
 # enabled = false
 # library = "scraper"
 # url = ""
-# scraper_page_id = ""
+# url_element = ""
 
 ########################################
 ###     END OF DEFAULT SETTINGS      ###

@@ -19,10 +19,10 @@ class Client:
         self.instrument = kwargs.get("instrument", None)
         self.format = kwargs.get("format", None)
         self.url = kwargs.get("url", None)
-        # self.date = kwargs.get("date", None)
+        self.url_element = kwargs.get("url_element", None)
         self.api_key = kwargs.get("api_key", None)
-        self.category = kwargs.get("category", None)
-        self.scraper_page_id = kwargs.get("scraper_page_id", None)
+        self.api_category = kwargs.get("api_category", None)
+
         self.client = None
 
     async def fetch(self):

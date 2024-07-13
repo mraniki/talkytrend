@@ -41,12 +41,11 @@ class YfinanceHandler(Client):
         if not ticker:
             return None
         logger.debug("Fetching news for {}", ticker)
-        try:
-            ticker = yf.Ticker(ticker)
-            news = ticker.news["context"]["news"][0]
-            return f"🗞️ <a href='{news['url']}>{news['title']}</a>"
-        except (KeyError, IndexError):
-            return None
+        ticker = yf.Ticker(ticker)
+        if news := ticker.news:
+            title = news[0].get("title")
+            link = news[0].get("link")
+            return f"🗞️ <a href='{link}'>{title}</a>"
 
     async def monitor(self):
         """

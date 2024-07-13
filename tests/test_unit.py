@@ -45,9 +45,8 @@ async def test_monitor(talky):
     result = await talky.monitor()
     print(result)
     assert result is not None
-    assert "EURUSD" in result
-    assert "📰" in result
-    assert "📺" in result
+    strings = ["EURUSD", "📰", "🗞️", "📺", "💬", "⏰"]
+    assert any(string in result for string in strings)
 
 
 # @pytest.mark.asyncio

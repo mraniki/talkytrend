@@ -30,3 +30,16 @@ class LivetvHandler(Client):
         """
         if self.enabled and self.url:
             return f"📺: {self.url}"
+
+    async def monitor(self):
+        """
+        Asynchronously monitors the system and retrieves
+        various data sources based on the configured settings.
+        Cover Events, Feed, and Signal.
+
+        Returns:
+            str: A string containing the concatenated results
+             of the retrieved data sources.
+        """
+
+        return await self.fetch()

@@ -48,7 +48,7 @@ class ScraperHandler(Client):
                 soup = BeautifulSoup(response.content, "html.parser")
                 if not self.scraper_page_id:
                     return soup.prettify()
-                description_element = soup.select(self.scraper_page_id)
+                description_element = soup.select(self.url_element)
                 return description_element[0].get_text()
         except requests.HTTPError as http_err:
             print(f"HTTP error occurred: {http_err}")
