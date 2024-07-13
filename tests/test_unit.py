@@ -45,6 +45,41 @@ async def test_get_info(talky):
 
 
 @pytest.mark.asyncio
+async def test_fetch_signal(talky):
+    result = await talky.fetch_signal()
+    print(result)
+    assert result is not None
+    strings = ["EURUSD"]
+    assert any(string in result for string in strings)
+
+@pytest.mark.asyncio
+async def test_fetch_feed(talky):
+    result = await talky.fetch_feed()
+    print(result)
+    assert result is not None
+    strings = ["📰"]
+    assert any(string in result for string in strings)
+
+
+@pytest.mark.asyncio
+async def test_fetch_page(talky):
+    result = await talky.fetch_page()
+    print(result)
+    assert result is not None
+    # strings = ["🗞️"]
+    # assert any(string in result for string in strings)
+
+
+@pytest.mark.asyncio
+async def test_fetch_tv(talky):
+    result = await talky.fetch_tv()
+    print(result)
+    assert result is not None
+    strings = ["📺"]
+    assert any(string in result for string in strings)
+
+
+@pytest.mark.asyncio
 async def test_monitor(talky):
     result = await talky.monitor()
     print(result)
