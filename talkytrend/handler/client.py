@@ -5,23 +5,26 @@ class Client:
 
     def __init__(self, **kwargs):
         """
-        Initialize the TalkyTrend object
+        Initializes the Client object
+        with the given keyword arguments.
 
-        Args:
-            None
+        :param kwargs: Variable length keyword arguments.
+        :type kwargs: dict
+
+        :return: None
         """
 
         logger.info("Initializing Client")
-        logger.debug("kwargs: {}", kwargs)
-        self.name = kwargs.get("name", None)
-        self.enabled = kwargs.get("enabled", True)
-        self.library = kwargs.get("library", None)
-        self.instrument = kwargs.get("instrument", None)
-        self.format = kwargs.get("format", None)
-        self.url = kwargs.get("url", None)
-        self.url_element = kwargs.get("url_element", None)
-        self.api_key = kwargs.get("api_key", None)
-        self.api_category = kwargs.get("api_category", None)
+        get = kwargs.get
+        self.name = get("name", None)
+        self.enabled = get("enabled", True)
+        self.library = get("library", None)
+        self.instrument = get("instrument", None)
+        self.format = get("format", None)
+        self.url = get("url", None)
+        self.url_element = get("url_element", None)
+        self.api_key = get("api_key", None)
+        self.api_category = get("api_category", None)
 
         self.client = None
 
@@ -35,8 +38,6 @@ class Client:
              of the retrieved data sources.
         """
 
-
-
     async def monitor(self):
         """
         Asynchronously monitors the system and retrieves
@@ -47,4 +48,3 @@ class Client:
             str: A string containing the concatenated results
              of the retrieved data sources.
         """
-
