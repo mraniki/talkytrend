@@ -36,22 +36,27 @@ class ScraperHandler(Client):
 
         :rtype: str
         """
+        if not self.enabled or not self.url:
+            return ""
+
+        headers = {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+            "AppleWebKit/537.36 (KHTML, like Gecko) "
+            "Chrome/58.0.3029.110 Safari/537.3"
+        }
         try:
-            if self.enabled and self.url:
-                headers = {
-                    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-                    "AppleWebKit/537.36 (KHTML, like Gecko) "
-                    "Chrome/58.0.3029.110 Safari/537.3"
-                }
-                response = requests.get(self.url, headers=headers)
-                response.raise_for_status()
-                soup = BeautifulSoup(response.content, "html.parser")
-                if not self.url_element:
-                    return soup.prettify()
-                description_element = soup.select(self.url_element)
-                return description_element[0].get_text()
-        except requests.HTTPError as http_err:
-            print(f"HTTP error occurred: {http_err}")
+            async with aiohttp.ClientSession() as session:
+                async with session.get(
+                    self.url, headers=headers, timeout=10
+                ) as response:
+                    response.raise_for_status()
+                    soup = BeautifulSoup(await response.text(), "html.parser")
+                    if not self.url_element:
+                        return soup.prettify()
+                    description_element = soup.select_one(self.url_element)
+                    return description_element.get_text() if description_element else ""
+        except aiohttp.ClientError as e:
+            print(f"An error occurred while making the request: {e}")
         except Exception as e:
             print(f"An error occurred: {e}")
 
