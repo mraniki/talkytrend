@@ -51,30 +51,30 @@ class TradingviewHandler(Client):
                 - 'STRONG_SELL': "⏬"
                 - Any other value: "▶️"
         """
-        try:
-            logger.debug(
-                "Fetching analysis for {} at {} with screener {} and interval {}.",
-                asset_id,
-                exchange,
-                screener,
-                interval,
-            )
-            handler = TA_Handler(
-                symbol=asset_id, exchange=exchange, screener=screener, interval=interval
-            )
-            analysis = handler.get_analysis()
-            if analysis.summary["RECOMMENDATION"] == "BUY":
-                return "🔼"
-            elif analysis.summary["RECOMMENDATION"] == "STRONG_BUY":
-                return "⏫"
-            elif analysis.summary["RECOMMENDATION"] == "SELL":
-                return "🔽"
-            elif analysis.summary["RECOMMENDATION"] == "STRONG_SELL":
-                return "⏬"
-            else:
-                return "▶️"
-        except Exception as error:
-            logger.warning("event {}", error)
+        # try:
+        logger.debug(
+            "Fetching analysis for {} at {} with screener {} and interval {}.",
+            asset_id,
+            exchange,
+            screener,
+            interval,
+        )
+        handler = TA_Handler(
+            symbol=asset_id, exchange=exchange, screener=screener, interval=interval
+        )
+        analysis = handler.get_analysis()
+        if analysis.summary["RECOMMENDATION"] == "BUY":
+            return "🔼"
+        elif analysis.summary["RECOMMENDATION"] == "STRONG_BUY":
+            return "⏫"
+        elif analysis.summary["RECOMMENDATION"] == "SELL":
+            return "🔽"
+        elif analysis.summary["RECOMMENDATION"] == "STRONG_SELL":
+            return "⏬"
+        else:
+            return "▶️"
+        # except Exception as error:
+        #     logger.warning("event {}", error)
 
     async def fetch(self, interval="4h"):
         """
