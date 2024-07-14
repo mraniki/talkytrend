@@ -2,6 +2,8 @@
 talkytrend Unit Testing
 """
 
+from unittest.mock import AsyncMock, MagicMock, patch
+
 import pytest
 
 from talkytrend import TalkyTrend
@@ -16,6 +18,62 @@ def set_test_settings():
 @pytest.fixture(name="talky")
 def talky_fixture():
     return TalkyTrend()
+
+
+@pytest.fixture(name="calendar")
+async def talky_calendar():
+    mock_response = MagicMock()
+    mock_response.status = 200
+    mock_response.json = AsyncMock(
+        return_value=[
+            {
+                "title": "Fed Chair Powell Speaks",
+                "country": "USD",
+                "date": "2024-07-15T12:00:00-04:00",
+                "impact": "High",
+                "forecast": "",
+                "previous": "",
+                "url": "https://www.forexfactory.com/calendar/717-usd-fed-chair-powell-speaks",
+            },
+            {
+                "title": "Bank Holiday",
+                "country": "USD",
+                "date": "2024-07-14T19:00:00-04:00",
+                "impact": "Holiday",
+                "forecast": "",
+                "previous": "",
+                "url": "https://www.forexfactory.com/calendar/393-jpy-bank-holiday",
+            },
+            {
+                "title": "OPEC Monthly Report",
+                "country": "ALL",
+                "date": "2024-07-15T00:00:00-04:00",
+                "impact": "High",
+                "forecast": "",
+                "previous": "",
+                "url": "https://www.forexfactory.com/calendar",
+            },
+            {
+                "title": "CPI m/m",
+                "country": "CAD",
+                "date": "2024-07-16T08:30:00-04:00",
+                "impact": "High",
+                "forecast": "0.1%",
+                "previous": "0.6%",
+                "url": "https://www.forexfactory.com/calendar/80-cad-cpi-mm",
+            },
+            {
+                "title": "Retail Sales m/m",
+                "country": "USD",
+                "date": "2024-07-16T08:30:00-04:00",
+                "impact": "High",
+                "forecast": "-0.2%",
+                "previous": "0.1%",
+                "url": "https://www.forexfactory.com/calendar/102-usd-retail-sales-mm",
+            },
+        ]
+    )
+    return mock_response
 
 
 @pytest.mark.asyncio
@@ -87,88 +145,13 @@ async def test_monitor(talky):
     assert any(string in result for string in strings)
 
 
-# @pytest.mark.asyncio
-# async def test_fetch_signal(talky):
-#     print(talky)
-#     result = await talky.fetch_signal()
-#     print(result)
-#     assert result is not None
-#     assert "EURUSD" in result
-
-
-# @pytest.mark.asyncio
-# async def test_interval_fetch_signal(talky):
-#     print(talky)
-#     result = await talky.fetch_signal(interval="1D")
-#     print(result)
-#     assert result is not None
-#     assert "EURUSD" in result
-
-
-# @pytest.mark.asyncio
-# async def test_invalid_interval_fetch_signal(talky):
-#     print(talky)
-#     result = await talky.fetch_signal(interval="3T")
-#     print(result)
-#     assert result is not None
-#     assert "EURUSD" in result
-
-
-# @pytest.mark.asyncio
-# async def test_fetch_event(talky):
-#     result = await talky.fetch_event()
-#     assert result is None or isinstance(result, str)
-
-
-# @pytest.mark.asyncio
-# async def test_fetch_feed(talky):
-#     result = await talky.fetch_feed()
-#     print(result)
-#     assert result is not None
-
-
-# @pytest.mark.asyncio
-# async def test_check_fomc(talky):
-#     result = await talky.check_fomc()
-#     print(result)
-#     assert result is not None
-#     assert result is False
-
-
-# @pytest.mark.asyncio
-# async def test_fetch_ticker_info(talky):
-#     result = await talky.fetch_ticker_info()
-#     print(result)
-#     assert result is not None
-#     assert "yahoo" in result
-
-
-# @pytest.mark.asyncio
-# async def test_get_tv(talky):
-#     result = await talky.get_tv()
-#     print(result)
-#     assert result is not None
-
-
-# @pytest.mark.asyncio
-# async def test_monitor(talky):
-#     result = await talky.monitor()
-#     print(result)
-#     assert result is not None
-#     # assert "💬" in result
-#     assert "📰" in result
-#     assert "EURUSD" in result
-#     assert "yahoo" in result
-
-
-# @pytest.mark.asyncio
-# async def test_get_finnhub_news(talky):
-#     result = await talky.get_finnhub_news()
-#     assert result is not None
-
-
-# @pytest.mark.asyncio
-# async def test_scrape_page(talky):
-#     result = await talky.scrape_page()
-#     print(result)
-#     assert result is not None
+@pytest.mark.asyncio
+async def test_calendar(talky, calendar):
+    with patch("aiohttp.ClientSession.get", return_value=calendar):
+        for cli in talky.clients:
+            if cli == "Calendar":
+                result = await talky.monitor()
+                print(result)
+                assert result is not None
+                assert "💬 Fed Chair Powell Speaks\n⏰ 2024-07-15" in result
+                assert "💬 Bank Holiday" in result
