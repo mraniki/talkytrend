@@ -1,5 +1,101 @@
 # CHANGELOG
 
+## v3.0.0 (2024-07-14)
+
+### Other
+
+* Merge pull request #249 from mraniki/dev
+
+💥 breaking: adding handler capability &amp; structure ([`dfb75cc`](https://github.com/mraniki/talkytrend/commit/dfb75ccf89ac4f99d4661ef704c1571680dd3452))
+
+* Add Tradingview parameters and instrument monitoring settings. ([`6788bfc`](https://github.com/mraniki/talkytrend/commit/6788bfcbe20ee050ad31fb2638df5d691f95ecd6))
+
+* Refactor client creation logic in TalkyTrend class ([`8681dcb`](https://github.com/mraniki/talkytrend/commit/8681dcb3743ebb2e42b4023fdfee698171ea2b20))
+
+* Add debug log for kwargs in Client class and remove debug log in TradingviewHandler. ([`8f6d10b`](https://github.com/mraniki/talkytrend/commit/8f6d10bfa23c6edf059988b6d04960d2c3c25c9c))
+
+* Remove asyncio_mode from pyproject.toml configuration file ([`7187d9d`](https://github.com/mraniki/talkytrend/commit/7187d9d1f05ed71ca0451613cfb09ff839258792))
+
+* Refactor handler imports in __init__.py file ([`04e5fb9`](https://github.com/mraniki/talkytrend/commit/04e5fb968ebb06ea9fe924e2867f86707cb01307))
+
+* update talkytrend/handler/__init__.py ([`33cc380`](https://github.com/mraniki/talkytrend/commit/33cc380405e26686f4982089aa751ec3bbe60773))
+
+* update tradingview.py ([`243d3a9`](https://github.com/mraniki/talkytrend/commit/243d3a9e710dd4617b32c46e918150e8fb681531))
+
+* update livetv.py and main.py ([`84cae29`](https://github.com/mraniki/talkytrend/commit/84cae2972008f7caf45b433083abcd720d519a60))
+
+* update config.py and default_settings.toml ([`f26fa64`](https://github.com/mraniki/talkytrend/commit/f26fa6496d41270de65f42684bef045258dec64a))
+
+* Merge pull request #246 from mraniki/dev
+
+✅ Unit Test ([`413dc33`](https://github.com/mraniki/talkytrend/commit/413dc33d8911bd7f86edac371f51dc2e213eecc4))
+
+* build(deps): update pyproject.toml ([`51dd9db`](https://github.com/mraniki/talkytrend/commit/51dd9dbab10d4118f81002d094fbd0ed87a46e64))
+
+### Update
+
+* Update condition to check for &#39;enabled&#39; instead of &#39;live_tv&#39; ([`4b19d98`](https://github.com/mraniki/talkytrend/commit/4b19d98bfacad903d069096388c70d6b159ae700))
+
+* Update logging URL in FeedHandler class ([`8f525c7`](https://github.com/mraniki/talkytrend/commit/8f525c7fcdced0c08c8bed81271c052824c1c727))
+
+### ♻️
+
+* ♻️ ([`a924a7a`](https://github.com/mraniki/talkytrend/commit/a924a7accbd75490073261b6055a57e0ffdc4366))
+
+* ♻️ scraper ([`9cb6042`](https://github.com/mraniki/talkytrend/commit/9cb60422e9bf2a4e0fcadfa3b1b973370449b82a))
+
+* ♻️ fetch_tv_data ([`4ff85e8`](https://github.com/mraniki/talkytrend/commit/4ff85e84284eb30842f56363f99d0e19e0d95ea6))
+
+* ♻️ ([`e4e1ee2`](https://github.com/mraniki/talkytrend/commit/e4e1ee27f7ef013ac7381a6392bccc332bccbac9))
+
+* ♻️ ([`8f71447`](https://github.com/mraniki/talkytrend/commit/8f71447d8c37cd7008f3329e541cecc9435b45d9))
+
+* ♻️ ([`f615bb0`](https://github.com/mraniki/talkytrend/commit/f615bb0d49b53b710e491f39fbf618574bc9b743))
+
+* ♻️ ([`fbc6fff`](https://github.com/mraniki/talkytrend/commit/fbc6ffffbeddbae027c35539847431fcc6fc9718))
+
+### ⚡
+
+* ⚡ ([`c04546c`](https://github.com/mraniki/talkytrend/commit/c04546ce49d55a93f3926a3db90d8652f8ca851c))
+
+* ⚡ ([`e714348`](https://github.com/mraniki/talkytrend/commit/e714348fe1d0ff7fc4982374c7fa7dfc5f48c8ac))
+
+* ⚡ ([`e7d42d5`](https://github.com/mraniki/talkytrend/commit/e7d42d5f1833177133b5f67d72b38f418e8eca45))
+
+* ⚡ ([`cce5ea5`](https://github.com/mraniki/talkytrend/commit/cce5ea5fdc6c62301b8024e443e56081232fae4f))
+
+### ✅
+
+* ✅ Unit Test ([`7b49a03`](https://github.com/mraniki/talkytrend/commit/7b49a03f0e02c1be9e370980e2ddda923f6615dd))
+
+* ✅ Unit Test update 8 files ([`b23773b`](https://github.com/mraniki/talkytrend/commit/b23773b2f832a1ea84c68d6afb39177ed60ac31c))
+
+* ✅ Unit Test ([`d775d8c`](https://github.com/mraniki/talkytrend/commit/d775d8cf0acd614e29d17567fef978eeef451404))
+
+* ✅ Unit Test ([`21fd64a`](https://github.com/mraniki/talkytrend/commit/21fd64ad560269dcb3eb190ba26631610dcf6a63))
+
+* ✅ Unit Test ([`72e2b14`](https://github.com/mraniki/talkytrend/commit/72e2b14b01230663acd704398f9c35bee8290733))
+
+### ⬆️
+
+* ⬆️ ([`da7cb8d`](https://github.com/mraniki/talkytrend/commit/da7cb8d7cb7e4ce3ef6bf17cfd6560742168bf1a))
+
+### 🐛
+
+* 🐛 ([`117d2ee`](https://github.com/mraniki/talkytrend/commit/117d2ee97d11112ea21c9fe1a606b0dd8b90941c))
+
+* 🐛 ([`30c5b0c`](https://github.com/mraniki/talkytrend/commit/30c5b0cc0eafaff4907867f55db5de9804a502a5))
+
+### 💥
+
+* 💥 breaking: adding handler capability &amp; structure ([`4322036`](https://github.com/mraniki/talkytrend/commit/4322036bf25e051177bda3585fce7eb64119655d))
+
+### 🔧
+
+* 🔧 ([`49e1797`](https://github.com/mraniki/talkytrend/commit/49e1797604c78a02bc38aa9402d10b738cf8a5f6))
+
+* 🔧 update 10 files ([`04c2656`](https://github.com/mraniki/talkytrend/commit/04c26564583e40141ae6875e8053d17a4ef78a52))
+
 ## v2.0.18 (2024-06-28)
 
 ### Other
@@ -124,6 +220,8 @@
 
 * ⬆️ 🛠️(deps): update dependency sphinx to v7.3.5 ([`678e781`](https://github.com/mraniki/talkytrend/commit/678e781a294943aa7a4e9eec0acd34f7afb96485))
 
+* ⬆️ 🛠️(deps): update dependency sphinx to v7.3.4 ([`0d6f4df`](https://github.com/mraniki/talkytrend/commit/0d6f4dfcaffee79708c20387d4f526097aff148d))
+
 ## v2.0.9 (2024-04-17)
 
 ### Other
@@ -133,8 +231,6 @@
 ⬆️ 🤖 - Big book big bore ([`ee631c9`](https://github.com/mraniki/talkytrend/commit/ee631c94941501636e6cd765fd0691366425672b))
 
 ### ⬆️
-
-* ⬆️ 🛠️(deps): update dependency sphinx to v7.3.4 ([`0d6f4df`](https://github.com/mraniki/talkytrend/commit/0d6f4dfcaffee79708c20387d4f526097aff148d))
 
 * ⬆️ 🛠️(deps): update dependency sphinx to v7.3.1 ([`407fa8c`](https://github.com/mraniki/talkytrend/commit/407fa8c366bb96dd851cc4f73e1074f725ddb585))
 
@@ -454,15 +550,15 @@ Align ([`21d0fd7`](https://github.com/mraniki/talkytrend/commit/21d0fd734a226255
 
 ⬆️ 🛠️(deps): update dependency ruff to v0.1.4 ([`110cff4`](https://github.com/mraniki/talkytrend/commit/110cff4e0f3cf13cd4001e061cc8e447dda2d69c))
 
+* Merge pull request #177 from mraniki/renovate/pydata-sphinx-theme-0.x-lockfile
+
+⬆️ 🛠️(deps): update dependency pydata-sphinx-theme to v0.14.3 ([`7a8522b`](https://github.com/mraniki/talkytrend/commit/7a8522bc227959dc2c7b76f13fb220c96f8fb64d))
+
 * Delete .mergify.yml ([`5824a34`](https://github.com/mraniki/talkytrend/commit/5824a34a95e8e0a14f672e7086aafa34573db6d3))
 
 * Delete requirements.txt ([`08716c8`](https://github.com/mraniki/talkytrend/commit/08716c87b72055e328d863171f92efb897c902b9))
 
 * Delete poetry.lock ([`b5855d5`](https://github.com/mraniki/talkytrend/commit/b5855d5af2a51d185a33f805631723f8127e9969))
-
-* Merge pull request #177 from mraniki/renovate/pydata-sphinx-theme-0.x-lockfile
-
-⬆️ 🛠️(deps): update dependency pydata-sphinx-theme to v0.14.3 ([`7a8522b`](https://github.com/mraniki/talkytrend/commit/7a8522bc227959dc2c7b76f13fb220c96f8fb64d))
 
 ### ♻️
 
@@ -884,18 +980,6 @@ Merge pull request #138 from mraniki/dev ([`f611759`](https://github.com/mraniki
 
 ⬆️ 🤖 Dependencies: Update sphinx requirement from 7.2.4 to 7.2.5 ([`b6fb361`](https://github.com/mraniki/talkytrend/commit/b6fb3612c3305601d8535bb577088f64db02e0c7))
 
-### ⬆️
-
-* ⬆️ 🛠️(deps): update dependency ruff to &gt;=0.0.287,&lt;0.0.288 ([`bdc272b`](https://github.com/mraniki/talkytrend/commit/bdc272b42d373557db7e6c5618a2eb2262f37ca2))
-
-## v1.14.10 (2023-08-31)
-
-### Other
-
-* Merge pull request #135 from mraniki/renovate/sphinx-7.x
-
-⬆️ 🛠️(deps): update dependency sphinx to v7.2.5 ([`230e211`](https://github.com/mraniki/talkytrend/commit/230e21154a9bd8b758eb42742f36ad5fcaba3c58))
-
 ### Update
 
 * Update Requirements ([`7d5ea1f`](https://github.com/mraniki/talkytrend/commit/7d5ea1fe741b64725e335e137e4e2f4d1ebbc19a))
@@ -914,6 +998,20 @@ updated-dependencies:
 ...
 
 Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`4b0ea36`](https://github.com/mraniki/talkytrend/commit/4b0ea36711f1df6ee4cd4cf550f33998154ed369))
+
+### ⬆️
+
+* ⬆️ 🛠️(deps): update dependency ruff to &gt;=0.0.287,&lt;0.0.288 ([`bdc272b`](https://github.com/mraniki/talkytrend/commit/bdc272b42d373557db7e6c5618a2eb2262f37ca2))
+
+## v1.14.10 (2023-08-31)
+
+### Other
+
+* Merge pull request #135 from mraniki/renovate/sphinx-7.x
+
+⬆️ 🛠️(deps): update dependency sphinx to v7.2.5 ([`230e211`](https://github.com/mraniki/talkytrend/commit/230e21154a9bd8b758eb42742f36ad5fcaba3c58))
+
+### Update
 
 * Update Requirements ([`5ca6d1a`](https://github.com/mraniki/talkytrend/commit/5ca6d1a4f3f541fad27cbec34994576ebc748936))
 
@@ -951,15 +1049,15 @@ Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`4b0ea36`](https://g
 
 ### Update
 
-* Update Requirements ([`f788adc`](https://github.com/mraniki/talkytrend/commit/f788adcb13b6944469d0a334826a200dac1046db))
-
 * Update Requirements ([`8175e2e`](https://github.com/mraniki/talkytrend/commit/8175e2eb7699c15c47845293077ccfe86e834a5b))
+
+* Update Requirements ([`f788adc`](https://github.com/mraniki/talkytrend/commit/f788adcb13b6944469d0a334826a200dac1046db))
 
 ### ⬆️
 
-* ⬆️ 🛠️(deps): update dependency sphinx to v7.2.4 ([`6ec9c82`](https://github.com/mraniki/talkytrend/commit/6ec9c82def0b2aa1ade9886cfb1edbbd44b6e515))
-
 * ⬆️ 🛠️(deps): update dependency ruff to &gt;=0.0.286,&lt;0.0.287 ([`bdd641e`](https://github.com/mraniki/talkytrend/commit/bdd641e938843bbcf8faa16a5589faa4c80b0ccb))
+
+* ⬆️ 🛠️(deps): update dependency sphinx to v7.2.4 ([`6ec9c82`](https://github.com/mraniki/talkytrend/commit/6ec9c82def0b2aa1ade9886cfb1edbbd44b6e515))
 
 ### 🐛
 
@@ -1243,14 +1341,6 @@ Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`4b0ea36`](https://g
 
 * Delete IMG_3091.png ([`e7e12d8`](https://github.com/mraniki/talkytrend/commit/e7e12d80b00def1c2812d7ee01ab905a76724f6a))
 
-### 📝
-
-* 📝 intersphinx setup ([`8c9fb4d`](https://github.com/mraniki/talkytrend/commit/8c9fb4d3b1ced6de6393f68342e41fc89b7a4dbe))
-
-### 🧐
-
-* 🧐 ([`fc521f8`](https://github.com/mraniki/talkytrend/commit/fc521f861a947fc502d6764a4f43a8fd768b5fbb))
-
 ## v1.12.8 (2023-08-06)
 
 ### Other
@@ -1264,6 +1354,14 @@ Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`4b0ea36`](https://g
 ### Update
 
 * Update README.md ([`4feb165`](https://github.com/mraniki/talkytrend/commit/4feb1652386bacdb07cfb76424acaefc869075ec))
+
+### 📝
+
+* 📝 intersphinx setup ([`8c9fb4d`](https://github.com/mraniki/talkytrend/commit/8c9fb4d3b1ced6de6393f68342e41fc89b7a4dbe))
+
+### 🧐
+
+* 🧐 ([`fc521f8`](https://github.com/mraniki/talkytrend/commit/fc521f861a947fc502d6764a4f43a8fd768b5fbb))
 
 ## v1.12.7 (2023-08-05)
 
@@ -1309,17 +1407,7 @@ Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`4b0ea36`](https://g
 
 ⬆️ Dep: Update ruff requirement from ^0.0.280 to &gt;=0.0.280,&lt;0.0.283 ([`51ab0a1`](https://github.com/mraniki/talkytrend/commit/51ab0a1bc50d7d92aac63e39b680371697ba4370))
 
-## v1.12.4 (2023-08-03)
-
-### Other
-
-* Merge pull request #105 from mraniki/dev
-
-📝 RTD initial release ([`d4968e7`](https://github.com/mraniki/talkytrend/commit/d4968e7a15dde26f19f069e46b56bf7c62d8a9f9))
-
 ### Update
-
-* Update Requirements ([`4474f6f`](https://github.com/mraniki/talkytrend/commit/4474f6f7598998a0c4032019a210ba834e81754b))
 
 * Update Requirements ([`5c87328`](https://github.com/mraniki/talkytrend/commit/5c87328453bfd37a972d6ebaf87a0bf37250c79a))
 
@@ -1337,6 +1425,18 @@ updated-dependencies:
 ...
 
 Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`f4b9c77`](https://github.com/mraniki/talkytrend/commit/f4b9c7728e69d631226ef8865ae64caca75c8624))
+
+## v1.12.4 (2023-08-03)
+
+### Other
+
+* Merge pull request #105 from mraniki/dev
+
+📝 RTD initial release ([`d4968e7`](https://github.com/mraniki/talkytrend/commit/d4968e7a15dde26f19f069e46b56bf7c62d8a9f9))
+
+### Update
+
+* Update Requirements ([`4474f6f`](https://github.com/mraniki/talkytrend/commit/4474f6f7598998a0c4032019a210ba834e81754b))
 
 ### 📝
 
@@ -1360,6 +1460,8 @@ Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`f4b9c77`](https://g
 
 :zap: monitor output tweak (Sourcery refactored) ([`11b6a66`](https://github.com/mraniki/talkytrend/commit/11b6a66226a276443d9b8d790ff6bebe752d3f93))
 
+* &#39;Refactored by Sourcery&#39; ([`0ab751a`](https://github.com/mraniki/talkytrend/commit/0ab751a99b13e64ba9dde02d685f5e5a09c0fce8))
+
 ### ✅
 
 * ✅ Unit Test ([`f49483d`](https://github.com/mraniki/talkytrend/commit/f49483de36b0b36b42da85faaf2578f3a34addd2))
@@ -1375,8 +1477,6 @@ Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`f4b9c77`](https://g
 * :zap: monitor output tweak ([`bdc86a9`](https://github.com/mraniki/talkytrend/commit/bdc86a96974ac0188d04c99a6261cbc20be9d2d1))
 
 ### Other
-
-* &#39;Refactored by Sourcery&#39; ([`0ab751a`](https://github.com/mraniki/talkytrend/commit/0ab751a99b13e64ba9dde02d685f5e5a09c0fce8))
 
 * Merge pull request #100 from mraniki/dev
 
@@ -1524,9 +1624,9 @@ Update Requirements ([`ace27b5`](https://github.com/mraniki/talkytrend/commit/ac
 
 * Update Requirements ([`d10f5e5`](https://github.com/mraniki/talkytrend/commit/d10f5e560012b10faa6476b3d3c697982ac40cb3))
 
-* Update Requirements ([`7355f77`](https://github.com/mraniki/talkytrend/commit/7355f77e7f98cd5bf7a84a9d544753288e0dacd3))
-
 * Update Requirements ([`7e94c8c`](https://github.com/mraniki/talkytrend/commit/7e94c8c6fe2768bb949bd6499ee74efcc059c397))
+
+* Update Requirements ([`7355f77`](https://github.com/mraniki/talkytrend/commit/7355f77e7f98cd5bf7a84a9d544753288e0dacd3))
 
 * Update Requirements ([`2bee78a`](https://github.com/mraniki/talkytrend/commit/2bee78a916e12cf164621f4ac611c3c5e75cfa5e))
 
@@ -1562,9 +1662,9 @@ Update Requirements ([`ace27b5`](https://github.com/mraniki/talkytrend/commit/ac
 
 ### Update
 
-* Update Requirements ([`e2f4a92`](https://github.com/mraniki/talkytrend/commit/e2f4a92e7f8663eb5673e6e4d6fc08582ec054ad))
-
 * Update Requirements ([`6fcb3ed`](https://github.com/mraniki/talkytrend/commit/6fcb3eda06a063b4ae6948628ae163175dbe21c2))
+
+* Update Requirements ([`e2f4a92`](https://github.com/mraniki/talkytrend/commit/e2f4a92e7f8663eb5673e6e4d6fc08582ec054ad))
 
 * Update Requirements ([`6fbf92e`](https://github.com/mraniki/talkytrend/commit/6fbf92ee867533111b6d0c337d517b5d99e573ff))
 
@@ -1652,6 +1752,10 @@ Update Requirements ([`ace27b5`](https://github.com/mraniki/talkytrend/commit/ac
 
 ⬆️(deps): update dependency python-semantic-release to v8 ([`b0bbad4`](https://github.com/mraniki/talkytrend/commit/b0bbad49ef39a4e8c2f1b4776dcaad65881ea946))
 
+### ⬆️
+
+* ⬆️(deps): update dependency python-semantic-release to v8 ([`ea8dac5`](https://github.com/mraniki/talkytrend/commit/ea8dac5cb04d0e8bd750ddaa5ad0a85276971d2a))
+
 ## v1.8.2 (2023-07-17)
 
 ### Other
@@ -1659,10 +1763,6 @@ Update Requirements ([`ace27b5`](https://github.com/mraniki/talkytrend/commit/ac
 * Merge pull request #80 from mraniki/dev
 
 🐛 error handling in case feed is not valid xml ([`be9f057`](https://github.com/mraniki/talkytrend/commit/be9f057b4cb55f959b12ed9077590e1292ae5fc5))
-
-### ⬆️
-
-* ⬆️(deps): update dependency python-semantic-release to v8 ([`ea8dac5`](https://github.com/mraniki/talkytrend/commit/ea8dac5cb04d0e8bd750ddaa5ad0a85276971d2a))
 
 ### 🐛
 
@@ -1806,6 +1906,10 @@ Update Requirements ([`ace27b5`](https://github.com/mraniki/talkytrend/commit/ac
 
 * Merge branch &#39;main&#39; into dev ([`e99c05e`](https://github.com/mraniki/talkytrend/commit/e99c05e2c4fbba9eaaf4731d3e8cac5053a3475e))
 
+* Merge pull request #65 from mraniki/dev
+
+📝 readmydocs updated config ([`98f1cb1`](https://github.com/mraniki/talkytrend/commit/98f1cb156c43fbad64358b913e6709acba3c82d1))
+
 * Delete poetry.lock ([`5def6c6`](https://github.com/mraniki/talkytrend/commit/5def6c608eca1b51f7fe96f85a6ea405c7e157a5))
 
 * :private: defusedxml ([`8cb807b`](https://github.com/mraniki/talkytrend/commit/8cb807bffca8167641e66c3fa536068665a8d272))
@@ -1815,10 +1919,6 @@ Update Requirements ([`ace27b5`](https://github.com/mraniki/talkytrend/commit/ac
 ✨ 💄 Delivery of the trading view trend as html table + feeds news (Sourcery refactored) ([`6aaada6`](https://github.com/mraniki/talkytrend/commit/6aaada6a81c351946028e34f9c18610fce2c4573))
 
 * &#39;Refactored by Sourcery&#39; ([`58961df`](https://github.com/mraniki/talkytrend/commit/58961dff715fa6e2e4229860bd42db6db1822bfd))
-
-* Merge pull request #65 from mraniki/dev
-
-📝 readmydocs updated config ([`98f1cb1`](https://github.com/mraniki/talkytrend/commit/98f1cb156c43fbad64358b913e6709acba3c82d1))
 
 * Updating Requirements ([`9f18870`](https://github.com/mraniki/talkytrend/commit/9f1887053f4f95c4f53a5751e4c4cee0d9754dbc))
 
@@ -2086,8 +2186,6 @@ Update dependabot.yml with commit message prefix ([`d45fc3a`](https://github.com
 
 * :memo: docs ([`d93df5b`](https://github.com/mraniki/talkytrend/commit/d93df5b37b9e069bf35da9ae129b3ad228f5be34))
 
-* :memo: readthedocs ([`3b9998e`](https://github.com/mraniki/talkytrend/commit/3b9998e2c381b585d760d1a606b30ba377e788b8))
-
 ### Other
 
 * Merge pull request #51 from mraniki/dev
@@ -2097,6 +2195,10 @@ Update dependabot.yml with commit message prefix ([`d45fc3a`](https://github.com
 * Merge branch &#39;dev&#39; of git@github.com:mraniki/talkytrend.git ([`d935804`](https://github.com/mraniki/talkytrend/commit/d935804921f14b70b4229f1ff62449a305cc07dd))
 
 ## v1.3.4 (2023-06-22)
+
+### :memo:
+
+* :memo: readthedocs ([`3b9998e`](https://github.com/mraniki/talkytrend/commit/3b9998e2c381b585d760d1a606b30ba377e788b8))
 
 ### Other
 
@@ -2284,10 +2386,6 @@ Update dependabot.yml with commit message prefix ([`d45fc3a`](https://github.com
 
 * :recycle: none article case ([`1bea4f8`](https://github.com/mraniki/talkytrend/commit/1bea4f87c49166c50fcb3e76f90ef9e77776975c))
 
-### :white_check_mark:
-
-* :white_check_mark: unit test ([`5a3795f`](https://github.com/mraniki/talkytrend/commit/5a3795fd63ccee4c33467269a219841257ff1065))
-
 ### Other
 
 * Merge pull request #29 from mraniki/dev
@@ -2311,6 +2409,10 @@ Update dependabot.yml with commit message prefix ([`d45fc3a`](https://github.com
 ### :arrow_up:
 
 * :arrow_up: Add aiohttp to dependencies ([`8f44fc1`](https://github.com/mraniki/talkytrend/commit/8f44fc16c89c72726699814b02a9324e7ec53264))
+
+### :white_check_mark:
+
+* :white_check_mark: unit test ([`5a3795f`](https://github.com/mraniki/talkytrend/commit/5a3795fd63ccee4c33467269a219841257ff1065))
 
 ### Fix
 
@@ -2600,13 +2702,13 @@ Dev ([`eb65612`](https://github.com/mraniki/talkytrend/commit/eb6561265c5ebc2167
 
 * Merge pull request #7 from mraniki/dev ([`6f8ebb9`](https://github.com/mraniki/talkytrend/commit/6f8ebb997ba8b3e308b1df84acd0fc129fc5c156))
 
+* Refactor test_unit.py for async testing ([`c88ad51`](https://github.com/mraniki/talkytrend/commit/c88ad511b281ccce1e73d2da1fb44879fa4cac01))
+
 * Merge pull request #8 from mraniki/renovate/configure
 
 Configure Renovate ([`17f1b0f`](https://github.com/mraniki/talkytrend/commit/17f1b0f9a673daed5300651adc4c7b6b1e84f1f9))
 
 * Add renovate.json ([`5eb13da`](https://github.com/mraniki/talkytrend/commit/5eb13dae727be02536b92cbdfe9124dd2b6dee50))
-
-* Refactor test_unit.py for async testing ([`c88ad51`](https://github.com/mraniki/talkytrend/commit/c88ad511b281ccce1e73d2da1fb44879fa4cac01))
 
 * Refactor bot.py to import HTMLResponse from fastapi.responses ([`0c2ff27`](https://github.com/mraniki/talkytrend/commit/0c2ff271eb1d9f34b55a167726cf4eca394ebe42))
 
@@ -2692,9 +2794,9 @@ Configure Renovate ([`17f1b0f`](https://github.com/mraniki/talkytrend/commit/17f
 
 * :bug: Update default_settings.toml and main.py files with new asset and TA_Handler initialization. ([`d03d857`](https://github.com/mraniki/talkytrend/commit/d03d8579acdc5b2bcbecc6426b1f7d49b96bce02))
 
-* Update bot.py ([`59ddb3c`](https://github.com/mraniki/talkytrend/commit/59ddb3c93d39a9d609ac864c21247487e2345b25))
-
 * Updated  requirements file ([`f9fb279`](https://github.com/mraniki/talkytrend/commit/f9fb2792fc2586ce7f5c0d090022184d396e4cdf))
+
+* Update bot.py ([`59ddb3c`](https://github.com/mraniki/talkytrend/commit/59ddb3c93d39a9d609ac864c21247487e2345b25))
 
 * Updated  requirements file ([`a644fda`](https://github.com/mraniki/talkytrend/commit/a644fdae8742242c6d4faf6193ac3bd2b399fe84))
 
@@ -2704,9 +2806,9 @@ Configure Renovate ([`17f1b0f`](https://github.com/mraniki/talkytrend/commit/17f
 
 * Update Dockerfile ([`4ded349`](https://github.com/mraniki/talkytrend/commit/4ded349df8364653649ffdf1a66e9e3c11e6a229))
 
-* Update requirements.txt ([`32f97c7`](https://github.com/mraniki/talkytrend/commit/32f97c7fea9c66549e34e720c3b6973babc4c4cc))
-
 * Update requirements.txt ([`fae5947`](https://github.com/mraniki/talkytrend/commit/fae5947e9347308a6794bbb5d1bd03e23de9aad0))
+
+* Update requirements.txt ([`32f97c7`](https://github.com/mraniki/talkytrend/commit/32f97c7fea9c66549e34e720c3b6973babc4c4cc))
 
 * Update bot.py ([`acf8a04`](https://github.com/mraniki/talkytrend/commit/acf8a04988dd1e9fceae3297d8b7ae481716cb51))
 
@@ -2770,9 +2872,9 @@ Configure Renovate ([`17f1b0f`](https://github.com/mraniki/talkytrend/commit/17f
 
 * Update requirements.txt ([`6c0051e`](https://github.com/mraniki/talkytrend/commit/6c0051e1424cb4104e0c556b34ddc49fc494f94a))
 
-* Update Dockerfile ([`1e1ff65`](https://github.com/mraniki/talkytrend/commit/1e1ff65ceb717b030a30b7a2f4ef695fd51c6cfa))
-
 * Update Dockerfile ([`b3c923a`](https://github.com/mraniki/talkytrend/commit/b3c923a046882ebb036046e071ee219c09fce60d))
+
+* Update Dockerfile ([`1e1ff65`](https://github.com/mraniki/talkytrend/commit/1e1ff65ceb717b030a30b7a2f4ef695fd51c6cfa))
 
 * Update requirements.txt ([`8a10eb3`](https://github.com/mraniki/talkytrend/commit/8a10eb3f0c95d1ee86b0237c8f1ad0a254010857))
 
