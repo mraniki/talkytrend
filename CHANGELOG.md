@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## v3.0.2 (2024-07-14)
+
+### Other
+
+* Merge pull request #251 from mraniki/dev
+
+✅ Unit Test ([`a953ff3`](https://github.com/mraniki/talkytrend/commit/a953ff3653e6f1e0d960bb02784fb7c3cc9d1b30))
+
+### ✅
+
+* ✅ Unit Test ([`6e30b26`](https://github.com/mraniki/talkytrend/commit/6e30b26eeea129d1e963c0842c45e3d4e60e0e65))
+
 ## v3.0.1 (2024-07-14)
 
 ### :bug:
