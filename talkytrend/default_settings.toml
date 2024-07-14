@@ -17,7 +17,7 @@
 VALUE = "On Default"
 
 # Module Enable/Disable
-# talkytrend_enabled = true
+talkytrend_enabled = true
 # # Tradingview Parameters
 [default.talkytrend.template]
 # Signals Enable/Disable
