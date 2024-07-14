@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## v3.0.1 (2024-07-14)
+
+### :bug:
+
+* :bug: Enable talkytrend module in default settings TOML file. ([`85b74b2`](https://github.com/mraniki/talkytrend/commit/85b74b25d38c426a6742d179e9117866e2cf46ea))
+
+### Other
+
+* Merge pull request #250 from mraniki/dev
+
+:bug: Enable talkytrend module in default settings TOML file. ([`068ccd7`](https://github.com/mraniki/talkytrend/commit/068ccd779315e0bad307259c9dbf264a07301ae7))
+
 ## v3.0.0 (2024-07-14)
 
 ### Other
