@@ -9,7 +9,8 @@ from .client import Client
 class CalendarHandler(Client):
     """
 
-    CalendarHandler
+    CalendarHandler to retrieve economic events
+    from the forexfactory economic calendar.
 
 
     """
