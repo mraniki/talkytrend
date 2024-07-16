@@ -1,5 +1,25 @@
 # CHANGELOG
 
+## v3.0.3 (2024-07-16)
+
+### Other
+
+* Merge pull request #255 from mraniki/dev
+
+⬆️ 🤖 - Dont read everything you believe ([`08489fb`](https://github.com/mraniki/talkytrend/commit/08489fb8bcf0c9ccaec031f60e6e33c6d6a42f89))
+
+### ⬆️
+
+* ⬆️ 🛠️(deps): update dependency sphinx to v7.4.4 ([`0c384ef`](https://github.com/mraniki/talkytrend/commit/0c384efbbf82073d89bd477aa921197b7debccf5))
+
+* ⬆️ 🛠️(deps): update dependency sphinx to v7.4.3 ([`ee8880d`](https://github.com/mraniki/talkytrend/commit/ee8880d962a36f10dd05fb8d130654a31219c3e8))
+
+* ⬆️ 🛠️(deps): update dependency sphinx to v7.4.0 ([`4c02911`](https://github.com/mraniki/talkytrend/commit/4c0291148e0c145bad1a06e9e4eceb682a2b1f01))
+
+### 📝
+
+* 📝 ([`3263f74`](https://github.com/mraniki/talkytrend/commit/3263f7486b5907328538dfa8970a9af28b69daa4))
+
 ## v3.0.2 (2024-07-14)
 
 ### Other
