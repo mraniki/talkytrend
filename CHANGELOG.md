@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## v3.0.4 (2024-07-17)
+
+### Other
+
+* Merge pull request #257 from mraniki/dev
+
+⬆️ 🤖 - Your depth of comprehension may tend to make you lax in worldly ways ([`d3faafd`](https://github.com/mraniki/talkytrend/commit/d3faafd78dd18f847ec3301492b85dc598e9aaae))
+
+### ⬆️
+
+* ⬆️ 🛠️(deps): update dependency sphinx to v7.4.5 ([`ab90107`](https://github.com/mraniki/talkytrend/commit/ab90107cf14e632aa73c84a3056327b3a0d6070f))
+
 ## v3.0.3 (2024-07-16)
 
 ### Other
