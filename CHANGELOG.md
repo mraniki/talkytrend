@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## v3.0.5 (2024-07-20)
+
+### Other
+
+* Merge pull request #259 from mraniki/dev
+
+⬆️ 🤖 - You never know how many friends you have until you rent a house on the beach ([`ef8d758`](https://github.com/mraniki/talkytrend/commit/ef8d7589ff8bffced9f243ce94bcb47f9003d2df))
+
+### ⬆️
+
+* ⬆️ 🛠️(deps): update dependency sphinx to v7.4.6 ([`1f69c3e`](https://github.com/mraniki/talkytrend/commit/1f69c3ecfd329d91167f3ce24723934417a26bdd))
+
 ## v3.0.4 (2024-07-17)
 
 ### Other
