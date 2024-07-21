@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## v3.0.6 (2024-07-21)
+
+### Other
+
+* Merge pull request #261 from mraniki/dev
+
+⬆️ 🤖 - Excellent day to have a rotten day ([`38e68d1`](https://github.com/mraniki/talkytrend/commit/38e68d103ed54e812e850f52e49b2cda5eda931e))
+
+### ⬆️
+
+* ⬆️ 🛠️(deps): update dependency sphinx to v7.4.7 ([`e20b5e0`](https://github.com/mraniki/talkytrend/commit/e20b5e0394620b6f49ca462dafe4d551b5a20048))
+
 ## v3.0.5 (2024-07-20)
 
 ### Other
