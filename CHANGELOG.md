@@ -1,5 +1,27 @@
 # CHANGELOG
 
+## v3.0.7 (2024-08-16)
+
+### Other
+
+* Merge pull request #266 from mraniki/dev
+
+⬆️ 🤖 - April ([`384a211`](https://github.com/mraniki/talkytrend/commit/384a211405a31364464eaeb948539c59b9cacc34))
+
+* Merge pull request #265 from mraniki/renovate/ruff-0.x
+
+⬆️ 🛠️(deps): update dependency ruff to ^0.6.0 ([`26f7c06`](https://github.com/mraniki/talkytrend/commit/26f7c06d67119e30a5a8c69d149d7a0182406a1c))
+
+* Merge pull request #262 from mraniki/dev
+
+⬆️ 🤖 - Many pages make a thick book except for pocket Bibles which are on very ([`9a00d4e`](https://github.com/mraniki/talkytrend/commit/9a00d4ed944cf2777647cfc895930e5193925719))
+
+* build(deps): update pyproject.toml ([`234055b`](https://github.com/mraniki/talkytrend/commit/234055b9d074f46385b68451b37ace0032647e1d))
+
+### ⬆️
+
+* ⬆️ 🛠️(deps): update dependency ruff to ^0.6.0 ([`64b8d3f`](https://github.com/mraniki/talkytrend/commit/64b8d3fa67da86e9b22beea8ee1944aa730aca38))
+
 ## v3.0.6 (2024-07-21)
 
 ### Other
