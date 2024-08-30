@@ -1,6 +1,6 @@
-# from alpha_vantage.alphaintelligence import AlphaIntelligence
-from alpha_vantage.alphavantage import AlphaVantage
+from alpha_vantage.alphaintelligence import AlphaIntelligence
 
+# from alpha_vantage.alphavantage import AlphaVantage
 from .client import Client
 
 
@@ -25,8 +25,10 @@ class AlphavantageHandler(Client):
         if self.enabled:
 
             # Initialize the AlphaVantage Class with default values
-            self.client = AlphaVantage(key=self.api_key)
+            self.client = AlphaIntelligence(key=self.api_key)
+            # if self.api_category is None
+            #     self.api_category = "topnews"
 
     async def fetch(self):
         # TODO
-        pass
+        return self.client.get_news_sentiment(limit=1)
