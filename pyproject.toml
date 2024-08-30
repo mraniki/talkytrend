@@ -32,9 +32,10 @@ prettytable = "^3.8.0"
 tradingview_ta = "^3.3.0"
 yfinance = "^0.2.25"
 finnhub-python = "2.4.20"
-alphaVantage-api = "1.0.33"
-
-
+alpha_vantage = "3.0.0"
+tradermade = "0.8.0"
+polygon-api-client = "1.14.2"
+twelvedata = "1.2.22"
 
 [tool.poetry.group.dev.dependencies]
 python-semantic-release = ">=8.0.8"

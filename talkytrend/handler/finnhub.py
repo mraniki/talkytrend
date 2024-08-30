@@ -8,6 +8,8 @@ class FinnhubHandler(Client):
     """
     Finnhub API client
 
+    documentation: https://finnhub.io/docs/api
+
     """
 
     def __init__(self, **kwargs):

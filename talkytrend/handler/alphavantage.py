@@ -1,4 +1,5 @@
-from alphaVantageAPI import AlphaVantage
+# from alpha_vantage.alphaintelligence import AlphaIntelligence
+from alpha_vantage.alphavantage import AlphaVantage
 
 from .client import Client
 
@@ -7,6 +8,8 @@ class AlphavantageHandler(Client):
     """
     AlphaVantage API client
 
+    documentation: https://www.alphavantage.co/documentation/
+    and https://github.com/RomelTorres/alpha_vantage
 
     """
 
@@ -22,17 +25,8 @@ class AlphavantageHandler(Client):
         if self.enabled:
 
             # Initialize the AlphaVantage Class with default values
-            self.client = AlphaVantage(
-                api_key=self.api_key,
-                premium=False,
-                output_size="compact",
-                datatype="json",
-                export=False,
-                export_path="~/av_data",
-                output="csv",
-                clean=False,
-                proxy={},
-            )
+            self.client = AlphaVantage(key=self.api_key)
 
     async def fetch(self):
+        # TODO
         pass

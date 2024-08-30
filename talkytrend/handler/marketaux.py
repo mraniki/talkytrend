@@ -7,7 +7,7 @@ from .client import Client
 class MarketauxHandler(Client):
     """
     Marketaux client
-
+    documentation: https://www.marketaux.com/documentation
 
     """
 
@@ -25,6 +25,14 @@ class MarketauxHandler(Client):
             logger.info("Initializing Marketaux with self.url={}", self.url)
 
     async def fetch(self):
+        """
+        Asynchronously retrieves news articles from the Marketaux endpoint
+        based on the specified url.
+
+        :return: A string containing HTML formatted news summaries
+        linked to their respective URLs.
+        Returns None if an error occurs while retrieving the news.
+        """
         async with aiohttp.ClientSession() as session:
             async with session.get(self.url, timeout=10) as response:
                 logger.debug("Fetching events from {}", self.url)
@@ -36,16 +44,10 @@ class MarketauxHandler(Client):
                     url = article["url"]
                     title = article["title"]
                     sentiment = article["entities"][0]["sentiment_score"]
-
-                    # Process the article data here
-                    # For example, you can format the article data into a string
                     article_summary = (
                         f"<a href='{url}'>{title}</a><br>" f"Sentiment: {sentiment}"
                     )
 
                     news_articles.append(article_summary)
 
-                # Join the news articles into a single string
-                news_summaries = "<br><br>".join(news_articles)
-
-                return news_summaries
+                return "<br><br>".join(news_articles)

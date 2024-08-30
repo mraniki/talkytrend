@@ -6,8 +6,9 @@ from .client import Client
 
 class ForexnewsapiHandler(Client):
     """
-    forexnewsapi API client
+    forexnewsapi client
 
+    docs: https://forexnewsapi.com/documentation
 
     """
 
@@ -25,6 +26,13 @@ class ForexnewsapiHandler(Client):
             logger.info("Initializing ForexnewsapiHandler with self.url={}", self.url)
 
     async def fetch(self):
+        """
+        Asynchronously retrieves news articles from the Forexnewsapi endpoint
+
+        :return: A string containing HTML formatted news summaries
+        linked to their respective URLs.
+        Returns None if an error occurs while retrieving the news.
+        """
         async with aiohttp.ClientSession() as session:
             async with session.get(self.url, timeout=10) as response:
                 logger.debug("Fetching events from {}", self.url)
@@ -37,9 +45,6 @@ class ForexnewsapiHandler(Client):
                     title = article["title"]
                     text = article["text"]
                     sentiment = article["sentiment"]
-
-                    # Process the article data here
-                    # For example, you can format the article data into a string
                     article_summary = (
                         f"<a href='{news_url}'>{title}</a><br>"
                         f"{text}<br>"
@@ -48,7 +53,4 @@ class ForexnewsapiHandler(Client):
 
                     news_articles.append(article_summary)
 
-                # Join the news articles into a single string
-                news_summaries = "<br><br>".join(news_articles)
-
-                return news_summaries
+                return "<br><br>".join(news_articles)

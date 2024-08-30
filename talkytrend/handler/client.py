@@ -25,6 +25,7 @@ class Client:
         self.url_element = get("url_element", None)
         self.api_key = get("api_key", None)
         self.api_category = get("api_category", None)
+        self.ticker = get("ticker", "AAPL")
 
         self.client = None
 
@@ -43,6 +44,16 @@ class Client:
         Asynchronously monitors the system and retrieves
         various data sources based on the configured settings.
         Cover Events, Feed, and Signal.
+
+        Returns:
+            str: A string containing the concatenated results
+             of the retrieved data sources.
+        """
+
+    async def stream(self):
+        """
+        Asynchronously streams data from the source
+        using the configured settings.
 
         Returns:
             str: A string containing the concatenated results
