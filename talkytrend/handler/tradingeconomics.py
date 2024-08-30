@@ -66,12 +66,10 @@ class TradingeconomicsHandler(Client):
 
         web_sock.on_open = on_open
         try:
-            print("RUN")
+            logger.debug("RUN")
             web_sock.run_forever()
-        # except KeyboardInterrupt:
-        except:
-            # print(traceback.print_exc())
-            logger.debug("exception on the run_forever()")
+        except Exception as e:
+            logger.debug("exception on the run_forever() {}", e)
             sys.exit("Error. Exiting...")
         logger.debug("End of start_socket()")
         web_sock.close()
@@ -81,7 +79,7 @@ def on_open(web_sock):
     """subscribe to calendar
     needs to sleep to subscribe multiple times
     """
-    print("Open")
+    logger.debug("Open")
     # web_sock.send(json.dumps({'topic': 'subscribe', 'to': 'calendar'}))
     web_sock.send(json.dumps({"topic": "subscribe", "to": "EURUSD:CUR"}))
     time.sleep(2)
