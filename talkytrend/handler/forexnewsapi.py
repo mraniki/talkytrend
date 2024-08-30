@@ -4,9 +4,9 @@ from loguru import logger
 from .client import Client
 
 
-class MarketauxHandler(Client):
+class ForexnewsapiHandler(Client):
     """
-    Marketaux client
+    forexnewsapi API client
 
 
     """
@@ -21,8 +21,8 @@ class MarketauxHandler(Client):
 
         super().__init__(**kwargs)
         if self.enabled:
-            self.client = "Marketaux"
-            logger.info("Initializing Marketaux with self.url={}", self.url)
+            self.client = "Forexnewsapi"
+            logger.info("Initializing ForexnewsapiHandler with self.url={}", self.url)
 
     async def fetch(self):
         async with aiohttp.ClientSession() as session:
@@ -33,14 +33,17 @@ class MarketauxHandler(Client):
 
                 news_articles = []
                 for article in data["data"]:
-                    url = article["url"]
+                    news_url = article["news_url"]
                     title = article["title"]
-                    sentiment = article["entities"][0]["sentiment_score"]
+                    text = article["text"]
+                    sentiment = article["sentiment"]
 
                     # Process the article data here
                     # For example, you can format the article data into a string
                     article_summary = (
-                        f"<a href='{url}'>{title}</a><br>" f"Sentiment: {sentiment}"
+                        f"<a href='{news_url}'>{title}</a><br>"
+                        f"{text}<br>"
+                        f"Sentiment: {sentiment}"
                     )
 
                     news_articles.append(article_summary)

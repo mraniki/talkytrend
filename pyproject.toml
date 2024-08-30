@@ -33,7 +33,7 @@ tradingview_ta = "^3.3.0"
 yfinance = "^0.2.25"
 finnhub-python = "2.4.20"
 alphaVantage-api = "1.0.33"
-# cot_reports = "0.1.3"
+
 
 
 [tool.poetry.group.dev.dependencies]
