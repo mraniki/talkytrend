@@ -8,7 +8,6 @@ class FinnhubHandler(Client):
     """
     Finnhub API client
 
-
     """
 
     def __init__(self, **kwargs):
@@ -21,7 +20,7 @@ class FinnhubHandler(Client):
 
         super().__init__(**kwargs)
         if self.enabled:
-            self.client = "Finnhub"
+            self.client = finnhub.Client(api_key=self.api_key)
 
     async def fetch(self):
         """
@@ -33,8 +32,7 @@ class FinnhubHandler(Client):
         Returns None if an error occurs while retrieving the news.
         """
         try:
-            finnhub_client = finnhub.Client(api_key=self.api_key)
-            news_data = finnhub_client.general_news(self.api_category, min_id=0)
+            news_data = self.client.general_news(self.api_category, min_id=0)
             # Create HTML formatted string for each news item
             news_summary_html = (
                 f"<a href='{item['url']}' target='_blank'>{item['headline']}</a>"
