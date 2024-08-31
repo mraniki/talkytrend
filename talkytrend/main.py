@@ -150,6 +150,13 @@ class TalkyTrend:
         return "\n".join(results)
 
     async def fetch_signal(self):
+        """
+        Asynchronously fetches the signal from Tradingview.
+
+        Returns:
+            str: A string containing the concatenated results
+             of the retrieved signal.
+        """
         results = []
         for client in self.clients:
             if client.client == "Tradingview":
@@ -160,6 +167,15 @@ class TalkyTrend:
 
     async def fetch_feed(self):
 
+        """
+        Asynchronously retrieves the latest news
+        from various sources based on the configured
+        settings.
+
+        Returns:
+            str: A string containing the concatenated
+             results of the retrieved news sources.
+        """
         results = []
         for client in self.clients:
             if client.client == "Feed":
@@ -169,7 +185,18 @@ class TalkyTrend:
         return "\n".join(results)
 
     async def fetch_page(self):
+        """
+        Asynchronously scrapes a webpage and retrieves
+        the content specified by the scraper_page_url
+        and scraper_page_id attributes.
 
+        :return: The content of the webpage as a string,
+        formatted using BeautifulSoup.
+        If the scraper_page_id is not specified,
+        the entire webpage is returned.
+
+        :rtype: str
+        """
         results = []
         for client in self.clients:
             if client.client == "Scraper":
@@ -181,7 +208,13 @@ class TalkyTrend:
     scrape_page = fetch_page
 
     async def fetch_tv(self):
+        """
+        Asynchronously retrieves the URL for TV feed.
 
+        Returns:
+            str: An URL representing the live TV
+            url if available, otherwise None.
+        """
         results = []
         for client in self.clients:
             if client.client == "LiveTV":
@@ -191,3 +224,20 @@ class TalkyTrend:
         return "\n".join(results)
 
     get_tv = fetch_tv
+
+    async def stream(self):
+        """
+        Asynchronously streams data from the source
+        using the configured settings.
+
+        Returns:
+            str: A string containing the concatenated results
+             of the retrieved data sources.
+        """
+        results = []
+        for client in self.clients:
+            if client.stream:
+                result = await client.stream()
+                if result:
+                    results.append(result)
+        return "\n".join(results)

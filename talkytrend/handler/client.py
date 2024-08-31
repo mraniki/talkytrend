@@ -26,7 +26,7 @@ class Client:
         self.api_key = get("api_key", None)
         self.api_category = get("api_category", None)
         self.ticker = get("ticker", "AAPL")
-
+        self.stream = get("stream", False)
         self.client = None
 
     async def fetch(self):

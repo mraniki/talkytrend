@@ -29,6 +29,7 @@ class TradingeconomicsHandler(Client):
         super().__init__(**kwargs)
         if self.enabled:
             te.login(userkey=self.api_key)
+            self.stream = True
 
     async def fetch(self):
         """ """
