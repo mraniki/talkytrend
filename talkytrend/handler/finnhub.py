@@ -1,5 +1,4 @@
 import finnhub
-from loguru import logger
 
 from .client import Client
 
@@ -33,16 +32,14 @@ class FinnhubHandler(Client):
         linked to their respective URLs.
         Returns None if an error occurs while retrieving the news.
         """
-        try:
-            news_data = self.client.general_news(self.api_category, min_id=0)
-            # Create HTML formatted string for each news item
-            news_summary_html = (
-                f"<a href='{item['url']}' target='_blank'>{item['headline']}</a>"
-                f"<br/><p>{item['summary']}</p>"
-                for item in news_data
-                if "headline" in item and "url" in item and "summary" in item
-            )
 
-            return "<br/>".join(news_summary_html)
-        except Exception as e:
-            logger.error("Error getting finnhub news: {}", e)
+        news_data = self.client.general_news(self.api_category, min_id=0)
+        # Create HTML formatted string for each news item
+        news_summary_html = (
+            f"<a href='{item['url']}' target='_blank'>{item['headline']}</a>"
+            f"<br/><p>{item['summary']}</p>"
+            for item in news_data
+            if "headline" in item and "url" in item and "summary" in item
+        )
+
+        return "<br/>".join(news_summary_html)
