@@ -136,6 +136,12 @@ async def test_fetch_tv(talky):
     strings = ["📺"]
     assert any(string in result for string in strings)
 
+async def test_get_news(talky):
+    result = await talky.get_news()
+    print(result)
+    assert result is not None
+    # strings = ["📺"]
+    # assert any(string in result for string in strings)
 
 @pytest.mark.asyncio
 async def test_monitor(talky):

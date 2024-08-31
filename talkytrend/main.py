@@ -224,7 +224,26 @@ class TalkyTrend:
 
     get_tv = fetch_tv
 
-    async def stream(self):
+    async def get_news(self):
+        """
+        Asynchronously retrieves the latest news
+        from various sources based on the configured
+        settings.
+
+        Returns:
+            str: A string containing the concatenated
+             results of the retrieved news sources.
+        """
+        results = []
+        for client in self.clients:
+            # if client.client == "Feed":
+                result = await client.fetch()
+                if result:
+                    results.append(result)
+        return "\n".join(results)
+
+
+    async def get_stream(self):
         """
         Asynchronously streams data from the source
         using the configured settings.
@@ -240,3 +259,4 @@ class TalkyTrend:
                 if result:
                     results.append(result)
         return "\n".join(results)
+
