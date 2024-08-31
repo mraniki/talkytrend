@@ -22,7 +22,7 @@ class TwelvedataHandler(Client):
 
         super().__init__(**kwargs)
         if self.enabled:
-            self.client = TDClient(api_key=self.api_key)
+            self.client = TDClient(apikey=self.api_key)
             logger.info("Initializing Twelvedata")
 
     async def fetch(self):
