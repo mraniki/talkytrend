@@ -9,8 +9,7 @@ from talkytrend.handler.scraper import ScraperHandler
 from talkytrend.handler.tradermade import TradermadeHandler
 from talkytrend.handler.tradingeconomics import TradingeconomicsHandler
 from talkytrend.handler.tradingview import TradingviewHandler
-
-# from talkytrend.handler.twelvedata import TwelvedataHandler
+from talkytrend.handler.twelvedata import TwelvedataHandler
 from talkytrend.handler.yfinance import YfinanceHandler
 
 __all__ = [
@@ -24,7 +23,7 @@ __all__ = [
     "AlphavantageHandler",
     "MarketauxHandler",
     "TradingeconomicsHandler",
-    # "TwelvedataHandler",
+    "TwelvedataHandler",
     "ForexnewsapiHandler",
     "TradermadeHandler",
 ]

@@ -28,4 +28,3 @@ class TwelvedataHandler(Client):
     async def get_news(self):
         """ """
         # TODO
-        pass
