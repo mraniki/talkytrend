@@ -23,7 +23,7 @@ class FinnhubHandler(Client):
         if self.enabled:
             self.client = finnhub.Client(api_key=self.api_key)
 
-    async def fetch(self):
+    async def get_news(self):
         """
         Asynchronously retrieves news articles from the Finnhub API
         based on the specified category and API key.

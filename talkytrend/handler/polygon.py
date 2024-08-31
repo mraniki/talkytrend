@@ -25,6 +25,6 @@
 #             self.client = RESTClient(api_key=self.api_key)
 #             logger.info("Initializing Polygon.io")
 
-#     async def fetch(self):
+#     async def get_news(self):
 #         """ """
 #         return self.client.list_ticker_news(self.ticker, order="desc", limit=1)

@@ -25,7 +25,7 @@ class ForexnewsapiHandler(Client):
             self.client = "Forexnewsapi"
             logger.info("Initializing ForexnewsapiHandler with self.url={}", self.url)
 
-    async def fetch(self):
+    async def get_news(self):
         """
         Asynchronously retrieves news articles from the Forexnewsapi endpoint
 
@@ -38,7 +38,7 @@ class ForexnewsapiHandler(Client):
                 logger.debug("Fetching events from {}", self.url)
                 response.raise_for_status()
                 data = await response.json()
-
+                logger.debug("Data: {}", data)
                 news_articles = []
                 for article in data["data"]:
                     news_url = article["news_url"]
@@ -52,5 +52,6 @@ class ForexnewsapiHandler(Client):
                     )
 
                     news_articles.append(article_summary)
-
-                return "<br><br>".join(news_articles)
+                logger.debug("news_articles: {}", news_articles)
+                # return "<br><br>".join(news_articles)
+                return "<br><br>".join([article_summary for _ in data["data"]])

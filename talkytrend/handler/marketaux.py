@@ -24,7 +24,7 @@ class MarketauxHandler(Client):
             self.client = "Marketaux"
             logger.info("Initializing Marketaux with self.url={}", self.url)
 
-    async def fetch(self):
+    async def get_news(self):
         """
         Asynchronously retrieves news articles from the Marketaux endpoint
         based on the specified url.

@@ -25,6 +25,7 @@ class TwelvedataHandler(Client):
             self.client = TDClient(apikey=self.api_key)
             logger.info("Initializing Twelvedata")
 
-    async def fetch(self):
+    async def get_news(self):
         """ """
         # TODO
+        pass

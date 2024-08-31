@@ -32,7 +32,7 @@ class TradingeconomicsHandler(Client):
             te.login(self.api_key)
             self.stream = True
 
-    async def fetch(self):
+    async def get_news(self):
         """ """
         data = te.getNews(country=["United States"])
         logger.debug("Data: {}", data)

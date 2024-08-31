@@ -1,4 +1,5 @@
 from alpha_vantage.alphaintelligence import AlphaIntelligence
+from loguru import logger
 
 # from alpha_vantage.alphavantage import AlphaVantage
 from .client import Client
@@ -29,6 +30,13 @@ class AlphavantageHandler(Client):
             # if self.api_category is None
             #     self.api_category = "topnews"
 
-    async def fetch(self):
+    async def get_news(self):
         # TODO
-        return self.client.get_news_sentiment(limit=1)
+        news = self.client.get_news_sentiment(limit=1)
+        # logger.debug("Data: {}", news)
+        logger.debug("Data: {}", news[0])
+        # first_news = news[0]
+        # title = first_news["title"]
+        # ticker_sentiment = first_news["ticker_sentiment"]
+        # logger.debug("Title: {}, Ticker Sentiment: {}", title, ticker_sentiment)
+        return news

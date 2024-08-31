@@ -59,3 +59,14 @@ class Client:
             str: A string containing the concatenated results
              of the retrieved data sources.
         """
+
+    async def get_news(self):
+        """
+        Asynchronously retrieves the latest news
+        from various sources based on the configured
+        settings.
+
+        Returns:
+            str: A string containing the concatenated
+             results of the retrieved news sources.
+        """

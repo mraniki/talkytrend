@@ -236,10 +236,15 @@ class TalkyTrend:
         """
         results = []
         for client in self.clients:
-            result = await client.fetch()
-            if result is not None:
-                results.append(str(result))
-        return "\n".join(results)
+            result = await client.get_news()
+            logger.debug("Result from {}: {}", client.library, result)
+            if result and isinstance(result, str):
+                results.append(result)
+            else:
+                logger.warning("Skipping non-string result from client: {}", result)
+        aggregated_news = "\n".join(results)
+        logger.info("news: {}", aggregated_news)
+        return aggregated_news
 
     async def get_stream(self):
         """
