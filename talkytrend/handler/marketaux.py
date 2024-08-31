@@ -43,10 +43,8 @@ class MarketauxHandler(Client):
                 for article in data["data"]:
                     url = article["url"]
                     title = article["title"]
-                    sentiment = article["entities"][0]["sentiment_score"]
-                    article_summary = (
-                        f"<a href='{url}'>{title}</a><br>" f"Sentiment: {sentiment}"
-                    )
+                    # sentiment = article["entities"][0]["sentiment_score"]
+                    article_summary = f"<a href='{url}'>{title}</a><br>"
 
                     news_articles.append(article_summary)
 
