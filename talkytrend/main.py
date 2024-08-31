@@ -166,7 +166,6 @@ class TalkyTrend:
         return "\n".join(results)
 
     async def fetch_feed(self):
-
         """
         Asynchronously retrieves the latest news
         from various sources based on the configured
