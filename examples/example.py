@@ -4,8 +4,6 @@ Provides example for talkytrend
 
 import asyncio
 
-from loguru import logger
-
 from talkytrend import TalkyTrend
 
 
@@ -46,7 +44,6 @@ async def main():
     # monitor = await talky.monitor()
     # print("monitor:\n", monitor)
     await talky.get_news()
-
 
 
 if __name__ == "__main__":
