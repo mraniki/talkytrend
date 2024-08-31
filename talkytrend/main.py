@@ -237,11 +237,10 @@ class TalkyTrend:
         results = []
         for client in self.clients:
             # if client.client == "Feed":
-                result = await client.fetch()
-                if result:
-                    results.append(result)
+            result = await client.fetch()
+            if result is not None:
+                results.append(result)
         return "\n".join(results)
-
 
     async def get_stream(self):
         """
@@ -259,4 +258,3 @@ class TalkyTrend:
                 if result:
                     results.append(result)
         return "\n".join(results)
-
