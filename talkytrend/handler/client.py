@@ -50,16 +50,6 @@ class Client:
              of the retrieved data sources.
         """
 
-    async def stream(self):
-        """
-        Asynchronously streams data from the source
-        using the configured settings.
-
-        Returns:
-            str: A string containing the concatenated results
-             of the retrieved data sources.
-        """
-
     async def get_news(self):
         """
         Asynchronously retrieves the latest news
@@ -69,4 +59,14 @@ class Client:
         Returns:
             str: A string containing the concatenated
              results of the retrieved news sources.
+        """
+
+    async def stream(self):
+        """
+        Asynchronously streams data from the source
+        using the configured settings.
+
+        Returns:
+            str: A string containing the concatenated results
+             of the retrieved data sources.
         """
