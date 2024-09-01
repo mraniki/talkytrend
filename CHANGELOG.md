@@ -1,5 +1,81 @@
 # CHANGELOG
 
+## v3.1.0 (2024-09-01)
+
+### Other
+
+* Merge pull request #271 from mraniki/dev
+
+🥚Multi data provider ([`4230534`](https://github.com/mraniki/talkytrend/commit/4230534e86323725e367b5f412ec1f5e3773e386))
+
+* update client.py ([`200f322`](https://github.com/mraniki/talkytrend/commit/200f322529ab35766301de08dfcceb568886dc02))
+
+* Remove unused import and add TwelvedataHandler class. ([`b0b5660`](https://github.com/mraniki/talkytrend/commit/b0b5660d8f435c939cf0b06822711c13d943e1f3))
+
+* update example.py ([`36b079b`](https://github.com/mraniki/talkytrend/commit/36b079b89988304d8eb5298d4f5b80c83d3a16a2))
+
+* update tradingeconomics.py ([`c361619`](https://github.com/mraniki/talkytrend/commit/c361619e60c15fc5e4f312151fcb701644d6f526))
+
+* Adding Trading Economics ([`a54e234`](https://github.com/mraniki/talkytrend/commit/a54e23425b226363235305331ee5a3ba4b348bc8))
+
+* build(deps): update pyproject.toml ([`1233d51`](https://github.com/mraniki/talkytrend/commit/1233d51892b87240b8d26ce7a85b5092b79f1906))
+
+* build(deps): update pyproject.toml and polygon.py ([`d81f227`](https://github.com/mraniki/talkytrend/commit/d81f227b2f2f7010580c19e48369bd470a55c806))
+
+* update 6 files ([`8c98d8d`](https://github.com/mraniki/talkytrend/commit/8c98d8d27b6516257dc35a15357a132e59b649b0))
+
+* Add AlphavantageHandler class for AlphaVantage API integration. ([`785cbe7`](https://github.com/mraniki/talkytrend/commit/785cbe7fdf08bf01c2165f1633e8ede2498664e5))
+
+* Add alphavantage API to dependencies and create handler. ([`7d1d990`](https://github.com/mraniki/talkytrend/commit/7d1d990f96b30340a7fbb9eb370298caf1baf92d))
+
+### ✅
+
+* ✅ Unit Test update 13 files ([`e7c06c0`](https://github.com/mraniki/talkytrend/commit/e7c06c0bf16c2317906fc01fa709f0b0a741c80b))
+
+* ✅ Unit Test ([`34a58c7`](https://github.com/mraniki/talkytrend/commit/34a58c740159d442af5218537d32d02acbd72b1c))
+
+* ✅ Unit Test ([`1270685`](https://github.com/mraniki/talkytrend/commit/127068576df58f13aab3865283b9da3f768dfc63))
+
+* ✅ Unit Test ([`95485d1`](https://github.com/mraniki/talkytrend/commit/95485d1ce00ed24dc38188c9ac2b257639707bbc))
+
+### ⬆️
+
+* ⬆️ 🛠️(deps): update dependency tradingeconomics to v4.3.8 ([`fde5b8d`](https://github.com/mraniki/talkytrend/commit/fde5b8d183b79d069d75264795d112c056a62b57))
+
+* ⬆️ 🛠️(deps): update dependency twelvedata to v1.2.23 ([`0e8d848`](https://github.com/mraniki/talkytrend/commit/0e8d8481d2d1cc089cc261b2b260e794b519c13f))
+
+* ⬆️ 🛠️(deps): update dependency sphinx to v8.0.2 ([`f35a1a4`](https://github.com/mraniki/talkytrend/commit/f35a1a450eecb89ec1e53bb7fe6be985ed9e619a))
+
+* ⬆️ 🛠️(deps): update dependency sphinx to v8 ([`73c541c`](https://github.com/mraniki/talkytrend/commit/73c541cddd77db8749341365748627e62ce98bd2))
+
+### 🎨
+
+* 🎨 ([`9a1771f`](https://github.com/mraniki/talkytrend/commit/9a1771fed06aced9e1d1f884f3042cac7b99cda9))
+
+### 🐛
+
+* 🐛 ([`73a405a`](https://github.com/mraniki/talkytrend/commit/73a405a5f9faefcc9fabb7d49e8405c6f5e7f177))
+
+* 🐛 ([`62cc034`](https://github.com/mraniki/talkytrend/commit/62cc034655ec831297e925075ec4b11220bb70ee))
+
+* 🐛 ([`3bd4704`](https://github.com/mraniki/talkytrend/commit/3bd47041f01827c0e649f12f03842eae8b053dfc))
+
+* 🐛 ([`4d5ce48`](https://github.com/mraniki/talkytrend/commit/4d5ce48707d7c64dc26b31918336ea2188b8b9d9))
+
+* 🐛 ([`55c0e67`](https://github.com/mraniki/talkytrend/commit/55c0e678fdaef16931e2d19eea8a3af3ad3cca01))
+
+### 💬
+
+* 💬 ([`8b83bd0`](https://github.com/mraniki/talkytrend/commit/8b83bd0e6490ec186ec2ece60d835d555415f8fa))
+
+* 💬 updated docstring and testing ([`9351763`](https://github.com/mraniki/talkytrend/commit/9351763a454cdfc36dbc60cb588e56aff84f6b34))
+
+### 🥚
+
+* 🥚 update talkytrend/handler/__init__.py ([`827e2ea`](https://github.com/mraniki/talkytrend/commit/827e2eaf96282043e1eaa541a3a516f7393a5022))
+
+* 🥚 Adding multiple data provider handler ([`63d4df8`](https://github.com/mraniki/talkytrend/commit/63d4df8463d5d822ee3317a19299636181526302))
+
 ## v3.0.7 (2024-08-16)
 
 ### Other
