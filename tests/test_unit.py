@@ -1,5 +1,6 @@
 """
 talkytrend Unit Testing
+
 """
 
 from unittest.mock import AsyncMock, MagicMock, patch
@@ -134,6 +135,22 @@ async def test_fetch_tv(talky):
     assert result is not None
     strings = ["📺"]
     assert any(string in result for string in strings)
+
+
+async def test_get_news(talky):
+    result = await talky.get_news()
+    print(result)
+    assert result is not None
+    # strings = ["📺"]
+    # assert any(string in result for string in strings)
+
+
+async def test_get_stream(talky):
+    result = await talky.get_stream()
+    print(result)
+    assert result is not None
+    # strings = ["📺"]
+    # assert any(string in result for string in strings)
 
 
 @pytest.mark.asyncio
