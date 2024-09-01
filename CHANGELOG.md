@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## v3.1.1 (2024-09-01)
+
+### Other
+
+* Merge pull request #275 from mraniki/dev
+
+⬆️ build(deps): update pyproject.toml and talkytrend/handler/__init__.py ([`7f345a9`](https://github.com/mraniki/talkytrend/commit/7f345a97e2b0ba0143b63e0de8992605a474e433))
+
+### ⬆️
+
+* ⬆️ build(deps): update pyproject.toml and talkytrend/handler/__init__.py ([`cef59ad`](https://github.com/mraniki/talkytrend/commit/cef59ad8956bf868f2b04e6d43d4e4168e4466b6))
+
 ## v3.1.0 (2024-09-01)
 
 ### Other
