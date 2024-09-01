@@ -43,7 +43,9 @@ async def main():
 
     # monitor = await talky.monitor()
     # print("monitor:\n", monitor)
-    await talky.get_news()
+    # await talky.get_news()
+
+    await talky.continuous_stream()
 
 
 if __name__ == "__main__":

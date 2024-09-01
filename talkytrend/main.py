@@ -2,6 +2,7 @@
  TalkyTrend Main
 """
 
+import asyncio
 import importlib
 
 from loguru import logger
@@ -242,9 +243,7 @@ class TalkyTrend:
                 results.append(result)
             else:
                 logger.warning("Skipping non-string result from client: {}", result)
-        aggregated_news = "\n".join(results)
-        logger.info("news: {}", aggregated_news)
-        return aggregated_news
+        return "\n".join(results)
 
     async def get_stream(self):
         """
@@ -258,7 +257,18 @@ class TalkyTrend:
         results = []
         for client in self.clients:
             if client.stream:
-                result = await client.stream()
-                if result:
+                async for result in client.stream():
                     results.append(result)
         return "\n".join(results)
+
+    async def continuous_stream(self):
+        """
+        Continuously fetches stream data and handles it.
+        """
+        while True:
+            try:
+                result = await self.get_stream()
+                logger.info(result)  # or handle the result as needed
+            except Exception as e:
+                logger.error(f"Error occurred: {e}")
+            await asyncio.sleep(1)  # Add a delay if needed to prevent tight loop

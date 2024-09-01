@@ -11,6 +11,8 @@ from talkytrend.handler.scraper import ScraperHandler
 from talkytrend.handler.tradingeconomics import TradingeconomicsHandler
 from talkytrend.handler.tradingview import TradingviewHandler
 from talkytrend.handler.twelvedata import TwelvedataHandler
+
+# from talkytrend.handler.websocket import WebsocketHandler
 from talkytrend.handler.yfinance import YfinanceHandler
 
 __all__ = [
@@ -26,5 +28,6 @@ __all__ = [
     "TradingeconomicsHandler",
     "TwelvedataHandler",
     "ForexnewsapiHandler",
+    # "WebsocketHandler",
     # "TradermadeHandler",
 ]

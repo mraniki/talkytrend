@@ -22,6 +22,7 @@ class FinnhubHandler(Client):
         super().__init__(**kwargs)
         if self.enabled:
             self.client = finnhub.Client(api_key=self.api_key)
+            self.websocket_url = f"wss://ws.finnhub.io?token={self.api_key}"
 
     async def get_news(self):
         """
@@ -43,3 +44,21 @@ class FinnhubHandler(Client):
         )
 
         return "<br/>".join(news_summary_html)
+
+    # async def stream(self):
+    #     """
+    #     Asynchronously streams data from the source
+    #     using the configured settings.
+
+    #     Returns:
+    #         str: A string containing the concatenated results
+    #          of the retrieved data sources.
+    #     """
+    #     # async with websockets.connect(self.websocket_url) as websocket:
+    #     #     async for message in websocket:
+    #     #         yield message
+
+    #     with websockets.connect(self.websocket_url) as websocket:
+    #         message = websocket.recv()
+    #         logger.info(f"Received: {message}")
+    #         yield message

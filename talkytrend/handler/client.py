@@ -1,3 +1,4 @@
+import websockets
 from loguru import logger
 
 
@@ -27,6 +28,7 @@ class Client:
         self.api_category = get("api_category", None)
         self.ticker = get("ticker", "AAPL")
         self.stream = get("stream", False)
+        self.websocket_url = get("websocket_url", None)
         self.client = None
 
     async def fetch(self):
@@ -61,6 +63,15 @@ class Client:
              results of the retrieved news sources.
         """
 
+    # async def stream(self):
+    #     """
+    #     Asynchronously streams data from the source
+    #     using the configured settings.
+
+    #     Returns:
+    #         str: A string containing the concatenated results
+    #          of the retrieved data sources.
+    #     """
     async def stream(self):
         """
         Asynchronously streams data from the source
@@ -70,3 +81,10 @@ class Client:
             str: A string containing the concatenated results
              of the retrieved data sources.
         """
+
+        if self.websocket_url is None:
+            return
+        with websockets.connect(self.websocket_url) as websocket:
+            message = websocket.recv()
+            logger.info(f"Received: {message}")
+            yield message
