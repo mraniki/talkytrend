@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## v3.2.0 (2024-09-02)
+
+### Other
+
+* Merge pull request #276 from mraniki/dev
+
+⬆️ 🤖 - You could live a better life if you had a better mind and a better body ([`164c130`](https://github.com/mraniki/talkytrend/commit/164c1300fc4164742002ae1782c531bd89ef5a28))
+
+### 🥚
+
+* 🥚websocket   🔧default value for data provider ([`7361912`](https://github.com/mraniki/talkytrend/commit/7361912488b018ae4ec93ff81cad5cadd9ebc131))
+
 ## v3.1.1 (2024-09-01)
 
 ### Other
