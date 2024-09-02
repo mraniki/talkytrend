@@ -101,6 +101,49 @@ format = ""
 # url = ""
 # url_element = ""
 
+
+# [default.talkytrend.alphavantage]
+# enabled = false
+# library = "alphavantage"
+# api_key = "DEADBEAFDEADBEAFDEADBEAFDEADBEAF"
+
+# # Finnhub news fetcher
+# [default.talkytrend.finnhub]
+# enabled = false
+# library = "finnhub"
+# api_key = "DEADBEAFDEADBEAFDEADBEAFDEADBEAF"
+# api_category = "forex"
+
+# [default.talkytrend.forexnewsapi]
+# enabled = false
+# library = "forexnewsapi"
+# url = "https://forexnewsapi.com/api/v1/category?section=general&items=3&page=1&token=DEADBEAFDEADBEAFDEADBEAFDEADBEAF"
+
+# [default.talkytrend.marketaux]
+# enabled = false
+# library = "marketaux"
+# url = "https://api.marketaux.com/v1/news/all?language=en&api_token=DEADBEAFDEADBEAFDEADBEAFDEADBEAF"
+
+# [default.talkytrend.tradermade]
+# enabled = false
+# library = "tradermade"
+# api_key = "DEADBEAFDEADBEAFDEADBEAFDEADBEAF"
+
+# [default.talkytrend.tradingeconomics]
+# enabled = false
+# library = "tradingeconomics"
+# api_key = "DEADBEAFDEADBEAFDEADBEAFDEADBEAF:DEADBEAFDEADBEAFDEADBEAFDEADBEAF"
+
+# [default.talkytrend.twelvedata]
+# enabled = false
+# library = "twelvedata"
+# api_key = "DEADBEAFDEADBEAFDEADBEAFDEADBEAF"
+
+# [default.talkytrend.alpacamarkets]
+# enabled = false
+# library = "alpacamarkets"
+
+
 ########################################
 ###     END OF DEFAULT SETTINGS      ###
 ########################################
