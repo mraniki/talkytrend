@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## v3.2.1 (2024-09-03)
+
+### Other
+
+* Merge pull request #278 from mraniki/dev
+
+⬆️ 🤖 - Blow it out your ear ([`2c1750b`](https://github.com/mraniki/talkytrend/commit/2c1750bfe53b3af0749e836bd13f3eeca60f9cf1))
+
+### ⬆️
+
+* ⬆️ 🛠️(deps): update dependency tradingeconomics to v4.3.9 ([`1838159`](https://github.com/mraniki/talkytrend/commit/183815968ed23a7f92c39aa4c15dd82697d6495f))
+
 ## v3.2.0 (2024-09-02)
 
 ### Other
