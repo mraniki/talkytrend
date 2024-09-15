@@ -44,7 +44,7 @@ class FeedHandler(Client):
                     title = data["title"]
                     link = data["link"]
                     return f"📰 <a href='{link}'>{title}</a>"
-        except (aiohttp.ClientError, xmltodict.ExpatError) as error:
+        except Exception as error:
             logger.error("Error occurred while fetching news: {}", error)
             return f"📰 {error}"
 
