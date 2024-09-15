@@ -8,7 +8,7 @@ import tradingeconomics as te
 # import websocket
 from loguru import logger
 
-from .client import Client
+from ._client import Client
 
 
 class TradingeconomicsHandler(Client):

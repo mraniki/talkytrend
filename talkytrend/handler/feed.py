@@ -2,7 +2,7 @@ import aiohttp
 import xmltodict
 from loguru import logger
 
-from .client import Client
+from ._client import Client
 
 
 class FeedHandler(Client):
@@ -32,17 +32,21 @@ class FeedHandler(Client):
         :return: The formatted news feed as a string with an HTML link.
         :rtype: str or None
         """
-        async with aiohttp.ClientSession() as session:
-            async with session.get(self.url, timeout=10) as response:
-                logger.debug("Fetching news from {}", self.url)
-                data = (
-                    xmltodict.parse(await response.text())
-                    .get("rss")
-                    .get("channel")["item"][0]
-                )
-                title = data["title"]
-                link = data["link"]
-                return f"📰 <a href='{link}'>{title}</a>"
+        try:
+            async with aiohttp.ClientSession() as session:
+                async with session.get(self.url, timeout=10) as response:
+                    logger.debug("Fetching news from {}", self.url)
+                    data = (
+                        xmltodict.parse(await response.text())
+                        .get("rss")
+                        .get("channel")["item"][0]
+                    )
+                    title = data["title"]
+                    link = data["link"]
+                    return f"📰 <a href='{link}'>{title}</a>"
+        except Exception as error:
+            logger.error("Error occurred while fetching news: {}", error)
+            return f"📰 {error}"
 
     async def monitor(self):
         """

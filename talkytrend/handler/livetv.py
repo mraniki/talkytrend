@@ -1,4 +1,4 @@
-from .client import Client
+from ._client import Client
 
 
 class LivetvHandler(Client):

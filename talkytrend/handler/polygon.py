@@ -1,7 +1,7 @@
 # from loguru import logger
 # from polygon import RESTClient
 
-# from .client import Client
+# from ._client import Client
 
 
 # class PolygonHandler(Client):
