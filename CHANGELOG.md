@@ -1,5 +1,29 @@
 # CHANGELOG
 
+## v3.3.0 (2024-09-15)
+
+### Other
+
+* Merge pull request #287 from mraniki/dev
+
+⬆️ 🤖 - Hope that the day after you die is a nice day ([`3ab0f4e`](https://github.com/mraniki/talkytrend/commit/3ab0f4ea9325e03647c3fc1666ed5fdaccfd25b9))
+
+### ⬆️
+
+* ⬆️ 🛠️(deps): update dependency myst_parser to v4 ([`d7f4c65`](https://github.com/mraniki/talkytrend/commit/d7f4c65d368159aa306326e4a2b18d34b44399f1))
+
+### 🎨
+
+* 🎨 ([`2459484`](https://github.com/mraniki/talkytrend/commit/245948430644f7fe3f7d235e00c0e15f1fac71a1))
+
+### 🐛
+
+* 🐛 ([`9528cd9`](https://github.com/mraniki/talkytrend/commit/9528cd90ce09e91be81913f570b48fbdd9ddffbd))
+
+### 💄
+
+* 💄 Rename client and improve error handling for feed.py ([`f992606`](https://github.com/mraniki/talkytrend/commit/f992606f1eed1bbc5a16a49498082af985e09884))
+
 ## v3.2.1 (2024-09-03)
 
 ### Other
