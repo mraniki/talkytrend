@@ -38,7 +38,8 @@
 #             result = []
 #             for currency, values in data.items():
 #                 result.append(f"{currency}:")
-#                 result.extend(f"  {field}: {value}" for field, value in values.items())
+#                 result.extend(
+# f"  {field}: {value}" for field, value in values.items())
 #             return "\n".join(result)
 #         except Exception as e:
 #             return f"Error fetching currency data: {str(e)}"
