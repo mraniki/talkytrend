@@ -4,7 +4,7 @@ from loguru import logger
 from prettytable import PrettyTable
 from tradingview_ta import TA_Handler
 
-from .client import Client
+from ._client import Client
 
 
 class TradingviewHandler(Client):

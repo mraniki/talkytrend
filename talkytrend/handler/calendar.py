@@ -3,7 +3,7 @@ from datetime import datetime
 import aiohttp
 from loguru import logger
 
-from .client import Client
+from ._client import Client
 
 
 class CalendarHandler(Client):

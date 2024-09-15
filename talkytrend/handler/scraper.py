@@ -1,7 +1,7 @@
 import aiohttp
 from bs4 import BeautifulSoup
 
-from .client import Client
+from ._client import Client
 
 
 class ScraperHandler(Client):

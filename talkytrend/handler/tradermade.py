@@ -1,7 +1,7 @@
 import tradermade as tm
 from loguru import logger
 
-from .client import Client
+from ._client import Client
 
 
 class TradermadeHandler(Client):

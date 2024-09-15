@@ -1,7 +1,7 @@
 from loguru import logger
 from twelvedata import TDClient
 
-from .client import Client
+from ._client import Client
 
 
 class TwelvedataHandler(Client):

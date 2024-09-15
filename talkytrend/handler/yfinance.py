@@ -1,7 +1,7 @@
 import yfinance as yf
 from loguru import logger
 
-from .client import Client
+from ._client import Client
 
 
 class YfinanceHandler(Client):
