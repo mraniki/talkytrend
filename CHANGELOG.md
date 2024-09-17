@@ -1,5 +1,25 @@
 # CHANGELOG
 
+## v3.3.1 (2024-09-17)
+
+### Other
+
+* Merge pull request #288 from mraniki/dev
+
+⬆️ 🤖 - By trying we can easily learn to endure adversity  Another mans I mean ([`d45b766`](https://github.com/mraniki/talkytrend/commit/d45b76622971af15cc5363fc2f92ea314e0dce51))
+
+### ⬆️
+
+* ⬆️ 🛠️(deps): update dependency twelvedata to v1.2.24 ([`ac715f9`](https://github.com/mraniki/talkytrend/commit/ac715f9ba01dfd72e640e45f212c5a33ade67e8d))
+
+### 🔥
+
+* 🔥 ([`d798a10`](https://github.com/mraniki/talkytrend/commit/d798a10fb77a06b104001ebdf6b11a1ff5ba244c))
+
+### 🚨
+
+* 🚨 ([`3039693`](https://github.com/mraniki/talkytrend/commit/30396936d7eb4c2b3a9f847f6388ce203bf0acb4))
+
 ## v3.3.0 (2024-09-15)
 
 ### Other
