@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## v3.3.2 (2024-09-22)
+
+### Other
+
+* Merge pull request #292 from mraniki/dev
+
+⬆️ 🤖 - Go to a movie tonight  Darkness becomes you ([`2a11dda`](https://github.com/mraniki/talkytrend/commit/2a11ddae8e7d5792195aee143c4c50cd72bf3f16))
+
+### ⬆️
+
+* ⬆️ 🛠️(deps): update dependency websockets to v13.1 ([`7a1a5a2`](https://github.com/mraniki/talkytrend/commit/7a1a5a22a3f985e3381af87ab7409621aabfde3a))
+
 ## v3.3.1 (2024-09-17)
 
 ### Other
