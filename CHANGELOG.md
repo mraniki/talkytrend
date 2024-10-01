@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## v3.3.3 (2024-10-01)
+
+### Other
+
+* Merge pull request #294 from mraniki/dev
+
+⬆️ 🤖 - A classic is something that everyone wants to have read ([`1327a8e`](https://github.com/mraniki/talkytrend/commit/1327a8e6c06ef1ac33cc6e70cf0e99cd6f05dd08))
+
+### ⬆️
+
+* ⬆️ 🛠️(deps): update dependency tradingeconomics to v4.3.10 ([`d22c152`](https://github.com/mraniki/talkytrend/commit/d22c152548c9f787d0a2addbf5e1c899ac990786))
+
 ## v3.3.2 (2024-09-22)
 
 ### Other
