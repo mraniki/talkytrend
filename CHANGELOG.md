@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## v3.3.4 (2024-10-03)
+
+### Other
+
+* Merge pull request #296 from mraniki/dev
+
+⬆️ 🤖 - Dont kiss an elephant on the lips today ([`7cd3644`](https://github.com/mraniki/talkytrend/commit/7cd36448e794ef083d6803f4ff6fc0687e5e9144))
+
+### ⬆️
+
+* ⬆️ 🛠️(deps): update dependency tradingeconomics to v4.3.11 ([`46862d6`](https://github.com/mraniki/talkytrend/commit/46862d6fa25dd52a49e315421047121de371e49f))
+
 ## v3.3.3 (2024-10-01)
 
 ### Other
