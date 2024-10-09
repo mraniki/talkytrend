@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## v3.3.5 (2024-10-09)
+
+### Other
+
+* Merge pull request #299 from mraniki/dev
+
+⬆️ 🤖 - You definitely intend to start living sometime soon ([`0a912dc`](https://github.com/mraniki/talkytrend/commit/0a912dcbc46b41d37b3b05633d7300f1957eb7df))
+
+### ⬆️
+
+* ⬆️ 🛠️(deps): update python docker tag to v3.13 ([`65f252e`](https://github.com/mraniki/talkytrend/commit/65f252e4854112252ef5f10b1313bcb220c7bf9d))
+
 ## v3.3.4 (2024-10-03)
 
 ### Other
