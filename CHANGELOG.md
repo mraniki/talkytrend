@@ -1,6 +1,19 @@
 # CHANGELOG
 
 
+## v3.3.7 (2024-10-27)
+
+### Fix
+
+* ⬆️ dependencies fix ([`fce5f63`](https://github.com/mraniki/talkytrend/commit/fce5f63e15f6615e3c8b92d25230443630429faa))
+
+### Other
+
+* Merge pull request #305 from mraniki/dev
+
+⬆️ dependencies fix ([`689de1e`](https://github.com/mraniki/talkytrend/commit/689de1e4372fda51e6c62556741fa229c18de2a9))
+
+
 ## v3.3.6 (2024-10-25)
 
 ### Other
