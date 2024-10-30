@@ -1,6 +1,27 @@
 # CHANGELOG
 
 
+## v3.3.8 (2024-10-30)
+
+### :fire:
+
+* :fire: ([`8f7d622`](https://github.com/mraniki/talkytrend/commit/8f7d622eef53ddf4b984a0df3399d2a83f6440a5))
+
+### Other
+
+* Merge pull request #308 from mraniki/dev
+
+:fire: ([`7b4a70d`](https://github.com/mraniki/talkytrend/commit/7b4a70df85dea0d97cca23fcafe649e951c5bf87))
+
+* Merge pull request #307 from mraniki/dev
+
+🔥 ([`9553fcd`](https://github.com/mraniki/talkytrend/commit/9553fcdadf2f1212e0c883e26988a554afe5c1dd))
+
+### 🔥
+
+* 🔥 ([`cdac4c5`](https://github.com/mraniki/talkytrend/commit/cdac4c5cdd620563255bac5f22507e08251dbea5))
+
+
 ## v3.3.7 (2024-10-27)
 
 ### Fix
