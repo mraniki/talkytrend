@@ -1,4 +1,4 @@
-import websockets
+#import websockets
 from loguru import logger
 
 
@@ -72,19 +72,19 @@ class Client:
     #         str: A string containing the concatenated results
     #          of the retrieved data sources.
     #     """
-    async def stream(self):
-        """
-        Asynchronously streams data from the source
-        using the configured settings.
+    # async def stream(self):
+    #     """
+    #     Asynchronously streams data from the source
+    #     using the configured settings.
 
-        Returns:
-            str: A string containing the concatenated results
-             of the retrieved data sources.
-        """
+    #     Returns:
+    #         str: A string containing the concatenated results
+    #          of the retrieved data sources.
+    #     """
 
-        if self.websocket_url is None:
-            return
-        with websockets.connect(self.websocket_url) as websocket:
-            message = websocket.recv()
-            logger.info(f"Received: {message}")
-            yield message
+    #     if self.websocket_url is None:
+    #         return
+    #     with websockets.connect(self.websocket_url) as websocket:
+    #         message = websocket.recv()
+    #         logger.info(f"Received: {message}")
+    #         yield message
