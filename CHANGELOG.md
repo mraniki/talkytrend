@@ -1,6 +1,25 @@
 # CHANGELOG
 
 
+## v3.3.9 (2024-11-02)
+
+### Other
+
+* Merge pull request #310 from mraniki/dev
+
+⬆️ 🤖 - Q	What do agnostic insomniac dyslexics do at night ([`2939e1e`](https://github.com/mraniki/talkytrend/commit/2939e1e0bf4c0ad504ab9c8efbeb1b26f5bc7320))
+
+* Merge pull request #309 from mraniki/dev
+
+⬆️ 🤖 - You will probably marry after a very brief courtship ([`61106f0`](https://github.com/mraniki/talkytrend/commit/61106f05278363e3abd67daa18575578c94bae36))
+
+* build(deps): update pyproject.toml ([`6766015`](https://github.com/mraniki/talkytrend/commit/67660159e86064d035d5d002840fe69c4bd4573b))
+
+### 🔥
+
+* 🔥 black ([`344171e`](https://github.com/mraniki/talkytrend/commit/344171e940e36a5e093bb127e83dc3021f2ea160))
+
+
 ## v3.3.8 (2024-10-30)
 
 ### :fire:
