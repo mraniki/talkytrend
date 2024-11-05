@@ -1,6 +1,19 @@
 # CHANGELOG
 
 
+## v3.3.10 (2024-11-05)
+
+### Other
+
+* Merge pull request #313 from mraniki/dev
+
+⬆️ 🤖 - Q	What do you call a blind prehistoric animal ([`e2e9efa`](https://github.com/mraniki/talkytrend/commit/e2e9efa6fbbd623dbe3c0f2b74c091f5c753840e))
+
+### ⬆️
+
+* ⬆️ 🛠️(deps): update dependency pre-commit to v4 ([`db37517`](https://github.com/mraniki/talkytrend/commit/db375177ad496bc6ef9d7b2d8e847052889ba3a9))
+
+
 ## v3.3.9 (2024-11-02)
 
 ### Other
