@@ -1,6 +1,19 @@
 # CHANGELOG
 
 
+## v3.3.11 (2024-11-07)
+
+### Other
+
+* Merge pull request #315 from mraniki/dev
+
+⬆️ 🤖 - Conscience doth make cowards of us all ([`e5fec06`](https://github.com/mraniki/talkytrend/commit/e5fec0650e85bdd3cd41c109aa110c4cafe83dad))
+
+### ⬆️
+
+* ⬆️ 🛠️(deps): update dependency finnhub-python to v2.4.21 ([`71e7d42`](https://github.com/mraniki/talkytrend/commit/71e7d4232b95a045b1c1d30e643eaa37569ab77d))
+
+
 ## v3.3.10 (2024-11-05)
 
 ### Other
