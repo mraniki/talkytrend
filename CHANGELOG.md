@@ -1,6 +1,23 @@
 # CHANGELOG
 
 
+## v3.3.12 (2024-11-23)
+
+### Other
+
+* Merge pull request #317 from mraniki/dev
+
+⬆️ 🤖 - You will be awarded some great honor ([`edfce8e`](https://github.com/mraniki/talkytrend/commit/edfce8e55583fe29b87196fbc04e628f1d9cc3fe))
+
+* Merge pull request #316 from mraniki/renovate/ruff-0.x
+
+⬆️ 🛠️(deps): update dependency ruff to ^0.8.0 ([`838002c`](https://github.com/mraniki/talkytrend/commit/838002c764c9fb2643f91d3abb7c93acb459d8f7))
+
+### ⬆️
+
+* ⬆️ 🛠️(deps): update dependency ruff to ^0.8.0 ([`1e1db28`](https://github.com/mraniki/talkytrend/commit/1e1db289d6ec286aa4e45b237ba9d49057117c09))
+
+
 ## v3.3.11 (2024-11-07)
 
 ### Other
