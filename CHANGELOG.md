@@ -1,6 +1,21 @@
 # CHANGELOG
 
 
+## v3.3.13 (2024-11-25)
+
+### Other
+
+* Merge pull request #319 from mraniki/dev
+
+⬆️ 🤖 - Dont look back the lemmings are gaining on you ([`4a72dbb`](https://github.com/mraniki/talkytrend/commit/4a72dbbdf82da9cc3f624e0278bea8f7beea2bb3))
+
+### ⬆️
+
+* ⬆️ 🛠️(deps): update dependency finnhub-python to v2.4.22 (#318)
+
+Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com> ([`f8eca55`](https://github.com/mraniki/talkytrend/commit/f8eca555ec89ea935603dc1aab0d3c4473fcbe6f))
+
+
 ## v3.3.12 (2024-11-23)
 
 ### Other
