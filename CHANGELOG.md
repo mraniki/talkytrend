@@ -1,6 +1,21 @@
 # CHANGELOG
 
 
+## v3.3.16 (2025-01-12)
+
+### Other
+
+- Merge pull request #331 from mraniki/dev
+  ([`f0222c0`](https://github.com/mraniki/talkytrend/commit/f0222c003353b81109bf384a8757643e807398d3))
+
+⬆️ 🤖 - Excellent day for putting Slinkies on an escalator
+
+### Update
+
+- Update dependabot configuration file
+  ([`3097daa`](https://github.com/mraniki/talkytrend/commit/3097daaf75109440a895edc2010d169283e35085))
+
+
 ## v3.3.15 (2025-01-11)
 
 ### Other
